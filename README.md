@@ -1,0 +1,36 @@
+# Calc 1 Study Hub
+
+A password-protected study site for Calculus 1. It has:
+
+- **15 topics**: limits, continuity, definition of the derivative, derivative rules, chain rule (trig/exp/log), implicit differentiation, related rates, linear approximation, extrema & curve sketching, Mean Value Theorem, optimization, L'Hôpital's rule, antiderivatives, definite integrals & FTC, u-substitution
+- **How-tos**: step-by-step methods for each topic
+- **Formulas**: listed for each topic, plus a printable formula sheet with all of them
+- **78 practice problems**: reveal the solution one step at a time, or show the answer right away
+- **Self-marking**: "I got it right" / "I got it wrong". Progress is saved in the browser, and missed problems go on the Review list
+- **Random practice**: a mixed set across the topics you choose
+
+## Password
+
+The default password is **`ilovecalc`**. To change it:
+
+```bash
+node tools/set-password.js "new password"
+```
+
+Then commit and push. This is a light lock for a static site. It keeps casual visitors out, but it is not real security.
+
+## Publish with GitHub Pages
+
+1. On GitHub, go to **Settings → Pages**.
+2. Under **Build and deployment**, choose **Deploy from a branch**. Pick the branch with this code and the **/ (root)** folder, then click **Save**.
+3. After a minute or two the site is live at `https://<your-username>.github.io/phoebe-study/`.
+
+Note: GitHub Pages on a free account requires the repository to be **public**.
+
+## Run locally
+
+Open `index.html` in a browser. To serve it locally instead, run `python3 -m http.server` and visit http://localhost:8000.
+
+## Editing content
+
+All topics, how-tos, formulas, and problems are in `js/content.js`. Math is written in LaTeX between `\( ... \)` or `\[ ... \]`.
