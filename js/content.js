@@ -201,66 +201,390 @@ window.TOPICS = [
           R`For \(x<0\): \(|x|=-x\), so \(\dfrac{|x|}{x}=-1\). Left limit \(=-1\).`,
           R`\(1\neq-1\), so the limit does not exist.`,
         ], R`Does not exist (left \(=-1\), right \(=1\)).`),
-      // ---- even more practice ----
-      P(R`Evaluate \(\displaystyle\lim_{x\to -3}\frac{x^{2}+7x+12}{x+3}\).`, [
-        R`Plug in \(x=-3\): top \(=9-21+12=0\) and bottom \(=0\). That's \(\tfrac00\), so factor.`,
-        R`Factor the top: \(x^{2}+7x+12=(x+3)(x+4)\).`,
-        R`Cancel \((x+3)\): you're left with \(x+4\).`,
-        R`Plug in: \(-3+4=1\).`,
+      // ---- generated practice (numbers vary; answers computed) ----
+      P(R`Evaluate \(\displaystyle\lim_{x\to 5}\frac{x^{2}+3x-40}{x-5}\).`, [
+        R`Plug in \(x=5\): you get \(\tfrac00\), so factor.`,
+        R`\(x^{2}+3x-40=(x-5)(x+8)\).`,
+        R`Cancel \((x-5)\), leaving \(x+8\).`,
+        R`Plug in: \(5+8=13\).`,
+      ], R`\(13\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{-5x^{2}+4x+4}{x^{2}+3}\).`, [
+        R`Same degree (2) on top and bottom.`,
+        R`Divide every term by \(x^2\); the terms with \(x\) in a denominator go to 0.`,
+        R`Ratio of leading coefficients: \(\dfrac{-5}{1}\).`,
+      ], R`\(-5\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{\sin(9x)}{12x}\).`, [
+        R`Rewrite: \(\dfrac{9}{12}\cdot\dfrac{\sin(9x)}{9x}\).`,
+        R`\(\dfrac{\sin(9x)}{9x}\to1\).`,
+      ], R`\(\dfrac{3}{4}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{\sqrt{x+64}-8}{x}\).`, [
+        R`\(\tfrac00\); multiply top and bottom by \(\sqrt{x+64}+8\).`,
+        R`Top becomes \(x\): \(\dfrac{1}{\sqrt{x+64}+8}\).`,
+        R`Plug in \(x=0\): \(\dfrac{1}{16}\).`,
+      ], R`\(\dfrac{1}{16}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{7x-1}{9x^{2}+7}\).`, [
+        R`Degree of top (1) < degree of bottom (2).`,
+        R`Divide by \(x^2\): top \(\to0\), bottom \(\to9\).`,
+      ], R`\(0\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{x^{3}-9}{9x^{2}+5}\).`, [
+        R`Degree of top (3) > degree of bottom (2), so it blows up.`,
+        R`Divide by \(x^2\): \(\dfrac{x-9/x^2}{9+5/x^2}\) behaves like \(\dfrac{1}{9}x\).`,
+        R`\(\dfrac{1}{9}\) is positive, so the limit is \(+\infty\).`,
+      ], R`\(+\infty\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 3}\frac{x^3-27}{x-3}\).`, [
+        R`\(\tfrac00\). Use the cube factoring formula: \(x^3-(3)^3=(x-3)(x^{2}+3x+9)\).`,
+        R`Cancel: \(x^{2}+3x+9\).`,
+        R`Plug in: \(9+9+9=27\).`,
+      ], R`\(27\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to -2}\frac{x^{2}+2x+5}{x+5}\).`, [
+        R`Try plugging in first! Bottom: \(-2+5=3\neq0\), so direct substitution works.`,
+        R`Top: \(4-4+5=5\).`,
+        R`\(\dfrac{5}{3}=\dfrac{5}{3}\).`,
+      ], R`\(\dfrac{5}{3}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 5^+}\frac{5}{x-5}\).`, [
+        R`Top \(\to5\), bottom \(\to0\): vertical asymptote.`,
+        R`From the right, \(x-5\) is a tiny positive number.`,
+        R`Positive divided by tiny positive gives \(+\infty\).`,
+      ], R`\(+\infty\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{\tan(8x)}{10x}\).`, [
+        R`\(\tan(8x)=\dfrac{\sin(8x)}{\cos(8x)}\).`,
+        R`\(\dfrac{8}{10}\cdot\dfrac{\sin(8x)}{8x}\cdot\dfrac{1}{\cos(8x)}\to\dfrac{8}{10}\cdot1\cdot1\).`,
+      ], R`\(\dfrac{4}{5}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{x}{\sin(4x)}\).`, [
+        R`Flip the special limit: \(\dfrac{x}{\sin(4x)}=\dfrac{1}{4}\cdot\dfrac{4x}{\sin(4x)}\).`,
+        R`\(\dfrac{4x}{\sin(4x)}\to1\).`,
+      ], R`\(\dfrac{1}{4}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{h\to 0}\frac{(-8+h)^2-64}{h}\).`, [
+        R`Expand: \((-8+h)^2=64-16h+h^2\).`,
+        R`Subtract 64 and divide by \(h\): \(-16+h\).`,
+        R`\(h\to0\): \(-16\).`,
+      ], R`\(-16\)`),
+      P(R`Let \(f(x)=\begin{cases}x^{2}-2 & x<2\\ 3x-5 & x\ge 2\end{cases}\). Find \(\lim_{x\to 2}f(x)\).`, [
+        R`Left: \((2)^2-2=2\).`,
+        R`Right: \(3(2)-5=1\).`,
+        R`They don't match.`,
+      ], R`Does not exist (left \(2\), right \(1\))`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to -2}\frac{x^{2}-5x-14}{x+2}\).`, [
+        R`Plug in \(x=-2\): you get \(\tfrac00\), so factor.`,
+        R`\(x^{2}-5x-14=(x+2)(x-7)\).`,
+        R`Cancel \((x+2)\), leaving \(x-7\).`,
+        R`Plug in: \(-2-7=-9\).`,
+      ], R`\(-9\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{-8x^{2}+3x+6}{7x^{2}+7}\).`, [
+        R`Same degree (2) on top and bottom.`,
+        R`Divide every term by \(x^2\); the terms with \(x\) in a denominator go to 0.`,
+        R`Ratio of leading coefficients: \(\dfrac{-8}{7}\).`,
+      ], R`\(-\dfrac{8}{7}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{\sin(11x)}{10x}\).`, [
+        R`Rewrite: \(\dfrac{11}{10}\cdot\dfrac{\sin(11x)}{11x}\).`,
+        R`\(\dfrac{\sin(11x)}{11x}\to1\).`,
+      ], R`\(\dfrac{11}{10}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{\sqrt{x+4}-2}{x}\).`, [
+        R`\(\tfrac00\); multiply top and bottom by \(\sqrt{x+4}+2\).`,
+        R`Top becomes \(x\): \(\dfrac{1}{\sqrt{x+4}+2}\).`,
+        R`Plug in \(x=0\): \(\dfrac{1}{4}\).`,
+      ], R`\(\dfrac{1}{4}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{-4x+1}{9x^{2}+3}\).`, [
+        R`Degree of top (1) < degree of bottom (2).`,
+        R`Divide by \(x^2\): top \(\to0\), bottom \(\to9\).`,
+      ], R`\(0\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{x^{3}+5}{-7x^{2}+4}\).`, [
+        R`Degree of top (3) > degree of bottom (2), so it blows up.`,
+        R`Divide by \(x^2\): \(\dfrac{x+5/x^2}{-7+4/x^2}\) behaves like \(\dfrac{1}{-7}x\).`,
+        R`\(\dfrac{1}{-7}\) is negative, so the limit is \(-\infty\).`,
+      ], R`\(-\infty\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 5}\frac{x^3-125}{x-5}\).`, [
+        R`\(\tfrac00\). Use the cube factoring formula: \(x^3-(5)^3=(x-5)(x^{2}+5x+25)\).`,
+        R`Cancel: \(x^{2}+5x+25\).`,
+        R`Plug in: \(25+25+25=75\).`,
+      ], R`\(75\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 3}\frac{x^{2}+5x-1}{x+1}\).`, [
+        R`Try plugging in first! Bottom: \(3+1=4\neq0\), so direct substitution works.`,
+        R`Top: \(9+15-1=23\).`,
+        R`\(\dfrac{23}{4}=\dfrac{23}{4}\).`,
+      ], R`\(\dfrac{23}{4}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 4^-}\frac{9}{x-4}\).`, [
+        R`Top \(\to9\), bottom \(\to0\): vertical asymptote.`,
+        R`From the left, \(x-4\) is a tiny negative number.`,
+        R`Positive divided by tiny negative gives \(-\infty\).`,
+      ], R`\(-\infty\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{\tan(6x)}{4x}\).`, [
+        R`\(\tan(6x)=\dfrac{\sin(6x)}{\cos(6x)}\).`,
+        R`\(\dfrac{6}{4}\cdot\dfrac{\sin(6x)}{6x}\cdot\dfrac{1}{\cos(6x)}\to\dfrac{6}{4}\cdot1\cdot1\).`,
+      ], R`\(\dfrac{3}{2}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{x}{\sin(6x)}\).`, [
+        R`Flip the special limit: \(\dfrac{x}{\sin(6x)}=\dfrac{1}{6}\cdot\dfrac{6x}{\sin(6x)}\).`,
+        R`\(\dfrac{6x}{\sin(6x)}\to1\).`,
+      ], R`\(\dfrac{1}{6}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{h\to 0}\frac{(-10+h)^2-100}{h}\).`, [
+        R`Expand: \((-10+h)^2=100-20h+h^2\).`,
+        R`Subtract 100 and divide by \(h\): \(-20+h\).`,
+        R`\(h\to0\): \(-20\).`,
+      ], R`\(-20\)`),
+      P(R`Let \(f(x)=\begin{cases}x^{2}+3 & x<2\\ -4x+16 & x\ge 2\end{cases}\). Find \(\lim_{x\to 2}f(x)\).`, [
+        R`Left: \((2)^2+3=7\).`,
+        R`Right: \(-4(2)+16=8\).`,
+        R`They don't match.`,
+      ], R`Does not exist (left \(7\), right \(8\))`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to -6}\frac{x^{2}+13x+42}{x+6}\).`, [
+        R`Plug in \(x=-6\): you get \(\tfrac00\), so factor.`,
+        R`\(x^{2}+13x+42=(x+6)(x+7)\).`,
+        R`Cancel \((x+6)\), leaving \(x+7\).`,
+        R`Plug in: \(-6+7=1\).`,
       ], R`\(1\)`),
-      P(R`Evaluate \(\displaystyle\lim_{x\to 5}\frac{x^{2}-6x+5}{x-5}\).`, [
-        R`Plug in \(x=5\): top \(=25-30+5=0\) and bottom \(=0\). That's \(\tfrac00\), so factor.`,
-        R`Factor the top: \(x^{2}-6x+5=(x-5)(x-1)\).`,
-        R`Cancel \((x-5)\): you're left with \(x-1\).`,
-        R`Plug in: \(5-1=4\).`,
-      ], R`\(4\)`),
-      P(R`Evaluate \(\displaystyle\lim_{x\to 6}\frac{x^{2}-x-30}{x-6}\).`, [
-        R`Plug in \(x=6\): top \(=36-6-30=0\) and bottom \(=0\). That's \(\tfrac00\), so factor.`,
-        R`Factor the top: \(x^{2}-x-30=(x-6)(x+5)\).`,
-        R`Cancel \((x-6)\): you're left with \(x+5\).`,
-        R`Plug in: \(6+5=11\).`,
-      ], R`\(11\)`),
-      P(R`Evaluate \(\displaystyle\lim_{x\to 6}\frac{x^{2}-36}{x-6}\).`, [
-        R`Plug in \(x=6\): top \(=36+0-36=0\) and bottom \(=0\). That's \(\tfrac00\), so factor.`,
-        R`Factor the top: \(x^{2}-36=(x-6)(x+6)\).`,
-        R`Cancel \((x-6)\): you're left with \(x+6\).`,
-        R`Plug in: \(6+6=12\).`,
-      ], R`\(12\)`),
-      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{3x^{2}+9x-4}{6x^{2}+4}\).`, [
-        R`Top and bottom both have degree 2.`,
-        R`Divide every term by \(x^2\); every term with \(x\) left in a denominator goes to 0.`,
-        R`What's left is the ratio of leading coefficients: \(\dfrac{3}{6}\).`,
-      ], R`\(\dfrac{1}{2}\)`),
-      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{x^{2}+2x-3}{x^{2}+6}\).`, [
-        R`Top and bottom both have degree 2.`,
-        R`Divide every term by \(x^2\); every term with \(x\) left in a denominator goes to 0.`,
-        R`What's left is the ratio of leading coefficients: \(\dfrac{1}{1}\).`,
-      ], R`\(1\)`),
-      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{\sin(8x)}{9x}\).`, [
-        R`Make it look like \(\dfrac{\sin(\text{stuff})}{\text{stuff}}\) with stuff \(=8x\).`,
-        R`\(\dfrac{\sin(8x)}{9x}=\dfrac{8}{9}\cdot\dfrac{\sin(8x)}{8x}\).`,
-        R`\(\dfrac{\sin(8x)}{8x}\to1\), so the limit is \(\dfrac{8}{9}\).`,
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{-4x^{2}-5x-4}{9x^{2}+5}\).`, [
+        R`Same degree (2) on top and bottom.`,
+        R`Divide every term by \(x^2\); the terms with \(x\) in a denominator go to 0.`,
+        R`Ratio of leading coefficients: \(\dfrac{-4}{9}\).`,
+      ], R`\(-\dfrac{4}{9}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{\sin(12x)}{4x}\).`, [
+        R`Rewrite: \(\dfrac{12}{4}\cdot\dfrac{\sin(12x)}{12x}\).`,
+        R`\(\dfrac{\sin(12x)}{12x}\to1\).`,
+      ], R`\(3\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{\sqrt{x+9}-3}{x}\).`, [
+        R`\(\tfrac00\); multiply top and bottom by \(\sqrt{x+9}+3\).`,
+        R`Top becomes \(x\): \(\dfrac{1}{\sqrt{x+9}+3}\).`,
+        R`Plug in \(x=0\): \(\dfrac{1}{6}\).`,
+      ], R`\(\dfrac{1}{6}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{3x-3}{5x^{2}+3}\).`, [
+        R`Degree of top (1) < degree of bottom (2).`,
+        R`Divide by \(x^2\): top \(\to0\), bottom \(\to5\).`,
+      ], R`\(0\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{-x^{3}-7}{-8x^{2}+9}\).`, [
+        R`Degree of top (3) > degree of bottom (2), so it blows up.`,
+        R`Divide by \(x^2\): \(\dfrac{-x-7/x^2}{-8+9/x^2}\) behaves like \(\dfrac{-1}{-8}x\).`,
+        R`\(\dfrac{-1}{-8}\) is positive, so the limit is \(+\infty\).`,
+      ], R`\(+\infty\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 1}\frac{x^3-1}{x-1}\).`, [
+        R`\(\tfrac00\). Use the cube factoring formula: \(x^3-(1)^3=(x-1)(x^{2}+x+1)\).`,
+        R`Cancel: \(x^{2}+x+1\).`,
+        R`Plug in: \(1+1+1=3\).`,
+      ], R`\(3\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 1}\frac{x^{2}+8x-1}{x+8}\).`, [
+        R`Try plugging in first! Bottom: \(1+8=9\neq0\), so direct substitution works.`,
+        R`Top: \(1+8-1=8\).`,
+        R`\(\dfrac{8}{9}=\dfrac{8}{9}\).`,
       ], R`\(\dfrac{8}{9}\)`),
-      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{\sin(7x)}{2x}\).`, [
-        R`Make it look like \(\dfrac{\sin(\text{stuff})}{\text{stuff}}\) with stuff \(=7x\).`,
-        R`\(\dfrac{\sin(7x)}{2x}=\dfrac{7}{2}\cdot\dfrac{\sin(7x)}{7x}\).`,
-        R`\(\dfrac{\sin(7x)}{7x}\to1\), so the limit is \(\dfrac{7}{2}\).`,
-      ], R`\(\dfrac{7}{2}\)`),
-      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{\sin(2x)}{3x}\).`, [
-        R`Make it look like \(\dfrac{\sin(\text{stuff})}{\text{stuff}}\) with stuff \(=2x\).`,
-        R`\(\dfrac{\sin(2x)}{3x}=\dfrac{2}{3}\cdot\dfrac{\sin(2x)}{2x}\).`,
-        R`\(\dfrac{\sin(2x)}{2x}\to1\), so the limit is \(\dfrac{2}{3}\).`,
-      ], R`\(\dfrac{2}{3}\)`),
-      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{\sqrt{x+16}-4}{x}\).`, [
-        R`Plug in: \(\dfrac{4-4}{0}=\dfrac00\). Multiply by the conjugate \(\sqrt{x+16}+4\).`,
-        R`Top becomes \((x+16)-16=x\), so you get \(\dfrac{x}{x(\sqrt{x+16}+4)}=\dfrac{1}{\sqrt{x+16}+4}\).`,
-        R`Plug in \(x=0\): \(\dfrac{1}{4+4}=\dfrac{1}{8}\).`,
+      P(R`Evaluate \(\displaystyle\lim_{x\to -5^-}\frac{4}{x+5}\).`, [
+        R`Top \(\to4\), bottom \(\to0\): vertical asymptote.`,
+        R`From the left, \(x+5\) is a tiny negative number.`,
+        R`Positive divided by tiny negative gives \(-\infty\).`,
+      ], R`\(-\infty\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{\tan(12x)}{6x}\).`, [
+        R`\(\tan(12x)=\dfrac{\sin(12x)}{\cos(12x)}\).`,
+        R`\(\dfrac{12}{6}\cdot\dfrac{\sin(12x)}{12x}\cdot\dfrac{1}{\cos(12x)}\to\dfrac{12}{6}\cdot1\cdot1\).`,
+      ], R`\(2\)`),
+      P(R`Evaluate \(\displaystyle\lim_{h\to 0}\frac{(-2+h)^2-4}{h}\).`, [
+        R`Expand: \((-2+h)^2=4-4h+h^2\).`,
+        R`Subtract 4 and divide by \(h\): \(-4+h\).`,
+        R`\(h\to0\): \(-4\).`,
+      ], R`\(-4\)`),
+      P(R`Let \(f(x)=\begin{cases}x^{2}-6 & x<-2\\ 3x & x\ge -2\end{cases}\). Find \(\lim_{x\to -2}f(x)\).`, [
+        R`Left: \((-2)^2-6=-2\).`,
+        R`Right: \(3(-2)+0=-6\).`,
+        R`They don't match.`,
+      ], R`Does not exist (left \(-2\), right \(-6\))`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{-7x^{2}-2x-6}{x^{2}+5}\).`, [
+        R`Same degree (2) on top and bottom.`,
+        R`Divide every term by \(x^2\); the terms with \(x\) in a denominator go to 0.`,
+        R`Ratio of leading coefficients: \(\dfrac{-7}{1}\).`,
+      ], R`\(-7\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{\sin(10x)}{3x}\).`, [
+        R`Rewrite: \(\dfrac{10}{3}\cdot\dfrac{\sin(10x)}{10x}\).`,
+        R`\(\dfrac{\sin(10x)}{10x}\to1\).`,
+      ], R`\(\dfrac{10}{3}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{\sqrt{x+100}-10}{x}\).`, [
+        R`\(\tfrac00\); multiply top and bottom by \(\sqrt{x+100}+10\).`,
+        R`Top becomes \(x\): \(\dfrac{1}{\sqrt{x+100}+10}\).`,
+        R`Plug in \(x=0\): \(\dfrac{1}{20}\).`,
+      ], R`\(\dfrac{1}{20}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{-3x-6}{9x^{2}+2}\).`, [
+        R`Degree of top (1) < degree of bottom (2).`,
+        R`Divide by \(x^2\): top \(\to0\), bottom \(\to9\).`,
+      ], R`\(0\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{-4x^{3}-9}{-5x^{2}+5}\).`, [
+        R`Degree of top (3) > degree of bottom (2), so it blows up.`,
+        R`Divide by \(x^2\): \(\dfrac{-4x-9/x^2}{-5+5/x^2}\) behaves like \(\dfrac{-4}{-5}x\).`,
+        R`\(\dfrac{-4}{-5}\) is positive, so the limit is \(+\infty\).`,
+      ], R`\(+\infty\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to -3}\frac{x^3+27}{x+3}\).`, [
+        R`\(\tfrac00\). Use the cube factoring formula: \(x^3-(-3)^3=(x+3)(x^{2}-3x+9)\).`,
+        R`Cancel: \(x^{2}-3x+9\).`,
+        R`Plug in: \(9+9+9=27\).`,
+      ], R`\(27\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 1}\frac{x^{2}+4x-3}{x-9}\).`, [
+        R`Try plugging in first! Bottom: \(1-9=-8\neq0\), so direct substitution works.`,
+        R`Top: \(1+4-3=2\).`,
+        R`\(\dfrac{2}{-8}=-\dfrac{1}{4}\).`,
+      ], R`\(-\dfrac{1}{4}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 6^-}\frac{5}{x-6}\).`, [
+        R`Top \(\to5\), bottom \(\to0\): vertical asymptote.`,
+        R`From the left, \(x-6\) is a tiny negative number.`,
+        R`Positive divided by tiny negative gives \(-\infty\).`,
+      ], R`\(-\infty\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{\tan(5x)}{8x}\).`, [
+        R`\(\tan(5x)=\dfrac{\sin(5x)}{\cos(5x)}\).`,
+        R`\(\dfrac{5}{8}\cdot\dfrac{\sin(5x)}{5x}\cdot\dfrac{1}{\cos(5x)}\to\dfrac{5}{8}\cdot1\cdot1\).`,
+      ], R`\(\dfrac{5}{8}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{x}{\sin(8x)}\).`, [
+        R`Flip the special limit: \(\dfrac{x}{\sin(8x)}=\dfrac{1}{8}\cdot\dfrac{8x}{\sin(8x)}\).`,
+        R`\(\dfrac{8x}{\sin(8x)}\to1\).`,
       ], R`\(\dfrac{1}{8}\)`),
-      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{\sqrt{x+36}-6}{x}\).`, [
-        R`Plug in: \(\dfrac{6-6}{0}=\dfrac00\). Multiply by the conjugate \(\sqrt{x+36}+6\).`,
-        R`Top becomes \((x+36)-36=x\), so you get \(\dfrac{x}{x(\sqrt{x+36}+6)}=\dfrac{1}{\sqrt{x+36}+6}\).`,
-        R`Plug in \(x=0\): \(\dfrac{1}{6+6}=\dfrac{1}{12}\).`,
-      ], R`\(\dfrac{1}{12}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{h\to 0}\frac{(-12+h)^2-144}{h}\).`, [
+        R`Expand: \((-12+h)^2=144-24h+h^2\).`,
+        R`Subtract 144 and divide by \(h\): \(-24+h\).`,
+        R`\(h\to0\): \(-24\).`,
+      ], R`\(-24\)`),
+      P(R`Let \(f(x)=\begin{cases}x^{2}-6 & x<3\\ -4x+15 & x\ge 3\end{cases}\). Find \(\lim_{x\to 3}f(x)\).`, [
+        R`Left: \((3)^2-6=3\).`,
+        R`Right: \(-4(3)+15=3\).`,
+        R`They match.`,
+      ], R`\(3\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 1}\frac{x^{2}+3x-4}{x-1}\).`, [
+        R`Plug in \(x=1\): you get \(\tfrac00\), so factor.`,
+        R`\(x^{2}+3x-4=(x-1)(x+4)\).`,
+        R`Cancel \((x-1)\), leaving \(x+4\).`,
+        R`Plug in: \(1+4=5\).`,
+      ], R`\(5\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{-3x^{2}+7x-5}{2x^{2}+7}\).`, [
+        R`Same degree (2) on top and bottom.`,
+        R`Divide every term by \(x^2\); the terms with \(x\) in a denominator go to 0.`,
+        R`Ratio of leading coefficients: \(\dfrac{-3}{2}\).`,
+      ], R`\(-\dfrac{3}{2}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{\sqrt{x+81}-9}{x}\).`, [
+        R`\(\tfrac00\); multiply top and bottom by \(\sqrt{x+81}+9\).`,
+        R`Top becomes \(x\): \(\dfrac{1}{\sqrt{x+81}+9}\).`,
+        R`Plug in \(x=0\): \(\dfrac{1}{18}\).`,
+      ], R`\(\dfrac{1}{18}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{x-9}{4x^{2}+4}\).`, [
+        R`Degree of top (1) < degree of bottom (2).`,
+        R`Divide by \(x^2\): top \(\to0\), bottom \(\to4\).`,
+      ], R`\(0\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{-x^{3}+1}{4x^{2}+1}\).`, [
+        R`Degree of top (3) > degree of bottom (2), so it blows up.`,
+        R`Divide by \(x^2\): \(\dfrac{-x+/x^2}{4+/x^2}\) behaves like \(\dfrac{-1}{4}x\).`,
+        R`\(\dfrac{-1}{4}\) is negative, so the limit is \(-\infty\).`,
+      ], R`\(-\infty\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to -5}\frac{x^3+125}{x+5}\).`, [
+        R`\(\tfrac00\). Use the cube factoring formula: \(x^3-(-5)^3=(x+5)(x^{2}-5x+25)\).`,
+        R`Cancel: \(x^{2}-5x+25\).`,
+        R`Plug in: \(25+25+25=75\).`,
+      ], R`\(75\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to -6^+}\frac{3}{x+6}\).`, [
+        R`Top \(\to3\), bottom \(\to0\): vertical asymptote.`,
+        R`From the right, \(x+6\) is a tiny positive number.`,
+        R`Positive divided by tiny positive gives \(+\infty\).`,
+      ], R`\(+\infty\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{\tan(9x)}{10x}\).`, [
+        R`\(\tan(9x)=\dfrac{\sin(9x)}{\cos(9x)}\).`,
+        R`\(\dfrac{9}{10}\cdot\dfrac{\sin(9x)}{9x}\cdot\dfrac{1}{\cos(9x)}\to\dfrac{9}{10}\cdot1\cdot1\).`,
+      ], R`\(\dfrac{9}{10}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{h\to 0}\frac{(3+h)^2-9}{h}\).`, [
+        R`Expand: \((3+h)^2=9+6h+h^2\).`,
+        R`Subtract 9 and divide by \(h\): \(6+h\).`,
+        R`\(h\to0\): \(6\).`,
+      ], R`\(6\)`),
+      P(R`Let \(f(x)=\begin{cases}x^{2}-1 & x<-3\\ 3x+21 & x\ge -3\end{cases}\). Find \(\lim_{x\to -3}f(x)\).`, [
+        R`Left: \((-3)^2-1=8\).`,
+        R`Right: \(3(-3)+21=12\).`,
+        R`They don't match.`,
+      ], R`Does not exist (left \(8\), right \(12\))`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to -5}\frac{x^{2}-3x-40}{x+5}\).`, [
+        R`Plug in \(x=-5\): you get \(\tfrac00\), so factor.`,
+        R`\(x^{2}-3x-40=(x+5)(x-8)\).`,
+        R`Cancel \((x+5)\), leaving \(x-8\).`,
+        R`Plug in: \(-5-8=-13\).`,
+      ], R`\(-13\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to-\infty}\frac{8x^{2}-8x+4}{x^{2}+7}\).`, [
+        R`Same degree (2) on top and bottom.`,
+        R`Divide every term by \(x^2\); the terms with \(x\) in a denominator go to 0.`,
+        R`Ratio of leading coefficients: \(\dfrac{8}{1}\).`,
+      ], R`\(8\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{\sin(10x)}{12x}\).`, [
+        R`Rewrite: \(\dfrac{10}{12}\cdot\dfrac{\sin(10x)}{10x}\).`,
+        R`\(\dfrac{\sin(10x)}{10x}\to1\).`,
+      ], R`\(\dfrac{5}{6}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{\sqrt{x+16}-4}{x}\).`, [
+        R`\(\tfrac00\); multiply top and bottom by \(\sqrt{x+16}+4\).`,
+        R`Top becomes \(x\): \(\dfrac{1}{\sqrt{x+16}+4}\).`,
+        R`Plug in \(x=0\): \(\dfrac{1}{8}\).`,
+      ], R`\(\dfrac{1}{8}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{-5x-1}{x^{2}+1}\).`, [
+        R`Degree of top (1) < degree of bottom (2).`,
+        R`Divide by \(x^2\): top \(\to0\), bottom \(\to1\).`,
+      ], R`\(0\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{-5x^{3}-7}{7x^{2}+5}\).`, [
+        R`Degree of top (3) > degree of bottom (2), so it blows up.`,
+        R`Divide by \(x^2\): \(\dfrac{-5x-7/x^2}{7+5/x^2}\) behaves like \(\dfrac{-5}{7}x\).`,
+        R`\(\dfrac{-5}{7}\) is negative, so the limit is \(-\infty\).`,
+      ], R`\(-\infty\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to -1}\frac{x^{2}-4x-7}{x+2}\).`, [
+        R`Try plugging in first! Bottom: \(-1+2=1\neq0\), so direct substitution works.`,
+        R`Top: \(1+4-7=-2\).`,
+        R`\(\dfrac{-2}{1}=-2\).`,
+      ], R`\(-2\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 5^-}\frac{-8}{x-5}\).`, [
+        R`Top \(\to-8\), bottom \(\to0\): vertical asymptote.`,
+        R`From the left, \(x-5\) is a tiny negative number.`,
+        R`Negative divided by tiny negative gives \(+\infty\).`,
+      ], R`\(+\infty\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{\tan(3x)}{12x}\).`, [
+        R`\(\tan(3x)=\dfrac{\sin(3x)}{\cos(3x)}\).`,
+        R`\(\dfrac{3}{12}\cdot\dfrac{\sin(3x)}{3x}\cdot\dfrac{1}{\cos(3x)}\to\dfrac{3}{12}\cdot1\cdot1\).`,
+      ], R`\(\dfrac{1}{4}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{x}{\sin(5x)}\).`, [
+        R`Flip the special limit: \(\dfrac{x}{\sin(5x)}=\dfrac{1}{5}\cdot\dfrac{5x}{\sin(5x)}\).`,
+        R`\(\dfrac{5x}{\sin(5x)}\to1\).`,
+      ], R`\(\dfrac{1}{5}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{h\to 0}\frac{(6+h)^2-36}{h}\).`, [
+        R`Expand: \((6+h)^2=36+12h+h^2\).`,
+        R`Subtract 36 and divide by \(h\): \(12+h\).`,
+        R`\(h\to0\): \(12\).`,
+      ], R`\(12\)`),
+      P(R`Let \(f(x)=\begin{cases}x^{2}-5 & x<1\\ -4x & x\ge 1\end{cases}\). Find \(\lim_{x\to 1}f(x)\).`, [
+        R`Left: \((1)^2-5=-4\).`,
+        R`Right: \(-4(1)+0=-4\).`,
+        R`They match.`,
+      ], R`\(-4\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to -7}\frac{x^{2}+4x-21}{x+7}\).`, [
+        R`Plug in \(x=-7\): you get \(\tfrac00\), so factor.`,
+        R`\(x^{2}+4x-21=(x+7)(x-3)\).`,
+        R`Cancel \((x+7)\), leaving \(x-3\).`,
+        R`Plug in: \(-7-3=-10\).`,
+      ], R`\(-10\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to-\infty}\frac{-5x^{2}+8x+8}{3x^{2}+9}\).`, [
+        R`Same degree (2) on top and bottom.`,
+        R`Divide every term by \(x^2\); the terms with \(x\) in a denominator go to 0.`,
+        R`Ratio of leading coefficients: \(\dfrac{-5}{3}\).`,
+      ], R`\(-\dfrac{5}{3}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{2x-5}{9x^{2}+8}\).`, [
+        R`Degree of top (1) < degree of bottom (2).`,
+        R`Divide by \(x^2\): top \(\to0\), bottom \(\to9\).`,
+      ], R`\(0\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{-3x^{3}-4}{-9x^{2}+9}\).`, [
+        R`Degree of top (3) > degree of bottom (2), so it blows up.`,
+        R`Divide by \(x^2\): \(\dfrac{-3x-4/x^2}{-9+9/x^2}\) behaves like \(\dfrac{-3}{-9}x\).`,
+        R`\(\dfrac{-3}{-9}\) is positive, so the limit is \(+\infty\).`,
+      ], R`\(+\infty\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 2}\frac{x^3-8}{x-2}\).`, [
+        R`\(\tfrac00\). Use the cube factoring formula: \(x^3-(2)^3=(x-2)(x^{2}+2x+4)\).`,
+        R`Cancel: \(x^{2}+2x+4\).`,
+        R`Plug in: \(4+4+4=12\).`,
+      ], R`\(12\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 2}\frac{x^{2}-2x+1}{x+7}\).`, [
+        R`Try plugging in first! Bottom: \(2+7=9\neq0\), so direct substitution works.`,
+        R`Top: \(4-4+1=1\).`,
+        R`\(\dfrac{1}{9}=\dfrac{1}{9}\).`,
+      ], R`\(\dfrac{1}{9}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to -6^-}\frac{-8}{x+6}\).`, [
+        R`Top \(\to-8\), bottom \(\to0\): vertical asymptote.`,
+        R`From the left, \(x+6\) is a tiny negative number.`,
+        R`Negative divided by tiny negative gives \(+\infty\).`,
+      ], R`\(+\infty\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to 0}\frac{x}{\sin(10x)}\).`, [
+        R`Flip the special limit: \(\dfrac{x}{\sin(10x)}=\dfrac{1}{10}\cdot\dfrac{10x}{\sin(10x)}\).`,
+        R`\(\dfrac{10x}{\sin(10x)}\to1\).`,
+      ], R`\(\dfrac{1}{10}\)`),
     ],
   },
 
@@ -387,67 +711,410 @@ window.TOPICS = [
           R`\(\lim_{x\to3}(x+2)=5\).`,
           R`Define \(f(3)=5\) to fill the hole.`,
         ], R`\(f(3)=5\)`),
-      // ---- even more practice ----
-      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx+2 & x<4\\ x^{2}+4 & x\ge 4\end{cases}\) is continuous.`, [
-        R`Both pieces are polynomials, so only the break point \(x=4\) matters.`,
-        R`Left piece at \(x=4\): \(4k+2\).`,
-        R`Right piece at \(x=4\): \(16+4=20\).`,
-        R`Set equal: \(4k+2=20\Rightarrow 4k=18\Rightarrow k=\dfrac{9}{2}\).`,
-      ], R`\(k=\dfrac{9}{2}\)`),
-      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx+1 & x<4\\ x^{2}-1 & x\ge 4\end{cases}\) is continuous.`, [
-        R`Both pieces are polynomials, so only the break point \(x=4\) matters.`,
-        R`Left piece at \(x=4\): \(4k+1\).`,
-        R`Right piece at \(x=4\): \(16-1=15\).`,
-        R`Set equal: \(4k+1=15\Rightarrow 4k=14\Rightarrow k=\dfrac{7}{2}\).`,
-      ], R`\(k=\dfrac{7}{2}\)`),
-      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx+5 & x<1\\ x^{2}+4 & x\ge 1\end{cases}\) is continuous.`, [
-        R`Both pieces are polynomials, so only the break point \(x=1\) matters.`,
-        R`Left piece at \(x=1\): \(1k+5\).`,
-        R`Right piece at \(x=1\): \(1+4=5\).`,
-        R`Set equal: \(1k+5=5\Rightarrow 1k=0\Rightarrow k=0\).`,
+      // ---- generated practice (numbers vary; answers computed) ----
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx & x<-1\\ x^{2}+7 & x\ge -1\end{cases}\) is continuous.`, [
+        R`Only the break point \(x=-1\) matters.`,
+        R`Left: \(-1k\). Right: \(1+7=8\).`,
+        R`\(-1k=8\Rightarrow k=-8\).`,
+      ], R`\(k=-8\)`),
+      P(R`\(f(x)=\dfrac{x^{2}+2x-3}{x+3}\) is undefined at \(x=-3\). What value of \(f(-3)\) makes \(f\) continuous?`, [
+        R`Factor: \((x+3)(x-1)\); cancel to get \(x-1\).`,
+        R`\(\lim_{x\to-3}=-3-1=-4\).`,
+      ], R`\(f(-3)=-4\)`),
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx^2 & x<-3\\ x+3 & x\ge -3\end{cases}\) is continuous.`, [
+        R`Left at \(x=-3\): \(9k\). Right: \(1(-3)+3=0\).`,
+        R`\(9k=0\Rightarrow k=0\).`,
       ], R`\(k=0\)`),
-      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx+6 & x<2\\ x^{2}+5 & x\ge 2\end{cases}\) is continuous.`, [
-        R`Both pieces are polynomials, so only the break point \(x=2\) matters.`,
-        R`Left piece at \(x=2\): \(2k+6\).`,
-        R`Right piece at \(x=2\): \(4+5=9\).`,
-        R`Set equal: \(2k+6=9\Rightarrow 2k=3\Rightarrow k=\dfrac{3}{2}\).`,
+      P(R`Find and classify the discontinuities of \(f(x)=\dfrac{x^{2}+3x-10}{x^{2}-7x+10}\).`, [
+        R`Factor: \(\dfrac{(x-2)(x+5)}{(x-2)(x-5)}\). Undefined at \(x=2\) and \(x=5\).`,
+        R`At \(x=2\) the factor cancels: limit \(=\dfrac{2+5}{2-5}=-\dfrac{7}{3}\) &rArr; removable.`,
+        R`At \(x=5\) the factor doesn't cancel &rArr; infinite (vertical asymptote).`,
+      ], R`Removable at \(x=2\); infinite at \(x=5\)`),
+      P(R`Is \(f(x)=\begin{cases}\dfrac{x^2-1}{x+1} & x\neq-1\\ -4 & x=-1\end{cases}\) continuous at \(x=-1\)?`, [
+        R`\(f(-1)=-4\) is defined.`,
+        R`\(\lim_{x\to-1}\dfrac{(x+1)(x-1)}{x+1}=-1-1=-2\).`,
+        R`\(-2\neq-4\) ✗.`,
+      ], R`No (removable: limit \(-2\), but \(f(-1)=-4\))`),
+      P(R`Where is \(f(x)=\dfrac{\sqrt{x-3}}{x-4}\) continuous?`, [
+        R`Root needs \(x-3\ge0\) &rArr; \(x\ge3\).`,
+        R`Denominator: \(x\neq4\).`,
+      ], R`\([3,4)\cup(4,\infty)\)`),
+      P(R`Where is \(f(x)=\dfrac{1}{x^2-36}\) continuous?`, [
+        R`Denominator \(=0\) when \(x=\pm6\).`,
+        R`Rational functions are continuous everywhere else.`,
+      ], R`\((-\infty,-6)\cup(-6,6)\cup(6,\infty)\)`),
+      P(R`Show that \(f(x)=x^{2}+3x\) takes the value \(7\) somewhere in \([1,2]\).`, [
+        R`\(f\) is a polynomial, so it's continuous on \([1,2]\).`,
+        R`\(f(1)=4\), \(f(2)=10\).`,
+        R`\(7\) is between them, so by the IVT \(f(c)=7\) for some \(c\) in \((1,2)\).`,
+      ], R`True by the IVT.`),
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx-2 & x<2\\ x^{2}-7 & x\ge 2\end{cases}\) is continuous.`, [
+        R`Only the break point \(x=2\) matters.`,
+        R`Left: \(2k-2\). Right: \(4-7=-3\).`,
+        R`\(2k=-1\Rightarrow k=-\dfrac{1}{2}\).`,
+      ], R`\(k=-\dfrac{1}{2}\)`),
+      P(R`\(f(x)=\dfrac{x^{2}+2x-15}{x-3}\) is undefined at \(x=3\). What value of \(f(3)\) makes \(f\) continuous?`, [
+        R`Factor: \((x-3)(x+5)\); cancel to get \(x+5\).`,
+        R`\(\lim_{x\to3}=3+5=8\).`,
+      ], R`\(f(3)=8\)`),
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx^2 & x<-3\\ 2x+9 & x\ge -3\end{cases}\) is continuous.`, [
+        R`Left at \(x=-3\): \(9k\). Right: \(2(-3)+9=3\).`,
+        R`\(9k=3\Rightarrow k=\dfrac{1}{3}\).`,
+      ], R`\(k=\dfrac{1}{3}\)`),
+      P(R`Is \(f(x)=\begin{cases}\dfrac{x^2-1}{x-1} & x\neq1\\ 4 & x=1\end{cases}\) continuous at \(x=1\)?`, [
+        R`\(f(1)=4\) is defined.`,
+        R`\(\lim_{x\to1}\dfrac{(x-1)(x+1)}{x-1}=1+1=2\).`,
+        R`\(2\neq4\) ✗.`,
+      ], R`No (removable: limit \(2\), but \(f(1)=4\))`),
+      P(R`Where is \(f(x)=\dfrac{\sqrt{x+4}}{x}\) continuous?`, [
+        R`Root needs \(x+4\ge0\) &rArr; \(x\ge-4\).`,
+        R`Denominator: \(x\neq0\).`,
+      ], R`\([-4,0)\cup(0,\infty)\)`),
+      P(R`Where is \(f(x)=\dfrac{1}{x^2-64}\) continuous?`, [
+        R`Denominator \(=0\) when \(x=\pm8\).`,
+        R`Rational functions are continuous everywhere else.`,
+      ], R`\((-\infty,-8)\cup(-8,8)\cup(8,\infty)\)`),
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx+4 & x<4\\ x^{2}+5 & x\ge 4\end{cases}\) is continuous.`, [
+        R`Only the break point \(x=4\) matters.`,
+        R`Left: \(4k+4\). Right: \(16+5=21\).`,
+        R`\(4k=17\Rightarrow k=\dfrac{17}{4}\).`,
+      ], R`\(k=\dfrac{17}{4}\)`),
+      P(R`\(f(x)=\dfrac{x^{2}-36}{x+6}\) is undefined at \(x=-6\). What value of \(f(-6)\) makes \(f\) continuous?`, [
+        R`Factor: \((x+6)(x-6)\); cancel to get \(x-6\).`,
+        R`\(\lim_{x\to-6}=-6-6=-12\).`,
+      ], R`\(f(-6)=-12\)`),
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx^2 & x<-1\\ -5x-7 & x\ge -1\end{cases}\) is continuous.`, [
+        R`Left at \(x=-1\): \(1k\). Right: \(-5(-1)-7=-2\).`,
+        R`\(1k=-2\Rightarrow k=-2\).`,
+      ], R`\(k=-2\)`),
+      P(R`Is \(f(x)=\begin{cases}\dfrac{x^2-36}{x-6} & x\neq6\\ 12 & x=6\end{cases}\) continuous at \(x=6\)?`, [
+        R`\(f(6)=12\) is defined.`,
+        R`\(\lim_{x\to6}\dfrac{(x-6)(x+6)}{x-6}=6+6=12\).`,
+        R`Limit equals \(f(6)\) ✓.`,
+      ], R`Yes`),
+      P(R`Where is \(f(x)=\dfrac{\sqrt{x+1}}{x-5}\) continuous?`, [
+        R`Root needs \(x+1\ge0\) &rArr; \(x\ge-1\).`,
+        R`Denominator: \(x\neq5\).`,
+      ], R`\([-1,5)\cup(5,\infty)\)`),
+      P(R`Where is \(f(x)=\dfrac{1}{x^2-16}\) continuous?`, [
+        R`Denominator \(=0\) when \(x=\pm4\).`,
+        R`Rational functions are continuous everywhere else.`,
+      ], R`\((-\infty,-4)\cup(-4,4)\cup(4,\infty)\)`),
+      P(R`Show that \(f(x)=x^{2}+4x\) takes the value \(6\) somewhere in \([1,4]\).`, [
+        R`\(f\) is a polynomial, so it's continuous on \([1,4]\).`,
+        R`\(f(1)=5\), \(f(4)=32\).`,
+        R`\(6\) is between them, so by the IVT \(f(c)=6\) for some \(c\) in \((1,4)\).`,
+      ], R`True by the IVT.`),
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx-6 & x<-3\\ x^{2}-6 & x\ge -3\end{cases}\) is continuous.`, [
+        R`Only the break point \(x=-3\) matters.`,
+        R`Left: \(-3k-6\). Right: \(9-6=3\).`,
+        R`\(-3k=9\Rightarrow k=-3\).`,
+      ], R`\(k=-3\)`),
+      P(R`\(f(x)=\dfrac{x^{2}-6x+5}{x-1}\) is undefined at \(x=1\). What value of \(f(1)\) makes \(f\) continuous?`, [
+        R`Factor: \((x-1)(x-5)\); cancel to get \(x-5\).`,
+        R`\(\lim_{x\to1}=1-5=-4\).`,
+      ], R`\(f(1)=-4\)`),
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx^2 & x<1\\ -4x+5 & x\ge 1\end{cases}\) is continuous.`, [
+        R`Left at \(x=1\): \(1k\). Right: \(-4(1)+5=1\).`,
+        R`\(1k=1\Rightarrow k=1\).`,
+      ], R`\(k=1\)`),
+      P(R`Find and classify the discontinuities of \(f(x)=\dfrac{x^{2}-4x+3}{x^{2}-8x+15}\).`, [
+        R`Factor: \(\dfrac{(x-3)(x-1)}{(x-3)(x-5)}\). Undefined at \(x=3\) and \(x=5\).`,
+        R`At \(x=3\) the factor cancels: limit \(=\dfrac{3-1}{3-5}=-1\) &rArr; removable.`,
+        R`At \(x=5\) the factor doesn't cancel &rArr; infinite (vertical asymptote).`,
+      ], R`Removable at \(x=3\); infinite at \(x=5\)`),
+      P(R`Is \(f(x)=\begin{cases}\dfrac{x^2-4}{x-2} & x\neq2\\ 4 & x=2\end{cases}\) continuous at \(x=2\)?`, [
+        R`\(f(2)=4\) is defined.`,
+        R`\(\lim_{x\to2}\dfrac{(x-2)(x+2)}{x-2}=2+2=4\).`,
+        R`Limit equals \(f(2)\) ✓.`,
+      ], R`Yes`),
+      P(R`Where is \(f(x)=\dfrac{\sqrt{x+2}}{x+1}\) continuous?`, [
+        R`Root needs \(x+2\ge0\) &rArr; \(x\ge-2\).`,
+        R`Denominator: \(x\neq-1\).`,
+      ], R`\([-2,-1)\cup(-1,\infty)\)`),
+      P(R`Where is \(f(x)=\dfrac{1}{x^2-81}\) continuous?`, [
+        R`Denominator \(=0\) when \(x=\pm9\).`,
+        R`Rational functions are continuous everywhere else.`,
+      ], R`\((-\infty,-9)\cup(-9,9)\cup(9,\infty)\)`),
+      P(R`Show that \(f(x)=x^{2}-3x\) takes the value \(-1\) somewhere in \([2,3]\).`, [
+        R`\(f\) is a polynomial, so it's continuous on \([2,3]\).`,
+        R`\(f(2)=-2\), \(f(3)=0\).`,
+        R`\(-1\) is between them, so by the IVT \(f(c)=-1\) for some \(c\) in \((2,3)\).`,
+      ], R`True by the IVT.`),
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx+7 & x<4\\ x^{2}-3 & x\ge 4\end{cases}\) is continuous.`, [
+        R`Only the break point \(x=4\) matters.`,
+        R`Left: \(4k+7\). Right: \(16-3=13\).`,
+        R`\(4k=6\Rightarrow k=\dfrac{3}{2}\).`,
       ], R`\(k=\dfrac{3}{2}\)`),
-      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx-1 & x<3\\ x^{2} & x\ge 3\end{cases}\) is continuous.`, [
-        R`Both pieces are polynomials, so only the break point \(x=3\) matters.`,
-        R`Left piece at \(x=3\): \(3k-1\).`,
-        R`Right piece at \(x=3\): \(9+0=9\).`,
-        R`Set equal: \(3k-1=9\Rightarrow 3k=10\Rightarrow k=\dfrac{10}{3}\).`,
-      ], R`\(k=\dfrac{10}{3}\)`),
-      P(R`\(f(x)=\dfrac{x^{2}-3x-10}{x-5}\) has a hole at \(x=5\). What should \(f(5)\) be to make \(f\) continuous?`, [
-        R`Factor the top: \((x-5)(x+2)\).`,
-        R`Cancel: for \(x\neq5\), \(f(x)=x+2\).`,
-        R`\(\lim_{x\to5}f(x)=5+2=7\).`,
-        R`Define \(f(5)=7\).`,
-      ], R`\(f(5)=7\)`),
-      P(R`\(f(x)=\dfrac{x^{2}+3x+2}{x+1}\) has a hole at \(x=-1\). What should \(f(-1)\) be to make \(f\) continuous?`, [
-        R`Factor the top: \((x+1)(x+2)\).`,
-        R`Cancel: for \(x\neq-1\), \(f(x)=x+2\).`,
-        R`\(\lim_{x\to-1}f(x)=-1+2=1\).`,
-        R`Define \(f(-1)=1\).`,
-      ], R`\(f(-1)=1\)`),
-      P(R`\(f(x)=\dfrac{x^{2}-3x+2}{x-2}\) has a hole at \(x=2\). What should \(f(2)\) be to make \(f\) continuous?`, [
-        R`Factor the top: \((x-2)(x-1)\).`,
-        R`Cancel: for \(x\neq2\), \(f(x)=x-1\).`,
-        R`\(\lim_{x\to2}f(x)=2-1=1\).`,
-        R`Define \(f(2)=1\).`,
-      ], R`\(f(2)=1\)`),
-      P(R`Use the IVT to show \(x^{3}+x-8=0\) has a solution between \(1\) and \(2\).`, [
-        R`Let \(f(x)=x^{3}+x-8\). It's a polynomial, so it's continuous on \([1,2]\).`,
-        R`\(f(1)=-6\).`,
-        R`\(f(2)=2\).`,
-        R`One is negative and one is positive, so by the IVT there's a \(c\) in \((1,2)\) with \(f(c)=0\).`,
-      ], R`A root exists in \((1,2)\) by the IVT.`),
-      P(R`Use the IVT to show \(x^{3}+4x+4=0\) has a solution between \(-1\) and \(0\).`, [
-        R`Let \(f(x)=x^{3}+4x+4\). It's a polynomial, so it's continuous on \([-1,0]\).`,
-        R`\(f(-1)=-1\).`,
-        R`\(f(0)=4\).`,
-        R`One is negative and one is positive, so by the IVT there's a \(c\) in \((-1,0)\) with \(f(c)=0\).`,
-      ], R`A root exists in \((-1,0)\) by the IVT.`),
+      P(R`\(f(x)=\dfrac{x^{2}-4}{x-2}\) is undefined at \(x=2\). What value of \(f(2)\) makes \(f\) continuous?`, [
+        R`Factor: \((x-2)(x+2)\); cancel to get \(x+2\).`,
+        R`\(\lim_{x\to2}=2+2=4\).`,
+      ], R`\(f(2)=4\)`),
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx^2 & x<3\\ -x-1 & x\ge 3\end{cases}\) is continuous.`, [
+        R`Left at \(x=3\): \(9k\). Right: \(-1(3)-1=-4\).`,
+        R`\(9k=-4\Rightarrow k=-\dfrac{4}{9}\).`,
+      ], R`\(k=-\dfrac{4}{9}\)`),
+      P(R`Is \(f(x)=\begin{cases}\dfrac{x^2-16}{x+4} & x\neq-4\\ -8 & x=-4\end{cases}\) continuous at \(x=-4\)?`, [
+        R`\(f(-4)=-8\) is defined.`,
+        R`\(\lim_{x\to-4}\dfrac{(x+4)(x-4)}{x+4}=-4-4=-8\).`,
+        R`Limit equals \(f(-4)\) ✓.`,
+      ], R`Yes`),
+      P(R`Where is \(f(x)=\dfrac{\sqrt{x+3}}{x-3}\) continuous?`, [
+        R`Root needs \(x+3\ge0\) &rArr; \(x\ge-3\).`,
+        R`Denominator: \(x\neq3\).`,
+      ], R`\([-3,3)\cup(3,\infty)\)`),
+      P(R`Where is \(f(x)=\dfrac{1}{x^2-1}\) continuous?`, [
+        R`Denominator \(=0\) when \(x=\pm1\).`,
+        R`Rational functions are continuous everywhere else.`,
+      ], R`\((-\infty,-1)\cup(-1,1)\cup(1,\infty)\)`),
+      P(R`Show that \(f(x)=x^{2}-3x\) takes the value \(1\) somewhere in \([3,4]\).`, [
+        R`\(f\) is a polynomial, so it's continuous on \([3,4]\).`,
+        R`\(f(3)=0\), \(f(4)=4\).`,
+        R`\(1\) is between them, so by the IVT \(f(c)=1\) for some \(c\) in \((3,4)\).`,
+      ], R`True by the IVT.`),
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx-6 & x<1\\ x^{2}-6 & x\ge 1\end{cases}\) is continuous.`, [
+        R`Only the break point \(x=1\) matters.`,
+        R`Left: \(1k-6\). Right: \(1-6=-5\).`,
+        R`\(1k=1\Rightarrow k=1\).`,
+      ], R`\(k=1\)`),
+      P(R`\(f(x)=\dfrac{x^{2}+4x-5}{x+5}\) is undefined at \(x=-5\). What value of \(f(-5)\) makes \(f\) continuous?`, [
+        R`Factor: \((x+5)(x-1)\); cancel to get \(x-1\).`,
+        R`\(\lim_{x\to-5}=-5-1=-6\).`,
+      ], R`\(f(-5)=-6\)`),
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx^2 & x<2\\ 2x+5 & x\ge 2\end{cases}\) is continuous.`, [
+        R`Left at \(x=2\): \(4k\). Right: \(2(2)+5=9\).`,
+        R`\(4k=9\Rightarrow k=\dfrac{9}{4}\).`,
+      ], R`\(k=\dfrac{9}{4}\)`),
+      P(R`Find and classify the discontinuities of \(f(x)=\dfrac{x^{2}-9}{x^{2}-7x+12}\).`, [
+        R`Factor: \(\dfrac{(x-3)(x+3)}{(x-3)(x-4)}\). Undefined at \(x=3\) and \(x=4\).`,
+        R`At \(x=3\) the factor cancels: limit \(=\dfrac{3+3}{3-4}=-6\) &rArr; removable.`,
+        R`At \(x=4\) the factor doesn't cancel &rArr; infinite (vertical asymptote).`,
+      ], R`Removable at \(x=3\); infinite at \(x=4\)`),
+      P(R`Where is \(f(x)=\dfrac{\sqrt{x-5}}{x-10}\) continuous?`, [
+        R`Root needs \(x-5\ge0\) &rArr; \(x\ge5\).`,
+        R`Denominator: \(x\neq10\).`,
+      ], R`\([5,10)\cup(10,\infty)\)`),
+      P(R`Show that \(f(x)=x^{2}-2x\) takes the value \(4\) somewhere in \([2,4]\).`, [
+        R`\(f\) is a polynomial, so it's continuous on \([2,4]\).`,
+        R`\(f(2)=0\), \(f(4)=8\).`,
+        R`\(4\) is between them, so by the IVT \(f(c)=4\) for some \(c\) in \((2,4)\).`,
+      ], R`True by the IVT.`),
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx & x<-2\\ x^{2}-7 & x\ge -2\end{cases}\) is continuous.`, [
+        R`Only the break point \(x=-2\) matters.`,
+        R`Left: \(-2k\). Right: \(4-7=-3\).`,
+        R`\(-2k=-3\Rightarrow k=\dfrac{3}{2}\).`,
+      ], R`\(k=\dfrac{3}{2}\)`),
+      P(R`\(f(x)=\dfrac{x^{2}-x-2}{x+1}\) is undefined at \(x=-1\). What value of \(f(-1)\) makes \(f\) continuous?`, [
+        R`Factor: \((x+1)(x-2)\); cancel to get \(x-2\).`,
+        R`\(\lim_{x\to-1}=-1-2=-3\).`,
+      ], R`\(f(-1)=-3\)`),
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx^2 & x<2\\ x+8 & x\ge 2\end{cases}\) is continuous.`, [
+        R`Left at \(x=2\): \(4k\). Right: \(1(2)+8=10\).`,
+        R`\(4k=10\Rightarrow k=\dfrac{5}{2}\).`,
+      ], R`\(k=\dfrac{5}{2}\)`),
+      P(R`Find and classify the discontinuities of \(f(x)=\dfrac{x^{2}+2x-8}{x^{2}+3x-4}\).`, [
+        R`Factor: \(\dfrac{(x+4)(x-2)}{(x+4)(x-1)}\). Undefined at \(x=-4\) and \(x=1\).`,
+        R`At \(x=-4\) the factor cancels: limit \(=\dfrac{-4-2}{-4-1}=\dfrac{6}{5}\) &rArr; removable.`,
+        R`At \(x=1\) the factor doesn't cancel &rArr; infinite (vertical asymptote).`,
+      ], R`Removable at \(x=-4\); infinite at \(x=1\)`),
+      P(R`Is \(f(x)=\begin{cases}\dfrac{x^2-1}{x+1} & x\neq-1\\ -2 & x=-1\end{cases}\) continuous at \(x=-1\)?`, [
+        R`\(f(-1)=-2\) is defined.`,
+        R`\(\lim_{x\to-1}\dfrac{(x+1)(x-1)}{x+1}=-1-1=-2\).`,
+        R`Limit equals \(f(-1)\) ✓.`,
+      ], R`Yes`),
+      P(R`Where is \(f(x)=\dfrac{\sqrt{x}}{x-5}\) continuous?`, [
+        R`Root needs \(x+0\ge0\) &rArr; \(x\ge0\).`,
+        R`Denominator: \(x\neq5\).`,
+      ], R`\([0,5)\cup(5,\infty)\)`),
+      P(R`Where is \(f(x)=\dfrac{1}{x^2-49}\) continuous?`, [
+        R`Denominator \(=0\) when \(x=\pm7\).`,
+        R`Rational functions are continuous everywhere else.`,
+      ], R`\((-\infty,-7)\cup(-7,7)\cup(7,\infty)\)`),
+      P(R`Show that \(f(x)=x^{2}\) takes the value \(9\) somewhere in \([2,4]\).`, [
+        R`\(f\) is a polynomial, so it's continuous on \([2,4]\).`,
+        R`\(f(2)=4\), \(f(4)=16\).`,
+        R`\(9\) is between them, so by the IVT \(f(c)=9\) for some \(c\) in \((2,4)\).`,
+      ], R`True by the IVT.`),
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx-1 & x<-2\\ x^{2}-2 & x\ge -2\end{cases}\) is continuous.`, [
+        R`Only the break point \(x=-2\) matters.`,
+        R`Left: \(-2k-1\). Right: \(4-2=2\).`,
+        R`\(-2k=3\Rightarrow k=-\dfrac{3}{2}\).`,
+      ], R`\(k=-\dfrac{3}{2}\)`),
+      P(R`\(f(x)=\dfrac{x^{2}+7x+12}{x+4}\) is undefined at \(x=-4\). What value of \(f(-4)\) makes \(f\) continuous?`, [
+        R`Factor: \((x+4)(x+3)\); cancel to get \(x+3\).`,
+        R`\(\lim_{x\to-4}=-4+3=-1\).`,
+      ], R`\(f(-4)=-1\)`),
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx^2 & x<-1\\ -4x-2 & x\ge -1\end{cases}\) is continuous.`, [
+        R`Left at \(x=-1\): \(1k\). Right: \(-4(-1)-2=2\).`,
+        R`\(1k=2\Rightarrow k=2\).`,
+      ], R`\(k=2\)`),
+      P(R`Is \(f(x)=\begin{cases}\dfrac{x^2-25}{x+5} & x\neq-5\\ -9 & x=-5\end{cases}\) continuous at \(x=-5\)?`, [
+        R`\(f(-5)=-9\) is defined.`,
+        R`\(\lim_{x\to-5}\dfrac{(x+5)(x-5)}{x+5}=-5-5=-10\).`,
+        R`\(-10\neq-9\) ✗.`,
+      ], R`No (removable: limit \(-10\), but \(f(-5)=-9\))`),
+      P(R`Where is \(f(x)=\dfrac{\sqrt{x+2}}{x}\) continuous?`, [
+        R`Root needs \(x+2\ge0\) &rArr; \(x\ge-2\).`,
+        R`Denominator: \(x\neq0\).`,
+      ], R`\([-2,0)\cup(0,\infty)\)`),
+      P(R`Where is \(f(x)=\dfrac{1}{x^2-9}\) continuous?`, [
+        R`Denominator \(=0\) when \(x=\pm3\).`,
+        R`Rational functions are continuous everywhere else.`,
+      ], R`\((-\infty,-3)\cup(-3,3)\cup(3,\infty)\)`),
+      P(R`Show that \(f(x)=x^{2}-3x\) takes the value \(3\) somewhere in \([1,4]\).`, [
+        R`\(f\) is a polynomial, so it's continuous on \([1,4]\).`,
+        R`\(f(1)=-2\), \(f(4)=4\).`,
+        R`\(3\) is between them, so by the IVT \(f(c)=3\) for some \(c\) in \((1,4)\).`,
+      ], R`True by the IVT.`),
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx+4 & x<-3\\ x^{2}+8 & x\ge -3\end{cases}\) is continuous.`, [
+        R`Only the break point \(x=-3\) matters.`,
+        R`Left: \(-3k+4\). Right: \(9+8=17\).`,
+        R`\(-3k=13\Rightarrow k=-\dfrac{13}{3}\).`,
+      ], R`\(k=-\dfrac{13}{3}\)`),
+      P(R`\(f(x)=\dfrac{x^{2}-7x+6}{x-1}\) is undefined at \(x=1\). What value of \(f(1)\) makes \(f\) continuous?`, [
+        R`Factor: \((x-1)(x-6)\); cancel to get \(x-6\).`,
+        R`\(\lim_{x\to1}=1-6=-5\).`,
+      ], R`\(f(1)=-5\)`),
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx^2 & x<2\\ x+4 & x\ge 2\end{cases}\) is continuous.`, [
+        R`Left at \(x=2\): \(4k\). Right: \(1(2)+4=6\).`,
+        R`\(4k=6\Rightarrow k=\dfrac{3}{2}\).`,
+      ], R`\(k=\dfrac{3}{2}\)`),
+      P(R`Find and classify the discontinuities of \(f(x)=\dfrac{x^{2}+6x+5}{x^{2}+4x+3}\).`, [
+        R`Factor: \(\dfrac{(x+1)(x+5)}{(x+1)(x+3)}\). Undefined at \(x=-1\) and \(x=-3\).`,
+        R`At \(x=-1\) the factor cancels: limit \(=\dfrac{-1+5}{-1+3}=2\) &rArr; removable.`,
+        R`At \(x=-3\) the factor doesn't cancel &rArr; infinite (vertical asymptote).`,
+      ], R`Removable at \(x=-1\); infinite at \(x=-3\)`),
+      P(R`Is \(f(x)=\begin{cases}\dfrac{x^2-9}{x+3} & x\neq-3\\ -9 & x=-3\end{cases}\) continuous at \(x=-3\)?`, [
+        R`\(f(-3)=-9\) is defined.`,
+        R`\(\lim_{x\to-3}\dfrac{(x+3)(x-3)}{x+3}=-3-3=-6\).`,
+        R`\(-6\neq-9\) ✗.`,
+      ], R`No (removable: limit \(-6\), but \(f(-3)=-9\))`),
+      P(R`Where is \(f(x)=\dfrac{\sqrt{x+5}}{x}\) continuous?`, [
+        R`Root needs \(x+5\ge0\) &rArr; \(x\ge-5\).`,
+        R`Denominator: \(x\neq0\).`,
+      ], R`\([-5,0)\cup(0,\infty)\)`),
+      P(R`Show that \(f(x)=x^{2}-x\) takes the value \(18\) somewhere in \([2,5]\).`, [
+        R`\(f\) is a polynomial, so it's continuous on \([2,5]\).`,
+        R`\(f(2)=2\), \(f(5)=20\).`,
+        R`\(18\) is between them, so by the IVT \(f(c)=18\) for some \(c\) in \((2,5)\).`,
+      ], R`True by the IVT.`),
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx & x<-1\\ x^{2}+1 & x\ge -1\end{cases}\) is continuous.`, [
+        R`Only the break point \(x=-1\) matters.`,
+        R`Left: \(-1k\). Right: \(1+1=2\).`,
+        R`\(-1k=2\Rightarrow k=-2\).`,
+      ], R`\(k=-2\)`),
+      P(R`\(f(x)=\dfrac{x^{2}-11x+30}{x-6}\) is undefined at \(x=6\). What value of \(f(6)\) makes \(f\) continuous?`, [
+        R`Factor: \((x-6)(x-5)\); cancel to get \(x-5\).`,
+        R`\(\lim_{x\to6}=6-5=1\).`,
+      ], R`\(f(6)=1\)`),
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx^2 & x<1\\ 4x & x\ge 1\end{cases}\) is continuous.`, [
+        R`Left at \(x=1\): \(1k\). Right: \(4(1)+0=4\).`,
+        R`\(1k=4\Rightarrow k=4\).`,
+      ], R`\(k=4\)`),
+      P(R`Is \(f(x)=\begin{cases}\dfrac{x^2-9}{x+3} & x\neq-3\\ -8 & x=-3\end{cases}\) continuous at \(x=-3\)?`, [
+        R`\(f(-3)=-8\) is defined.`,
+        R`\(\lim_{x\to-3}\dfrac{(x+3)(x-3)}{x+3}=-3-3=-6\).`,
+        R`\(-6\neq-8\) ✗.`,
+      ], R`No (removable: limit \(-6\), but \(f(-3)=-8\))`),
+      P(R`Where is \(f(x)=\dfrac{\sqrt{x-3}}{x-9}\) continuous?`, [
+        R`Root needs \(x-3\ge0\) &rArr; \(x\ge3\).`,
+        R`Denominator: \(x\neq9\).`,
+      ], R`\([3,9)\cup(9,\infty)\)`),
+      P(R`Show that \(f(x)=x^{2}+4x\) takes the value \(18\) somewhere in \([0,3]\).`, [
+        R`\(f\) is a polynomial, so it's continuous on \([0,3]\).`,
+        R`\(f(0)=0\), \(f(3)=21\).`,
+        R`\(18\) is between them, so by the IVT \(f(c)=18\) for some \(c\) in \((0,3)\).`,
+      ], R`True by the IVT.`),
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx+4 & x<4\\ x^{2}+7 & x\ge 4\end{cases}\) is continuous.`, [
+        R`Only the break point \(x=4\) matters.`,
+        R`Left: \(4k+4\). Right: \(16+7=23\).`,
+        R`\(4k=19\Rightarrow k=\dfrac{19}{4}\).`,
+      ], R`\(k=\dfrac{19}{4}\)`),
+      P(R`\(f(x)=\dfrac{x^{2}+7x+6}{x+6}\) is undefined at \(x=-6\). What value of \(f(-6)\) makes \(f\) continuous?`, [
+        R`Factor: \((x+6)(x+1)\); cancel to get \(x+1\).`,
+        R`\(\lim_{x\to-6}=-6+1=-5\).`,
+      ], R`\(f(-6)=-5\)`),
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx^2 & x<-1\\ -6x-5 & x\ge -1\end{cases}\) is continuous.`, [
+        R`Left at \(x=-1\): \(1k\). Right: \(-6(-1)-5=1\).`,
+        R`\(1k=1\Rightarrow k=1\).`,
+      ], R`\(k=1\)`),
+      P(R`Find and classify the discontinuities of \(f(x)=\dfrac{x^{2}+7x+10}{x^{2}-2x-8}\).`, [
+        R`Factor: \(\dfrac{(x+2)(x+5)}{(x+2)(x-4)}\). Undefined at \(x=-2\) and \(x=4\).`,
+        R`At \(x=-2\) the factor cancels: limit \(=\dfrac{-2+5}{-2-4}=-\dfrac{1}{2}\) &rArr; removable.`,
+        R`At \(x=4\) the factor doesn't cancel &rArr; infinite (vertical asymptote).`,
+      ], R`Removable at \(x=-2\); infinite at \(x=4\)`),
+      P(R`Is \(f(x)=\begin{cases}\dfrac{x^2-16}{x-4} & x\neq4\\ 6 & x=4\end{cases}\) continuous at \(x=4\)?`, [
+        R`\(f(4)=6\) is defined.`,
+        R`\(\lim_{x\to4}\dfrac{(x-4)(x+4)}{x-4}=4+4=8\).`,
+        R`\(8\neq6\) ✗.`,
+      ], R`No (removable: limit \(8\), but \(f(4)=6\))`),
+      P(R`Where is \(f(x)=\dfrac{\sqrt{x}}{x-1}\) continuous?`, [
+        R`Root needs \(x+0\ge0\) &rArr; \(x\ge0\).`,
+        R`Denominator: \(x\neq1\).`,
+      ], R`\([0,1)\cup(1,\infty)\)`),
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx+4 & x<-2\\ x^{2}-4 & x\ge -2\end{cases}\) is continuous.`, [
+        R`Only the break point \(x=-2\) matters.`,
+        R`Left: \(-2k+4\). Right: \(4-4=0\).`,
+        R`\(-2k=-4\Rightarrow k=2\).`,
+      ], R`\(k=2\)`),
+      P(R`\(f(x)=\dfrac{x^{2}+3x-4}{x+4}\) is undefined at \(x=-4\). What value of \(f(-4)\) makes \(f\) continuous?`, [
+        R`Factor: \((x+4)(x-1)\); cancel to get \(x-1\).`,
+        R`\(\lim_{x\to-4}=-4-1=-5\).`,
+      ], R`\(f(-4)=-5\)`),
+      P(R`Use the IVT to show \(x^{3}+6x+11=0\) has a solution in \((-2,-1)\).`, [
+        R`\(f(x)=x^{3}+6x+11\) is a polynomial, so continuous.`,
+        R`\(f(-2)=-9\) and \(f(-1)=4\): opposite signs.`,
+        R`By the IVT, \(f(c)=0\) for some \(c\) in \((-2,-1)\).`,
+      ], R`Proved by the IVT.`),
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx^2 & x<-2\\ 3x-4 & x\ge -2\end{cases}\) is continuous.`, [
+        R`Left at \(x=-2\): \(4k\). Right: \(3(-2)-4=-10\).`,
+        R`\(4k=-10\Rightarrow k=-\dfrac{5}{2}\).`,
+      ], R`\(k=-\dfrac{5}{2}\)`),
+      P(R`Find and classify the discontinuities of \(f(x)=\dfrac{x^{2}+x-12}{x^{2}-x-6}\).`, [
+        R`Factor: \(\dfrac{(x-3)(x+4)}{(x-3)(x+2)}\). Undefined at \(x=3\) and \(x=-2\).`,
+        R`At \(x=3\) the factor cancels: limit \(=\dfrac{3+4}{3+2}=\dfrac{7}{5}\) &rArr; removable.`,
+        R`At \(x=-2\) the factor doesn't cancel &rArr; infinite (vertical asymptote).`,
+      ], R`Removable at \(x=3\); infinite at \(x=-2\)`),
+      P(R`Is \(f(x)=\begin{cases}\dfrac{x^2-9}{x-3} & x\neq3\\ 7 & x=3\end{cases}\) continuous at \(x=3\)?`, [
+        R`\(f(3)=7\) is defined.`,
+        R`\(\lim_{x\to3}\dfrac{(x-3)(x+3)}{x-3}=3+3=6\).`,
+        R`\(6\neq7\) ✗.`,
+      ], R`No (removable: limit \(6\), but \(f(3)=7\))`),
+      P(R`Where is \(f(x)=\dfrac{\sqrt{x+2}}{x-1}\) continuous?`, [
+        R`Root needs \(x+2\ge0\) &rArr; \(x\ge-2\).`,
+        R`Denominator: \(x\neq1\).`,
+      ], R`\([-2,1)\cup(1,\infty)\)`),
+      P(R`Show that \(f(x)=x^{2}+3x\) takes the value \(19\) somewhere in \([3,5]\).`, [
+        R`\(f\) is a polynomial, so it's continuous on \([3,5]\).`,
+        R`\(f(3)=18\), \(f(5)=40\).`,
+        R`\(19\) is between them, so by the IVT \(f(c)=19\) for some \(c\) in \((3,5)\).`,
+      ], R`True by the IVT.`),
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx & x<-3\\ x^{2}+4 & x\ge -3\end{cases}\) is continuous.`, [
+        R`Only the break point \(x=-3\) matters.`,
+        R`Left: \(-3k\). Right: \(9+4=13\).`,
+        R`\(-3k=13\Rightarrow k=-\dfrac{13}{3}\).`,
+      ], R`\(k=-\dfrac{13}{3}\)`),
+      P(R`\(f(x)=\dfrac{x^{2}+x-20}{x-4}\) is undefined at \(x=4\). What value of \(f(4)\) makes \(f\) continuous?`, [
+        R`Factor: \((x-4)(x+5)\); cancel to get \(x+5\).`,
+        R`\(\lim_{x\to4}=4+5=9\).`,
+      ], R`\(f(4)=9\)`),
+      P(R`Find \(k\) so that \(f(x)=\begin{cases}kx^2 & x<-2\\ 6x-1 & x\ge -2\end{cases}\) is continuous.`, [
+        R`Left at \(x=-2\): \(4k\). Right: \(6(-2)-1=-13\).`,
+        R`\(4k=-13\Rightarrow k=-\dfrac{13}{4}\).`,
+      ], R`\(k=-\dfrac{13}{4}\)`),
+      P(R`Is \(f(x)=\begin{cases}\dfrac{x^2-4}{x-2} & x\neq2\\ 6 & x=2\end{cases}\) continuous at \(x=2\)?`, [
+        R`\(f(2)=6\) is defined.`,
+        R`\(\lim_{x\to2}\dfrac{(x-2)(x+2)}{x-2}=2+2=4\).`,
+        R`\(4\neq6\) ✗.`,
+      ], R`No (removable: limit \(4\), but \(f(2)=6\))`),
+      P(R`Where is \(f(x)=\dfrac{\sqrt{x-3}}{x-6}\) continuous?`, [
+        R`Root needs \(x-3\ge0\) &rArr; \(x\ge3\).`,
+        R`Denominator: \(x\neq6\).`,
+      ], R`\([3,6)\cup(6,\infty)\)`),
+      P(R`Where is \(f(x)=\dfrac{1}{x^2-4}\) continuous?`, [
+        R`Denominator \(=0\) when \(x=\pm2\).`,
+        R`Rational functions are continuous everywhere else.`,
+      ], R`\((-\infty,-2)\cup(-2,2)\cup(2,\infty)\)`),
     ],
   },
 
@@ -572,67 +1239,439 @@ window.TOPICS = [
           R`\(f(1)=1-3=-2\).`,
           R`\(\dfrac{f(4)-f(1)}{4-1}=\dfrac{4-(-2)}{3}=\dfrac63=2\).`,
         ], R`\(2\)`),
-      // ---- even more practice ----
-      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=3x^{2}-4x+8\).`, [
-        R`\(f(x+h)=3(x+h)^2-4(x+h)+8\)`,
-        R`Expand and subtract \(f(x)\) (the \(x^2\), \(x\), and constant terms cancel): \(f(x+h)-f(x)=6xh+3h^2-4h\).`,
-        R`Divide by \(h\): \(6x+3h-4\).`,
-        R`Let \(h\to0\): \(f'(x)=6x-4\).`,
-      ], R`\(f'(x)=6x-4\)`),
-      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=4x^{2}+4x+1\).`, [
-        R`\(f(x+h)=4(x+h)^2+4(x+h)+1\)`,
-        R`Expand and subtract \(f(x)\) (the \(x^2\), \(x\), and constant terms cancel): \(f(x+h)-f(x)=8xh+4h^2+4h\).`,
-        R`Divide by \(h\): \(8x+4h+4\).`,
-        R`Let \(h\to0\): \(f'(x)=8x+4\).`,
-      ], R`\(f'(x)=8x+4\)`),
-      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=2x^{2}+7\).`, [
-        R`\(f(x+h)=2(x+h)^2+7\)`,
-        R`Expand and subtract \(f(x)\) (the \(x^2\), \(x\), and constant terms cancel): \(f(x+h)-f(x)=4xh+2h^2\).`,
+      // ---- generated practice (numbers vary; answers computed) ----
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=5x^{2}-6x-6\).`, [
+        R`\(f(x+h)=5(x+h)^2-6(x+h)-6\).`,
+        R`Expand and subtract \(f(x)\): \(f(x+h)-f(x)=10xh+5h^2-6h\).`,
+        R`Divide by \(h\): \(10x+5h-6\).`,
+        R`\(h\to0\).`,
+      ], R`\(f'(x)=10x-6\)`),
+      P(R`Find the tangent line to \(y=-4x^{2}-8x-2\) at \(x=2\).`, [
+        R`Point: \((2,-34)\).`,
+        R`\(y'=-8x-8\), slope \(m=-24\).`,
+        R`\(y-(-34)=-24(x-2)\).`,
+      ], R`\(y=-24x+14\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=-x+12\).`, [
+        R`\(f(x+h)-f(x)=-(x+h)+12-(-x+12)=-h\).`,
+        R`Divide by \(h\): \(-1\). No \(h\) left, so that's the limit.`,
+      ], R`\(f'(x)=-1\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=\dfrac{5}{x-5}\).`, [
+        R`\(\dfrac{1}{h}\left[\dfrac{5}{x+h-5}-\dfrac{5}{x-5}\right]\).`,
+        R`Common denominator: top becomes \(5(x-5)-5(x+h-5)=-5h\).`,
+        R`Divide by \(h\): \(\dfrac{-5}{(x-5)(x+h-5)}\).`,
+        R`\(h\to0\).`,
+      ], R`\(f'(x)=\dfrac{-5}{(x-5)^2}\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=\sqrt{x+5}\).`, [
+        R`\(\dfrac{\sqrt{x+h+5}-\sqrt{x+5}}{h}\); multiply by the conjugate.`,
+        R`Top becomes \((x+h+5)-(x+5)=h\): \(\dfrac{1}{\sqrt{x+h+5}+\sqrt{x+5}}\).`,
+        R`\(h\to0\): \(\dfrac{1}{2\sqrt{x+5}}\).`,
+      ], R`\(f'(x)=\dfrac{1}{2\sqrt{x+5}}\)`),
+      P(R`Find the tangent line to \(y=x^{3}+6x-7\) at \(x=2\).`, [
+        R`Point: \(y(2)=13\).`,
+        R`\(y'=3x^{2}+6\), slope \(=18\).`,
+        R`\(y-13=18(x-2)\).`,
+      ], R`\(y=18x-23\)`),
+      P(R`Find the average rate of change of \(f(x)=-3x^{2}+2x-9\) on \([-2,1]\).`, [
+        R`\(f(1)=-10\), \(f(-2)=-25\).`,
+        R`\(\dfrac{-10-(-25)}{1-(-2)}\).`,
+      ], R`\(5\)`),
+      P(R`Evaluate \(\displaystyle\lim_{h\to0}\frac{(5+h)^{2}-25}{h}\) by recognizing it as a derivative.`, [
+        R`It's \(f'(a)\) for \(f(x)=x^{2}\) at \(a=5\) (check: \(5^{2}=25\)).`,
+        R`\(f'(x)=2x\), so \(f'(5)=10\).`,
+      ], R`\(10\)`),
+      P(R`Find the tangent line to \(y=\sqrt x\) at \(x=4\).`, [
+        R`Point: \((4,2)\).`,
+        R`\(y'=\dfrac{1}{2\sqrt x}=\dfrac{1}{4}\).`,
+        R`\(y-2=\dfrac{1}{4}(x-4)\).`,
+      ], R`\(y=\tfrac{1}{4}x+1\)`),
+      P(R`Find the tangent line to \(y=\dfrac{-1}{x}\) at \(x=-3\).`, [
+        R`Point: \(\left(-3,\dfrac{1}{3}\right)\).`,
+        R`\(y'=-\dfrac{-1}{x^2}\) &rArr; slope \(\dfrac{1}{9}\).`,
+        R`Point-slope, then simplify.`,
+      ], R`\(y=\tfrac{1}{9}x+\tfrac{2}{3}\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=-x^{2}+7x-1\).`, [
+        R`\(f(x+h)=-(x+h)^2+7(x+h)-1\).`,
+        R`Expand and subtract \(f(x)\): \(f(x+h)-f(x)=-2xh-h^2+7h\).`,
+        R`Divide by \(h\): \(-2x-h+7\).`,
+        R`\(h\to0\).`,
+      ], R`\(f'(x)=-2x+7\)`),
+      P(R`Find the tangent line to \(y=3x^{2}-x+7\) at \(x=1\).`, [
+        R`Point: \((1,9)\).`,
+        R`\(y'=6x-1\), slope \(m=5\).`,
+        R`\(y-9=5(x-1)\).`,
+      ], R`\(y=5x+4\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=8x+9\).`, [
+        R`\(f(x+h)-f(x)=8(x+h)+9-(8x+9)=8h\).`,
+        R`Divide by \(h\): \(8\). No \(h\) left, so that's the limit.`,
+      ], R`\(f'(x)=8\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=\dfrac{-4}{x-1}\).`, [
+        R`\(\dfrac{1}{h}\left[\dfrac{-4}{x+h-1}-\dfrac{-4}{x-1}\right]\).`,
+        R`Common denominator: top becomes \(-4(x-1)-(-4)(x+h-1)=4h\).`,
+        R`Divide by \(h\): \(\dfrac{4}{(x-1)(x+h-1)}\).`,
+        R`\(h\to0\).`,
+      ], R`\(f'(x)=\dfrac{4}{(x-1)^2}\)`),
+      P(R`Find the tangent line to \(y=x^{3}+6x-9\) at \(x=-2\).`, [
+        R`Point: \(y(-2)=-29\).`,
+        R`\(y'=3x^{2}+6\), slope \(=18\).`,
+        R`\(y-(-29)=18(x-(-2))\).`,
+      ], R`\(y=18x+7\)`),
+      P(R`Find the average rate of change of \(f(x)=x^{2}+9x-5\) on \([-3,1]\).`, [
+        R`\(f(1)=5\), \(f(-3)=-23\).`,
+        R`\(\dfrac{5-(-23)}{1-(-3)}\).`,
+      ], R`\(7\)`),
+      P(R`Evaluate \(\displaystyle\lim_{h\to0}\frac{(3+h)^{5}-243}{h}\) by recognizing it as a derivative.`, [
+        R`It's \(f'(a)\) for \(f(x)=x^{5}\) at \(a=3\) (check: \(3^{5}=243\)).`,
+        R`\(f'(x)=5x^{4}\), so \(f'(3)=405\).`,
+      ], R`\(405\)`),
+      P(R`Find the tangent line to \(y=\sqrt x\) at \(x=25\).`, [
+        R`Point: \((25,5)\).`,
+        R`\(y'=\dfrac{1}{2\sqrt x}=\dfrac{1}{10}\).`,
+        R`\(y-5=\dfrac{1}{10}(x-25)\).`,
+      ], R`\(y=\tfrac{1}{10}x+\tfrac{5}{2}\)`),
+      P(R`Find the tangent line to \(y=\dfrac{-2}{x}\) at \(x=-3\).`, [
+        R`Point: \(\left(-3,\dfrac{2}{3}\right)\).`,
+        R`\(y'=-\dfrac{-2}{x^2}\) &rArr; slope \(\dfrac{2}{9}\).`,
+        R`Point-slope, then simplify.`,
+      ], R`\(y=\tfrac{2}{9}x+\tfrac{4}{3}\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=x^{2}+4x+4\).`, [
+        R`\(f(x+h)=(x+h)^2+4(x+h)+4\).`,
+        R`Expand and subtract \(f(x)\): \(f(x+h)-f(x)=2xh+h^2+4h\).`,
+        R`Divide by \(h\): \(2x+h+4\).`,
+        R`\(h\to0\).`,
+      ], R`\(f'(x)=2x+4\)`),
+      P(R`Find the tangent line to \(y=3x^{2}+x-6\) at \(x=-2\).`, [
+        R`Point: \((-2,4)\).`,
+        R`\(y'=6x+1\), slope \(m=-11\).`,
+        R`\(y-4=-11(x-(-2))\).`,
+      ], R`\(y=-11x-18\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=10x-11\).`, [
+        R`\(f(x+h)-f(x)=10(x+h)-11-(10x-11)=10h\).`,
+        R`Divide by \(h\): \(10\). No \(h\) left, so that's the limit.`,
+      ], R`\(f'(x)=10\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=\dfrac{7}{x-6}\).`, [
+        R`\(\dfrac{1}{h}\left[\dfrac{7}{x+h-6}-\dfrac{7}{x-6}\right]\).`,
+        R`Common denominator: top becomes \(7(x-6)-7(x+h-6)=-7h\).`,
+        R`Divide by \(h\): \(\dfrac{-7}{(x-6)(x+h-6)}\).`,
+        R`\(h\to0\).`,
+      ], R`\(f'(x)=\dfrac{-7}{(x-6)^2}\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=\sqrt{x-3}\).`, [
+        R`\(\dfrac{\sqrt{x+h-3}-\sqrt{x-3}}{h}\); multiply by the conjugate.`,
+        R`Top becomes \((x+h-3)-(x-3)=h\): \(\dfrac{1}{\sqrt{x+h-3}+\sqrt{x-3}}\).`,
+        R`\(h\to0\): \(\dfrac{1}{2\sqrt{x-3}}\).`,
+      ], R`\(f'(x)=\dfrac{1}{2\sqrt{x-3}}\)`),
+      P(R`Find the tangent line to \(y=x^{3}+x-6\) at \(x=-3\).`, [
+        R`Point: \(y(-3)=-36\).`,
+        R`\(y'=3x^{2}+1\), slope \(=28\).`,
+        R`\(y-(-36)=28(x-(-3))\).`,
+      ], R`\(y=28x+48\)`),
+      P(R`Find the average rate of change of \(f(x)=2x^{2}-7\) on \([-3,0]\).`, [
+        R`\(f(0)=-7\), \(f(-3)=11\).`,
+        R`\(\dfrac{-7-11}{0-(-3)}\).`,
+      ], R`\(-6\)`),
+      P(R`Find the tangent line to \(y=\dfrac{-7}{x}\) at \(x=5\).`, [
+        R`Point: \(\left(5,-\dfrac{7}{5}\right)\).`,
+        R`\(y'=-\dfrac{-7}{x^2}\) &rArr; slope \(\dfrac{7}{25}\).`,
+        R`Point-slope, then simplify.`,
+      ], R`\(y=\tfrac{7}{25}x-\tfrac{14}{5}\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=2x^{2}-8\).`, [
+        R`\(f(x+h)=2(x+h)^2-8\).`,
+        R`Expand and subtract \(f(x)\): \(f(x+h)-f(x)=4xh+2h^2\).`,
         R`Divide by \(h\): \(4x+2h\).`,
-        R`Let \(h\to0\): \(f'(x)=4x\).`,
+        R`\(h\to0\).`,
       ], R`\(f'(x)=4x\)`),
-      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=3x^{2}+5x+6\).`, [
-        R`\(f(x+h)=3(x+h)^2+5(x+h)+6\)`,
-        R`Expand and subtract \(f(x)\) (the \(x^2\), \(x\), and constant terms cancel): \(f(x+h)-f(x)=6xh+3h^2+5h\).`,
-        R`Divide by \(h\): \(6x+3h+5\).`,
-        R`Let \(h\to0\): \(f'(x)=6x+5\).`,
-      ], R`\(f'(x)=6x+5\)`),
-      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=-2x^{2}-5x-4\).`, [
-        R`\(f(x+h)=-2(x+h)^2-5(x+h)-4\)`,
-        R`Expand and subtract \(f(x)\) (the \(x^2\), \(x\), and constant terms cancel): \(f(x+h)-f(x)=-4xh-2h^2-5h\).`,
-        R`Divide by \(h\): \(-4x-2h-5\).`,
-        R`Let \(h\to0\): \(f'(x)=-4x-5\).`,
-      ], R`\(f'(x)=-4x-5\)`),
-      P(R`Find the tangent line to \(y=-2x^{2}+5x+6\) at \(x=-2\).`, [
-        R`Point: \(y(-2)=-12\), so \((-2,-12)\).`,
-        R`\(y'=-4x+5\), so slope \(m=y'(-2)=13\).`,
-        R`\(y-(-12)=13(x-(-2))\).`,
-        R`Simplify: \(y=13x+14\).`,
-      ], R`\(y=13x+14\)`),
-      P(R`Find the tangent line to \(y=-3x^{2}-x-4\) at \(x=1\).`, [
-        R`Point: \(y(1)=-8\), so \((1,-8)\).`,
-        R`\(y'=-6x-1\), so slope \(m=y'(1)=-7\).`,
-        R`\(y-(-8)=-7(x-1)\).`,
-        R`Simplify: \(y=-7x-1\).`,
-      ], R`\(y=-7x-1\)`),
-      P(R`Find the tangent line to \(y=2x^{2}+3x+3\) at \(x=-3\).`, [
-        R`Point: \(y(-3)=12\), so \((-3,12)\).`,
-        R`\(y'=4x+3\), so slope \(m=y'(-3)=-9\).`,
-        R`\(y-12=-9(x-(-3))\).`,
-        R`Simplify: \(y=-9x-15\).`,
-      ], R`\(y=-9x-15\)`),
-      P(R`Find the tangent line to \(y=-2x^{2}-6x+5\) at \(x=2\).`, [
-        R`Point: \(y(2)=-15\), so \((2,-15)\).`,
-        R`\(y'=-4x-6\), so slope \(m=y'(2)=-14\).`,
-        R`\(y-(-15)=-14(x-2)\).`,
-        R`Simplify: \(y=-14x+13\).`,
-      ], R`\(y=-14x+13\)`),
-      P(R`Find the tangent line to \(y=-x^{2}+6x+5\) at \(x=-1\).`, [
-        R`Point: \(y(-1)=-2\), so \((-1,-2)\).`,
-        R`\(y'=-2x+6\), so slope \(m=y'(-1)=8\).`,
-        R`\(y-(-2)=8(x-(-1))\).`,
-        R`Simplify: \(y=8x+6\).`,
-      ], R`\(y=8x+6\)`),
+      P(R`Find the tangent line to \(y=4x^{2}+7x-7\) at \(x=2\).`, [
+        R`Point: \((2,23)\).`,
+        R`\(y'=8x+7\), slope \(m=23\).`,
+        R`\(y-23=23(x-2)\).`,
+      ], R`\(y=23x-23\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=3x+5\).`, [
+        R`\(f(x+h)-f(x)=3(x+h)+5-(3x+5)=3h\).`,
+        R`Divide by \(h\): \(3\). No \(h\) left, so that's the limit.`,
+      ], R`\(f'(x)=3\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=\dfrac{-4}{x-3}\).`, [
+        R`\(\dfrac{1}{h}\left[\dfrac{-4}{x+h-3}-\dfrac{-4}{x-3}\right]\).`,
+        R`Common denominator: top becomes \(-4(x-3)-(-4)(x+h-3)=4h\).`,
+        R`Divide by \(h\): \(\dfrac{4}{(x-3)(x+h-3)}\).`,
+        R`\(h\to0\).`,
+      ], R`\(f'(x)=\dfrac{4}{(x-3)^2}\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=\sqrt{x+6}\).`, [
+        R`\(\dfrac{\sqrt{x+h+6}-\sqrt{x+6}}{h}\); multiply by the conjugate.`,
+        R`Top becomes \((x+h+6)-(x+6)=h\): \(\dfrac{1}{\sqrt{x+h+6}+\sqrt{x+6}}\).`,
+        R`\(h\to0\): \(\dfrac{1}{2\sqrt{x+6}}\).`,
+      ], R`\(f'(x)=\dfrac{1}{2\sqrt{x+6}}\)`),
+      P(R`Find the tangent line to \(y=x^{3}+x+3\) at \(x=-1\).`, [
+        R`Point: \(y(-1)=1\).`,
+        R`\(y'=3x^{2}+1\), slope \(=4\).`,
+        R`\(y-1=4(x-(-1))\).`,
+      ], R`\(y=4x+5\)`),
+      P(R`Find the average rate of change of \(f(x)=5x^{2}+4x+1\) on \([1,4]\).`, [
+        R`\(f(4)=97\), \(f(1)=10\).`,
+        R`\(\dfrac{97-10}{4-1}\).`,
+      ], R`\(29\)`),
+      P(R`Evaluate \(\displaystyle\lim_{h\to0}\frac{(1+h)^{3}-1}{h}\) by recognizing it as a derivative.`, [
+        R`It's \(f'(a)\) for \(f(x)=x^{3}\) at \(a=1\) (check: \(1^{3}=1\)).`,
+        R`\(f'(x)=3x^{2}\), so \(f'(1)=3\).`,
+      ], R`\(3\)`),
+      P(R`Find the tangent line to \(y=\dfrac{8}{x}\) at \(x=5\).`, [
+        R`Point: \(\left(5,\dfrac{8}{5}\right)\).`,
+        R`\(y'=-\dfrac{8}{x^2}\) &rArr; slope \(-\dfrac{8}{25}\).`,
+        R`Point-slope, then simplify.`,
+      ], R`\(y=-\tfrac{8}{25}x+\tfrac{16}{5}\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=2x^{2}+7x+7\).`, [
+        R`\(f(x+h)=2(x+h)^2+7(x+h)+7\).`,
+        R`Expand and subtract \(f(x)\): \(f(x+h)-f(x)=4xh+2h^2+7h\).`,
+        R`Divide by \(h\): \(4x+2h+7\).`,
+        R`\(h\to0\).`,
+      ], R`\(f'(x)=4x+7\)`),
+      P(R`Find the tangent line to \(y=-3x^{2}+4\) at \(x=1\).`, [
+        R`Point: \((1,1)\).`,
+        R`\(y'=-6x\), slope \(m=-6\).`,
+        R`\(y-1=-6(x-1)\).`,
+      ], R`\(y=-6x+7\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=-8x-3\).`, [
+        R`\(f(x+h)-f(x)=-8(x+h)-3-(-8x-3)=-8h\).`,
+        R`Divide by \(h\): \(-8\). No \(h\) left, so that's the limit.`,
+      ], R`\(f'(x)=-8\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=\dfrac{4}{x-3}\).`, [
+        R`\(\dfrac{1}{h}\left[\dfrac{4}{x+h-3}-\dfrac{4}{x-3}\right]\).`,
+        R`Common denominator: top becomes \(4(x-3)-4(x+h-3)=-4h\).`,
+        R`Divide by \(h\): \(\dfrac{-4}{(x-3)(x+h-3)}\).`,
+        R`\(h\to0\).`,
+      ], R`\(f'(x)=\dfrac{-4}{(x-3)^2}\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=\sqrt{x-4}\).`, [
+        R`\(\dfrac{\sqrt{x+h-4}-\sqrt{x-4}}{h}\); multiply by the conjugate.`,
+        R`Top becomes \((x+h-4)-(x-4)=h\): \(\dfrac{1}{\sqrt{x+h-4}+\sqrt{x-4}}\).`,
+        R`\(h\to0\): \(\dfrac{1}{2\sqrt{x-4}}\).`,
+      ], R`\(f'(x)=\dfrac{1}{2\sqrt{x-4}}\)`),
+      P(R`Find the tangent line to \(y=x^{3}-2\) at \(x=-1\).`, [
+        R`Point: \(y(-1)=-3\).`,
+        R`\(y'=3x^{2}\), slope \(=3\).`,
+        R`\(y-(-3)=3(x-(-1))\).`,
+      ], R`\(y=3x\)`),
+      P(R`Find the average rate of change of \(f(x)=-5x^{2}-7x-2\) on \([3,4]\).`, [
+        R`\(f(4)=-110\), \(f(3)=-68\).`,
+        R`\(\dfrac{-110-(-68)}{4-3}\).`,
+      ], R`\(-42\)`),
+      P(R`Evaluate \(\displaystyle\lim_{h\to0}\frac{(2+h)^{2}-4}{h}\) by recognizing it as a derivative.`, [
+        R`It's \(f'(a)\) for \(f(x)=x^{2}\) at \(a=2\) (check: \(2^{2}=4\)).`,
+        R`\(f'(x)=2x\), so \(f'(2)=4\).`,
+      ], R`\(4\)`),
+      P(R`Find the tangent line to \(y=\sqrt x\) at \(x=81\).`, [
+        R`Point: \((81,9)\).`,
+        R`\(y'=\dfrac{1}{2\sqrt x}=\dfrac{1}{18}\).`,
+        R`\(y-9=\dfrac{1}{18}(x-81)\).`,
+      ], R`\(y=\tfrac{1}{18}x+\tfrac{9}{2}\)`),
+      P(R`Find the tangent line to \(y=\dfrac{-6}{x}\) at \(x=-4\).`, [
+        R`Point: \(\left(-4,\dfrac{3}{2}\right)\).`,
+        R`\(y'=-\dfrac{-6}{x^2}\) &rArr; slope \(\dfrac{3}{8}\).`,
+        R`Point-slope, then simplify.`,
+      ], R`\(y=\tfrac{3}{8}x+3\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=x^{2}-4x-9\).`, [
+        R`\(f(x+h)=(x+h)^2-4(x+h)-9\).`,
+        R`Expand and subtract \(f(x)\): \(f(x+h)-f(x)=2xh+h^2-4h\).`,
+        R`Divide by \(h\): \(2x+h-4\).`,
+        R`\(h\to0\).`,
+      ], R`\(f'(x)=2x-4\)`),
+      P(R`Find the tangent line to \(y=3x^{2}-x\) at \(x=-1\).`, [
+        R`Point: \((-1,4)\).`,
+        R`\(y'=6x-1\), slope \(m=-7\).`,
+        R`\(y-4=-7(x-(-1))\).`,
+      ], R`\(y=-7x-3\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=-6x-8\).`, [
+        R`\(f(x+h)-f(x)=-6(x+h)-8-(-6x-8)=-6h\).`,
+        R`Divide by \(h\): \(-6\). No \(h\) left, so that's the limit.`,
+      ], R`\(f'(x)=-6\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=\dfrac{-2}{x-3}\).`, [
+        R`\(\dfrac{1}{h}\left[\dfrac{-2}{x+h-3}-\dfrac{-2}{x-3}\right]\).`,
+        R`Common denominator: top becomes \(-2(x-3)-(-2)(x+h-3)=2h\).`,
+        R`Divide by \(h\): \(\dfrac{2}{(x-3)(x+h-3)}\).`,
+        R`\(h\to0\).`,
+      ], R`\(f'(x)=\dfrac{2}{(x-3)^2}\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=\sqrt{x+7}\).`, [
+        R`\(\dfrac{\sqrt{x+h+7}-\sqrt{x+7}}{h}\); multiply by the conjugate.`,
+        R`Top becomes \((x+h+7)-(x+7)=h\): \(\dfrac{1}{\sqrt{x+h+7}+\sqrt{x+7}}\).`,
+        R`\(h\to0\): \(\dfrac{1}{2\sqrt{x+7}}\).`,
+      ], R`\(f'(x)=\dfrac{1}{2\sqrt{x+7}}\)`),
+      P(R`Find the tangent line to \(y=x^{3}+4x-2\) at \(x=-1\).`, [
+        R`Point: \(y(-1)=-7\).`,
+        R`\(y'=3x^{2}+4\), slope \(=7\).`,
+        R`\(y-(-7)=7(x-(-1))\).`,
+      ], R`\(y=7x\)`),
+      P(R`Find the average rate of change of \(f(x)=4x^{2}-9x-7\) on \([0,5]\).`, [
+        R`\(f(5)=48\), \(f(0)=-7\).`,
+        R`\(\dfrac{48-(-7)}{5-0}\).`,
+      ], R`\(11\)`),
+      P(R`Evaluate \(\displaystyle\lim_{h\to0}\frac{(3+h)^{2}-9}{h}\) by recognizing it as a derivative.`, [
+        R`It's \(f'(a)\) for \(f(x)=x^{2}\) at \(a=3\) (check: \(3^{2}=9\)).`,
+        R`\(f'(x)=2x\), so \(f'(3)=6\).`,
+      ], R`\(6\)`),
+      P(R`Find the tangent line to \(y=\sqrt x\) at \(x=121\).`, [
+        R`Point: \((121,11)\).`,
+        R`\(y'=\dfrac{1}{2\sqrt x}=\dfrac{1}{22}\).`,
+        R`\(y-11=\dfrac{1}{22}(x-121)\).`,
+      ], R`\(y=\tfrac{1}{22}x+\tfrac{11}{2}\)`),
+      P(R`Find the tangent line to \(y=\dfrac{-8}{x}\) at \(x=1\).`, [
+        R`Point: \(\left(1,-8\right)\).`,
+        R`\(y'=-\dfrac{-8}{x^2}\) &rArr; slope \(8\).`,
+        R`Point-slope, then simplify.`,
+      ], R`\(y=8x-16\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=-2x^{2}+2x+6\).`, [
+        R`\(f(x+h)=-2(x+h)^2+2(x+h)+6\).`,
+        R`Expand and subtract \(f(x)\): \(f(x+h)-f(x)=-4xh-2h^2+2h\).`,
+        R`Divide by \(h\): \(-4x-2h+2\).`,
+        R`\(h\to0\).`,
+      ], R`\(f'(x)=-4x+2\)`),
+      P(R`Find the tangent line to \(y=-4x^{2}+8x+6\) at \(x=-4\).`, [
+        R`Point: \((-4,-90)\).`,
+        R`\(y'=-8x+8\), slope \(m=40\).`,
+        R`\(y-(-90)=40(x-(-4))\).`,
+      ], R`\(y=40x+70\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=-11x-3\).`, [
+        R`\(f(x+h)-f(x)=-11(x+h)-3-(-11x-3)=-11h\).`,
+        R`Divide by \(h\): \(-11\). No \(h\) left, so that's the limit.`,
+      ], R`\(f'(x)=-11\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=\dfrac{1}{x-5}\).`, [
+        R`\(\dfrac{1}{h}\left[\dfrac{1}{x+h-5}-\dfrac{1}{x-5}\right]\).`,
+        R`Common denominator: top becomes \(1(x-5)-1(x+h-5)=-h\).`,
+        R`Divide by \(h\): \(\dfrac{-1}{(x-5)(x+h-5)}\).`,
+        R`\(h\to0\).`,
+      ], R`\(f'(x)=\dfrac{-1}{(x-5)^2}\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=\sqrt{x+9}\).`, [
+        R`\(\dfrac{\sqrt{x+h+9}-\sqrt{x+9}}{h}\); multiply by the conjugate.`,
+        R`Top becomes \((x+h+9)-(x+9)=h\): \(\dfrac{1}{\sqrt{x+h+9}+\sqrt{x+9}}\).`,
+        R`\(h\to0\): \(\dfrac{1}{2\sqrt{x+9}}\).`,
+      ], R`\(f'(x)=\dfrac{1}{2\sqrt{x+9}}\)`),
+      P(R`Find the tangent line to \(y=x^{3}+4x-2\) at \(x=1\).`, [
+        R`Point: \(y(1)=3\).`,
+        R`\(y'=3x^{2}+4\), slope \(=7\).`,
+        R`\(y-3=7(x-1)\).`,
+      ], R`\(y=7x-4\)`),
+      P(R`Find the average rate of change of \(f(x)=3x^{2}+8x-8\) on \([-1,2]\).`, [
+        R`\(f(2)=20\), \(f(-1)=-13\).`,
+        R`\(\dfrac{20-(-13)}{2-(-1)}\).`,
+      ], R`\(11\)`),
+      P(R`Evaluate \(\displaystyle\lim_{h\to0}\frac{(1+h)^{2}-1}{h}\) by recognizing it as a derivative.`, [
+        R`It's \(f'(a)\) for \(f(x)=x^{2}\) at \(a=1\) (check: \(1^{2}=1\)).`,
+        R`\(f'(x)=2x\), so \(f'(1)=2\).`,
+      ], R`\(2\)`),
+      P(R`Find the tangent line to \(y=\dfrac{-1}{x}\) at \(x=-1\).`, [
+        R`Point: \(\left(-1,1\right)\).`,
+        R`\(y'=-\dfrac{-1}{x^2}\) &rArr; slope \(1\).`,
+        R`Point-slope, then simplify.`,
+      ], R`\(y=x+2\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=5x^{2}+7x+5\).`, [
+        R`\(f(x+h)=5(x+h)^2+7(x+h)+5\).`,
+        R`Expand and subtract \(f(x)\): \(f(x+h)-f(x)=10xh+5h^2+7h\).`,
+        R`Divide by \(h\): \(10x+5h+7\).`,
+        R`\(h\to0\).`,
+      ], R`\(f'(x)=10x+7\)`),
+      P(R`Find the tangent line to \(y=2x^{2}-2x+2\) at \(x=4\).`, [
+        R`Point: \((4,26)\).`,
+        R`\(y'=4x-2\), slope \(m=14\).`,
+        R`\(y-26=14(x-4)\).`,
+      ], R`\(y=14x-30\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=-6x\).`, [
+        R`\(f(x+h)-f(x)=-6(x+h)-(-6x)=-6h\).`,
+        R`Divide by \(h\): \(-6\). No \(h\) left, so that's the limit.`,
+      ], R`\(f'(x)=-6\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=\dfrac{9}{x+4}\).`, [
+        R`\(\dfrac{1}{h}\left[\dfrac{9}{x+h+4}-\dfrac{9}{x+4}\right]\).`,
+        R`Common denominator: top becomes \(9(x+4)-9(x+h+4)=-9h\).`,
+        R`Divide by \(h\): \(\dfrac{-9}{(x+4)(x+h+4)}\).`,
+        R`\(h\to0\).`,
+      ], R`\(f'(x)=\dfrac{-9}{(x+4)^2}\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=\sqrt{x}\).`, [
+        R`\(\dfrac{\sqrt{x+h}-\sqrt{x}}{h}\); multiply by the conjugate.`,
+        R`Top becomes \((x+h)-(x)=h\): \(\dfrac{1}{\sqrt{x+h}+\sqrt{x}}\).`,
+        R`\(h\to0\): \(\dfrac{1}{2\sqrt{x}}\).`,
+      ], R`\(f'(x)=\dfrac{1}{2\sqrt{x}}\)`),
+      P(R`Find the tangent line to \(y=x^{3}+2x-8\) at \(x=3\).`, [
+        R`Point: \(y(3)=25\).`,
+        R`\(y'=3x^{2}+2\), slope \(=29\).`,
+        R`\(y-25=29(x-3)\).`,
+      ], R`\(y=29x-62\)`),
+      P(R`Find the average rate of change of \(f(x)=3x^{2}-7x-1\) on \([3,5]\).`, [
+        R`\(f(5)=39\), \(f(3)=5\).`,
+        R`\(\dfrac{39-5}{5-3}\).`,
+      ], R`\(17\)`),
+      P(R`Evaluate \(\displaystyle\lim_{h\to0}\frac{(3+h)^{4}-81}{h}\) by recognizing it as a derivative.`, [
+        R`It's \(f'(a)\) for \(f(x)=x^{4}\) at \(a=3\) (check: \(3^{4}=81\)).`,
+        R`\(f'(x)=4x^{3}\), so \(f'(3)=108\).`,
+      ], R`\(108\)`),
+      P(R`Find the tangent line to \(y=\sqrt x\) at \(x=36\).`, [
+        R`Point: \((36,6)\).`,
+        R`\(y'=\dfrac{1}{2\sqrt x}=\dfrac{1}{12}\).`,
+        R`\(y-6=\dfrac{1}{12}(x-36)\).`,
+      ], R`\(y=\tfrac{1}{12}x+3\)`),
+      P(R`Find the tangent line to \(y=\dfrac{-7}{x}\) at \(x=4\).`, [
+        R`Point: \(\left(4,-\dfrac{7}{4}\right)\).`,
+        R`\(y'=-\dfrac{-7}{x^2}\) &rArr; slope \(\dfrac{7}{16}\).`,
+        R`Point-slope, then simplify.`,
+      ], R`\(y=\tfrac{7}{16}x-\tfrac{7}{2}\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=-2x^{2}+4x-7\).`, [
+        R`\(f(x+h)=-2(x+h)^2+4(x+h)-7\).`,
+        R`Expand and subtract \(f(x)\): \(f(x+h)-f(x)=-4xh-2h^2+4h\).`,
+        R`Divide by \(h\): \(-4x-2h+4\).`,
+        R`\(h\to0\).`,
+      ], R`\(f'(x)=-4x+4\)`),
+      P(R`Find the tangent line to \(y=-3x^{2}+6x-2\) at \(x=1\).`, [
+        R`Point: \((1,1)\).`,
+        R`\(y'=-6x+6\), slope \(m=0\).`,
+        R`\(y-1=0(x-1)\).`,
+      ], R`\(y=1\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=x-4\).`, [
+        R`\(f(x+h)-f(x)=(x+h)-4-(x-4)=h\).`,
+        R`Divide by \(h\): \(1\). No \(h\) left, so that's the limit.`,
+      ], R`\(f'(x)=1\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=\dfrac{-9}{x+5}\).`, [
+        R`\(\dfrac{1}{h}\left[\dfrac{-9}{x+h+5}-\dfrac{-9}{x+5}\right]\).`,
+        R`Common denominator: top becomes \(-9(x+5)-(-9)(x+h+5)=9h\).`,
+        R`Divide by \(h\): \(\dfrac{9}{(x+5)(x+h+5)}\).`,
+        R`\(h\to0\).`,
+      ], R`\(f'(x)=\dfrac{9}{(x+5)^2}\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=\sqrt{x-1}\).`, [
+        R`\(\dfrac{\sqrt{x+h-1}-\sqrt{x-1}}{h}\); multiply by the conjugate.`,
+        R`Top becomes \((x+h-1)-(x-1)=h\): \(\dfrac{1}{\sqrt{x+h-1}+\sqrt{x-1}}\).`,
+        R`\(h\to0\): \(\dfrac{1}{2\sqrt{x-1}}\).`,
+      ], R`\(f'(x)=\dfrac{1}{2\sqrt{x-1}}\)`),
+      P(R`Find the tangent line to \(y=x^{3}-x-4\) at \(x=3\).`, [
+        R`Point: \(y(3)=20\).`,
+        R`\(y'=3x^{2}-1\), slope \(=26\).`,
+        R`\(y-20=26(x-3)\).`,
+      ], R`\(y=26x-58\)`),
+      P(R`Find the average rate of change of \(f(x)=5x^{2}-6\) on \([-1,1]\).`, [
+        R`\(f(1)=-1\), \(f(-1)=-1\).`,
+        R`\(\dfrac{-1-(-1)}{1-(-1)}\).`,
+      ], R`\(0\)`),
+      P(R`Evaluate \(\displaystyle\lim_{h\to0}\frac{(5+h)^{5}-3125}{h}\) by recognizing it as a derivative.`, [
+        R`It's \(f'(a)\) for \(f(x)=x^{5}\) at \(a=5\) (check: \(5^{5}=3125\)).`,
+        R`\(f'(x)=5x^{4}\), so \(f'(5)=3125\).`,
+      ], R`\(3125\)`),
+      P(R`Find the tangent line to \(y=\sqrt x\) at \(x=49\).`, [
+        R`Point: \((49,7)\).`,
+        R`\(y'=\dfrac{1}{2\sqrt x}=\dfrac{1}{14}\).`,
+        R`\(y-7=\dfrac{1}{14}(x-49)\).`,
+      ], R`\(y=\tfrac{1}{14}x+\tfrac{7}{2}\)`),
+      P(R`Find the tangent line to \(y=\dfrac{-7}{x}\) at \(x=-1\).`, [
+        R`Point: \(\left(-1,7\right)\).`,
+        R`\(y'=-\dfrac{-7}{x^2}\) &rArr; slope \(7\).`,
+        R`Point-slope, then simplify.`,
+      ], R`\(y=7x+14\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=x^{2}-2x-1\).`, [
+        R`\(f(x+h)=(x+h)^2-2(x+h)-1\).`,
+        R`Expand and subtract \(f(x)\): \(f(x+h)-f(x)=2xh+h^2-2h\).`,
+        R`Divide by \(h\): \(2x+h-2\).`,
+        R`\(h\to0\).`,
+      ], R`\(f'(x)=2x-2\)`),
+      P(R`Find the tangent line to \(y=-x^{2}+2x+7\) at \(x=1\).`, [
+        R`Point: \((1,8)\).`,
+        R`\(y'=-2x+2\), slope \(m=0\).`,
+        R`\(y-8=0(x-1)\).`,
+      ], R`\(y=8\)`),
+      P(R`Use the limit definition to find \(f'(x)\) for \(f(x)=-3x+2\).`, [
+        R`\(f(x+h)-f(x)=-3(x+h)+2-(-3x+2)=-3h\).`,
+        R`Divide by \(h\): \(-3\). No \(h\) left, so that's the limit.`,
+      ], R`\(f'(x)=-3\)`),
     ],
   },
 
@@ -796,66 +1835,326 @@ window.TOPICS = [
           R`\(f'(x)=4x^3-10x\).`,
           R`Differentiate again: \(f''(x)=12x^2-10\).`,
         ], R`\(f''(x)=12x^2-10\)`),
-      // ---- even more practice ----
-      P(R`Differentiate \(f(x)=7x^{7}+5x^{2}+5x+6\).`, [
-        R`Power rule on each term: bring the power down, subtract 1.`,
-        R`\(7x^{7}\to49x^{6}\), \(5x^{2}\to10x\), \(5x\to5\), and the constant \(\to0\).`,
-      ], R`\(f'(x)=49x^{6}+10x+5\)`),
-      P(R`Differentiate \(f(x)=2x^{6}+4x^{2}+3x+5\).`, [
-        R`Power rule on each term: bring the power down, subtract 1.`,
-        R`\(2x^{6}\to12x^{5}\), \(4x^{2}\to8x\), \(3x\to3\), and the constant \(\to0\).`,
-      ], R`\(f'(x)=12x^{5}+8x+3\)`),
-      P(R`Differentiate \(f(x)=6x^{7}+8x^{3}+6x-6\).`, [
-        R`Power rule on each term: bring the power down, subtract 1.`,
-        R`\(6x^{7}\to42x^{6}\), \(8x^{3}\to24x^{2}\), \(6x\to6\), and the constant \(\to0\).`,
-      ], R`\(f'(x)=42x^{6}+24x^{2}+6\)`),
-      P(R`Differentiate \(f(x)=9x^{6}+x^{2}+9x-8\).`, [
-        R`Power rule on each term: bring the power down, subtract 1.`,
-        R`\(9x^{6}\to54x^{5}\), \(x^{2}\to2x\), \(9x\to9\), and the constant \(\to0\).`,
-      ], R`\(f'(x)=54x^{5}+2x+9\)`),
-      P(R`Differentiate \(f(x)=-3x^{5}+3x^{3}-9x-6\).`, [
-        R`Power rule on each term: bring the power down, subtract 1.`,
-        R`\(-3x^{5}\to-15x^{4}\), \(3x^{3}\to9x^{2}\), \(-9x\to-9\), and the constant \(\to0\).`,
-      ], R`\(f'(x)=-15x^{4}+9x^{2}-9\)`),
-      P(R`Use the product rule to differentiate \(f(x)=(4x-1)(4x^{2}+2)\).`, [
-        R`First \(=4x-1\), first\('\) \(=4\). Second \(=4x^{2}+2\), second\('\) \(=8x\).`,
-        R`\(f'=4(4x^{2}+2)+(4x-1)(8x)\).`,
-        R`Expand: \(16x^{2}+8+(32x^{2}-8x)\).`,
-        R`Combine: \(48x^{2}-8x+8\).`,
-      ], R`\(f'(x)=48x^{2}-8x+8\)`),
-      P(R`Use the product rule to differentiate \(f(x)=(-3x-1)(-2x^{2}+4)\).`, [
-        R`First \(=-3x-1\), first\('\) \(=-3\). Second \(=-2x^{2}+4\), second\('\) \(=-4x\).`,
-        R`\(f'=-3(-2x^{2}+4)+(-3x-1)(-4x)\).`,
-        R`Expand: \(6x^{2}-12+(12x^{2}+4x)\).`,
-        R`Combine: \(18x^{2}+4x-12\).`,
-      ], R`\(f'(x)=18x^{2}+4x-12\)`),
-      P(R`Use the product rule to differentiate \(f(x)=(-4x-1)(-3x^{2}-5)\).`, [
-        R`First \(=-4x-1\), first\('\) \(=-4\). Second \(=-3x^{2}-5\), second\('\) \(=-6x\).`,
-        R`\(f'=-4(-3x^{2}-5)+(-4x-1)(-6x)\).`,
-        R`Expand: \(12x^{2}+20+(24x^{2}+6x)\).`,
-        R`Combine: \(36x^{2}+6x+20\).`,
-      ], R`\(f'(x)=36x^{2}+6x+20\)`),
-      P(R`Use the product rule to differentiate \(f(x)=(4x+2)(x^{2}+5)\).`, [
-        R`First \(=4x+2\), first\('\) \(=4\). Second \(=x^{2}+5\), second\('\) \(=2x\).`,
-        R`\(f'=4(x^{2}+5)+(4x+2)(2x)\).`,
-        R`Expand: \(4x^{2}+20+(8x^{2}+4x)\).`,
-        R`Combine: \(12x^{2}+4x+20\).`,
-      ], R`\(f'(x)=12x^{2}+4x+20\)`),
-      P(R`Use the quotient rule to differentiate \(f(x)=\dfrac{4x-5}{x+2}\).`, [
-        R`High \(=4x-5\), d-high \(=4\); low \(=x+2\), d-low \(=1\).`,
-        R`\(f'=\dfrac{4(x+2)-(4x-5)(1)}{(x+2)^2}\).`,
-        R`Top: \(4x+8-(4x-5)=13\).`,
-      ], R`\(f'(x)=\dfrac{13}{(x+2)^2}\)`),
-      P(R`Use the quotient rule to differentiate \(f(x)=\dfrac{3x+3}{3x+1}\).`, [
-        R`High \(=3x+3\), d-high \(=3\); low \(=3x+1\), d-low \(=3\).`,
-        R`\(f'=\dfrac{3(3x+1)-(3x+3)(3)}{(3x+1)^2}\).`,
-        R`Top: \(9x+3-(9x+9)=-6\).`,
-      ], R`\(f'(x)=\dfrac{-6}{(3x+1)^2}\)`),
-      P(R`Use the quotient rule to differentiate \(f(x)=\dfrac{x+4}{2x+2}\).`, [
-        R`High \(=x+4\), d-high \(=1\); low \(=2x+2\), d-low \(=2\).`,
-        R`\(f'=\dfrac{1(2x+2)-(x+4)(2)}{(2x+2)^2}\).`,
-        R`Top: \(2x+2-(2x+8)=-6\).`,
-      ], R`\(f'(x)=\dfrac{-6}{(2x+2)^2}\)`),
+      // ---- generated practice (numbers vary; answers computed) ----
+      P(R`Differentiate \(f(x)=3x^{8}+8x^{3}+10x-12\).`, [
+        R`Power rule term by term; the constant becomes 0.`,
+      ], R`\(f'(x)=24x^{7}+24x^{2}+10\)`),
+      P(R`Use the product rule on \(f(x)=(6x-6)(5x^{2}-5)\).`, [
+        R`\(f'=6(5x^{2}-5)+(6x-6)(10x)\).`,
+        R`Expand and combine.`,
+      ], R`\(f'(x)=90x^{2}-60x-30\)`),
+      P(R`Use the quotient rule on \(f(x)=\dfrac{-3x+4}{x+3}\).`, [
+        R`\(f'=\dfrac{-3(x+3)-(-3x+4)(1)}{(x+3)^2}\).`,
+        R`The \(x\) terms cancel on top: \(-9-4=-13\).`,
+      ], R`\(f'(x)=\dfrac{-13}{(x+3)^2}\)`),
+      P(R`Differentiate \(f(x)=2\sqrt x+\dfrac{6}{x}\).`, [
+        R`Rewrite: \(2x^{1/2}+6x^{-1}\).`,
+        R`Power rule: \(x^{-1/2}-6x^{-2}\).`,
+      ], R`\(f'(x)=\dfrac{1}{\sqrt x}-\dfrac{6}{x^{2}}\)`),
+      P(R`Differentiate \(f(x)=x^{2}\cos x\).`, [
+        R`Product rule: \((x^{2})'=2x\), \((\cos x)'=-\sin x\).`,
+        R`\(f'=2x\cdot \cos x+x^{2}\cdot(-\sin x)\).`,
+      ], R`\(f'(x)=2x\cos x-x^{2}\sin x\)`),
+      P(R`Differentiate \(f(x)=\dfrac{3x+2}{x^2+6}\).`, [
+        R`\(f'=\dfrac{3(x^2+6)-(3x+2)(2x)}{(x^2+6)^2}\).`,
+        R`Top: \(3x^{2}+18-(6x^{2}+4x)\).`,
+      ], R`\(f'(x)=\dfrac{-3x^{2}-4x+18}{(x^2+6)^2}\)`),
+      P(R`Find the points where \(y=x^{3}-48x-1\) has a horizontal tangent.`, [
+        R`\(y'=3x^2-48=0\Rightarrow x^2=16\Rightarrow x=\pm4\).`,
+        R`\(y(4)=-129\), \(y(-4)=127\).`,
+      ], R`\((4,-129)\) and \((-4,127)\)`),
+      P(R`Find \(f''(x)\) for \(f(x)=5x^{3}-6x^{2}+4x\).`, [
+        R`\(f'(x)=15x^{2}-12x+4\).`,
+        R`Differentiate again.`,
+      ], R`\(f''(x)=30x-12\)`),
+      P(R`If \(f(x)=4x^{3}-6x^{2}+x\), find \(f'(3)\).`, [
+        R`\(f'(x)=12x^{2}-12x+1\).`,
+        R`Plug in \(x=3\).`,
+      ], R`\(73\)`),
+      P(R`Differentiate \(f(x)=\dfrac{x^{2}}{e^x}\).`, [
+        R`\(f'=\dfrac{2xe^x-x^{2}e^x}{(e^x)^2}\).`,
+        R`Cancel one \(e^x\): \(\dfrac{2x-x^{2}}{e^x}\).`,
+      ], R`\(f'(x)=\dfrac{x(2-x)}{e^x}\)`),
+      P(R`Differentiate \(f(x)=3x^{4}+12x^{2}-10x+3\).`, [
+        R`Power rule term by term; the constant becomes 0.`,
+      ], R`\(f'(x)=12x^{3}+24x-10\)`),
+      P(R`Use the product rule on \(f(x)=(2x+7)(-4x^{2}-7)\).`, [
+        R`\(f'=2(-4x^{2}-7)+(2x+7)(-8x)\).`,
+        R`Expand and combine.`,
+      ], R`\(f'(x)=-24x^{2}-56x-14\)`),
+      P(R`Use the quotient rule on \(f(x)=\dfrac{-4x-9}{5x+1}\).`, [
+        R`\(f'=\dfrac{-4(5x+1)-(-4x-9)(5)}{(5x+1)^2}\).`,
+        R`The \(x\) terms cancel on top: \(-4-(-45)=41\).`,
+      ], R`\(f'(x)=\dfrac{41}{(5x+1)^2}\)`),
+      P(R`Differentiate \(f(x)=-8\sqrt x-\dfrac{4}{x^{2}}\).`, [
+        R`Rewrite: \(-8x^{1/2}-4x^{-2}\).`,
+        R`Power rule: \(-4x^{-1/2}+8x^{-3}\).`,
+      ], R`\(f'(x)=-\dfrac{4}{\sqrt x}+\dfrac{8}{x^{3}}\)`),
+      P(R`Differentiate \(f(x)=x^{5}\sin x\).`, [
+        R`Product rule: \((x^{5})'=5x^{4}\), \((\sin x)'=\cos x\).`,
+        R`\(f'=5x^{4}\cdot \sin x+x^{5}\cdot\cos x\).`,
+      ], R`\(f'(x)=5x^{4}\sin x+x^{5}\cos x\)`),
+      P(R`Differentiate \(f(x)=\dfrac{3x+8}{x^2+3}\).`, [
+        R`\(f'=\dfrac{3(x^2+3)-(3x+8)(2x)}{(x^2+3)^2}\).`,
+        R`Top: \(3x^{2}+9-(6x^{2}+16x)\).`,
+      ], R`\(f'(x)=\dfrac{-3x^{2}-16x+9}{(x^2+3)^2}\)`),
+      P(R`Find the points where \(y=x^{3}-48x+8\) has a horizontal tangent.`, [
+        R`\(y'=3x^2-48=0\Rightarrow x^2=16\Rightarrow x=\pm4\).`,
+        R`\(y(4)=-120\), \(y(-4)=136\).`,
+      ], R`\((4,-120)\) and \((-4,136)\)`),
+      P(R`Find \(f''(x)\) for \(f(x)=4x^{6}+x^{5}+6x\).`, [
+        R`\(f'(x)=24x^{5}+5x^{4}+6\).`,
+        R`Differentiate again.`,
+      ], R`\(f''(x)=120x^{4}+20x^{3}\)`),
+      P(R`If \(f(x)=4x^{3}-x^{2}-4x\), find \(f'(1)\).`, [
+        R`\(f'(x)=12x^{2}-2x-4\).`,
+        R`Plug in \(x=1\).`,
+      ], R`\(6\)`),
+      P(R`Differentiate \(f(x)=\dfrac{x^{7}}{e^x}\).`, [
+        R`\(f'=\dfrac{7x^{6}e^x-x^{7}e^x}{(e^x)^2}\).`,
+        R`Cancel one \(e^x\): \(\dfrac{7x^{6}-x^{7}}{e^x}\).`,
+      ], R`\(f'(x)=\dfrac{x^{6}(7-x)}{e^x}\)`),
+      P(R`Differentiate \(f(x)=-8x^{5}+8x^{2}+9x+4\).`, [
+        R`Power rule term by term; the constant becomes 0.`,
+      ], R`\(f'(x)=-40x^{4}+16x+9\)`),
+      P(R`Use the product rule on \(f(x)=(-5x+8)(-4x^{2}+8)\).`, [
+        R`\(f'=-5(-4x^{2}+8)+(-5x+8)(-8x)\).`,
+        R`Expand and combine.`,
+      ], R`\(f'(x)=60x^{2}-64x-40\)`),
+      P(R`Use the quotient rule on \(f(x)=\dfrac{5x+8}{5x-3}\).`, [
+        R`\(f'=\dfrac{5(5x-3)-(5x+8)(5)}{(5x-3)^2}\).`,
+        R`The \(x\) terms cancel on top: \(-15-40=-55\).`,
+      ], R`\(f'(x)=\dfrac{-55}{(5x-3)^2}\)`),
+      P(R`Differentiate \(f(x)=6\sqrt x-\dfrac{8}{x^{4}}\).`, [
+        R`Rewrite: \(6x^{1/2}-8x^{-4}\).`,
+        R`Power rule: \(3x^{-1/2}+32x^{-5}\).`,
+      ], R`\(f'(x)=\dfrac{3}{\sqrt x}+\dfrac{32}{x^{5}}\)`),
+      P(R`Differentiate \(f(x)=x^{4}\sin x\).`, [
+        R`Product rule: \((x^{4})'=4x^{3}\), \((\sin x)'=\cos x\).`,
+        R`\(f'=4x^{3}\cdot \sin x+x^{4}\cdot\cos x\).`,
+      ], R`\(f'(x)=4x^{3}\sin x+x^{4}\cos x\)`),
+      P(R`Differentiate \(f(x)=\dfrac{-x-1}{x^2+3}\).`, [
+        R`\(f'=\dfrac{-1(x^2+3)-(-x-1)(2x)}{(x^2+3)^2}\).`,
+        R`Top: \(-x^{2}-3-(-2x^{2}-2x)\).`,
+      ], R`\(f'(x)=\dfrac{x^{2}+2x-3}{(x^2+3)^2}\)`),
+      P(R`Find the points where \(y=x^{3}-75x-4\) has a horizontal tangent.`, [
+        R`\(y'=3x^2-75=0\Rightarrow x^2=25\Rightarrow x=\pm5\).`,
+        R`\(y(5)=-254\), \(y(-5)=246\).`,
+      ], R`\((5,-254)\) and \((-5,246)\)`),
+      P(R`Find \(f''(x)\) for \(f(x)=x^{5}+8x^{2}+3x\).`, [
+        R`\(f'(x)=5x^{4}+16x+3\).`,
+        R`Differentiate again.`,
+      ], R`\(f''(x)=20x^{3}+16\)`),
+      P(R`If \(f(x)=4x^{4}-5x^{2}-8x\), find \(f'(-3)\).`, [
+        R`\(f'(x)=16x^{3}-10x-8\).`,
+        R`Plug in \(x=-3\).`,
+      ], R`\(-410\)`),
+      P(R`Differentiate \(f(x)=\dfrac{x^{5}}{e^x}\).`, [
+        R`\(f'=\dfrac{5x^{4}e^x-x^{5}e^x}{(e^x)^2}\).`,
+        R`Cancel one \(e^x\): \(\dfrac{5x^{4}-x^{5}}{e^x}\).`,
+      ], R`\(f'(x)=\dfrac{x^{4}(5-x)}{e^x}\)`),
+      P(R`Differentiate \(f(x)=-3x^{9}+x^{2}-5x-5\).`, [
+        R`Power rule term by term; the constant becomes 0.`,
+      ], R`\(f'(x)=-27x^{8}+2x-5\)`),
+      P(R`Use the product rule on \(f(x)=(x+4)(-4x^{2}-6)\).`, [
+        R`\(f'=1(-4x^{2}-6)+(x+4)(-8x)\).`,
+        R`Expand and combine.`,
+      ], R`\(f'(x)=-12x^{2}-32x-6\)`),
+      P(R`Use the quotient rule on \(f(x)=\dfrac{-4x-5}{x-1}\).`, [
+        R`\(f'=\dfrac{-4(x-1)-(-4x-5)(1)}{(x-1)^2}\).`,
+        R`The \(x\) terms cancel on top: \(4-(-5)=9\).`,
+      ], R`\(f'(x)=\dfrac{9}{(x-1)^2}\)`),
+      P(R`Differentiate \(f(x)=-\sqrt x+\dfrac{3}{x^{3}}\).`, [
+        R`Rewrite: \(-x^{1/2}+3x^{-3}\).`,
+        R`Power rule: \(-\tfrac{1}{2}x^{-1/2}-9x^{-4}\).`,
+      ], R`\(f'(x)=-\dfrac{1}{2\sqrt x}-\dfrac{9}{x^{4}}\)`),
+      P(R`Differentiate \(f(x)=x^{6}\cos x\).`, [
+        R`Product rule: \((x^{6})'=6x^{5}\), \((\cos x)'=-\sin x\).`,
+        R`\(f'=6x^{5}\cdot \cos x+x^{6}\cdot(-\sin x)\).`,
+      ], R`\(f'(x)=6x^{5}\cos x-x^{6}\sin x\)`),
+      P(R`Differentiate \(f(x)=\dfrac{-5x+1}{x^2+5}\).`, [
+        R`\(f'=\dfrac{-5(x^2+5)-(-5x+1)(2x)}{(x^2+5)^2}\).`,
+        R`Top: \(-5x^{2}-25-(-10x^{2}+2x)\).`,
+      ], R`\(f'(x)=\dfrac{5x^{2}-2x-25}{(x^2+5)^2}\)`),
+      P(R`Find the points where \(y=x^{3}-27x+6\) has a horizontal tangent.`, [
+        R`\(y'=3x^2-27=0\Rightarrow x^2=9\Rightarrow x=\pm3\).`,
+        R`\(y(3)=-48\), \(y(-3)=60\).`,
+      ], R`\((3,-48)\) and \((-3,60)\)`),
+      P(R`Find \(f''(x)\) for \(f(x)=-x^{7}-8x^{6}+x\).`, [
+        R`\(f'(x)=-7x^{6}-48x^{5}+1\).`,
+        R`Differentiate again.`,
+      ], R`\(f''(x)=-42x^{5}-240x^{4}\)`),
+      P(R`If \(f(x)=2x^{4}-3x^{2}+3x\), find \(f'(3)\).`, [
+        R`\(f'(x)=8x^{3}-6x+3\).`,
+        R`Plug in \(x=3\).`,
+      ], R`\(201\)`),
+      P(R`Differentiate \(f(x)=\dfrac{x^{6}}{e^x}\).`, [
+        R`\(f'=\dfrac{6x^{5}e^x-x^{6}e^x}{(e^x)^2}\).`,
+        R`Cancel one \(e^x\): \(\dfrac{6x^{5}-x^{6}}{e^x}\).`,
+      ], R`\(f'(x)=\dfrac{x^{5}(6-x)}{e^x}\)`),
+      P(R`Differentiate \(f(x)=-2x^{4}+4x^{2}+4x-4\).`, [
+        R`Power rule term by term; the constant becomes 0.`,
+      ], R`\(f'(x)=-8x^{3}+8x+4\)`),
+      P(R`Use the product rule on \(f(x)=(-x-7)(-x^{2}+6)\).`, [
+        R`\(f'=-1(-x^{2}+6)+(-x-7)(-2x)\).`,
+        R`Expand and combine.`,
+      ], R`\(f'(x)=3x^{2}+14x-6\)`),
+      P(R`Use the quotient rule on \(f(x)=\dfrac{-3x+5}{2x-2}\).`, [
+        R`\(f'=\dfrac{-3(2x-2)-(-3x+5)(2)}{(2x-2)^2}\).`,
+        R`The \(x\) terms cancel on top: \(6-10=-4\).`,
+      ], R`\(f'(x)=\dfrac{-4}{(2x-2)^2}\)`),
+      P(R`Differentiate \(f(x)=-5\sqrt x-\dfrac{1}{x^{3}}\).`, [
+        R`Rewrite: \(-5x^{1/2}-x^{-3}\).`,
+        R`Power rule: \(-\tfrac{5}{2}x^{-1/2}+3x^{-4}\).`,
+      ], R`\(f'(x)=-\dfrac{5}{2\sqrt x}+\dfrac{3}{x^{4}}\)`),
+      P(R`Differentiate \(f(x)=x^{3}\ln x\).`, [
+        R`Product rule: \((x^{3})'=3x^{2}\), \((\ln x)'=\tfrac1x\).`,
+        R`\(f'=3x^{2}\cdot \ln x+x^{3}\cdot\tfrac1x\).`,
+      ], R`\(f'(x)=3x^{2}\ln x+x^{2}\)`),
+      P(R`Differentiate \(f(x)=\dfrac{6x-9}{x^2+5}\).`, [
+        R`\(f'=\dfrac{6(x^2+5)-(6x-9)(2x)}{(x^2+5)^2}\).`,
+        R`Top: \(6x^{2}+30-(12x^{2}-18x)\).`,
+      ], R`\(f'(x)=\dfrac{-6x^{2}+18x+30}{(x^2+5)^2}\)`),
+      P(R`Find the points where \(y=x^{3}-27x+2\) has a horizontal tangent.`, [
+        R`\(y'=3x^2-27=0\Rightarrow x^2=9\Rightarrow x=\pm3\).`,
+        R`\(y(3)=-52\), \(y(-3)=56\).`,
+      ], R`\((3,-52)\) and \((-3,56)\)`),
+      P(R`Find \(f''(x)\) for \(f(x)=6x^{3}-6x^{2}-6x\).`, [
+        R`\(f'(x)=18x^{2}-12x-6\).`,
+        R`Differentiate again.`,
+      ], R`\(f''(x)=36x-12\)`),
+      P(R`If \(f(x)=5x^{3}+x^{2}+9x\), find \(f'(-1)\).`, [
+        R`\(f'(x)=15x^{2}+2x+9\).`,
+        R`Plug in \(x=-1\).`,
+      ], R`\(22\)`),
+      P(R`Differentiate \(f(x)=\dfrac{x^{3}}{e^x}\).`, [
+        R`\(f'=\dfrac{3x^{2}e^x-x^{3}e^x}{(e^x)^2}\).`,
+        R`Cancel one \(e^x\): \(\dfrac{3x^{2}-x^{3}}{e^x}\).`,
+      ], R`\(f'(x)=\dfrac{x^{2}(3-x)}{e^x}\)`),
+      P(R`Differentiate \(f(x)=-8x^{8}-2x^{2}+2x+2\).`, [
+        R`Power rule term by term; the constant becomes 0.`,
+      ], R`\(f'(x)=-64x^{7}-4x+2\)`),
+      P(R`Use the product rule on \(f(x)=(-x-7)(5x^{2}-5)\).`, [
+        R`\(f'=-1(5x^{2}-5)+(-x-7)(10x)\).`,
+        R`Expand and combine.`,
+      ], R`\(f'(x)=-15x^{2}-70x+5\)`),
+      P(R`Use the quotient rule on \(f(x)=\dfrac{2x+4}{5x+8}\).`, [
+        R`\(f'=\dfrac{2(5x+8)-(2x+4)(5)}{(5x+8)^2}\).`,
+        R`The \(x\) terms cancel on top: \(16-20=-4\).`,
+      ], R`\(f'(x)=\dfrac{-4}{(5x+8)^2}\)`),
+      P(R`Differentiate \(f(x)=2\sqrt x+\dfrac{2}{x^{4}}\).`, [
+        R`Rewrite: \(2x^{1/2}+2x^{-4}\).`,
+        R`Power rule: \(x^{-1/2}-8x^{-5}\).`,
+      ], R`\(f'(x)=\dfrac{1}{\sqrt x}-\dfrac{8}{x^{5}}\)`),
+      P(R`Differentiate \(f(x)=x^{6}\ln x\).`, [
+        R`Product rule: \((x^{6})'=6x^{5}\), \((\ln x)'=\tfrac1x\).`,
+        R`\(f'=6x^{5}\cdot \ln x+x^{6}\cdot\tfrac1x\).`,
+      ], R`\(f'(x)=6x^{5}\ln x+x^{5}\)`),
+      P(R`Differentiate \(f(x)=\dfrac{-5x+2}{x^2+7}\).`, [
+        R`\(f'=\dfrac{-5(x^2+7)-(-5x+2)(2x)}{(x^2+7)^2}\).`,
+        R`Top: \(-5x^{2}-35-(-10x^{2}+4x)\).`,
+      ], R`\(f'(x)=\dfrac{5x^{2}-4x-35}{(x^2+7)^2}\)`),
+      P(R`Find the points where \(y=x^{3}-3x-9\) has a horizontal tangent.`, [
+        R`\(y'=3x^2-3=0\Rightarrow x^2=1\Rightarrow x=\pm1\).`,
+        R`\(y(1)=-11\), \(y(-1)=-7\).`,
+      ], R`\((1,-11)\) and \((-1,-7)\)`),
+      P(R`Find \(f''(x)\) for \(f(x)=-7x^{3}-x^{2}-8x\).`, [
+        R`\(f'(x)=-21x^{2}-2x-8\).`,
+        R`Differentiate again.`,
+      ], R`\(f''(x)=-42x-2\)`),
+      P(R`If \(f(x)=2x^{3}-3x^{2}-8x\), find \(f'(1)\).`, [
+        R`\(f'(x)=6x^{2}-6x-8\).`,
+        R`Plug in \(x=1\).`,
+      ], R`\(-8\)`),
+      P(R`Differentiate \(f(x)=-2x^{7}+11x^{3}+12x+1\).`, [
+        R`Power rule term by term; the constant becomes 0.`,
+      ], R`\(f'(x)=-14x^{6}+33x^{2}+12\)`),
+      P(R`Use the product rule on \(f(x)=(6x+7)(-5x^{2}+5)\).`, [
+        R`\(f'=6(-5x^{2}+5)+(6x+7)(-10x)\).`,
+        R`Expand and combine.`,
+      ], R`\(f'(x)=-90x^{2}-70x+30\)`),
+      P(R`Use the quotient rule on \(f(x)=\dfrac{-5x+9}{4x+4}\).`, [
+        R`\(f'=\dfrac{-5(4x+4)-(-5x+9)(4)}{(4x+4)^2}\).`,
+        R`The \(x\) terms cancel on top: \(-20-36=-56\).`,
+      ], R`\(f'(x)=\dfrac{-56}{(4x+4)^2}\)`),
+      P(R`Differentiate \(f(x)=8\sqrt x+\dfrac{9}{x^{2}}\).`, [
+        R`Rewrite: \(8x^{1/2}+9x^{-2}\).`,
+        R`Power rule: \(4x^{-1/2}-18x^{-3}\).`,
+      ], R`\(f'(x)=\dfrac{4}{\sqrt x}-\dfrac{18}{x^{3}}\)`),
+      P(R`Differentiate \(f(x)=x^{6}e^x\).`, [
+        R`Product rule: \((x^{6})'=6x^{5}\), \((e^x)'=e^x\).`,
+        R`\(f'=6x^{5}\cdot e^x+x^{6}\cdote^x\).`,
+      ], R`\(f'(x)=6x^{5}e^x+x^{6}e^x\)`),
+      P(R`Differentiate \(f(x)=\dfrac{-3x+9}{x^2+3}\).`, [
+        R`\(f'=\dfrac{-3(x^2+3)-(-3x+9)(2x)}{(x^2+3)^2}\).`,
+        R`Top: \(-3x^{2}-9-(-6x^{2}+18x)\).`,
+      ], R`\(f'(x)=\dfrac{3x^{2}-18x-9}{(x^2+3)^2}\)`),
+      P(R`Find the points where \(y=x^{3}-3x-7\) has a horizontal tangent.`, [
+        R`\(y'=3x^2-3=0\Rightarrow x^2=1\Rightarrow x=\pm1\).`,
+        R`\(y(1)=-9\), \(y(-1)=-5\).`,
+      ], R`\((1,-9)\) and \((-1,-5)\)`),
+      P(R`Find \(f''(x)\) for \(f(x)=-4x^{3}+3x^{2}+3x\).`, [
+        R`\(f'(x)=-12x^{2}+6x+3\).`,
+        R`Differentiate again.`,
+      ], R`\(f''(x)=-24x+6\)`),
+      P(R`If \(f(x)=2x^{3}-4x^{2}-6x\), find \(f'(3)\).`, [
+        R`\(f'(x)=6x^{2}-8x-6\).`,
+        R`Plug in \(x=3\).`,
+      ], R`\(24\)`),
+      P(R`Differentiate \(f(x)=11x^{4}+10x^{3}-9x-3\).`, [
+        R`Power rule term by term; the constant becomes 0.`,
+      ], R`\(f'(x)=44x^{3}+30x^{2}-9\)`),
+      P(R`Use the product rule on \(f(x)=(2x-5)(-5x^{2}-3)\).`, [
+        R`\(f'=2(-5x^{2}-3)+(2x-5)(-10x)\).`,
+        R`Expand and combine.`,
+      ], R`\(f'(x)=-30x^{2}+50x-6\)`),
+      P(R`Use the quotient rule on \(f(x)=\dfrac{5x-3}{3x-2}\).`, [
+        R`\(f'=\dfrac{5(3x-2)-(5x-3)(3)}{(3x-2)^2}\).`,
+        R`The \(x\) terms cancel on top: \(-10-(-9)=-1\).`,
+      ], R`\(f'(x)=\dfrac{-1}{(3x-2)^2}\)`),
+      P(R`Differentiate \(f(x)=-5\sqrt x-\dfrac{3}{x^{3}}\).`, [
+        R`Rewrite: \(-5x^{1/2}-3x^{-3}\).`,
+        R`Power rule: \(-\tfrac{5}{2}x^{-1/2}+9x^{-4}\).`,
+      ], R`\(f'(x)=-\dfrac{5}{2\sqrt x}+\dfrac{9}{x^{4}}\)`),
+      P(R`Differentiate \(f(x)=\dfrac{-5x+3}{x^2+2}\).`, [
+        R`\(f'=\dfrac{-5(x^2+2)-(-5x+3)(2x)}{(x^2+2)^2}\).`,
+        R`Top: \(-5x^{2}-10-(-10x^{2}+6x)\).`,
+      ], R`\(f'(x)=\dfrac{5x^{2}-6x-10}{(x^2+2)^2}\)`),
+      P(R`Find the points where \(y=x^{3}-3x+5\) has a horizontal tangent.`, [
+        R`\(y'=3x^2-3=0\Rightarrow x^2=1\Rightarrow x=\pm1\).`,
+        R`\(y(1)=3\), \(y(-1)=7\).`,
+      ], R`\((1,3)\) and \((-1,7)\)`),
+      P(R`Find \(f''(x)\) for \(f(x)=8x^{3}+7x^{2}-4x\).`, [
+        R`\(f'(x)=24x^{2}+14x-4\).`,
+        R`Differentiate again.`,
+      ], R`\(f''(x)=48x+14\)`),
+      P(R`If \(f(x)=-x^{4}+5x^{2}-x\), find \(f'(-2)\).`, [
+        R`\(f'(x)=-4x^{3}+10x-1\).`,
+        R`Plug in \(x=-2\).`,
+      ], R`\(11\)`),
+      P(R`Differentiate \(f(x)=6x^{8}-12x^{2}+4x+7\).`, [
+        R`Power rule term by term; the constant becomes 0.`,
+      ], R`\(f'(x)=48x^{7}-24x+4\)`),
+      P(R`Use the product rule on \(f(x)=(5x-3)(2x^{2}+5)\).`, [
+        R`\(f'=5(2x^{2}+5)+(5x-3)(4x)\).`,
+        R`Expand and combine.`,
+      ], R`\(f'(x)=30x^{2}-12x+25\)`),
+      P(R`Use the quotient rule on \(f(x)=\dfrac{5x-1}{6x+4}\).`, [
+        R`\(f'=\dfrac{5(6x+4)-(5x-1)(6)}{(6x+4)^2}\).`,
+        R`The \(x\) terms cancel on top: \(20-(-6)=26\).`,
+      ], R`\(f'(x)=\dfrac{26}{(6x+4)^2}\)`),
+      P(R`Differentiate \(f(x)=-9\sqrt x-\dfrac{2}{x^{3}}\).`, [
+        R`Rewrite: \(-9x^{1/2}-2x^{-3}\).`,
+        R`Power rule: \(-\tfrac{9}{2}x^{-1/2}+6x^{-4}\).`,
+      ], R`\(f'(x)=-\dfrac{9}{2\sqrt x}+\dfrac{6}{x^{4}}\)`),
+      P(R`Differentiate \(f(x)=\dfrac{-x-7}{x^2+4}\).`, [
+        R`\(f'=\dfrac{-1(x^2+4)-(-x-7)(2x)}{(x^2+4)^2}\).`,
+        R`Top: \(-x^{2}-4-(-2x^{2}-14x)\).`,
+      ], R`\(f'(x)=\dfrac{x^{2}+14x-4}{(x^2+4)^2}\)`),
+      P(R`Find the points where \(y=x^{3}-3x+4\) has a horizontal tangent.`, [
+        R`\(y'=3x^2-3=0\Rightarrow x^2=1\Rightarrow x=\pm1\).`,
+        R`\(y(1)=2\), \(y(-1)=6\).`,
+      ], R`\((1,2)\) and \((-1,6)\)`),
     ],
   },
 
@@ -1035,53 +2334,252 @@ window.TOPICS = [
           R`\(\dfrac{d}{dx}\log_a u=\dfrac{u'}{u\ln a}\).`,
           R`\(u=x^3+1\), \(u'=3x^2\), \(a=2\).`,
         ], R`\(f'(x)=\dfrac{3x^2}{(x^3+1)\ln2}\)`),
-      // ---- even more practice ----
-      P(R`Differentiate \(f(x)=(3x-1)^{5}\).`, [
-        R`Outside: \(5(3x-1)^{4}\). Inside derivative: \(3\).`,
-        R`Multiply: \(15(3x-1)^{4}\).`,
-      ], R`\(f'(x)=15(3x-1)^{4}\)`),
-      P(R`Differentiate \(f(x)=(-2x+4)^{6}\).`, [
-        R`Outside: \(6(-2x+4)^{5}\). Inside derivative: \(-2\).`,
-        R`Multiply: \(-12(-2x+4)^{5}\).`,
-      ], R`\(f'(x)=-12(-2x+4)^{5}\)`),
-      P(R`Differentiate \(f(x)=(-2x-5)^{6}\).`, [
-        R`Outside: \(6(-2x-5)^{5}\). Inside derivative: \(-2\).`,
-        R`Multiply: \(-12(-2x-5)^{5}\).`,
-      ], R`\(f'(x)=-12(-2x-5)^{5}\)`),
-      P(R`Differentiate \(f(x)=(-5x-1)^{3}\).`, [
-        R`Outside: \(3(-5x-1)^{2}\). Inside derivative: \(-5\).`,
-        R`Multiply: \(-15(-5x-1)^{2}\).`,
-      ], R`\(f'(x)=-15(-5x-1)^{2}\)`),
-      P(R`Differentiate \(f(x)=\cos(3x^{4})\).`, [
-        R`Outside derivative: \(-\sin(3x^{4})\). Inside derivative: \(12x^{3}\).`,
-        R`Multiply them.`,
-      ], R`\(f'(x)=-12x^{3}\sin(3x^{4})\)`),
-      P(R`Differentiate \(f(x)=\sin(4x^{4})\).`, [
-        R`Outside derivative: \(\cos(4x^{4})\). Inside derivative: \(16x^{3}\).`,
-        R`Multiply them.`,
-      ], R`\(f'(x)=16x^{3}\cos(4x^{4})\)`),
-      P(R`Differentiate \(f(x)=\sin(6x^{3})\).`, [
-        R`Outside derivative: \(\cos(6x^{3})\). Inside derivative: \(18x^{2}\).`,
-        R`Multiply them.`,
-      ], R`\(f'(x)=18x^{2}\cos(6x^{3})\)`),
-      P(R`Differentiate \(f(x)=e^{3x^{2}-2}\).`, [
-        R`\(\dfrac{d}{dx}e^u=e^u\cdot u'\), with \(u=3x^{2}-2\), \(u'=6x\).`,
-      ], R`\(f'(x)=6x\,e^{3x^{2}-2}\)`),
-      P(R`Differentiate \(f(x)=e^{x^{2}+4}\).`, [
-        R`\(\dfrac{d}{dx}e^u=e^u\cdot u'\), with \(u=x^{2}+4\), \(u'=2x\).`,
-      ], R`\(f'(x)=2x\,e^{x^{2}+4}\)`),
-      P(R`Differentiate \(f(x)=e^{x^{2}+2}\).`, [
-        R`\(\dfrac{d}{dx}e^u=e^u\cdot u'\), with \(u=x^{2}+2\), \(u'=2x\).`,
-      ], R`\(f'(x)=2x\,e^{x^{2}+2}\)`),
-      P(R`Differentiate \(f(x)=\ln(4x^{2}+7)\).`, [
-        R`\(\dfrac{d}{dx}\ln u=\dfrac{u'}{u}\), with \(u=4x^{2}+7\), \(u'=8x\).`,
-      ], R`\(f'(x)=\dfrac{8x}{4x^{2}+7}\)`),
-      P(R`Differentiate \(f(x)=\ln(4x^{2}+2)\).`, [
-        R`\(\dfrac{d}{dx}\ln u=\dfrac{u'}{u}\), with \(u=4x^{2}+2\), \(u'=8x\).`,
-      ], R`\(f'(x)=\dfrac{8x}{4x^{2}+2}\)`),
-      P(R`Differentiate \(f(x)=\ln(x^{2}+9)\).`, [
-        R`\(\dfrac{d}{dx}\ln u=\dfrac{u'}{u}\), with \(u=x^{2}+9\), \(u'=2x\).`,
-      ], R`\(f'(x)=\dfrac{2x}{x^{2}+9}\)`),
+      // ---- generated practice (numbers vary; answers computed) ----
+      P(R`Differentiate \(f(x)=(-7x-6)^{11}\).`, [
+        R`Outside: \(11(-7x-6)^{10}\); inside derivative \(-7\).`,
+      ], R`\(f'(x)=-77(-7x-6)^{10}\)`),
+      P(R`Differentiate \(f(x)=\sin(9x^{5})\).`, [
+        R`Outside: \(\cos(9x^{5})\). Inside: \(45x^{4}\).`,
+      ], R`\(f'(x)=45x^{4}\cos(9x^{5})\)`),
+      P(R`Differentiate \(f(x)=e^{-4x^{2}+1}\).`, [
+        R`\(e^u\cdot u'\) with \(u'=-8x\).`,
+      ], R`\(f'(x)=-8x\,e^{-4x^{2}+1}\)`),
+      P(R`Differentiate \(f(x)=\ln(3x^{2}+11)\).`, [
+        R`\(\dfrac{u'}{u}\) with \(u'=6x\).`,
+      ], R`\(f'(x)=\dfrac{6x}{3x^{2}+11}\)`),
+      P(R`Differentiate \(f(x)=\sqrt{9x+7}\).`, [
+        R`\((9x+7)^{1/2}\to\tfrac12(9x+7)^{-1/2}\cdot9\).`,
+      ], R`\(f'(x)=\dfrac{9}{2\sqrt{9x+7}}\)`),
+      P(R`Differentiate \(f(x)=\tan(5x+9)\).`, [
+        R`\(\sec^2(5x+9)\) times inside derivative \(5\).`,
+      ], R`\(f'(x)=5\sec^2(5x+9)\)`),
+      P(R`Differentiate \(f(x)=\sin^{6}x\).`, [
+        R`Rewrite as \((\sin x)^{6}\).`,
+        R`\(6(\sin x)^{5}\) times \(\cos x\).`,
+      ], R`\(f'(x)=6\sin^{5}x\cos x\)`),
+      P(R`Differentiate \(f(x)=e^{4x}\sin(5x)\).`, [
+        R`Product rule: \((e^{4x})'=4e^{4x}\), \((\sin 5x)'=5\cos(5x)\).`,
+        R`\(f'=4e^{4x}\sin(5x)+5e^{4x}\cos(5x)\).`,
+      ], R`\(f'(x)=e^{4x}\big(4\sin(5x)+5\cos(5x)\big)\)`),
+      P(R`Differentiate \(f(x)=(x^2-6)^{2}\).`, [
+        R`\(2(x^2-6)^{1}\cdot2x\).`,
+      ], R`\(f'(x)=4x(x^2-6)^{1}\)`),
+      P(R`Differentiate \(f(x)=9^{-5x}\).`, [
+        R`\(\dfrac{d}{dx}a^u=a^u\ln a\cdot u'\) with \(u'=-5\).`,
+      ], R`\(f'(x)=-5(\ln 9)\,9^{-5x}\)`),
+      P(R`Differentiate \(f(x)=\ln(5x+6)\).`, [
+        R`\(\dfrac{u'}{u}\) with \(u'=5\).`,
+      ], R`\(f'(x)=\dfrac{5}{5x+6}\)`),
+      P(R`Differentiate \(f(x)=\arctan(9x)\).`, [
+        R`\(\dfrac{u'}{1+u^2}\) with \(u=9x\).`,
+      ], R`\(f'(x)=\dfrac{9}{1+81x^2}\)`),
+      P(R`Differentiate \(f(x)=\cos(e^{x})\).`, [
+        R`Outside: \(-\sin(e^{x})\). Inside: \(e^{x}\).`,
+      ], R`\(f'(x)=-e^{x}\sin(e^{x})\)`),
+      P(R`Differentiate \(f(x)=(4x+3)^{9}\).`, [
+        R`Outside: \(9(4x+3)^{8}\); inside derivative \(4\).`,
+      ], R`\(f'(x)=36(4x+3)^{8}\)`),
+      P(R`Differentiate \(f(x)=\cos(6x^{5})\).`, [
+        R`Outside: \(-\sin(6x^{5})\). Inside: \(30x^{4}\).`,
+      ], R`\(f'(x)=-30x^{4}\sin(6x^{5})\)`),
+      P(R`Differentiate \(f(x)=e^{-6x^{2}-8}\).`, [
+        R`\(e^u\cdot u'\) with \(u'=-12x\).`,
+      ], R`\(f'(x)=-12x\,e^{-6x^{2}-8}\)`),
+      P(R`Differentiate \(f(x)=\ln(8x^{2}+7)\).`, [
+        R`\(\dfrac{u'}{u}\) with \(u'=16x\).`,
+      ], R`\(f'(x)=\dfrac{16x}{8x^{2}+7}\)`),
+      P(R`Differentiate \(f(x)=\sqrt{-9x-9}\).`, [
+        R`\((-9x-9)^{1/2}\to\tfrac12(-9x-9)^{-1/2}\cdot(-9)\).`,
+      ], R`\(f'(x)=-\dfrac{9}{2\sqrt{-9x-9}}\)`),
+      P(R`Differentiate \(f(x)=\tan(-7x-3)\).`, [
+        R`\(\sec^2(-7x-3)\) times inside derivative \(-7\).`,
+      ], R`\(f'(x)=-7\sec^2(-7x-3)\)`),
+      P(R`Differentiate \(f(x)=\sin^{5}x\).`, [
+        R`Rewrite as \((\sin x)^{5}\).`,
+        R`\(5(\sin x)^{4}\) times \(\cos x\).`,
+      ], R`\(f'(x)=5\sin^{4}x\cos x\)`),
+      P(R`Differentiate \(f(x)=e^{-2x}\sin(7x)\).`, [
+        R`Product rule: \((e^{-2x})'=-2e^{-2x}\), \((\sin 7x)'=7\cos(7x)\).`,
+        R`\(f'=-2e^{-2x}\sin(7x)+7e^{-2x}\cos(7x)\).`,
+      ], R`\(f'(x)=e^{-2x}\big(-2\sin(7x)+7\cos(7x)\big)\)`),
+      P(R`Differentiate \(f(x)=(x^2-7)^{5}\).`, [
+        R`\(5(x^2-7)^{4}\cdot2x\).`,
+      ], R`\(f'(x)=10x(x^2-7)^{4}\)`),
+      P(R`Differentiate \(f(x)=3^{-2x}\).`, [
+        R`\(\dfrac{d}{dx}a^u=a^u\ln a\cdot u'\) with \(u'=-2\).`,
+      ], R`\(f'(x)=-2(\ln 3)\,3^{-2x}\)`),
+      P(R`Differentiate \(f(x)=\ln(-4x+3)\).`, [
+        R`\(\dfrac{u'}{u}\) with \(u'=-4\).`,
+      ], R`\(f'(x)=\dfrac{-4}{-4x+3}\)`),
+      P(R`Differentiate \(f(x)=\arctan(11x)\).`, [
+        R`\(\dfrac{u'}{1+u^2}\) with \(u=11x\).`,
+      ], R`\(f'(x)=\dfrac{11}{1+121x^2}\)`),
+      P(R`Differentiate \(f(x)=\cos(e^{4x})\).`, [
+        R`Outside: \(-\sin(e^{4x})\). Inside: \(4e^{4x}\).`,
+      ], R`\(f'(x)=-4e^{4x}\sin(e^{4x})\)`),
+      P(R`Differentiate \(f(x)=(7x-8)^{6}\).`, [
+        R`Outside: \(6(7x-8)^{5}\); inside derivative \(7\).`,
+      ], R`\(f'(x)=42(7x-8)^{5}\)`),
+      P(R`Differentiate \(f(x)=\sin(5x^{5})\).`, [
+        R`Outside: \(\cos(5x^{5})\). Inside: \(25x^{4}\).`,
+      ], R`\(f'(x)=25x^{4}\cos(5x^{5})\)`),
+      P(R`Differentiate \(f(x)=e^{2x^{2}+2}\).`, [
+        R`\(e^u\cdot u'\) with \(u'=4x\).`,
+      ], R`\(f'(x)=4x\,e^{2x^{2}+2}\)`),
+      P(R`Differentiate \(f(x)=\ln(8x^{2}+9)\).`, [
+        R`\(\dfrac{u'}{u}\) with \(u'=16x\).`,
+      ], R`\(f'(x)=\dfrac{16x}{8x^{2}+9}\)`),
+      P(R`Differentiate \(f(x)=\sqrt{x-8}\).`, [
+        R`\((x-8)^{1/2}\to\tfrac12(x-8)^{-1/2}\cdot1\).`,
+      ], R`\(f'(x)=\dfrac{1}{2\sqrt{x-8}}\)`),
+      P(R`Differentiate \(f(x)=\tan(-3x+7)\).`, [
+        R`\(\sec^2(-3x+7)\) times inside derivative \(-3\).`,
+      ], R`\(f'(x)=-3\sec^2(-3x+7)\)`),
+      P(R`Differentiate \(f(x)=\sin^{7}x\).`, [
+        R`Rewrite as \((\sin x)^{7}\).`,
+        R`\(7(\sin x)^{6}\) times \(\cos x\).`,
+      ], R`\(f'(x)=7\sin^{6}x\cos x\)`),
+      P(R`Differentiate \(f(x)=e^{-2x}\sin(6x)\).`, [
+        R`Product rule: \((e^{-2x})'=-2e^{-2x}\), \((\sin 6x)'=6\cos(6x)\).`,
+        R`\(f'=-2e^{-2x}\sin(6x)+6e^{-2x}\cos(6x)\).`,
+      ], R`\(f'(x)=e^{-2x}\big(-2\sin(6x)+6\cos(6x)\big)\)`),
+      P(R`Differentiate \(f(x)=(x^2+9)^{8}\).`, [
+        R`\(8(x^2+9)^{7}\cdot2x\).`,
+      ], R`\(f'(x)=16x(x^2+9)^{7}\)`),
+      P(R`Differentiate \(f(x)=8^{2x}\).`, [
+        R`\(\dfrac{d}{dx}a^u=a^u\ln a\cdot u'\) with \(u'=2\).`,
+      ], R`\(f'(x)=2(\ln 8)\,8^{2x}\)`),
+      P(R`Differentiate \(f(x)=\ln(-4x+6)\).`, [
+        R`\(\dfrac{u'}{u}\) with \(u'=-4\).`,
+      ], R`\(f'(x)=\dfrac{-4}{-4x+6}\)`),
+      P(R`Differentiate \(f(x)=\arctan(5x)\).`, [
+        R`\(\dfrac{u'}{1+u^2}\) with \(u=5x\).`,
+      ], R`\(f'(x)=\dfrac{5}{1+25x^2}\)`),
+      P(R`Differentiate \(f(x)=\cos(e^{-6x})\).`, [
+        R`Outside: \(-\sin(e^{-6x})\). Inside: \(-6e^{-6x}\).`,
+      ], R`\(f'(x)=6e^{-6x}\sin(e^{-6x})\)`),
+      P(R`Differentiate \(f(x)=(4x-6)^{8}\).`, [
+        R`Outside: \(8(4x-6)^{7}\); inside derivative \(4\).`,
+      ], R`\(f'(x)=32(4x-6)^{7}\)`),
+      P(R`Differentiate \(f(x)=\cos(7x^{2})\).`, [
+        R`Outside: \(-\sin(7x^{2})\). Inside: \(14x\).`,
+      ], R`\(f'(x)=-14x\sin(7x^{2})\)`),
+      P(R`Differentiate \(f(x)=e^{6x^{2}+1}\).`, [
+        R`\(e^u\cdot u'\) with \(u'=12x\).`,
+      ], R`\(f'(x)=12x\,e^{6x^{2}+1}\)`),
+      P(R`Differentiate \(f(x)=\ln(3x^{2}+8)\).`, [
+        R`\(\dfrac{u'}{u}\) with \(u'=6x\).`,
+      ], R`\(f'(x)=\dfrac{6x}{3x^{2}+8}\)`),
+      P(R`Differentiate \(f(x)=\sqrt{8x+7}\).`, [
+        R`\((8x+7)^{1/2}\to\tfrac12(8x+7)^{-1/2}\cdot8\).`,
+      ], R`\(f'(x)=\dfrac{4}{\sqrt{8x+7}}\)`),
+      P(R`Differentiate \(f(x)=\tan(x+6)\).`, [
+        R`\(\sec^2(x+6)\) times inside derivative \(1\).`,
+      ], R`\(f'(x)=\sec^2(x+6)\)`),
+      P(R`Differentiate \(f(x)=\cos^{2}x\).`, [
+        R`Rewrite as \((\cos x)^{2}\).`,
+        R`\(2(\cos x)^{1}\) times \(-\sin x\).`,
+      ], R`\(f'(x)=-2\cosx\sin x\)`),
+      P(R`Differentiate \(f(x)=e^{-3x}\sin(4x)\).`, [
+        R`Product rule: \((e^{-3x})'=-3e^{-3x}\), \((\sin 4x)'=4\cos(4x)\).`,
+        R`\(f'=-3e^{-3x}\sin(4x)+4e^{-3x}\cos(4x)\).`,
+      ], R`\(f'(x)=e^{-3x}\big(-3\sin(4x)+4\cos(4x)\big)\)`),
+      P(R`Differentiate \(f(x)=(x^2+7)^{7}\).`, [
+        R`\(7(x^2+7)^{6}\cdot2x\).`,
+      ], R`\(f'(x)=14x(x^2+7)^{6}\)`),
+      P(R`Differentiate \(f(x)=7^{-2x}\).`, [
+        R`\(\dfrac{d}{dx}a^u=a^u\ln a\cdot u'\) with \(u'=-2\).`,
+      ], R`\(f'(x)=-2(\ln 7)\,7^{-2x}\)`),
+      P(R`Differentiate \(f(x)=\ln(5x-9)\).`, [
+        R`\(\dfrac{u'}{u}\) with \(u'=5\).`,
+      ], R`\(f'(x)=\dfrac{5}{5x-9}\)`),
+      P(R`Differentiate \(f(x)=\arctan(10x)\).`, [
+        R`\(\dfrac{u'}{1+u^2}\) with \(u=10x\).`,
+      ], R`\(f'(x)=\dfrac{10}{1+100x^2}\)`),
+      P(R`Differentiate \(f(x)=\cos(e^{-2x})\).`, [
+        R`Outside: \(-\sin(e^{-2x})\). Inside: \(-2e^{-2x}\).`,
+      ], R`\(f'(x)=2e^{-2x}\sin(e^{-2x})\)`),
+      P(R`Differentiate \(f(x)=(6x+3)^{11}\).`, [
+        R`Outside: \(11(6x+3)^{10}\); inside derivative \(6\).`,
+      ], R`\(f'(x)=66(6x+3)^{10}\)`),
+      P(R`Differentiate \(f(x)=\cos(8x^{3})\).`, [
+        R`Outside: \(-\sin(8x^{3})\). Inside: \(24x^{2}\).`,
+      ], R`\(f'(x)=-24x^{2}\sin(8x^{3})\)`),
+      P(R`Differentiate \(f(x)=e^{-x^{2}-9}\).`, [
+        R`\(e^u\cdot u'\) with \(u'=-2x\).`,
+      ], R`\(f'(x)=-2x\,e^{-x^{2}-9}\)`),
+      P(R`Differentiate \(f(x)=\ln(6x^{2}+8)\).`, [
+        R`\(\dfrac{u'}{u}\) with \(u'=12x\).`,
+      ], R`\(f'(x)=\dfrac{12x}{6x^{2}+8}\)`),
+      P(R`Differentiate \(f(x)=\sqrt{3x-7}\).`, [
+        R`\((3x-7)^{1/2}\to\tfrac12(3x-7)^{-1/2}\cdot3\).`,
+      ], R`\(f'(x)=\dfrac{3}{2\sqrt{3x-7}}\)`),
+      P(R`Differentiate \(f(x)=\tan(-6x-8)\).`, [
+        R`\(\sec^2(-6x-8)\) times inside derivative \(-6\).`,
+      ], R`\(f'(x)=-6\sec^2(-6x-8)\)`),
+      P(R`Differentiate \(f(x)=e^{x}\sin(3x)\).`, [
+        R`Product rule: \((e^{x})'=e^{x}\), \((\sin 3x)'=3\cos(3x)\).`,
+        R`\(f'=e^{x}\sin(3x)+3e^{x}\cos(3x)\).`,
+      ], R`\(f'(x)=e^{x}\big(\sin(3x)+3\cos(3x)\big)\)`),
+      P(R`Differentiate \(f(x)=(x^2+3)^{3}\).`, [
+        R`\(3(x^2+3)^{2}\cdot2x\).`,
+      ], R`\(f'(x)=6x(x^2+3)^{2}\)`),
+      P(R`Differentiate \(f(x)=9^{-2x}\).`, [
+        R`\(\dfrac{d}{dx}a^u=a^u\ln a\cdot u'\) with \(u'=-2\).`,
+      ], R`\(f'(x)=-2(\ln 9)\,9^{-2x}\)`),
+      P(R`Differentiate \(f(x)=(-6x+4)^{3}\).`, [
+        R`Outside: \(3(-6x+4)^{2}\); inside derivative \(-6\).`,
+      ], R`\(f'(x)=-18(-6x+4)^{2}\)`),
+      P(R`Differentiate \(f(x)=\cos(7x^{4})\).`, [
+        R`Outside: \(-\sin(7x^{4})\). Inside: \(28x^{3}\).`,
+      ], R`\(f'(x)=-28x^{3}\sin(7x^{4})\)`),
+      P(R`Differentiate \(f(x)=e^{-3x^{2}-3}\).`, [
+        R`\(e^u\cdot u'\) with \(u'=-6x\).`,
+      ], R`\(f'(x)=-6x\,e^{-3x^{2}-3}\)`),
+      P(R`Differentiate \(f(x)=\ln(3x^{2}+5)\).`, [
+        R`\(\dfrac{u'}{u}\) with \(u'=6x\).`,
+      ], R`\(f'(x)=\dfrac{6x}{3x^{2}+5}\)`),
+      P(R`Differentiate \(f(x)=\sqrt{-8x+5}\).`, [
+        R`\((-8x+5)^{1/2}\to\tfrac12(-8x+5)^{-1/2}\cdot(-8)\).`,
+      ], R`\(f'(x)=-\dfrac{4}{\sqrt{-8x+5}}\)`),
+      P(R`Differentiate \(f(x)=\tan(x-9)\).`, [
+        R`\(\sec^2(x-9)\) times inside derivative \(1\).`,
+      ], R`\(f'(x)=\sec^2(x-9)\)`),
+      P(R`Differentiate \(f(x)=\cos^{6}x\).`, [
+        R`Rewrite as \((\cos x)^{6}\).`,
+        R`\(6(\cos x)^{5}\) times \(-\sin x\).`,
+      ], R`\(f'(x)=-6\cos^{5}x\sin x\)`),
+      P(R`Differentiate \(f(x)=e^{2x}\sin(3x)\).`, [
+        R`Product rule: \((e^{2x})'=2e^{2x}\), \((\sin 3x)'=3\cos(3x)\).`,
+        R`\(f'=2e^{2x}\sin(3x)+3e^{2x}\cos(3x)\).`,
+      ], R`\(f'(x)=e^{2x}\big(2\sin(3x)+3\cos(3x)\big)\)`),
+      P(R`Differentiate \(f(x)=(x^2+5)^{8}\).`, [
+        R`\(8(x^2+5)^{7}\cdot2x\).`,
+      ], R`\(f'(x)=16x(x^2+5)^{7}\)`),
+      P(R`Differentiate \(f(x)=10^{x}\).`, [
+        R`\(\dfrac{d}{dx}a^u=a^u\ln a\cdot u'\) with \(u'=1\).`,
+      ], R`\(f'(x)=(\ln 10)\,10^{x}\)`),
+      P(R`Differentiate \(f(x)=\ln(-2x-3)\).`, [
+        R`\(\dfrac{u'}{u}\) with \(u'=-2\).`,
+      ], R`\(f'(x)=\dfrac{-2}{-2x-3}\)`),
+      P(R`Differentiate \(f(x)=\cos(e^{-x})\).`, [
+        R`Outside: \(-\sin(e^{-x})\). Inside: \(-e^{-x}\).`,
+      ], R`\(f'(x)=e^{-x}\sin(e^{-x})\)`),
+      P(R`Differentiate \(f(x)=(2x-1)^{5}\).`, [
+        R`Outside: \(5(2x-1)^{4}\); inside derivative \(2\).`,
+      ], R`\(f'(x)=10(2x-1)^{4}\)`),
+      P(R`Differentiate \(f(x)=\sin(6x^{4})\).`, [
+        R`Outside: \(\cos(6x^{4})\). Inside: \(24x^{3}\).`,
+      ], R`\(f'(x)=24x^{3}\cos(6x^{4})\)`),
+      P(R`Differentiate \(f(x)=e^{-6x^{2}-5}\).`, [
+        R`\(e^u\cdot u'\) with \(u'=-12x\).`,
+      ], R`\(f'(x)=-12x\,e^{-6x^{2}-5}\)`),
+      P(R`Differentiate \(f(x)=\ln(4x^{2}+3)\).`, [
+        R`\(\dfrac{u'}{u}\) with \(u'=8x\).`,
+      ], R`\(f'(x)=\dfrac{8x}{4x^{2}+3}\)`),
+      P(R`Differentiate \(f(x)=\sqrt{2x-8}\).`, [
+        R`\((2x-8)^{1/2}\to\tfrac12(2x-8)^{-1/2}\cdot2\).`,
+      ], R`\(f'(x)=\dfrac{1}{\sqrt{2x-8}}\)`),
     ],
   },
 
@@ -1203,62 +2701,377 @@ window.TOPICS = [
           R`Product rule: \(\dfrac{1}{y}y'=\cos x\ln x+\sin x\cdot\dfrac1x\).`,
           R`Multiply by \(y=x^{\sin x}\).`,
         ], R`\(y'=x^{\sin x}\left(\cos x\ln x+\dfrac{\sin x}{x}\right)\)`),
-      // ---- even more practice ----
-      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2+4y^2=25\) and the slope of the tangent line at \((3,2)\).`, [
-        R`Differentiate: \(2x+8y\dfrac{dy}{dx}=0\).`,
-        R`Solve: \(\dfrac{dy}{dx}=-\dfrac{2x}{8y}=-\dfrac{x}{4y}\).`,
-        R`Plug in \((3,2)\): \(-\dfrac{3}{8}\).`,
-      ], R`\(\dfrac{dy}{dx}=-\dfrac{x}{4y}\); slope \(-\dfrac{3}{8}\)`),
-      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2+2y^2=41\) and the slope of the tangent line at \((-3,4)\).`, [
-        R`Differentiate: \(2x+4y\dfrac{dy}{dx}=0\).`,
-        R`Solve: \(\dfrac{dy}{dx}=-\dfrac{2x}{4y}=-\dfrac{x}{2y}\).`,
-        R`Plug in \((-3,4)\): \(\dfrac{3}{8}\).`,
-      ], R`\(\dfrac{dy}{dx}=-\dfrac{x}{2y}\); slope \(\dfrac{3}{8}\)`),
-      P(R`Find \(\dfrac{dy}{dx}\) for \(3x^2+2y^2=50\) and the slope of the tangent line at \((-4,1)\).`, [
-        R`Differentiate: \(6x+4y\dfrac{dy}{dx}=0\).`,
-        R`Solve: \(\dfrac{dy}{dx}=-\dfrac{6x}{4y}=-\dfrac{3x}{2y}\).`,
-        R`Plug in \((-4,1)\): \(6\).`,
-      ], R`\(\dfrac{dy}{dx}=-\dfrac{3x}{2y}\); slope \(6\)`),
-      P(R`Find \(\dfrac{dy}{dx}\) for \(4x^2+2y^2=44\) and the slope of the tangent line at \((3,-2)\).`, [
-        R`Differentiate: \(8x+4y\dfrac{dy}{dx}=0\).`,
-        R`Solve: \(\dfrac{dy}{dx}=-\dfrac{8x}{4y}=-\dfrac{2x}{y}\).`,
-        R`Plug in \((3,-2)\): \(3\).`,
-      ], R`\(\dfrac{dy}{dx}=-\dfrac{2x}{y}\); slope \(3\)`),
-      P(R`Find \(\dfrac{dy}{dx}\) for \(5x^2+5y^2=40\) and the slope of the tangent line at \((-2,-2)\).`, [
-        R`Differentiate: \(10x+10y\dfrac{dy}{dx}=0\).`,
-        R`Solve: \(\dfrac{dy}{dx}=-\dfrac{10x}{10y}=-\dfrac{x}{y}\).`,
-        R`Plug in \((-2,-2)\): \(-1\).`,
-      ], R`\(\dfrac{dy}{dx}=-\dfrac{x}{y}\); slope \(-1\)`),
-      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2+xy+y^2=9\), then the slope at \((3,-3)\).`, [
-        R`Differentiate (product rule on the middle): \(2x+1\left(y+x\dfrac{dy}{dx}\right)+2y\dfrac{dy}{dx}=0\).`,
-        R`Gather: \(\dfrac{dy}{dx}(1x+2y)=-(2x+1y)\).`,
-        R`\(\dfrac{dy}{dx}=-\dfrac{2x+1y}{1x+2y}\).`,
-        R`At \((3,-3)\): \(-\dfrac{3}{-3}=1\).`,
-      ], R`\(\dfrac{dy}{dx}=-\dfrac{2x+1y}{1x+2y}\); slope \(1\)`),
-      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2-3xy+y^2=19\), then the slope at \((1,-3)\).`, [
-        R`Differentiate (product rule on the middle): \(2x+(-3)\left(y+x\dfrac{dy}{dx}\right)+2y\dfrac{dy}{dx}=0\).`,
-        R`Gather: \(\dfrac{dy}{dx}(-3x+2y)=-(2x-3y)\).`,
+      // ---- generated practice (numbers vary; answers computed) ----
+      P(R`Find \(\dfrac{dy}{dx}\) for \(3x^2+5y^2=57\) and the slope at \((2,3)\).`, [
+        R`\(6x+10y\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{3x}{5y}\).`,
+        R`At the point: \(-\dfrac{2}{5}\).`,
+      ], R`\(\dfrac{dy}{dx}=-\dfrac{3x}{5y}\); slope \(-\dfrac{2}{5}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2-3xy+y^2=-9\) and the slope at \((3,3)\).`, [
+        R`\(2x+(-3)\left(y+x\dfrac{dy}{dx}\right)+2y\dfrac{dy}{dx}=0\).`,
         R`\(\dfrac{dy}{dx}=-\dfrac{2x-3y}{-3x+2y}\).`,
-        R`At \((1,-3)\): \(-\dfrac{11}{-9}=\dfrac{11}{9}\).`,
-      ], R`\(\dfrac{dy}{dx}=-\dfrac{2x-3y}{-3x+2y}\); slope \(\dfrac{11}{9}\)`),
-      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2-3xy+y^2=1\), then the slope at \((-1,-3)\).`, [
-        R`Differentiate (product rule on the middle): \(2x+(-3)\left(y+x\dfrac{dy}{dx}\right)+2y\dfrac{dy}{dx}=0\).`,
-        R`Gather: \(\dfrac{dy}{dx}(-3x+2y)=-(2x-3y)\).`,
-        R`\(\dfrac{dy}{dx}=-\dfrac{2x-3y}{-3x+2y}\).`,
-        R`At \((-1,-3)\): \(-\dfrac{7}{-3}=\dfrac{7}{3}\).`,
-      ], R`\(\dfrac{dy}{dx}=-\dfrac{2x-3y}{-3x+2y}\); slope \(\dfrac{7}{3}\)`),
-      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2+3xy+y^2=20\), then the slope at \((2,2)\).`, [
-        R`Differentiate (product rule on the middle): \(2x+3\left(y+x\dfrac{dy}{dx}\right)+2y\dfrac{dy}{dx}=0\).`,
-        R`Gather: \(\dfrac{dy}{dx}(3x+2y)=-(2x+3y)\).`,
+        R`Plug in: \(-\dfrac{-3}{-3}\).`,
+      ], R`\(\dfrac{dy}{dx}=-\dfrac{2x-3y}{-3x+2y}\); slope \(-1\)`),
+      P(R`Find the slope of \(xy=2\) at \((-2,-1)\).`, [
+        R`\(y+x\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=-\dfrac yx\).`,
+        R`\(-\dfrac{-1}{-2}\).`,
+      ], R`\(-\dfrac{1}{2}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(y^2=x^3+25\) and the slope at \((0,5)\).`, [
+        R`\(2y\dfrac{dy}{dx}=3x^2\).`,
+        R`\(\dfrac{dy}{dx}=\dfrac{3x^2}{2y}\); plug in.`,
+      ], R`\(\dfrac{3x^2}{2y}\); slope \(0\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^3+y^3=-65\) and the slope at \((-4,-1)\).`, [
+        R`\(3x^2+3y^2\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=-\dfrac{x^2}{y^2}\).`,
+        R`Plug in.`,
+      ], R`\(-\dfrac{x^2}{y^2}\); slope \(-16\)`),
+      P(R`Find the tangent line to \(x^2-y^2=-27\) at \((3,-6)\).`, [
+        R`\(2x-2y\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=\dfrac xy\).`,
+        R`Slope \(-\dfrac{1}{2}\); \(y-(-6)=-\dfrac{1}{2}(x-3)\).`,
+      ], R`\(y=-\tfrac{1}{2}x-\tfrac{9}{2}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2y=-4\) and the slope at \((-2,-1)\).`, [
+        R`\(2xy+x^2\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{2xy}{x^2}=-\dfrac{2y}{x}\).`,
+      ], R`\(-\dfrac{2y}{x}\); slope \(-1\)`),
+      P(R`Find the equation of the tangent line to \(4x^2+y^2=5\) at \((-1,-1)\).`, [
+        R`\(\dfrac{dy}{dx}=-\dfrac{4x}{y}\) &rArr; slope \(-4\).`,
+        R`\(y-(-1)=-4(x-(-1))\).`,
+      ], R`\(y=-4x-5\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2+5y^2=70\) and the slope at \((5,3)\).`, [
+        R`\(2x+10y\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{x}{5y}\).`,
+        R`At the point: \(-\dfrac{1}{3}\).`,
+      ], R`\(\dfrac{dy}{dx}=-\dfrac{x}{5y}\); slope \(-\dfrac{1}{3}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2+4xy+y^2=-11\) and the slope at \((-3,2)\).`, [
+        R`\(2x+4\left(y+x\dfrac{dy}{dx}\right)+2y\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{2x+4y}{4x+2y}\).`,
+        R`Plug in: \(-\dfrac{2}{-8}\).`,
+      ], R`\(\dfrac{dy}{dx}=-\dfrac{2x+4y}{4x+2y}\); slope \(\dfrac{1}{4}\)`),
+      P(R`Find the slope of \(xy=7\) at \((7,1)\).`, [
+        R`\(y+x\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=-\dfrac yx\).`,
+        R`\(-\dfrac{1}{7}\).`,
+      ], R`\(-\dfrac{1}{7}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(y^2=x^3-2\) and the slope at \((3,-5)\).`, [
+        R`\(2y\dfrac{dy}{dx}=3x^2\).`,
+        R`\(\dfrac{dy}{dx}=\dfrac{3x^2}{2y}\); plug in.`,
+      ], R`\(\dfrac{3x^2}{2y}\); slope \(-\dfrac{27}{10}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^3+y^3=7\) and the slope at \((-1,2)\).`, [
+        R`\(3x^2+3y^2\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=-\dfrac{x^2}{y^2}\).`,
+        R`Plug in.`,
+      ], R`\(-\dfrac{x^2}{y^2}\); slope \(-\dfrac{1}{4}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2y=80\) and the slope at \((4,5)\).`, [
+        R`\(2xy+x^2\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{2xy}{x^2}=-\dfrac{2y}{x}\).`,
+      ], R`\(-\dfrac{2y}{x}\); slope \(-\dfrac{5}{2}\)`),
+      P(R`Find the equation of the tangent line to \(5x^2+5y^2=160\) at \((-4,-4)\).`, [
+        R`\(\dfrac{dy}{dx}=-\dfrac{5x}{5y}\) &rArr; slope \(-1\).`,
+        R`\(y-(-4)=-1(x-(-4))\).`,
+      ], R`\(y=-x-8\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2+6y^2=22\) and the slope at \((4,1)\).`, [
+        R`\(2x+12y\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{x}{6y}\).`,
+        R`At the point: \(-\dfrac{2}{3}\).`,
+      ], R`\(\dfrac{dy}{dx}=-\dfrac{x}{6y}\); slope \(-\dfrac{2}{3}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2+2xy+y^2=25\) and the slope at \((2,3)\).`, [
+        R`\(2x+2\left(y+x\dfrac{dy}{dx}\right)+2y\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{2x+2y}{2x+2y}\).`,
+        R`Plug in: \(-\dfrac{10}{10}\).`,
+      ], R`\(\dfrac{dy}{dx}=-\dfrac{2x+2y}{2x+2y}\); slope \(-1\)`),
+      P(R`Find the slope of \(xy=-10\) at \((5,-2)\).`, [
+        R`\(y+x\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=-\dfrac yx\).`,
+        R`\(-\dfrac{-2}{5}\).`,
+      ], R`\(\dfrac{2}{5}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(y^2=x^3+10\) and the slope at \((-1,-3)\).`, [
+        R`\(2y\dfrac{dy}{dx}=3x^2\).`,
+        R`\(\dfrac{dy}{dx}=\dfrac{3x^2}{2y}\); plug in.`,
+      ], R`\(\dfrac{3x^2}{2y}\); slope \(-\dfrac{1}{2}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^3+y^3=-9\) and the slope at \((-1,-2)\).`, [
+        R`\(3x^2+3y^2\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=-\dfrac{x^2}{y^2}\).`,
+        R`Plug in.`,
+      ], R`\(-\dfrac{x^2}{y^2}\); slope \(-\dfrac{1}{4}\)`),
+      P(R`Find the tangent line to \(x^2-y^2=45\) at \((9,-6)\).`, [
+        R`\(2x-2y\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=\dfrac xy\).`,
+        R`Slope \(-\dfrac{3}{2}\); \(y-(-6)=-\dfrac{3}{2}(x-9)\).`,
+      ], R`\(y=-\tfrac{3}{2}x+\tfrac{15}{2}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2y=-32\) and the slope at \((-4,-2)\).`, [
+        R`\(2xy+x^2\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{2xy}{x^2}=-\dfrac{2y}{x}\).`,
+      ], R`\(-\dfrac{2y}{x}\); slope \(-1\)`),
+      P(R`Find the equation of the tangent line to \(2x^2+3y^2=29\) at \((-1,3)\).`, [
+        R`\(\dfrac{dy}{dx}=-\dfrac{2x}{3y}\) &rArr; slope \(\dfrac{2}{9}\).`,
+        R`\(y-3=\dfrac{2}{9}(x-(-1))\).`,
+      ], R`\(y=\tfrac{2}{9}x+\tfrac{29}{9}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(4x^2+2y^2=96\) and the slope at \((4,-4)\).`, [
+        R`\(8x+4y\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{2x}{y}\).`,
+        R`At the point: \(2\).`,
+      ], R`\(\dfrac{dy}{dx}=-\dfrac{2x}{y}\); slope \(2\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2-2xy+y^2=16\) and the slope at \((1,-3)\).`, [
+        R`\(2x+(-2)\left(y+x\dfrac{dy}{dx}\right)+2y\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{2x-2y}{-2x+2y}\).`,
+        R`Plug in: \(-\dfrac{8}{-8}\).`,
+      ], R`\(\dfrac{dy}{dx}=-\dfrac{2x-2y}{-2x+2y}\); slope \(1\)`),
+      P(R`Find the slope of \(xy=-8\) at \((-8,1)\).`, [
+        R`\(y+x\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=-\dfrac yx\).`,
+        R`\(-\dfrac{1}{-8}\).`,
+      ], R`\(\dfrac{1}{8}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(y^2=x^3-7\) and the slope at \((2,-1)\).`, [
+        R`\(2y\dfrac{dy}{dx}=3x^2\).`,
+        R`\(\dfrac{dy}{dx}=\dfrac{3x^2}{2y}\); plug in.`,
+      ], R`\(\dfrac{3x^2}{2y}\); slope \(-6\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^3+y^3=-26\) and the slope at \((-3,1)\).`, [
+        R`\(3x^2+3y^2\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=-\dfrac{x^2}{y^2}\).`,
+        R`Plug in.`,
+      ], R`\(-\dfrac{x^2}{y^2}\); slope \(-9\)`),
+      P(R`Find the tangent line to \(x^2-y^2=77\) at \((-9,-2)\).`, [
+        R`\(2x-2y\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=\dfrac xy\).`,
+        R`Slope \(\dfrac{9}{2}\); \(y-(-2)=\dfrac{9}{2}(x-(-9))\).`,
+      ], R`\(y=\tfrac{9}{2}x+\tfrac{77}{2}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2y=80\) and the slope at \((-4,5)\).`, [
+        R`\(2xy+x^2\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{2xy}{x^2}=-\dfrac{2y}{x}\).`,
+      ], R`\(-\dfrac{2y}{x}\); slope \(\dfrac{5}{2}\)`),
+      P(R`Find the equation of the tangent line to \(x^2+5y^2=24\) at \((-2,-2)\).`, [
+        R`\(\dfrac{dy}{dx}=-\dfrac{x}{5y}\) &rArr; slope \(-\dfrac{1}{5}\).`,
+        R`\(y-(-2)=-\dfrac{1}{5}(x-(-2))\).`,
+      ], R`\(y=-\tfrac{1}{5}x-\tfrac{12}{5}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(2x^2+4y^2=150\) and the slope at \((-5,-5)\).`, [
+        R`\(4x+8y\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{x}{2y}\).`,
+        R`At the point: \(-\dfrac{1}{2}\).`,
+      ], R`\(\dfrac{dy}{dx}=-\dfrac{x}{2y}\); slope \(-\dfrac{1}{2}\)`),
+      P(R`Find the slope of \(xy=-18\) at \((-9,2)\).`, [
+        R`\(y+x\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=-\dfrac yx\).`,
+        R`\(-\dfrac{2}{-9}\).`,
+      ], R`\(\dfrac{2}{9}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(y^2=x^3+37\) and the slope at \((-1,6)\).`, [
+        R`\(2y\dfrac{dy}{dx}=3x^2\).`,
+        R`\(\dfrac{dy}{dx}=\dfrac{3x^2}{2y}\); plug in.`,
+      ], R`\(\dfrac{3x^2}{2y}\); slope \(\dfrac{1}{4}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^3+y^3=-35\) and the slope at \((-2,-3)\).`, [
+        R`\(3x^2+3y^2\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=-\dfrac{x^2}{y^2}\).`,
+        R`Plug in.`,
+      ], R`\(-\dfrac{x^2}{y^2}\); slope \(-\dfrac{4}{9}\)`),
+      P(R`Find the tangent line to \(x^2-y^2=-20\) at \((4,6)\).`, [
+        R`\(2x-2y\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=\dfrac xy\).`,
+        R`Slope \(\dfrac{2}{3}\); \(y-6=\dfrac{2}{3}(x-4)\).`,
+      ], R`\(y=\tfrac{2}{3}x+\tfrac{10}{3}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2y=-25\) and the slope at \((-5,-1)\).`, [
+        R`\(2xy+x^2\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{2xy}{x^2}=-\dfrac{2y}{x}\).`,
+      ], R`\(-\dfrac{2y}{x}\); slope \(-\dfrac{2}{5}\)`),
+      P(R`Find the equation of the tangent line to \(5x^2+y^2=21\) at \((-1,-4)\).`, [
+        R`\(\dfrac{dy}{dx}=-\dfrac{5x}{y}\) &rArr; slope \(-\dfrac{5}{4}\).`,
+        R`\(y-(-4)=-\dfrac{5}{4}(x-(-1))\).`,
+      ], R`\(y=-\tfrac{5}{4}x-\tfrac{21}{4}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(3x^2+2y^2=83\) and the slope at \((-5,-2)\).`, [
+        R`\(6x+4y\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{3x}{2y}\).`,
+        R`At the point: \(-\dfrac{15}{4}\).`,
+      ], R`\(\dfrac{dy}{dx}=-\dfrac{3x}{2y}\); slope \(-\dfrac{15}{4}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2-4xy+y^2=54\) and the slope at \((3,-3)\).`, [
+        R`\(2x+(-4)\left(y+x\dfrac{dy}{dx}\right)+2y\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{2x-4y}{-4x+2y}\).`,
+        R`Plug in: \(-\dfrac{18}{-18}\).`,
+      ], R`\(\dfrac{dy}{dx}=-\dfrac{2x-4y}{-4x+2y}\); slope \(1\)`),
+      P(R`Find the slope of \(xy=-6\) at \((2,-3)\).`, [
+        R`\(y+x\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=-\dfrac yx\).`,
+        R`\(-\dfrac{-3}{2}\).`,
+      ], R`\(\dfrac{3}{2}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^3+y^3=-35\) and the slope at \((-3,-2)\).`, [
+        R`\(3x^2+3y^2\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=-\dfrac{x^2}{y^2}\).`,
+        R`Plug in.`,
+      ], R`\(-\dfrac{x^2}{y^2}\); slope \(-\dfrac{9}{4}\)`),
+      P(R`Find the tangent line to \(x^2-y^2=-80\) at \((-1,9)\).`, [
+        R`\(2x-2y\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=\dfrac xy\).`,
+        R`Slope \(-\dfrac{1}{9}\); \(y-9=-\dfrac{1}{9}(x-(-1))\).`,
+      ], R`\(y=-\tfrac{1}{9}x+\tfrac{80}{9}\)`),
+      P(R`Find the equation of the tangent line to \(x^2+2y^2=18\) at \((4,-1)\).`, [
+        R`\(\dfrac{dy}{dx}=-\dfrac{x}{2y}\) &rArr; slope \(2\).`,
+        R`\(y-(-1)=2(x-4)\).`,
+      ], R`\(y=2x-9\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2+5y^2=30\) and the slope at \((-5,1)\).`, [
+        R`\(2x+10y\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{x}{5y}\).`,
+        R`At the point: \(1\).`,
+      ], R`\(\dfrac{dy}{dx}=-\dfrac{x}{5y}\); slope \(1\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2+3xy+y^2=-4\) and the slope at \((2,-2)\).`, [
+        R`\(2x+3\left(y+x\dfrac{dy}{dx}\right)+2y\dfrac{dy}{dx}=0\).`,
         R`\(\dfrac{dy}{dx}=-\dfrac{2x+3y}{3x+2y}\).`,
-        R`At \((2,2)\): \(-\dfrac{10}{10}=-1\).`,
-      ], R`\(\dfrac{dy}{dx}=-\dfrac{2x+3y}{3x+2y}\); slope \(-1\)`),
-      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2-3xy+y^2=31\), then the slope at \((3,-2)\).`, [
-        R`Differentiate (product rule on the middle): \(2x+(-3)\left(y+x\dfrac{dy}{dx}\right)+2y\dfrac{dy}{dx}=0\).`,
-        R`Gather: \(\dfrac{dy}{dx}(-3x+2y)=-(2x-3y)\).`,
-        R`\(\dfrac{dy}{dx}=-\dfrac{2x-3y}{-3x+2y}\).`,
-        R`At \((3,-2)\): \(-\dfrac{12}{-13}=\dfrac{12}{13}\).`,
-      ], R`\(\dfrac{dy}{dx}=-\dfrac{2x-3y}{-3x+2y}\); slope \(\dfrac{12}{13}\)`),
+        R`Plug in: \(-\dfrac{-2}{2}\).`,
+      ], R`\(\dfrac{dy}{dx}=-\dfrac{2x+3y}{3x+2y}\); slope \(1\)`),
+      P(R`Find the slope of \(xy=-2\) at \((-1,2)\).`, [
+        R`\(y+x\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=-\dfrac yx\).`,
+        R`\(-\dfrac{2}{-1}\).`,
+      ], R`\(2\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(y^2=x^3+43\) and the slope at \((-3,4)\).`, [
+        R`\(2y\dfrac{dy}{dx}=3x^2\).`,
+        R`\(\dfrac{dy}{dx}=\dfrac{3x^2}{2y}\); plug in.`,
+      ], R`\(\dfrac{3x^2}{2y}\); slope \(\dfrac{27}{8}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^3+y^3=-72\) and the slope at \((-4,-2)\).`, [
+        R`\(3x^2+3y^2\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=-\dfrac{x^2}{y^2}\).`,
+        R`Plug in.`,
+      ], R`\(-\dfrac{x^2}{y^2}\); slope \(-4\)`),
+      P(R`Find the tangent line to \(x^2-y^2=-13\) at \((6,7)\).`, [
+        R`\(2x-2y\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=\dfrac xy\).`,
+        R`Slope \(\dfrac{6}{7}\); \(y-7=\dfrac{6}{7}(x-6)\).`,
+      ], R`\(y=\tfrac{6}{7}x+\tfrac{13}{7}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2y=-9\) and the slope at \((3,-1)\).`, [
+        R`\(2xy+x^2\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{2xy}{x^2}=-\dfrac{2y}{x}\).`,
+      ], R`\(-\dfrac{2y}{x}\); slope \(\dfrac{2}{3}\)`),
+      P(R`Find the equation of the tangent line to \(2x^2+3y^2=21\) at \((-3,1)\).`, [
+        R`\(\dfrac{dy}{dx}=-\dfrac{2x}{3y}\) &rArr; slope \(2\).`,
+        R`\(y-1=2(x-(-3))\).`,
+      ], R`\(y=2x+7\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(3x^2+y^2=37\) and the slope at \((2,5)\).`, [
+        R`\(6x+2y\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{3x}{y}\).`,
+        R`At the point: \(-\dfrac{6}{5}\).`,
+      ], R`\(\dfrac{dy}{dx}=-\dfrac{3x}{y}\); slope \(-\dfrac{6}{5}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(y^2=x^3+1\) and the slope at \((2,-3)\).`, [
+        R`\(2y\dfrac{dy}{dx}=3x^2\).`,
+        R`\(\dfrac{dy}{dx}=\dfrac{3x^2}{2y}\); plug in.`,
+      ], R`\(\dfrac{3x^2}{2y}\); slope \(-2\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^3+y^3=-91\) and the slope at \((-3,-4)\).`, [
+        R`\(3x^2+3y^2\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=-\dfrac{x^2}{y^2}\).`,
+        R`Plug in.`,
+      ], R`\(-\dfrac{x^2}{y^2}\); slope \(-\dfrac{9}{16}\)`),
+      P(R`Find the tangent line to \(x^2-y^2=-65\) at \((-4,-9)\).`, [
+        R`\(2x-2y\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=\dfrac xy\).`,
+        R`Slope \(\dfrac{4}{9}\); \(y-(-9)=\dfrac{4}{9}(x-(-4))\).`,
+      ], R`\(y=\tfrac{4}{9}x-\tfrac{65}{9}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2y=-48\) and the slope at \((4,-3)\).`, [
+        R`\(2xy+x^2\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{2xy}{x^2}=-\dfrac{2y}{x}\).`,
+      ], R`\(-\dfrac{2y}{x}\); slope \(\dfrac{3}{2}\)`),
+      P(R`Find the equation of the tangent line to \(5x^2+2y^2=52\) at \((-2,-4)\).`, [
+        R`\(\dfrac{dy}{dx}=-\dfrac{5x}{2y}\) &rArr; slope \(-\dfrac{5}{4}\).`,
+        R`\(y-(-4)=-\dfrac{5}{4}(x-(-2))\).`,
+      ], R`\(y=-\tfrac{5}{4}x-\tfrac{13}{2}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(6x^2+5y^2=155\) and the slope at \((5,-1)\).`, [
+        R`\(12x+10y\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{6x}{5y}\).`,
+        R`At the point: \(6\).`,
+      ], R`\(\dfrac{dy}{dx}=-\dfrac{6x}{5y}\); slope \(6\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2+2xy+y^2=9\) and the slope at \((-1,4)\).`, [
+        R`\(2x+2\left(y+x\dfrac{dy}{dx}\right)+2y\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{2x+2y}{2x+2y}\).`,
+        R`Plug in: \(-\dfrac{6}{6}\).`,
+      ], R`\(\dfrac{dy}{dx}=-\dfrac{2x+2y}{2x+2y}\); slope \(-1\)`),
+      P(R`Find the slope of \(xy=6\) at \((3,2)\).`, [
+        R`\(y+x\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=-\dfrac yx\).`,
+        R`\(-\dfrac{2}{3}\).`,
+      ], R`\(-\dfrac{2}{3}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(y^2=x^3+9\) and the slope at \((0,3)\).`, [
+        R`\(2y\dfrac{dy}{dx}=3x^2\).`,
+        R`\(\dfrac{dy}{dx}=\dfrac{3x^2}{2y}\); plug in.`,
+      ], R`\(\dfrac{3x^2}{2y}\); slope \(0\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^3+y^3=0\) and the slope at \((1,-1)\).`, [
+        R`\(3x^2+3y^2\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=-\dfrac{x^2}{y^2}\).`,
+        R`Plug in.`,
+      ], R`\(-\dfrac{x^2}{y^2}\); slope \(-1\)`),
+      P(R`Find the tangent line to \(x^2-y^2=-33\) at \((-4,-7)\).`, [
+        R`\(2x-2y\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=\dfrac xy\).`,
+        R`Slope \(\dfrac{4}{7}\); \(y-(-7)=\dfrac{4}{7}(x-(-4))\).`,
+      ], R`\(y=\tfrac{4}{7}x-\tfrac{33}{7}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2y=32\) and the slope at \((4,2)\).`, [
+        R`\(2xy+x^2\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{2xy}{x^2}=-\dfrac{2y}{x}\).`,
+      ], R`\(-\dfrac{2y}{x}\); slope \(-1\)`),
+      P(R`Find the equation of the tangent line to \(2x^2+y^2=27\) at \((-3,3)\).`, [
+        R`\(\dfrac{dy}{dx}=-\dfrac{2x}{y}\) &rArr; slope \(2\).`,
+        R`\(y-3=2(x-(-3))\).`,
+      ], R`\(y=2x+9\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(5x^2+y^2=105\) and the slope at \((-4,5)\).`, [
+        R`\(10x+2y\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{5x}{y}\).`,
+        R`At the point: \(4\).`,
+      ], R`\(\dfrac{dy}{dx}=-\dfrac{5x}{y}\); slope \(4\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2-4xy+y^2=24\) and the slope at \((2,-2)\).`, [
+        R`\(2x+(-4)\left(y+x\dfrac{dy}{dx}\right)+2y\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{2x-4y}{-4x+2y}\).`,
+        R`Plug in: \(-\dfrac{12}{-12}\).`,
+      ], R`\(\dfrac{dy}{dx}=-\dfrac{2x-4y}{-4x+2y}\); slope \(1\)`),
+      P(R`Find the slope of \(xy=-14\) at \((7,-2)\).`, [
+        R`\(y+x\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=-\dfrac yx\).`,
+        R`\(-\dfrac{-2}{7}\).`,
+      ], R`\(\dfrac{2}{7}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(y^2=x^3+24\) and the slope at \((1,-5)\).`, [
+        R`\(2y\dfrac{dy}{dx}=3x^2\).`,
+        R`\(\dfrac{dy}{dx}=\dfrac{3x^2}{2y}\); plug in.`,
+      ], R`\(\dfrac{3x^2}{2y}\); slope \(-\dfrac{3}{10}\)`),
+      P(R`Find the tangent line to \(x^2-y^2=32\) at \((-6,2)\).`, [
+        R`\(2x-2y\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=\dfrac xy\).`,
+        R`Slope \(-3\); \(y-2=-3(x-(-6))\).`,
+      ], R`\(y=-3x-16\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2y=-32\) and the slope at \((4,-2)\).`, [
+        R`\(2xy+x^2\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{2xy}{x^2}=-\dfrac{2y}{x}\).`,
+      ], R`\(-\dfrac{2y}{x}\); slope \(1\)`),
+      P(R`Find the equation of the tangent line to \(3x^2+4y^2=48\) at \((-2,-3)\).`, [
+        R`\(\dfrac{dy}{dx}=-\dfrac{3x}{4y}\) &rArr; slope \(-\dfrac{1}{2}\).`,
+        R`\(y-(-3)=-\dfrac{1}{2}(x-(-2))\).`,
+      ], R`\(y=-\tfrac{1}{2}x-4\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2+4y^2=32\) and the slope at \((-4,2)\).`, [
+        R`\(2x+8y\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{x}{4y}\).`,
+        R`At the point: \(\dfrac{1}{2}\).`,
+      ], R`\(\dfrac{dy}{dx}=-\dfrac{x}{4y}\); slope \(\dfrac{1}{2}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2+3xy+y^2=5\) and the slope at \((-4,1)\).`, [
+        R`\(2x+3\left(y+x\dfrac{dy}{dx}\right)+2y\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{2x+3y}{3x+2y}\).`,
+        R`Plug in: \(-\dfrac{-5}{-10}\).`,
+      ], R`\(\dfrac{dy}{dx}=-\dfrac{2x+3y}{3x+2y}\); slope \(-\dfrac{1}{2}\)`),
+      P(R`Find the slope of \(xy=-72\) at \((-9,8)\).`, [
+        R`\(y+x\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=-\dfrac yx\).`,
+        R`\(-\dfrac{8}{-9}\).`,
+      ], R`\(\dfrac{8}{9}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(y^2=x^3+17\) and the slope at \((-1,4)\).`, [
+        R`\(2y\dfrac{dy}{dx}=3x^2\).`,
+        R`\(\dfrac{dy}{dx}=\dfrac{3x^2}{2y}\); plug in.`,
+      ], R`\(\dfrac{3x^2}{2y}\); slope \(\dfrac{3}{8}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^3+y^3=-63\) and the slope at \((-4,1)\).`, [
+        R`\(3x^2+3y^2\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=-\dfrac{x^2}{y^2}\).`,
+        R`Plug in.`,
+      ], R`\(-\dfrac{x^2}{y^2}\); slope \(-16\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2y=5\) and the slope at \((1,5)\).`, [
+        R`\(2xy+x^2\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{2xy}{x^2}=-\dfrac{2y}{x}\).`,
+      ], R`\(-\dfrac{2y}{x}\); slope \(-10\)`),
+      P(R`Find the equation of the tangent line to \(2x^2+3y^2=20\) at \((-2,2)\).`, [
+        R`\(\dfrac{dy}{dx}=-\dfrac{2x}{3y}\) &rArr; slope \(\dfrac{2}{3}\).`,
+        R`\(y-2=\dfrac{2}{3}(x-(-2))\).`,
+      ], R`\(y=\tfrac{2}{3}x+\tfrac{10}{3}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(4x^2+4y^2=164\) and the slope at \((5,4)\).`, [
+        R`\(8x+8y\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{x}{y}\).`,
+        R`At the point: \(-\dfrac{5}{4}\).`,
+      ], R`\(\dfrac{dy}{dx}=-\dfrac{x}{y}\); slope \(-\dfrac{5}{4}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2-4xy+y^2=13\) and the slope at \((1,-2)\).`, [
+        R`\(2x+(-4)\left(y+x\dfrac{dy}{dx}\right)+2y\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{2x-4y}{-4x+2y}\).`,
+        R`Plug in: \(-\dfrac{10}{-8}\).`,
+      ], R`\(\dfrac{dy}{dx}=-\dfrac{2x-4y}{-4x+2y}\); slope \(\dfrac{5}{4}\)`),
+      P(R`Find the slope of \(xy=-36\) at \((9,-4)\).`, [
+        R`\(y+x\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=-\dfrac yx\).`,
+        R`\(-\dfrac{-4}{9}\).`,
+      ], R`\(\dfrac{4}{9}\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^3+y^3=0\) and the slope at \((3,-3)\).`, [
+        R`\(3x^2+3y^2\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=-\dfrac{x^2}{y^2}\).`,
+        R`Plug in.`,
+      ], R`\(-\dfrac{x^2}{y^2}\); slope \(-1\)`),
+      P(R`Find the tangent line to \(x^2-y^2=48\) at \((-7,1)\).`, [
+        R`\(2x-2y\dfrac{dy}{dx}=0\Rightarrow\dfrac{dy}{dx}=\dfrac xy\).`,
+        R`Slope \(-7\); \(y-1=-7(x-(-7))\).`,
+      ], R`\(y=-7x-48\)`),
+      P(R`Find \(\dfrac{dy}{dx}\) for \(x^2y=27\) and the slope at \((3,3)\).`, [
+        R`\(2xy+x^2\dfrac{dy}{dx}=0\).`,
+        R`\(\dfrac{dy}{dx}=-\dfrac{2xy}{x^2}=-\dfrac{2y}{x}\).`,
+      ], R`\(-\dfrac{2y}{x}\); slope \(-2\)`),
+      P(R`Find the equation of the tangent line to \(2x^2+3y^2=45\) at \((-3,-3)\).`, [
+        R`\(\dfrac{dy}{dx}=-\dfrac{2x}{3y}\) &rArr; slope \(-\dfrac{2}{3}\).`,
+        R`\(y-(-3)=-\dfrac{2}{3}(x-(-3))\).`,
+      ], R`\(y=-\tfrac{2}{3}x-5\)`),
     ],
   },
 
@@ -1382,66 +3195,359 @@ window.TOPICS = [
           R`\(x\dfrac{dx}{dt}=z\dfrac{dz}{dt}\).`,
           R`\(100\sqrt3(8)=200\dfrac{dz}{dt}\Rightarrow\dfrac{dz}{dt}=4\sqrt3\approx6.93\).`,
         ], R`\(4\sqrt3\approx6.93\) ft/s`),
-      // ---- even more practice ----
-      P(R`A circle's radius grows at 2 cm/s. How fast is its area growing when \(r=4\) cm?`, [
-        R`\(A=\pi r^2\Rightarrow\dfrac{dA}{dt}=2\pi r\dfrac{dr}{dt}\).`,
-        R`\(\dfrac{dA}{dt}=2\pi(4)(2)=16\pi\).`,
-      ], R`\(16\pi\approx50.3\) cm²/s`),
-      P(R`A circle's radius grows at 5 cm/s. How fast is its area growing when \(r=11\) cm?`, [
-        R`\(A=\pi r^2\Rightarrow\dfrac{dA}{dt}=2\pi r\dfrac{dr}{dt}\).`,
-        R`\(\dfrac{dA}{dt}=2\pi(11)(5)=110\pi\).`,
-      ], R`\(110\pi\approx345.6\) cm²/s`),
-      P(R`A circle's radius grows at 3 cm/s. How fast is its area growing when \(r=18\) cm?`, [
-        R`\(A=\pi r^2\Rightarrow\dfrac{dA}{dt}=2\pi r\dfrac{dr}{dt}\).`,
-        R`\(\dfrac{dA}{dt}=2\pi(18)(3)=108\pi\).`,
-      ], R`\(108\pi\approx339.3\) cm²/s`),
-      P(R`A spherical balloon is inflated at 50 cm³/s. How fast is the radius increasing when \(r=6\) cm?`, [
-        R`\(V=\tfrac43\pi r^3\Rightarrow\dfrac{dV}{dt}=4\pi r^2\dfrac{dr}{dt}\).`,
-        R`\(50=4\pi(6)^2\dfrac{dr}{dt}=144\pi\dfrac{dr}{dt}\).`,
-        R`\(\dfrac{dr}{dt}=\dfrac{50}{144\pi}=\dfrac{25}{72\pi}\approx0.1105\).`,
-      ], R`\(\dfrac{25}{72\pi}\approx0.1105\) cm/s`),
-      P(R`A spherical balloon is inflated at 200 cm³/s. How fast is the radius increasing when \(r=10\) cm?`, [
-        R`\(V=\tfrac43\pi r^3\Rightarrow\dfrac{dV}{dt}=4\pi r^2\dfrac{dr}{dt}\).`,
-        R`\(200=4\pi(10)^2\dfrac{dr}{dt}=400\pi\dfrac{dr}{dt}\).`,
-        R`\(\dfrac{dr}{dt}=\dfrac{200}{400\pi}=\dfrac{1}{2\pi}\approx0.1592\).`,
-      ], R`\(\dfrac{1}{2\pi}\approx0.1592\) cm/s`),
-      P(R`A spherical balloon is inflated at 200 cm³/s. How fast is the radius increasing when \(r=3\) cm?`, [
-        R`\(V=\tfrac43\pi r^3\Rightarrow\dfrac{dV}{dt}=4\pi r^2\dfrac{dr}{dt}\).`,
-        R`\(200=4\pi(3)^2\dfrac{dr}{dt}=36\pi\dfrac{dr}{dt}\).`,
-        R`\(\dfrac{dr}{dt}=\dfrac{200}{36\pi}=\dfrac{50}{9\pi}\approx1.7684\).`,
+      // ---- generated practice (numbers vary; answers computed) ----
+      P(R`A circle's radius increases at 6 cm/s. How fast is its area increasing when \(r=26\) cm?`, [
+        R`\(\dfrac{dA}{dt}=2\pi r\dfrac{dr}{dt}\).`,
+        R`\(2\pi(26)(6)\).`,
+      ], R`\(312\pi\) cm²/s`),
+      P(R`Air fills a spherical balloon at 20 cm³/s. How fast is the radius growing when \(r=6\) cm?`, [
+        R`\(\dfrac{dV}{dt}=4\pi r^2\dfrac{dr}{dt}\).`,
+        R`\(20=144\pi\dfrac{dr}{dt}\).`,
+      ], R`\(\dfrac{5}{36\pi}\approx0.0442\) cm/s`),
+      P(R`A 20 ft ladder slides down a wall; its bottom moves away at 3 ft/s. How fast is the top falling when the bottom is 16 ft from the wall?`, [
+        R`\(x^2+y^2=400\); at \(x=16\), \(y=12\).`,
+        R`\(x\dfrac{dx}{dt}+y\dfrac{dy}{dt}=0\): \(16(3)+12\dfrac{dy}{dt}=0\).`,
+        R`\(\dfrac{dy}{dt}=-4\).`,
+      ], R`Falling at \(4\) ft/s`),
+      P(R`A square's side grows at 3 in/min. How fast is the area growing when the side is 7 in?`, [
+        R`\(\dfrac{dA}{dt}=2s\dfrac{ds}{dt}\).`,
+      ], R`\(42\) in²/min`),
+      P(R`A cube's edges grow at 3 cm/s. How fast is the volume growing when an edge is 4 cm?`, [
+        R`\(V=s^3\Rightarrow\dfrac{dV}{dt}=3s^2\dfrac{ds}{dt}\).`,
+        R`\(3(4)^2(3)\).`,
+      ], R`\(144\) cm³/s`),
+      P(R`A sphere's radius grows at 1 mm/s. How fast is its volume growing when \(r=6\) mm?`, [
+        R`\(\dfrac{dV}{dt}=4\pi r^2\dfrac{dr}{dt}\).`,
+        R`\(4\pi(6)^2(1)\).`,
+      ], R`\(144\pi\) mm³/s`),
+      P(R`A cone-shaped tank (point down) is 12 ft tall with top radius 4 ft. Water flows in at 2 ft³/min. How fast is the water rising when it is 5 ft deep?`, [
+        R`Similar triangles: \(r=\dfrac{1}{3}h\).`,
+        R`\(V=\tfrac13\pi r^2h=\dfrac{16\pi}{432}h^3\).`,
+        R`\(\dfrac{dV}{dt}=\dfrac{16\pi}{144}h^2\dfrac{dh}{dt}\).`,
+        R`\(2=\dfrac{16\pi(25)}{144}\dfrac{dh}{dt}\Rightarrow\dfrac{dh}{dt}=\dfrac{18}{25\pi}\).`,
+      ], R`\(\dfrac{18}{25\pi}\approx0.2292\) ft/min`),
+      P(R`Water pours into a cylindrical tank of radius 1 m at 7 m³/min. How fast does the level rise?`, [
+        R`\(V=\pi(1)^2h\) &rArr; \(\dfrac{dV}{dt}=1\pi\dfrac{dh}{dt}\).`,
+      ], R`\(\dfrac{7}{\pi}\approx2.2282\) m/min`),
+      P(R`Car A is 4 mi north of an intersection heading north at 55 mph; car B is 3 mi east heading east at 70 mph. How fast is the distance between them changing?`, [
+        R`\(x^2+y^2=z^2\); now \(z=5\).`,
+        R`\(z\dfrac{dz}{dt}=x\dfrac{dx}{dt}+y\dfrac{dy}{dt}\): \(5\dfrac{dz}{dt}=3(70)+4(55)=430\).`,
+      ], R`\(86\) mph`),
+      P(R`A 5 ft person walks away from a 15 ft lamppost at 4 ft/s. How fast is the shadow lengthening?`, [
+        R`\(\dfrac{15}{x+s}=\dfrac{5}{s}\Rightarrow 10s=5x\Rightarrow s=\dfrac{1}{2}x\).`,
+        R`\(\dfrac{ds}{dt}=\dfrac{1}{2}(4)\).`,
+      ], R`\(2\) ft/s`),
+      P(R`A rectangle's length changes at 6 cm/s and its width at -2 cm/s. How fast is the area changing when it is 8 cm by 18 cm?`, [
+        R`\(A=lw\Rightarrow\dfrac{dA}{dt}=\dfrac{dl}{dt}w+l\dfrac{dw}{dt}\).`,
+        R`\((6)(18)+(8)(-2)\).`,
+      ], R`\(92\) cm²/s`),
+      P(R`A circle's area grows at 8 m²/s. How fast is the radius growing when \(r=6\) m?`, [
+        R`\(\dfrac{dA}{dt}=2\pi r\dfrac{dr}{dt}\): \(8=12\pi\dfrac{dr}{dt}\).`,
+      ], R`\(\dfrac{2}{3\pi}\) m/s`),
+      P(R`A circle's radius increases at 4 cm/s. How fast is its area increasing when \(r=15\) cm?`, [
+        R`\(\dfrac{dA}{dt}=2\pi r\dfrac{dr}{dt}\).`,
+        R`\(2\pi(15)(4)\).`,
+      ], R`\(120\pi\) cm²/s`),
+      P(R`Air fills a spherical balloon at 200 cm³/s. How fast is the radius growing when \(r=3\) cm?`, [
+        R`\(\dfrac{dV}{dt}=4\pi r^2\dfrac{dr}{dt}\).`,
+        R`\(200=36\pi\dfrac{dr}{dt}\).`,
       ], R`\(\dfrac{50}{9\pi}\approx1.7684\) cm/s`),
-      P(R`A 15 ft ladder leans against a wall. The bottom slides away at 2 ft/s. How fast is the top sliding down when the bottom is 9 ft from the wall?`, [
-        R`\(x^2+y^2=225\). When \(x=9\): \(y=\sqrt{225-81}=12\).`,
-        R`Differentiate: \(2x\dfrac{dx}{dt}+2y\dfrac{dy}{dt}=0\).`,
-        R`\(9(2)+12\dfrac{dy}{dt}=0\Rightarrow\dfrac{dy}{dt}=-\dfrac{3}{2}\).`,
-        R`Negative means the top is moving down.`,
-      ], R`Down at \(\dfrac{3}{2}\) ft/s`),
-      P(R`A 10 ft ladder leans against a wall. The bottom slides away at 1 ft/s. How fast is the top sliding down when the bottom is 8 ft from the wall?`, [
-        R`\(x^2+y^2=100\). When \(x=8\): \(y=\sqrt{100-64}=6\).`,
-        R`Differentiate: \(2x\dfrac{dx}{dt}+2y\dfrac{dy}{dt}=0\).`,
-        R`\(8(1)+6\dfrac{dy}{dt}=0\Rightarrow\dfrac{dy}{dt}=-\dfrac{4}{3}\).`,
-        R`Negative means the top is moving down.`,
-      ], R`Down at \(\dfrac{4}{3}\) ft/s`),
-      P(R`A 17 ft ladder leans against a wall. The bottom slides away at 4 ft/s. How fast is the top sliding down when the bottom is 15 ft from the wall?`, [
-        R`\(x^2+y^2=289\). When \(x=15\): \(y=\sqrt{289-225}=8\).`,
-        R`Differentiate: \(2x\dfrac{dx}{dt}+2y\dfrac{dy}{dt}=0\).`,
-        R`\(15(4)+8\dfrac{dy}{dt}=0\Rightarrow\dfrac{dy}{dt}=-\dfrac{15}{2}\).`,
-        R`Negative means the top is moving down.`,
-      ], R`Down at \(\dfrac{15}{2}\) ft/s`),
-      P(R`A 10 ft ladder leans against a wall. The bottom slides away at 3 ft/s. How fast is the top sliding down when the bottom is 6 ft from the wall?`, [
-        R`\(x^2+y^2=100\). When \(x=6\): \(y=\sqrt{100-36}=8\).`,
-        R`Differentiate: \(2x\dfrac{dx}{dt}+2y\dfrac{dy}{dt}=0\).`,
-        R`\(6(3)+8\dfrac{dy}{dt}=0\Rightarrow\dfrac{dy}{dt}=-\dfrac{9}{4}\).`,
-        R`Negative means the top is moving down.`,
-      ], R`Down at \(\dfrac{9}{4}\) ft/s`),
-      P(R`The side of a square increases at 3 in/min. How fast is the area increasing when the side is 12 in?`, [
-        R`\(A=s^2\Rightarrow\dfrac{dA}{dt}=2s\dfrac{ds}{dt}\).`,
-        R`\(2(12)(3)=72\).`,
-      ], R`\(72\) in²/min`),
-      P(R`The side of a square increases at 3 in/min. How fast is the area increasing when the side is 4 in?`, [
-        R`\(A=s^2\Rightarrow\dfrac{dA}{dt}=2s\dfrac{ds}{dt}\).`,
-        R`\(2(4)(3)=24\).`,
+      P(R`A 15 ft ladder slides down a wall; its bottom moves away at 2 ft/s. How fast is the top falling when the bottom is 9 ft from the wall?`, [
+        R`\(x^2+y^2=225\); at \(x=9\), \(y=12\).`,
+        R`\(x\dfrac{dx}{dt}+y\dfrac{dy}{dt}=0\): \(9(2)+12\dfrac{dy}{dt}=0\).`,
+        R`\(\dfrac{dy}{dt}=-\dfrac{3}{2}\).`,
+      ], R`Falling at \(\dfrac{3}{2}\) ft/s`),
+      P(R`A square's side grows at 2 in/min. How fast is the area growing when the side is 11 in?`, [
+        R`\(\dfrac{dA}{dt}=2s\dfrac{ds}{dt}\).`,
+      ], R`\(44\) in²/min`),
+      P(R`A cube's edges grow at 2 cm/s. How fast is the volume growing when an edge is 7 cm?`, [
+        R`\(V=s^3\Rightarrow\dfrac{dV}{dt}=3s^2\dfrac{ds}{dt}\).`,
+        R`\(3(7)^2(2)\).`,
+      ], R`\(294\) cm³/s`),
+      P(R`A sphere's radius grows at 5 mm/s. How fast is its volume growing when \(r=5\) mm?`, [
+        R`\(\dfrac{dV}{dt}=4\pi r^2\dfrac{dr}{dt}\).`,
+        R`\(4\pi(5)^2(5)\).`,
+      ], R`\(500\pi\) mm³/s`),
+      P(R`A cone-shaped tank (point down) is 12 ft tall with top radius 6 ft. Water flows in at 6 ft³/min. How fast is the water rising when it is 5 ft deep?`, [
+        R`Similar triangles: \(r=\dfrac{1}{2}h\).`,
+        R`\(V=\tfrac13\pi r^2h=\dfrac{36\pi}{432}h^3\).`,
+        R`\(\dfrac{dV}{dt}=\dfrac{36\pi}{144}h^2\dfrac{dh}{dt}\).`,
+        R`\(6=\dfrac{36\pi(25)}{144}\dfrac{dh}{dt}\Rightarrow\dfrac{dh}{dt}=\dfrac{24}{25\pi}\).`,
+      ], R`\(\dfrac{24}{25\pi}\approx0.3056\) ft/min`),
+      P(R`Water pours into a cylindrical tank of radius 3 m at 2 m³/min. How fast does the level rise?`, [
+        R`\(V=\pi(3)^2h\) &rArr; \(\dfrac{dV}{dt}=9\pi\dfrac{dh}{dt}\).`,
+      ], R`\(\dfrac{2}{9\pi}\approx0.0707\) m/min`),
+      P(R`Car A is 12 mi north of an intersection heading north at 25 mph; car B is 5 mi east heading east at 70 mph. How fast is the distance between them changing?`, [
+        R`\(x^2+y^2=z^2\); now \(z=13\).`,
+        R`\(z\dfrac{dz}{dt}=x\dfrac{dx}{dt}+y\dfrac{dy}{dt}\): \(13\dfrac{dz}{dt}=5(70)+12(25)=650\).`,
+      ], R`\(50\) mph`),
+      P(R`A 5 ft person walks away from a 24 ft lamppost at 4 ft/s. How fast is the shadow lengthening?`, [
+        R`\(\dfrac{24}{x+s}=\dfrac{5}{s}\Rightarrow 19s=5x\Rightarrow s=\dfrac{5}{19}x\).`,
+        R`\(\dfrac{ds}{dt}=\dfrac{5}{19}(4)\).`,
+      ], R`\(\dfrac{20}{19}\) ft/s`),
+      P(R`A rectangle's length changes at 3 cm/s and its width at -3 cm/s. How fast is the area changing when it is 4 cm by 5 cm?`, [
+        R`\(A=lw\Rightarrow\dfrac{dA}{dt}=\dfrac{dl}{dt}w+l\dfrac{dw}{dt}\).`,
+        R`\((3)(5)+(4)(-3)\).`,
+      ], R`\(3\) cm²/s`),
+      P(R`A circle's area grows at 13 m²/s. How fast is the radius growing when \(r=3\) m?`, [
+        R`\(\dfrac{dA}{dt}=2\pi r\dfrac{dr}{dt}\): \(13=6\pi\dfrac{dr}{dt}\).`,
+      ], R`\(\dfrac{13}{6\pi}\) m/s`),
+      P(R`A circle's radius increases at 2 cm/s. How fast is its area increasing when \(r=15\) cm?`, [
+        R`\(\dfrac{dA}{dt}=2\pi r\dfrac{dr}{dt}\).`,
+        R`\(2\pi(15)(2)\).`,
+      ], R`\(60\pi\) cm²/s`),
+      P(R`Air fills a spherical balloon at 20 cm³/s. How fast is the radius growing when \(r=14\) cm?`, [
+        R`\(\dfrac{dV}{dt}=4\pi r^2\dfrac{dr}{dt}\).`,
+        R`\(20=784\pi\dfrac{dr}{dt}\).`,
+      ], R`\(\dfrac{5}{196\pi}\approx0.0081\) cm/s`),
+      P(R`A 5 ft ladder slides down a wall; its bottom moves away at 4 ft/s. How fast is the top falling when the bottom is 3 ft from the wall?`, [
+        R`\(x^2+y^2=25\); at \(x=3\), \(y=4\).`,
+        R`\(x\dfrac{dx}{dt}+y\dfrac{dy}{dt}=0\): \(3(4)+4\dfrac{dy}{dt}=0\).`,
+        R`\(\dfrac{dy}{dt}=-3\).`,
+      ], R`Falling at \(3\) ft/s`),
+      P(R`A square's side grows at 5 in/min. How fast is the area growing when the side is 10 in?`, [
+        R`\(\dfrac{dA}{dt}=2s\dfrac{ds}{dt}\).`,
+      ], R`\(100\) in²/min`),
+      P(R`A cube's edges grow at 2 cm/s. How fast is the volume growing when an edge is 8 cm?`, [
+        R`\(V=s^3\Rightarrow\dfrac{dV}{dt}=3s^2\dfrac{ds}{dt}\).`,
+        R`\(3(8)^2(2)\).`,
+      ], R`\(384\) cm³/s`),
+      P(R`A sphere's radius grows at 4 mm/s. How fast is its volume growing when \(r=5\) mm?`, [
+        R`\(\dfrac{dV}{dt}=4\pi r^2\dfrac{dr}{dt}\).`,
+        R`\(4\pi(5)^2(4)\).`,
+      ], R`\(400\pi\) mm³/s`),
+      P(R`A cone-shaped tank (point down) is 12 ft tall with top radius 4 ft. Water flows in at 5 ft³/min. How fast is the water rising when it is 8 ft deep?`, [
+        R`Similar triangles: \(r=\dfrac{1}{3}h\).`,
+        R`\(V=\tfrac13\pi r^2h=\dfrac{16\pi}{432}h^3\).`,
+        R`\(\dfrac{dV}{dt}=\dfrac{16\pi}{144}h^2\dfrac{dh}{dt}\).`,
+        R`\(5=\dfrac{16\pi(64)}{144}\dfrac{dh}{dt}\Rightarrow\dfrac{dh}{dt}=\dfrac{45}{64\pi}\).`,
+      ], R`\(\dfrac{45}{64\pi}\approx0.2238\) ft/min`),
+      P(R`Water pours into a cylindrical tank of radius 3 m at 5 m³/min. How fast does the level rise?`, [
+        R`\(V=\pi(3)^2h\) &rArr; \(\dfrac{dV}{dt}=9\pi\dfrac{dh}{dt}\).`,
+      ], R`\(\dfrac{5}{9\pi}\approx0.1768\) m/min`),
+      P(R`Car A is 15 mi north of an intersection heading north at 45 mph; car B is 8 mi east heading east at 45 mph. How fast is the distance between them changing?`, [
+        R`\(x^2+y^2=z^2\); now \(z=17\).`,
+        R`\(z\dfrac{dz}{dt}=x\dfrac{dx}{dt}+y\dfrac{dy}{dt}\): \(17\dfrac{dz}{dt}=8(45)+15(45)=1035\).`,
+      ], R`\(\dfrac{1035}{17}\) mph`),
+      P(R`A 6 ft person walks away from a 15 ft lamppost at 4 ft/s. How fast is the shadow lengthening?`, [
+        R`\(\dfrac{15}{x+s}=\dfrac{6}{s}\Rightarrow 9s=6x\Rightarrow s=\dfrac{2}{3}x\).`,
+        R`\(\dfrac{ds}{dt}=\dfrac{2}{3}(4)\).`,
+      ], R`\(\dfrac{8}{3}\) ft/s`),
+      P(R`A rectangle's length changes at 6 cm/s and its width at -4 cm/s. How fast is the area changing when it is 12 cm by 12 cm?`, [
+        R`\(A=lw\Rightarrow\dfrac{dA}{dt}=\dfrac{dl}{dt}w+l\dfrac{dw}{dt}\).`,
+        R`\((6)(12)+(12)(-4)\).`,
+      ], R`\(24\) cm²/s`),
+      P(R`A circle's area grows at 3 m²/s. How fast is the radius growing when \(r=3\) m?`, [
+        R`\(\dfrac{dA}{dt}=2\pi r\dfrac{dr}{dt}\): \(3=6\pi\dfrac{dr}{dt}\).`,
+      ], R`\(\dfrac{1}{2\pi}\) m/s`),
+      P(R`A circle's radius increases at 9 cm/s. How fast is its area increasing when \(r=28\) cm?`, [
+        R`\(\dfrac{dA}{dt}=2\pi r\dfrac{dr}{dt}\).`,
+        R`\(2\pi(28)(9)\).`,
+      ], R`\(504\pi\) cm²/s`),
+      P(R`Air fills a spherical balloon at 60 cm³/s. How fast is the radius growing when \(r=5\) cm?`, [
+        R`\(\dfrac{dV}{dt}=4\pi r^2\dfrac{dr}{dt}\).`,
+        R`\(60=100\pi\dfrac{dr}{dt}\).`,
+      ], R`\(\dfrac{3}{5\pi}\approx0.191\) cm/s`),
+      P(R`A 10 ft ladder slides down a wall; its bottom moves away at 1 ft/s. How fast is the top falling when the bottom is 6 ft from the wall?`, [
+        R`\(x^2+y^2=100\); at \(x=6\), \(y=8\).`,
+        R`\(x\dfrac{dx}{dt}+y\dfrac{dy}{dt}=0\): \(6(1)+8\dfrac{dy}{dt}=0\).`,
+        R`\(\dfrac{dy}{dt}=-\dfrac{3}{4}\).`,
+      ], R`Falling at \(\dfrac{3}{4}\) ft/s`),
+      P(R`A square's side grows at 2 in/min. How fast is the area growing when the side is 15 in?`, [
+        R`\(\dfrac{dA}{dt}=2s\dfrac{ds}{dt}\).`,
+      ], R`\(60\) in²/min`),
+      P(R`A cube's edges grow at 4 cm/s. How fast is the volume growing when an edge is 7 cm?`, [
+        R`\(V=s^3\Rightarrow\dfrac{dV}{dt}=3s^2\dfrac{ds}{dt}\).`,
+        R`\(3(7)^2(4)\).`,
+      ], R`\(588\) cm³/s`),
+      P(R`A sphere's radius grows at 5 mm/s. How fast is its volume growing when \(r=10\) mm?`, [
+        R`\(\dfrac{dV}{dt}=4\pi r^2\dfrac{dr}{dt}\).`,
+        R`\(4\pi(10)^2(5)\).`,
+      ], R`\(2000\pi\) mm³/s`),
+      P(R`A cone-shaped tank (point down) is 8 ft tall with top radius 4 ft. Water flows in at 10 ft³/min. How fast is the water rising when it is 6 ft deep?`, [
+        R`Similar triangles: \(r=\dfrac{1}{2}h\).`,
+        R`\(V=\tfrac13\pi r^2h=\dfrac{16\pi}{192}h^3\).`,
+        R`\(\dfrac{dV}{dt}=\dfrac{16\pi}{64}h^2\dfrac{dh}{dt}\).`,
+        R`\(10=\dfrac{16\pi(36)}{64}\dfrac{dh}{dt}\Rightarrow\dfrac{dh}{dt}=\dfrac{10}{9\pi}\).`,
+      ], R`\(\dfrac{10}{9\pi}\approx0.3537\) ft/min`),
+      P(R`Water pours into a cylindrical tank of radius 9 m at 8 m³/min. How fast does the level rise?`, [
+        R`\(V=\pi(9)^2h\) &rArr; \(\dfrac{dV}{dt}=81\pi\dfrac{dh}{dt}\).`,
+      ], R`\(\dfrac{8}{81\pi}\approx0.0314\) m/min`),
+      P(R`Car A is 20 mi north of an intersection heading north at 55 mph; car B is 15 mi east heading east at 35 mph. How fast is the distance between them changing?`, [
+        R`\(x^2+y^2=z^2\); now \(z=25\).`,
+        R`\(z\dfrac{dz}{dt}=x\dfrac{dx}{dt}+y\dfrac{dy}{dt}\): \(25\dfrac{dz}{dt}=15(35)+20(55)=1625\).`,
+      ], R`\(65\) mph`),
+      P(R`A 6 ft person walks away from a 18 ft lamppost at 2 ft/s. How fast is the shadow lengthening?`, [
+        R`\(\dfrac{18}{x+s}=\dfrac{6}{s}\Rightarrow 12s=6x\Rightarrow s=\dfrac{1}{2}x\).`,
+        R`\(\dfrac{ds}{dt}=\dfrac{1}{2}(2)\).`,
+      ], R`\(1\) ft/s`),
+      P(R`A rectangle's length changes at 6 cm/s and its width at -4 cm/s. How fast is the area changing when it is 6 cm by 19 cm?`, [
+        R`\(A=lw\Rightarrow\dfrac{dA}{dt}=\dfrac{dl}{dt}w+l\dfrac{dw}{dt}\).`,
+        R`\((6)(19)+(6)(-4)\).`,
+      ], R`\(90\) cm²/s`),
+      P(R`A circle's area grows at 11 m²/s. How fast is the radius growing when \(r=3\) m?`, [
+        R`\(\dfrac{dA}{dt}=2\pi r\dfrac{dr}{dt}\): \(11=6\pi\dfrac{dr}{dt}\).`,
+      ], R`\(\dfrac{11}{6\pi}\) m/s`),
+      P(R`A circle's radius increases at 7 cm/s. How fast is its area increasing when \(r=30\) cm?`, [
+        R`\(\dfrac{dA}{dt}=2\pi r\dfrac{dr}{dt}\).`,
+        R`\(2\pi(30)(7)\).`,
+      ], R`\(420\pi\) cm²/s`),
+      P(R`Air fills a spherical balloon at 100 cm³/s. How fast is the radius growing when \(r=2\) cm?`, [
+        R`\(\dfrac{dV}{dt}=4\pi r^2\dfrac{dr}{dt}\).`,
+        R`\(100=16\pi\dfrac{dr}{dt}\).`,
+      ], R`\(\dfrac{25}{4\pi}\approx1.9894\) cm/s`),
+      P(R`A 15 ft ladder slides down a wall; its bottom moves away at 1 ft/s. How fast is the top falling when the bottom is 12 ft from the wall?`, [
+        R`\(x^2+y^2=225\); at \(x=12\), \(y=9\).`,
+        R`\(x\dfrac{dx}{dt}+y\dfrac{dy}{dt}=0\): \(12(1)+9\dfrac{dy}{dt}=0\).`,
+        R`\(\dfrac{dy}{dt}=-\dfrac{4}{3}\).`,
+      ], R`Falling at \(\dfrac{4}{3}\) ft/s`),
+      P(R`A square's side grows at 2 in/min. How fast is the area growing when the side is 10 in?`, [
+        R`\(\dfrac{dA}{dt}=2s\dfrac{ds}{dt}\).`,
+      ], R`\(40\) in²/min`),
+      P(R`A cube's edges grow at 3 cm/s. How fast is the volume growing when an edge is 11 cm?`, [
+        R`\(V=s^3\Rightarrow\dfrac{dV}{dt}=3s^2\dfrac{ds}{dt}\).`,
+        R`\(3(11)^2(3)\).`,
+      ], R`\(1089\) cm³/s`),
+      P(R`A sphere's radius grows at 4 mm/s. How fast is its volume growing when \(r=7\) mm?`, [
+        R`\(\dfrac{dV}{dt}=4\pi r^2\dfrac{dr}{dt}\).`,
+        R`\(4\pi(7)^2(4)\).`,
+      ], R`\(784\pi\) mm³/s`),
+      P(R`A cone-shaped tank (point down) is 8 ft tall with top radius 4 ft. Water flows in at 4 ft³/min. How fast is the water rising when it is 4 ft deep?`, [
+        R`Similar triangles: \(r=\dfrac{1}{2}h\).`,
+        R`\(V=\tfrac13\pi r^2h=\dfrac{16\pi}{192}h^3\).`,
+        R`\(\dfrac{dV}{dt}=\dfrac{16\pi}{64}h^2\dfrac{dh}{dt}\).`,
+        R`\(4=\dfrac{16\pi(16)}{64}\dfrac{dh}{dt}\Rightarrow\dfrac{dh}{dt}=\dfrac{1}{\pi}\).`,
+      ], R`\(\dfrac{1}{\pi}\approx0.3183\) ft/min`),
+      P(R`Water pours into a cylindrical tank of radius 5 m at 4 m³/min. How fast does the level rise?`, [
+        R`\(V=\pi(5)^2h\) &rArr; \(\dfrac{dV}{dt}=25\pi\dfrac{dh}{dt}\).`,
+      ], R`\(\dfrac{4}{25\pi}\approx0.0509\) m/min`),
+      P(R`Car A is 40 mi north of an intersection heading north at 50 mph; car B is 30 mi east heading east at 25 mph. How fast is the distance between them changing?`, [
+        R`\(x^2+y^2=z^2\); now \(z=50\).`,
+        R`\(z\dfrac{dz}{dt}=x\dfrac{dx}{dt}+y\dfrac{dy}{dt}\): \(50\dfrac{dz}{dt}=30(25)+40(50)=2750\).`,
+      ], R`\(55\) mph`),
+      P(R`A 6 ft person walks away from a 20 ft lamppost at 3 ft/s. How fast is the shadow lengthening?`, [
+        R`\(\dfrac{20}{x+s}=\dfrac{6}{s}\Rightarrow 14s=6x\Rightarrow s=\dfrac{3}{7}x\).`,
+        R`\(\dfrac{ds}{dt}=\dfrac{3}{7}(3)\).`,
+      ], R`\(\dfrac{9}{7}\) ft/s`),
+      P(R`A rectangle's length changes at -3 cm/s and its width at 2 cm/s. How fast is the area changing when it is 12 cm by 3 cm?`, [
+        R`\(A=lw\Rightarrow\dfrac{dA}{dt}=\dfrac{dl}{dt}w+l\dfrac{dw}{dt}\).`,
+        R`\((-3)(3)+(12)(2)\).`,
+      ], R`\(15\) cm²/s`),
+      P(R`A circle's area grows at 18 m²/s. How fast is the radius growing when \(r=4\) m?`, [
+        R`\(\dfrac{dA}{dt}=2\pi r\dfrac{dr}{dt}\): \(18=8\pi\dfrac{dr}{dt}\).`,
+      ], R`\(\dfrac{9}{4\pi}\) m/s`),
+      P(R`A circle's radius increases at 2 cm/s. How fast is its area increasing when \(r=22\) cm?`, [
+        R`\(\dfrac{dA}{dt}=2\pi r\dfrac{dr}{dt}\).`,
+        R`\(2\pi(22)(2)\).`,
+      ], R`\(88\pi\) cm²/s`),
+      P(R`Air fills a spherical balloon at 20 cm³/s. How fast is the radius growing when \(r=7\) cm?`, [
+        R`\(\dfrac{dV}{dt}=4\pi r^2\dfrac{dr}{dt}\).`,
+        R`\(20=196\pi\dfrac{dr}{dt}\).`,
+      ], R`\(\dfrac{5}{49\pi}\approx0.0325\) cm/s`),
+      P(R`A 17 ft ladder slides down a wall; its bottom moves away at 3 ft/s. How fast is the top falling when the bottom is 15 ft from the wall?`, [
+        R`\(x^2+y^2=289\); at \(x=15\), \(y=8\).`,
+        R`\(x\dfrac{dx}{dt}+y\dfrac{dy}{dt}=0\): \(15(3)+8\dfrac{dy}{dt}=0\).`,
+        R`\(\dfrac{dy}{dt}=-\dfrac{45}{8}\).`,
+      ], R`Falling at \(\dfrac{45}{8}\) ft/s`),
+      P(R`A square's side grows at 3 in/min. How fast is the area growing when the side is 4 in?`, [
+        R`\(\dfrac{dA}{dt}=2s\dfrac{ds}{dt}\).`,
       ], R`\(24\) in²/min`),
+      P(R`A cube's edges grow at 1 cm/s. How fast is the volume growing when an edge is 10 cm?`, [
+        R`\(V=s^3\Rightarrow\dfrac{dV}{dt}=3s^2\dfrac{ds}{dt}\).`,
+        R`\(3(10)^2(1)\).`,
+      ], R`\(300\) cm³/s`),
+      P(R`A sphere's radius grows at 2 mm/s. How fast is its volume growing when \(r=7\) mm?`, [
+        R`\(\dfrac{dV}{dt}=4\pi r^2\dfrac{dr}{dt}\).`,
+        R`\(4\pi(7)^2(2)\).`,
+      ], R`\(392\pi\) mm³/s`),
+      P(R`A cone-shaped tank (point down) is 6 ft tall with top radius 2 ft. Water flows in at 1 ft³/min. How fast is the water rising when it is 2 ft deep?`, [
+        R`Similar triangles: \(r=\dfrac{1}{3}h\).`,
+        R`\(V=\tfrac13\pi r^2h=\dfrac{4\pi}{108}h^3\).`,
+        R`\(\dfrac{dV}{dt}=\dfrac{4\pi}{36}h^2\dfrac{dh}{dt}\).`,
+        R`\(1=\dfrac{4\pi(4)}{36}\dfrac{dh}{dt}\Rightarrow\dfrac{dh}{dt}=\dfrac{9}{4\pi}\).`,
+      ], R`\(\dfrac{9}{4\pi}\approx0.7162\) ft/min`),
+      P(R`Water pours into a cylindrical tank of radius 1 m at 14 m³/min. How fast does the level rise?`, [
+        R`\(V=\pi(1)^2h\) &rArr; \(\dfrac{dV}{dt}=1\pi\dfrac{dh}{dt}\).`,
+      ], R`\(\dfrac{14}{\pi}\approx4.4563\) m/min`),
+      P(R`Car A is 20 mi north of an intersection heading north at 65 mph; car B is 15 mi east heading east at 30 mph. How fast is the distance between them changing?`, [
+        R`\(x^2+y^2=z^2\); now \(z=25\).`,
+        R`\(z\dfrac{dz}{dt}=x\dfrac{dx}{dt}+y\dfrac{dy}{dt}\): \(25\dfrac{dz}{dt}=15(30)+20(65)=1750\).`,
+      ], R`\(70\) mph`),
+      P(R`A 5 ft person walks away from a 20 ft lamppost at 7 ft/s. How fast is the shadow lengthening?`, [
+        R`\(\dfrac{20}{x+s}=\dfrac{5}{s}\Rightarrow 15s=5x\Rightarrow s=\dfrac{1}{3}x\).`,
+        R`\(\dfrac{ds}{dt}=\dfrac{1}{3}(7)\).`,
+      ], R`\(\dfrac{7}{3}\) ft/s`),
+      P(R`A rectangle's length changes at -4 cm/s and its width at -1 cm/s. How fast is the area changing when it is 17 cm by 20 cm?`, [
+        R`\(A=lw\Rightarrow\dfrac{dA}{dt}=\dfrac{dl}{dt}w+l\dfrac{dw}{dt}\).`,
+        R`\((-4)(20)+(17)(-1)\).`,
+      ], R`\(-97\) cm²/s`),
+      P(R`A circle's area grows at 10 m²/s. How fast is the radius growing when \(r=7\) m?`, [
+        R`\(\dfrac{dA}{dt}=2\pi r\dfrac{dr}{dt}\): \(10=14\pi\dfrac{dr}{dt}\).`,
+      ], R`\(\dfrac{5}{7\pi}\) m/s`),
+      P(R`A circle's radius increases at 8 cm/s. How fast is its area increasing when \(r=28\) cm?`, [
+        R`\(\dfrac{dA}{dt}=2\pi r\dfrac{dr}{dt}\).`,
+        R`\(2\pi(28)(8)\).`,
+      ], R`\(448\pi\) cm²/s`),
+      P(R`Air fills a spherical balloon at 20 cm³/s. How fast is the radius growing when \(r=2\) cm?`, [
+        R`\(\dfrac{dV}{dt}=4\pi r^2\dfrac{dr}{dt}\).`,
+        R`\(20=16\pi\dfrac{dr}{dt}\).`,
+      ], R`\(\dfrac{5}{4\pi}\approx0.3979\) cm/s`),
+      P(R`A 25 ft ladder slides down a wall; its bottom moves away at 4 ft/s. How fast is the top falling when the bottom is 15 ft from the wall?`, [
+        R`\(x^2+y^2=625\); at \(x=15\), \(y=20\).`,
+        R`\(x\dfrac{dx}{dt}+y\dfrac{dy}{dt}=0\): \(15(4)+20\dfrac{dy}{dt}=0\).`,
+        R`\(\dfrac{dy}{dt}=-3\).`,
+      ], R`Falling at \(3\) ft/s`),
+      P(R`A square's side grows at 6 in/min. How fast is the area growing when the side is 19 in?`, [
+        R`\(\dfrac{dA}{dt}=2s\dfrac{ds}{dt}\).`,
+      ], R`\(228\) in²/min`),
+      P(R`A cube's edges grow at 0.5 cm/s. How fast is the volume growing when an edge is 10 cm?`, [
+        R`\(V=s^3\Rightarrow\dfrac{dV}{dt}=3s^2\dfrac{ds}{dt}\).`,
+        R`\(3(10)^2(0.5)\).`,
+      ], R`\(150\) cm³/s`),
+      P(R`A cone-shaped tank (point down) is 9 ft tall with top radius 3 ft. Water flows in at 2 ft³/min. How fast is the water rising when it is 6 ft deep?`, [
+        R`Similar triangles: \(r=\dfrac{1}{3}h\).`,
+        R`\(V=\tfrac13\pi r^2h=\dfrac{9\pi}{243}h^3\).`,
+        R`\(\dfrac{dV}{dt}=\dfrac{9\pi}{81}h^2\dfrac{dh}{dt}\).`,
+        R`\(2=\dfrac{9\pi(36)}{81}\dfrac{dh}{dt}\Rightarrow\dfrac{dh}{dt}=\dfrac{1}{2\pi}\).`,
+      ], R`\(\dfrac{1}{2\pi}\approx0.1592\) ft/min`),
+      P(R`Water pours into a cylindrical tank of radius 5 m at 17 m³/min. How fast does the level rise?`, [
+        R`\(V=\pi(5)^2h\) &rArr; \(\dfrac{dV}{dt}=25\pi\dfrac{dh}{dt}\).`,
+      ], R`\(\dfrac{17}{25\pi}\approx0.2165\) m/min`),
+      P(R`Car A is 20 mi north of an intersection heading north at 25 mph; car B is 15 mi east heading east at 30 mph. How fast is the distance between them changing?`, [
+        R`\(x^2+y^2=z^2\); now \(z=25\).`,
+        R`\(z\dfrac{dz}{dt}=x\dfrac{dx}{dt}+y\dfrac{dy}{dt}\): \(25\dfrac{dz}{dt}=15(30)+20(25)=950\).`,
+      ], R`\(38\) mph`),
+      P(R`A 6 ft person walks away from a 16 ft lamppost at 6 ft/s. How fast is the shadow lengthening?`, [
+        R`\(\dfrac{16}{x+s}=\dfrac{6}{s}\Rightarrow 10s=6x\Rightarrow s=\dfrac{3}{5}x\).`,
+        R`\(\dfrac{ds}{dt}=\dfrac{3}{5}(6)\).`,
+      ], R`\(\dfrac{18}{5}\) ft/s`),
+      P(R`A rectangle's length changes at -1 cm/s and its width at 1 cm/s. How fast is the area changing when it is 18 cm by 20 cm?`, [
+        R`\(A=lw\Rightarrow\dfrac{dA}{dt}=\dfrac{dl}{dt}w+l\dfrac{dw}{dt}\).`,
+        R`\((-1)(20)+(18)(1)\).`,
+      ], R`\(-2\) cm²/s`),
+      P(R`A circle's area grows at 6 m²/s. How fast is the radius growing when \(r=4\) m?`, [
+        R`\(\dfrac{dA}{dt}=2\pi r\dfrac{dr}{dt}\): \(6=8\pi\dfrac{dr}{dt}\).`,
+      ], R`\(\dfrac{3}{4\pi}\) m/s`),
+      P(R`A circle's radius increases at 4 cm/s. How fast is its area increasing when \(r=23\) cm?`, [
+        R`\(\dfrac{dA}{dt}=2\pi r\dfrac{dr}{dt}\).`,
+        R`\(2\pi(23)(4)\).`,
+      ], R`\(184\pi\) cm²/s`),
+      P(R`Air fills a spherical balloon at 200 cm³/s. How fast is the radius growing when \(r=7\) cm?`, [
+        R`\(\dfrac{dV}{dt}=4\pi r^2\dfrac{dr}{dt}\).`,
+        R`\(200=196\pi\dfrac{dr}{dt}\).`,
+      ], R`\(\dfrac{50}{49\pi}\approx0.3248\) cm/s`),
+      P(R`A 13 ft ladder slides down a wall; its bottom moves away at 2 ft/s. How fast is the top falling when the bottom is 5 ft from the wall?`, [
+        R`\(x^2+y^2=169\); at \(x=5\), \(y=12\).`,
+        R`\(x\dfrac{dx}{dt}+y\dfrac{dy}{dt}=0\): \(5(2)+12\dfrac{dy}{dt}=0\).`,
+        R`\(\dfrac{dy}{dt}=-\dfrac{5}{6}\).`,
+      ], R`Falling at \(\dfrac{5}{6}\) ft/s`),
+      P(R`A square's side grows at 5 in/min. How fast is the area growing when the side is 3 in?`, [
+        R`\(\dfrac{dA}{dt}=2s\dfrac{ds}{dt}\).`,
+      ], R`\(30\) in²/min`),
+      P(R`A cube's edges grow at 1 cm/s. How fast is the volume growing when an edge is 11 cm?`, [
+        R`\(V=s^3\Rightarrow\dfrac{dV}{dt}=3s^2\dfrac{ds}{dt}\).`,
+        R`\(3(11)^2(1)\).`,
+      ], R`\(363\) cm³/s`),
     ],
   },
 
@@ -1529,63 +3635,367 @@ window.TOPICS = [
           R`\(L(x)=2+\tfrac14(x-1)\).`,
           R`\(\sqrt{4.05}=f(1.05)\approx2+\tfrac14(0.05)=2.0125\).`,
         ], R`\(L(x)=2+\tfrac14(x-1)\); \(\sqrt{4.05}\approx2.0125\)`),
-      // ---- even more practice ----
-      P(R`Use linear approximation to estimate \(\sqrt{24.7}\).`, [
-        R`\(f(x)=\sqrt x\), \(a=25\). \(f(25)=5\).`,
-        R`\(f'(x)=\dfrac1{2\sqrt x}\Rightarrow f'(25)=\dfrac1{10}\).`,
-        R`\(L(24.7)=5+\dfrac1{10}(-0.3)\approx4.97\).`,
-        R`(Actual: \(4.9699\).)`,
-      ], R`\(\approx4.97\)`),
-      P(R`Use linear approximation to estimate \(\sqrt{100.4}\).`, [
-        R`\(f(x)=\sqrt x\), \(a=100\). \(f(100)=10\).`,
-        R`\(f'(x)=\dfrac1{2\sqrt x}\Rightarrow f'(100)=\dfrac1{20}\).`,
-        R`\(L(100.4)=10+\dfrac1{20}(0.4)\approx10.02\).`,
-        R`(Actual: \(10.0200\).)`,
-      ], R`\(\approx10.02\)`),
-      P(R`Use linear approximation to estimate \(\sqrt{25.4}\).`, [
-        R`\(f(x)=\sqrt x\), \(a=25\). \(f(25)=5\).`,
-        R`\(f'(x)=\dfrac1{2\sqrt x}\Rightarrow f'(25)=\dfrac1{10}\).`,
-        R`\(L(25.4)=5+\dfrac1{10}(0.4)\approx5.04\).`,
-        R`(Actual: \(5.0398\).)`,
-      ], R`\(\approx5.04\)`),
-      P(R`Use linear approximation to estimate \(\sqrt{36.3}\).`, [
-        R`\(f(x)=\sqrt x\), \(a=36\). \(f(36)=6\).`,
-        R`\(f'(x)=\dfrac1{2\sqrt x}\Rightarrow f'(36)=\dfrac1{12}\).`,
-        R`\(L(36.3)=6+\dfrac1{12}(0.3)\approx6.025\).`,
-        R`(Actual: \(6.0249\).)`,
-      ], R`\(\approx6.025\)`),
-      P(R`Use linear approximation to estimate \(\sqrt{8.9}\).`, [
-        R`\(f(x)=\sqrt x\), \(a=9\). \(f(9)=3\).`,
-        R`\(f'(x)=\dfrac1{2\sqrt x}\Rightarrow f'(9)=\dfrac1{6}\).`,
-        R`\(L(8.9)=3+\dfrac1{6}(-0.1)\approx2.9833\).`,
-        R`(Actual: \(2.9833\).)`,
-      ], R`\(\approx2.9833\)`),
-      P(R`Use linear approximation to estimate \(\sqrt{99.7}\).`, [
-        R`\(f(x)=\sqrt x\), \(a=100\). \(f(100)=10\).`,
-        R`\(f'(x)=\dfrac1{2\sqrt x}\Rightarrow f'(100)=\dfrac1{20}\).`,
-        R`\(L(99.7)=10+\dfrac1{20}(-0.3)\approx9.985\).`,
-        R`(Actual: \(9.9850\).)`,
-      ], R`\(\approx9.985\)`),
-      P(R`Use linear approximation to estimate \(\sqrt[3]{26.7}\).`, [
-        R`\(f(x)=x^{1/3}\), \(a=27\), \(f(27)=3\).`,
-        R`\(f'(x)=\tfrac13x^{-2/3}\Rightarrow f'(27)=\dfrac{1}{3\cdot9}=\dfrac1{27}\).`,
-        R`\(L(26.7)=3+\dfrac{-0.3}{27}\approx2.9889\).`,
-      ], R`\(\approx2.9889\)`),
-      P(R`Use linear approximation to estimate \(\sqrt[3]{125.1}\).`, [
-        R`\(f(x)=x^{1/3}\), \(a=125\), \(f(125)=5\).`,
-        R`\(f'(x)=\tfrac13x^{-2/3}\Rightarrow f'(125)=\dfrac{1}{3\cdot25}=\dfrac1{75}\).`,
-        R`\(L(125.1)=5+\dfrac{0.1}{75}\approx5.0013\).`,
-      ], R`\(\approx5.0013\)`),
-      P(R`Use linear approximation to estimate \(\sqrt[3]{63.7}\).`, [
-        R`\(f(x)=x^{1/3}\), \(a=64\), \(f(64)=4\).`,
-        R`\(f'(x)=\tfrac13x^{-2/3}\Rightarrow f'(64)=\dfrac{1}{3\cdot16}=\dfrac1{48}\).`,
-        R`\(L(63.7)=4+\dfrac{-0.3}{48}\approx3.9938\).`,
-      ], R`\(\approx3.9938\)`),
-      P(R`Use linear approximation to estimate \(\sqrt[3]{125.3}\).`, [
-        R`\(f(x)=x^{1/3}\), \(a=125\), \(f(125)=5\).`,
-        R`\(f'(x)=\tfrac13x^{-2/3}\Rightarrow f'(125)=\dfrac{1}{3\cdot25}=\dfrac1{75}\).`,
-        R`\(L(125.3)=5+\dfrac{0.3}{75}\approx5.004\).`,
-      ], R`\(\approx5.004\)`),
+      // ---- generated practice (numbers vary; answers computed) ----
+      P(R`Use linear approximation to estimate \(\sqrt{169.9}\).`, [
+        R`\(f=\sqrt x\), \(a=169\), \(f(a)=13\), \(f'(a)=\tfrac{1}{26}\).`,
+        R`\(L=13+\tfrac{1}{26}(0.9)\).`,
+      ], R`\(\approx13.0346\)`),
+      P(R`Use linear approximation to estimate \(\sqrt[3]{26.6}\).`, [
+        R`\(f=x^{1/3}\), \(a=27\), \(f'(a)=\tfrac{1}{3(3)^2}=\tfrac1{27}\).`,
+        R`\(L=3+\tfrac{-0.4}{27}\).`,
+      ], R`\(\approx2.9852\)`),
+      P(R`Use linear approximation to estimate \((0.97)^{10}\).`, [
+        R`\(f=x^{10}\), \(a=1\): \(f(1)=1\), \(f'(1)=10\).`,
+        R`\(L=1+10(-0.03)\). (Actual: \(0.7374\).)`,
+      ], R`\(\approx0.7\)`),
+      P(R`Use linear approximation to estimate \(\dfrac{1}{8.2}\).`, [
+        R`\(f=\tfrac1x\), \(a=8\): \(f(a)=\tfrac1{8}\), \(f'(a)=-\tfrac1{64}\).`,
+        R`\(L=\tfrac1{8}-\tfrac{1}{64}(0.2)\).`,
+      ], R`\(\approx0.1219\)`),
+      P(R`Use linear approximation to estimate \(e^{0.08}\).`, [
+        R`Linearize at \(a=0\): \(L(x)=1+x\).`,
+        R`Plug in.`,
+      ], R`\(\approx1.08\)`),
+      P(R`A square side is measured as 7 cm with possible error 0.05 cm. Use differentials to estimate the error in the area.`, [
+        R`\(A=s^2\) &rArr; \(dA=2s\,ds\).`,
+        R`Plug in 7 and 0.05.`,
+      ], R`\(\approx0.7\)`),
+      P(R`Find the linearization of \(f(x)=x^{2}+4x\) at \(a=3\).`, [
+        R`\(f(3)=21\), \(f'(x)=2x+4\Rightarrow f'(3)=10\).`,
+        R`\(L(x)=21+10(x-3)\).`,
+      ], R`\(L(x)=10x-9\)`),
+      P(R`Use linear approximation to estimate \((3.05)^2\).`, [
+        R`\(f=x^2\), \(a=3\): \(f(a)=9\), \(f'(a)=6\).`,
+        R`\(L=9+6(0.05)\).`,
+      ], R`\(\approx9.3\)`),
+      P(R`Use linear approximation to estimate \(\sqrt{24.4}\).`, [
+        R`\(f=\sqrt x\), \(a=25\), \(f(a)=5\), \(f'(a)=\tfrac{1}{10}\).`,
+        R`\(L=5+\tfrac{1}{10}(-0.6)\).`,
+      ], R`\(\approx4.94\)`),
+      P(R`Use linear approximation to estimate \(\sqrt[3]{7.6}\).`, [
+        R`\(f=x^{1/3}\), \(a=8\), \(f'(a)=\tfrac{1}{3(2)^2}=\tfrac1{12}\).`,
+        R`\(L=2+\tfrac{-0.4}{12}\).`,
+      ], R`\(\approx1.9667\)`),
+      P(R`Use linear approximation to estimate \((1.03)^{9}\).`, [
+        R`\(f=x^{9}\), \(a=1\): \(f(1)=1\), \(f'(1)=9\).`,
+        R`\(L=1+9(0.03)\). (Actual: \(1.3048\).)`,
+      ], R`\(\approx1.27\)`),
+      P(R`Use linear approximation to estimate \(\dfrac{1}{5.8}\).`, [
+        R`\(f=\tfrac1x\), \(a=6\): \(f(a)=\tfrac1{6}\), \(f'(a)=-\tfrac1{36}\).`,
+        R`\(L=\tfrac1{6}-\tfrac{1}{36}(-0.2)\).`,
+      ], R`\(\approx0.1722\)`),
+      P(R`Use linear approximation to estimate \(e^{0.04}\).`, [
+        R`Linearize at \(a=0\): \(L(x)=1+x\).`,
+        R`Plug in.`,
+      ], R`\(\approx1.04\)`),
+      P(R`A square side is measured as 14 cm with possible error 0.01 cm. Use differentials to estimate the error in the area.`, [
+        R`\(A=s^2\) &rArr; \(dA=2s\,ds\).`,
+        R`Plug in 14 and 0.01.`,
+      ], R`\(\approx0.28\)`),
+      P(R`Find the linearization of \(f(x)=x^{2}-7x\) at \(a=2\).`, [
+        R`\(f(2)=-10\), \(f'(x)=2x-7\Rightarrow f'(2)=-3\).`,
+        R`\(L(x)=-10-3(x-2)\).`,
+      ], R`\(L(x)=-3x-4\)`),
+      P(R`Use linear approximation to estimate \((13.02)^2\).`, [
+        R`\(f=x^2\), \(a=13\): \(f(a)=169\), \(f'(a)=26\).`,
+        R`\(L=169+26(0.02)\).`,
+      ], R`\(\approx169.52\)`),
+      P(R`Use linear approximation to estimate \(\sqrt{4.6}\).`, [
+        R`\(f=\sqrt x\), \(a=4\), \(f(a)=2\), \(f'(a)=\tfrac{1}{4}\).`,
+        R`\(L=2+\tfrac{1}{4}(0.6)\).`,
+      ], R`\(\approx2.15\)`),
+      P(R`Use linear approximation to estimate \(\sqrt[3]{216.3}\).`, [
+        R`\(f=x^{1/3}\), \(a=216\), \(f'(a)=\tfrac{1}{3(6)^2}=\tfrac1{108}\).`,
+        R`\(L=6+\tfrac{0.3}{108}\).`,
+      ], R`\(\approx6.0028\)`),
+      P(R`Use linear approximation to estimate \((0.96)^{6}\).`, [
+        R`\(f=x^{6}\), \(a=1\): \(f(1)=1\), \(f'(1)=6\).`,
+        R`\(L=1+6(-0.04)\). (Actual: \(0.7828\).)`,
+      ], R`\(\approx0.76\)`),
+      P(R`Use linear approximation to estimate \(\dfrac{1}{5.3}\).`, [
+        R`\(f=\tfrac1x\), \(a=5\): \(f(a)=\tfrac1{5}\), \(f'(a)=-\tfrac1{25}\).`,
+        R`\(L=\tfrac1{5}-\tfrac{1}{25}(0.3)\).`,
+      ], R`\(\approx0.188\)`),
+      P(R`A square side is measured as 11 cm with possible error 0.01 cm. Use differentials to estimate the error in the area.`, [
+        R`\(A=s^2\) &rArr; \(dA=2s\,ds\).`,
+        R`Plug in 11 and 0.01.`,
+      ], R`\(\approx0.22\)`),
+      P(R`Find the linearization of \(f(x)=x^{2}-2x\) at \(a=4\).`, [
+        R`\(f(4)=8\), \(f'(x)=2x-2\Rightarrow f'(4)=6\).`,
+        R`\(L(x)=8+6(x-4)\).`,
+      ], R`\(L(x)=6x-16\)`),
+      P(R`Use linear approximation to estimate \((5.03)^2\).`, [
+        R`\(f=x^2\), \(a=5\): \(f(a)=25\), \(f'(a)=10\).`,
+        R`\(L=25+10(0.03)\).`,
+      ], R`\(\approx25.3\)`),
+      P(R`Use linear approximation to estimate \(\sqrt{24.1}\).`, [
+        R`\(f=\sqrt x\), \(a=25\), \(f(a)=5\), \(f'(a)=\tfrac{1}{10}\).`,
+        R`\(L=5+\tfrac{1}{10}(-0.9)\).`,
+      ], R`\(\approx4.91\)`),
+      P(R`Use linear approximation to estimate \(\sqrt[3]{7.5}\).`, [
+        R`\(f=x^{1/3}\), \(a=8\), \(f'(a)=\tfrac{1}{3(2)^2}=\tfrac1{12}\).`,
+        R`\(L=2+\tfrac{-0.5}{12}\).`,
+      ], R`\(\approx1.9583\)`),
+      P(R`Use linear approximation to estimate \((0.96)^{2}\).`, [
+        R`\(f=x^{2}\), \(a=1\): \(f(1)=1\), \(f'(1)=2\).`,
+        R`\(L=1+2(-0.04)\). (Actual: \(0.9216\).)`,
+      ], R`\(\approx0.92\)`),
+      P(R`Use linear approximation to estimate \(\dfrac{1}{8.1}\).`, [
+        R`\(f=\tfrac1x\), \(a=8\): \(f(a)=\tfrac1{8}\), \(f'(a)=-\tfrac1{64}\).`,
+        R`\(L=\tfrac1{8}-\tfrac{1}{64}(0.1)\).`,
+      ], R`\(\approx0.1234\)`),
+      P(R`Use linear approximation to estimate \(\tan(0.03)\).`, [
+        R`Linearize at \(a=0\): \(L(x)=x\).`,
+        R`Plug in.`,
+      ], R`\(\approx0.03\)`),
+      P(R`A square side is measured as 18 cm with possible error 0.2 cm. Use differentials to estimate the error in the area.`, [
+        R`\(A=s^2\) &rArr; \(dA=2s\,ds\).`,
+        R`Plug in 18 and 0.2.`,
+      ], R`\(\approx7.2\)`),
+      P(R`Find the linearization of \(f(x)=x^{2}+8x\) at \(a=-5\).`, [
+        R`\(f(-5)=-15\), \(f'(x)=2x+8\Rightarrow f'(-5)=-2\).`,
+        R`\(L(x)=-15-2(x+5)\).`,
+      ], R`\(L(x)=-2x-25\)`),
+      P(R`Use linear approximation to estimate \((14.03)^2\).`, [
+        R`\(f=x^2\), \(a=14\): \(f(a)=196\), \(f'(a)=28\).`,
+        R`\(L=196+28(0.03)\).`,
+      ], R`\(\approx196.84\)`),
+      P(R`Use linear approximation to estimate \(\sqrt{63.6}\).`, [
+        R`\(f=\sqrt x\), \(a=64\), \(f(a)=8\), \(f'(a)=\tfrac{1}{16}\).`,
+        R`\(L=8+\tfrac{1}{16}(-0.4)\).`,
+      ], R`\(\approx7.975\)`),
+      P(R`Use linear approximation to estimate \(\sqrt[3]{27.6}\).`, [
+        R`\(f=x^{1/3}\), \(a=27\), \(f'(a)=\tfrac{1}{3(3)^2}=\tfrac1{27}\).`,
+        R`\(L=3+\tfrac{0.6}{27}\).`,
+      ], R`\(\approx3.0222\)`),
+      P(R`Use linear approximation to estimate \((1.03)^{12}\).`, [
+        R`\(f=x^{12}\), \(a=1\): \(f(1)=1\), \(f'(1)=12\).`,
+        R`\(L=1+12(0.03)\). (Actual: \(1.4258\).)`,
+      ], R`\(\approx1.36\)`),
+      P(R`Use linear approximation to estimate \(\dfrac{1}{6.7}\).`, [
+        R`\(f=\tfrac1x\), \(a=7\): \(f(a)=\tfrac1{7}\), \(f'(a)=-\tfrac1{49}\).`,
+        R`\(L=\tfrac1{7}-\tfrac{1}{49}(-0.3)\).`,
+      ], R`\(\approx0.149\)`),
+      P(R`Use linear approximation to estimate \(\tan(0.08)\).`, [
+        R`Linearize at \(a=0\): \(L(x)=x\).`,
+        R`Plug in.`,
+      ], R`\(\approx0.08\)`),
+      P(R`A square side is measured as 15 cm with possible error 0.05 cm. Use differentials to estimate the error in the area.`, [
+        R`\(A=s^2\) &rArr; \(dA=2s\,ds\).`,
+        R`Plug in 15 and 0.05.`,
+      ], R`\(\approx1.5\)`),
+      P(R`Find the linearization of \(f(x)=x^{2}+9x\) at \(a=-4\).`, [
+        R`\(f(-4)=-20\), \(f'(x)=2x+9\Rightarrow f'(-4)=1\).`,
+        R`\(L(x)=-20+(x+4)\).`,
+      ], R`\(L(x)=x-16\)`),
+      P(R`Use linear approximation to estimate \((13.95)^2\).`, [
+        R`\(f=x^2\), \(a=14\): \(f(a)=196\), \(f'(a)=28\).`,
+        R`\(L=196+28(-0.05)\).`,
+      ], R`\(\approx194.6\)`),
+      P(R`Use linear approximation to estimate \(\sqrt{16.2}\).`, [
+        R`\(f=\sqrt x\), \(a=16\), \(f(a)=4\), \(f'(a)=\tfrac{1}{8}\).`,
+        R`\(L=4+\tfrac{1}{8}(0.2)\).`,
+      ], R`\(\approx4.025\)`),
+      P(R`Use linear approximation to estimate \(\sqrt[3]{63.6}\).`, [
+        R`\(f=x^{1/3}\), \(a=64\), \(f'(a)=\tfrac{1}{3(4)^2}=\tfrac1{48}\).`,
+        R`\(L=4+\tfrac{-0.4}{48}\).`,
+      ], R`\(\approx3.9917\)`),
+      P(R`Use linear approximation to estimate \((1.03)^{7}\).`, [
+        R`\(f=x^{7}\), \(a=1\): \(f(1)=1\), \(f'(1)=7\).`,
+        R`\(L=1+7(0.03)\). (Actual: \(1.2299\).)`,
+      ], R`\(\approx1.21\)`),
+      P(R`Use linear approximation to estimate \(\dfrac{1}{9.8}\).`, [
+        R`\(f=\tfrac1x\), \(a=10\): \(f(a)=\tfrac1{10}\), \(f'(a)=-\tfrac1{100}\).`,
+        R`\(L=\tfrac1{10}-\tfrac{1}{100}(-0.2)\).`,
+      ], R`\(\approx0.102\)`),
+      P(R`Use linear approximation to estimate \(\ln(1.08)\).`, [
+        R`Linearize at \(a=1\): \(L(x)=x-1\).`,
+        R`Plug in.`,
+      ], R`\(\approx0.08\)`),
+      P(R`A square side is measured as 5 cm with possible error 0.01 cm. Use differentials to estimate the error in the area.`, [
+        R`\(A=s^2\) &rArr; \(dA=2s\,ds\).`,
+        R`Plug in 5 and 0.01.`,
+      ], R`\(\approx0.1\)`),
+      P(R`Find the linearization of \(f(x)=x^{2}-9x\) at \(a=5\).`, [
+        R`\(f(5)=-20\), \(f'(x)=2x-9\Rightarrow f'(5)=1\).`,
+        R`\(L(x)=-20+(x-5)\).`,
+      ], R`\(L(x)=x-25\)`),
+      P(R`Use linear approximation to estimate \((10.01)^2\).`, [
+        R`\(f=x^2\), \(a=10\): \(f(a)=100\), \(f'(a)=20\).`,
+        R`\(L=100+20(0.01)\).`,
+      ], R`\(\approx100.2\)`),
+      P(R`Use linear approximation to estimate \(\sqrt{81.6}\).`, [
+        R`\(f=\sqrt x\), \(a=81\), \(f(a)=9\), \(f'(a)=\tfrac{1}{18}\).`,
+        R`\(L=9+\tfrac{1}{18}(0.6)\).`,
+      ], R`\(\approx9.0333\)`),
+      P(R`Use linear approximation to estimate \(\sqrt[3]{8.3}\).`, [
+        R`\(f=x^{1/3}\), \(a=8\), \(f'(a)=\tfrac{1}{3(2)^2}=\tfrac1{12}\).`,
+        R`\(L=2+\tfrac{0.3}{12}\).`,
+      ], R`\(\approx2.025\)`),
+      P(R`Use linear approximation to estimate \((0.95)^{2}\).`, [
+        R`\(f=x^{2}\), \(a=1\): \(f(1)=1\), \(f'(1)=2\).`,
+        R`\(L=1+2(-0.05)\). (Actual: \(0.9025\).)`,
+      ], R`\(\approx0.9\)`),
+      P(R`Use linear approximation to estimate \(\dfrac{1}{2.3}\).`, [
+        R`\(f=\tfrac1x\), \(a=2\): \(f(a)=\tfrac1{2}\), \(f'(a)=-\tfrac1{4}\).`,
+        R`\(L=\tfrac1{2}-\tfrac{1}{4}(0.3)\).`,
+      ], R`\(\approx0.425\)`),
+      P(R`Use linear approximation to estimate \(\sqrt{0.91}\).`, [
+        R`Linearize at \(a=1\): \(L(x)=1+\tfrac12(x-1)\).`,
+        R`Plug in.`,
+      ], R`\(\approx0.955\)`),
+      P(R`A sphere radius is measured as 20 cm with possible error 0.01 cm. Use differentials to estimate the error in the volume.`, [
+        R`\(V=\tfrac43\pi r^3\) &rArr; \(dV=4\pi r^2\,dr\).`,
+        R`Plug in 20 and 0.01.`,
+      ], R`\(\approx16\pi\)`),
+      P(R`Find the linearization of \(f(x)=x^{2}-5x\) at \(a=2\).`, [
+        R`\(f(2)=-6\), \(f'(x)=2x-5\Rightarrow f'(2)=-1\).`,
+        R`\(L(x)=-6-(x-2)\).`,
+      ], R`\(L(x)=-x-4\)`),
+      P(R`Use linear approximation to estimate \((11.96)^2\).`, [
+        R`\(f=x^2\), \(a=12\): \(f(a)=144\), \(f'(a)=24\).`,
+        R`\(L=144+24(-0.04)\).`,
+      ], R`\(\approx143.04\)`),
+      P(R`Use linear approximation to estimate \(\sqrt{16.8}\).`, [
+        R`\(f=\sqrt x\), \(a=16\), \(f(a)=4\), \(f'(a)=\tfrac{1}{8}\).`,
+        R`\(L=4+\tfrac{1}{8}(0.8)\).`,
+      ], R`\(\approx4.1\)`),
+      P(R`Use linear approximation to estimate \(\sqrt[3]{64.7}\).`, [
+        R`\(f=x^{1/3}\), \(a=64\), \(f'(a)=\tfrac{1}{3(4)^2}=\tfrac1{48}\).`,
+        R`\(L=4+\tfrac{0.7}{48}\).`,
+      ], R`\(\approx4.0146\)`),
+      P(R`Use linear approximation to estimate \((1.01)^{11}\).`, [
+        R`\(f=x^{11}\), \(a=1\): \(f(1)=1\), \(f'(1)=11\).`,
+        R`\(L=1+11(0.01)\). (Actual: \(1.1157\).)`,
+      ], R`\(\approx1.11\)`),
+      P(R`Use linear approximation to estimate \(\dfrac{1}{4.2}\).`, [
+        R`\(f=\tfrac1x\), \(a=4\): \(f(a)=\tfrac1{4}\), \(f'(a)=-\tfrac1{16}\).`,
+        R`\(L=\tfrac1{4}-\tfrac{1}{16}(0.2)\).`,
+      ], R`\(\approx0.2375\)`),
+      P(R`Use linear approximation to estimate \(\sin(-0.07)\).`, [
+        R`Linearize at \(a=0\): \(L(x)=x\).`,
+        R`Plug in.`,
+      ], R`\(\approx-0.07\)`),
+      P(R`A sphere radius is measured as 9 cm with possible error 0.1 cm. Use differentials to estimate the error in the volume.`, [
+        R`\(V=\tfrac43\pi r^3\) &rArr; \(dV=4\pi r^2\,dr\).`,
+        R`Plug in 9 and 0.1.`,
+      ], R`\(\approx32.4\pi\)`),
+      P(R`Find the linearization of \(f(x)=x^{2}-7x\) at \(a=-2\).`, [
+        R`\(f(-2)=18\), \(f'(x)=2x-7\Rightarrow f'(-2)=-11\).`,
+        R`\(L(x)=18-11(x+2)\).`,
+      ], R`\(L(x)=-11x-4\)`),
+      P(R`Use linear approximation to estimate \((2.05)^2\).`, [
+        R`\(f=x^2\), \(a=2\): \(f(a)=4\), \(f'(a)=4\).`,
+        R`\(L=4+4(0.05)\).`,
+      ], R`\(\approx4.2\)`),
+      P(R`Use linear approximation to estimate \(\sqrt{48.1}\).`, [
+        R`\(f=\sqrt x\), \(a=49\), \(f(a)=7\), \(f'(a)=\tfrac{1}{14}\).`,
+        R`\(L=7+\tfrac{1}{14}(-0.9)\).`,
+      ], R`\(\approx6.9357\)`),
+      P(R`Use linear approximation to estimate \(\sqrt[3]{124.4}\).`, [
+        R`\(f=x^{1/3}\), \(a=125\), \(f'(a)=\tfrac{1}{3(5)^2}=\tfrac1{75}\).`,
+        R`\(L=5+\tfrac{-0.6}{75}\).`,
+      ], R`\(\approx4.992\)`),
+      P(R`Use linear approximation to estimate \((0.97)^{9}\).`, [
+        R`\(f=x^{9}\), \(a=1\): \(f(1)=1\), \(f'(1)=9\).`,
+        R`\(L=1+9(-0.03)\). (Actual: \(0.7602\).)`,
+      ], R`\(\approx0.73\)`),
+      P(R`Use linear approximation to estimate \(\dfrac{1}{3.7}\).`, [
+        R`\(f=\tfrac1x\), \(a=4\): \(f(a)=\tfrac1{4}\), \(f'(a)=-\tfrac1{16}\).`,
+        R`\(L=\tfrac1{4}-\tfrac{1}{16}(-0.3)\).`,
+      ], R`\(\approx0.2688\)`),
+      P(R`Use linear approximation to estimate \(\tan(-0.03)\).`, [
+        R`Linearize at \(a=0\): \(L(x)=x\).`,
+        R`Plug in.`,
+      ], R`\(\approx-0.03\)`),
+      P(R`A circle radius is measured as 12 cm with possible error 0.02 cm. Use differentials to estimate the error in the area.`, [
+        R`\(A=\pi r^2\) &rArr; \(dA=2\pi r\,dr\).`,
+        R`Plug in 12 and 0.02.`,
+      ], R`\(\approx0.48\pi\)`),
+      P(R`Use linear approximation to estimate \((11.95)^2\).`, [
+        R`\(f=x^2\), \(a=12\): \(f(a)=144\), \(f'(a)=24\).`,
+        R`\(L=144+24(-0.05)\).`,
+      ], R`\(\approx142.8\)`),
+      P(R`Use linear approximation to estimate \(\sqrt{80.4}\).`, [
+        R`\(f=\sqrt x\), \(a=81\), \(f(a)=9\), \(f'(a)=\tfrac{1}{18}\).`,
+        R`\(L=9+\tfrac{1}{18}(-0.6)\).`,
+      ], R`\(\approx8.9667\)`),
+      P(R`Use linear approximation to estimate \(\sqrt[3]{64.6}\).`, [
+        R`\(f=x^{1/3}\), \(a=64\), \(f'(a)=\tfrac{1}{3(4)^2}=\tfrac1{48}\).`,
+        R`\(L=4+\tfrac{0.6}{48}\).`,
+      ], R`\(\approx4.0125\)`),
+      P(R`Use linear approximation to estimate \((1.02)^{10}\).`, [
+        R`\(f=x^{10}\), \(a=1\): \(f(1)=1\), \(f'(1)=10\).`,
+        R`\(L=1+10(0.02)\). (Actual: \(1.219\).)`,
+      ], R`\(\approx1.2\)`),
+      P(R`Use linear approximation to estimate \(\dfrac{1}{3.9}\).`, [
+        R`\(f=\tfrac1x\), \(a=4\): \(f(a)=\tfrac1{4}\), \(f'(a)=-\tfrac1{16}\).`,
+        R`\(L=\tfrac1{4}-\tfrac{1}{16}(-0.1)\).`,
+      ], R`\(\approx0.2563\)`),
+      P(R`Use linear approximation to estimate \(\ln(1.03)\).`, [
+        R`Linearize at \(a=1\): \(L(x)=x-1\).`,
+        R`Plug in.`,
+      ], R`\(\approx0.03\)`),
+      P(R`A circle radius is measured as 4 cm with possible error 0.02 cm. Use differentials to estimate the error in the area.`, [
+        R`\(A=\pi r^2\) &rArr; \(dA=2\pi r\,dr\).`,
+        R`Plug in 4 and 0.02.`,
+      ], R`\(\approx0.16\pi\)`),
+      P(R`Find the linearization of \(f(x)=x^{2}\) at \(a=5\).`, [
+        R`\(f(5)=25\), \(f'(x)=2x\Rightarrow f'(5)=10\).`,
+        R`\(L(x)=25+10(x-5)\).`,
+      ], R`\(L(x)=10x-25\)`),
+      P(R`Use linear approximation to estimate \((9.96)^2\).`, [
+        R`\(f=x^2\), \(a=10\): \(f(a)=100\), \(f'(a)=20\).`,
+        R`\(L=100+20(-0.04)\).`,
+      ], R`\(\approx99.2\)`),
+      P(R`Use linear approximation to estimate \(\sqrt{120.9}\).`, [
+        R`\(f=\sqrt x\), \(a=121\), \(f(a)=11\), \(f'(a)=\tfrac{1}{22}\).`,
+        R`\(L=11+\tfrac{1}{22}(-0.1)\).`,
+      ], R`\(\approx10.9955\)`),
+      P(R`Use linear approximation to estimate \(\sqrt[3]{215.1}\).`, [
+        R`\(f=x^{1/3}\), \(a=216\), \(f'(a)=\tfrac{1}{3(6)^2}=\tfrac1{108}\).`,
+        R`\(L=6+\tfrac{-0.9}{108}\).`,
+      ], R`\(\approx5.9917\)`),
+      P(R`Use linear approximation to estimate \((1.03)^{2}\).`, [
+        R`\(f=x^{2}\), \(a=1\): \(f(1)=1\), \(f'(1)=2\).`,
+        R`\(L=1+2(0.03)\). (Actual: \(1.0609\).)`,
+      ], R`\(\approx1.06\)`),
+      P(R`Use linear approximation to estimate \(\dfrac{1}{5.7}\).`, [
+        R`\(f=\tfrac1x\), \(a=6\): \(f(a)=\tfrac1{6}\), \(f'(a)=-\tfrac1{36}\).`,
+        R`\(L=\tfrac1{6}-\tfrac{1}{36}(-0.3)\).`,
+      ], R`\(\approx0.175\)`),
+      P(R`Use linear approximation to estimate \(\sin(0.03)\).`, [
+        R`Linearize at \(a=0\): \(L(x)=x\).`,
+        R`Plug in.`,
+      ], R`\(\approx0.03\)`),
+      P(R`A sphere radius is measured as 6 cm with possible error 0.02 cm. Use differentials to estimate the error in the volume.`, [
+        R`\(V=\tfrac43\pi r^3\) &rArr; \(dV=4\pi r^2\,dr\).`,
+        R`Plug in 6 and 0.02.`,
+      ], R`\(\approx2.88\pi\)`),
+      P(R`Find the linearization of \(f(x)=x^{2}+4x\) at \(a=1\).`, [
+        R`\(f(1)=5\), \(f'(x)=2x+4\Rightarrow f'(1)=6\).`,
+        R`\(L(x)=5+6(x-1)\).`,
+      ], R`\(L(x)=6x-1\)`),
+      P(R`Use linear approximation to estimate \((11.03)^2\).`, [
+        R`\(f=x^2\), \(a=11\): \(f(a)=121\), \(f'(a)=22\).`,
+        R`\(L=121+22(0.03)\).`,
+      ], R`\(\approx121.66\)`),
+      P(R`Use linear approximation to estimate \(\sqrt{9.6}\).`, [
+        R`\(f=\sqrt x\), \(a=9\), \(f(a)=3\), \(f'(a)=\tfrac{1}{6}\).`,
+        R`\(L=3+\tfrac{1}{6}(0.6)\).`,
+      ], R`\(\approx3.1\)`),
+      P(R`Use linear approximation to estimate \((1.04)^{4}\).`, [
+        R`\(f=x^{4}\), \(a=1\): \(f(1)=1\), \(f'(1)=4\).`,
+        R`\(L=1+4(0.04)\). (Actual: \(1.1699\).)`,
+      ], R`\(\approx1.16\)`),
+      P(R`Use linear approximation to estimate \(\dfrac{1}{4.3}\).`, [
+        R`\(f=\tfrac1x\), \(a=4\): \(f(a)=\tfrac1{4}\), \(f'(a)=-\tfrac1{16}\).`,
+        R`\(L=\tfrac1{4}-\tfrac{1}{16}(0.3)\).`,
+      ], R`\(\approx0.2313\)`),
+      P(R`Use linear approximation to estimate \(e^{-0.08}\).`, [
+        R`Linearize at \(a=0\): \(L(x)=1+x\).`,
+        R`Plug in.`,
+      ], R`\(\approx0.92\)`),
     ],
   },
 
@@ -1728,74 +4138,365 @@ window.TOPICS = [
           R`\(x<-1\): \(-\). \(-1<x<1\): \(+\). \(x>1\): \(-\).`,
           R`Local min \(f(-1)=-\tfrac12\); local max \(f(1)=\tfrac12\).`,
         ], R`Local min \(\left(-1,-\tfrac12\right)\), local max \(\left(1,\tfrac12\right)\)`),
-      // ---- even more practice ----
-      P(R`For \(f(x)=x^{3}+6x^{2}+9x-4\), find the local extrema and the inflection point.`, [
-        R`\(f'(x)=3x^{2}+12x+9=3(x+3)(x+1)\). Critical numbers \(x=-3,\ -1\).`,
-        R`Sign of \(f'\): \(+\) before \(-3\), \(-\) between, \(+\) after \(-1\).`,
-        R`Local max at \(x=-3\): \(f(-3)=-4\). Local min at \(x=-1\): \(f(-1)=-8\).`,
-        R`\(f''(x)=6x+12=0\Rightarrow x=-2\); \(f(-2)=-6\). Concavity changes there.`,
-      ], R`Local max \((-3,-4)\), local min \((-1,-8)\), inflection \((-2,-6)\)`),
-      P(R`For \(f(x)=x^{3}-3x^{2}-9x+1\), find the local extrema and the inflection point.`, [
-        R`\(f'(x)=3x^{2}-6x-9=3(x+1)(x-3)\). Critical numbers \(x=-1,\ 3\).`,
-        R`Sign of \(f'\): \(+\) before \(-1\), \(-\) between, \(+\) after \(3\).`,
-        R`Local max at \(x=-1\): \(f(-1)=6\). Local min at \(x=3\): \(f(3)=-26\).`,
-        R`\(f''(x)=6x-6=0\Rightarrow x=1\); \(f(1)=-10\). Concavity changes there.`,
-      ], R`Local max \((-1,6)\), local min \((3,-26)\), inflection \((1,-10)\)`),
+      // ---- generated practice (numbers vary; answers computed) ----
+      P(R`For \(f(x)=x^{3}-6x^{2}-8\), find the local extrema and the inflection point.`, [
+        R`\(f'(x)=3x^{2}-12x=3(x)(x-4)\).`,
+        R`\(+,-,+\) pattern: max at \(x=0\), min at \(x=4\).`,
+        R`\(f''=6x-12=0\Rightarrow x=2\).`,
+      ], R`Max \((0,-8)\), min \((4,-40)\), inflection \((2,-24)\)`),
+      P(R`Where is \(f(x)=x^{3}-12x^{2}+36x-2\) increasing and decreasing?`, [
+        R`\(f'(x)=3(x-2)(x-6)\); critical numbers \(2,\ 6\).`,
+        R`Test points: positive outside, negative between.`,
+      ], R`Increasing on \((-\infty,2)\cup(6,\infty)\); decreasing on \((2,6)\)`),
+      P(R`Find where \(f(x)=x^{3}-9x^{2}+15x-5\) is concave up and concave down.`, [
+        R`\(f''(x)=6x-18\), zero at \(x=3\).`,
+        R`Negative to the left, positive to the right.`,
+      ], R`Down on \((-\infty,3)\), up on \((3,\infty)\); inflection at \(x=3\)`),
+      P(R`Use the Second Derivative Test to classify the critical numbers of \(f(x)=x^{3}+12x^{2}+45x-9\).`, [
+        R`CPs: \(x=-5,\ -3\). \(f''(x)=6x+24\).`,
+        R`\(f''(-5)=-6<0\) &rArr; max; \(f''(-3)=6>0\) &rArr; min.`,
+      ], R`Local max at \(x=-5\), local min at \(x=-3\)`),
+      P(R`Find the absolute max and min of \(f(x)=-x^{2}+4\) on \([-3,4]\).`, [
+        R`\(f'=-2x=0\Rightarrow x=0\).`,
+        R`\(f(-3)=-5\), \(f(0)=4\), \(f(4)=-12\).`,
+      ], R`Max \(4\) at \(x=0\); min \(-12\) at \(x=4\)`),
+      P(R`Find the absolute max and min of \(f(x)=x^{3}-48x-10\) on \([-3,5]\).`, [
+        R`\(f'=3x^2-48=0\Rightarrow x=\pm4\); keep the ones inside the interval.`,
+        R`\(f(-3)=107\), \(f(5)=-125\), \(f(4)=-138\).`,
+      ], R`Max \(107\) at \(x=-3\); min \(-138\) at \(x=4\)`),
+      P(R`Find the local extrema of \(f(x)=x^{4}-18x^{2}+2\).`, [
+        R`\(f'=4x^3-36x=4x(x-3)(x+3)\); CPs \(0,\pm3\).`,
+        R`Signs: \(-,+,-,+\).`,
+      ], R`Local max \((0,2)\); local mins \((\pm3,-79)\)`),
+      P(R`If \(f'(x)=(x+1)(x-1)^2\), where does \(f\) have local extrema?`, [
+        R`\((x-1)^2\ge0\), so the sign of \(f'\) comes from \((x+1)\).`,
+        R`Sign changes at \(x=-1\) only (− to +); none at \(x=1\).`,
+      ], R`Local min at \(x=-1\); no extremum at \(x=1\)`),
+      P(R`Find the absolute max and min of \(f(x)=x+\dfrac{4}{x}\) on \([1,5]\).`, [
+        R`\(f'=1-\dfrac{4}{x^2}=0\Rightarrow x=2\).`,
+        R`\(f(1)=5\), \(f(2)=4\), \(f(5)=\dfrac{29}{5}\).`,
+      ], R`Min \(4\) at \(x=2\); max \(\dfrac{29}{5}\) at \(x=5\)`),
+      P(R`For \(f(x)=x^{3}-3x^{2}-9x-1\), find the local extrema and the inflection point.`, [
+        R`\(f'(x)=3x^{2}-6x-9=3(x+1)(x-3)\).`,
+        R`\(+,-,+\) pattern: max at \(x=-1\), min at \(x=3\).`,
+        R`\(f''=6x-6=0\Rightarrow x=1\).`,
+      ], R`Max \((-1,4)\), min \((3,-28)\), inflection \((1,-12)\)`),
+      P(R`Where is \(f(x)=x^{3}-3x^{2}-9x-1\) increasing and decreasing?`, [
+        R`\(f'(x)=3(x+1)(x-3)\); critical numbers \(-1,\ 3\).`,
+        R`Test points: positive outside, negative between.`,
+      ], R`Increasing on \((-\infty,-1)\cup(3,\infty)\); decreasing on \((-1,3)\)`),
+      P(R`Find where \(f(x)=x^{3}-12x^{2}+45x-7\) is concave up and concave down.`, [
+        R`\(f''(x)=6x-24\), zero at \(x=4\).`,
+        R`Negative to the left, positive to the right.`,
+      ], R`Down on \((-\infty,4)\), up on \((4,\infty)\); inflection at \(x=4\)`),
+      P(R`Use the Second Derivative Test to classify the critical numbers of \(f(x)=x^{3}+3x^{2}-9x-6\).`, [
+        R`CPs: \(x=-3,\ 1\). \(f''(x)=6x+6\).`,
+        R`\(f''(-3)=-12<0\) &rArr; max; \(f''(1)=12>0\) &rArr; min.`,
+      ], R`Local max at \(x=-3\), local min at \(x=1\)`),
+      P(R`Find the absolute max and min of \(f(x)=3x^{2}+12x+3\) on \([-6,2]\).`, [
+        R`\(f'=6x+12=0\Rightarrow x=-2\).`,
+        R`\(f(-6)=39\), \(f(-2)=-9\), \(f(2)=39\).`,
+      ], R`Max \(39\) at \(x=-6 and 2\); min \(-9\) at \(x=-2\)`),
+      P(R`Find the absolute max and min of \(f(x)=x^{3}-12x-19\) on \([-4,2]\).`, [
+        R`\(f'=3x^2-12=0\Rightarrow x=\pm2\); keep the ones inside the interval.`,
+        R`\(f(-4)=-35\), \(f(2)=-35\), \(f(-2)=-3\).`,
+      ], R`Max \(-3\) at \(x=-2\); min \(-35\) at \(x=-4 and 2\)`),
+      P(R`Find the local extrema of \(f(x)=x^{4}-18x^{2}+6\).`, [
+        R`\(f'=4x^3-36x=4x(x-3)(x+3)\); CPs \(0,\pm3\).`,
+        R`Signs: \(-,+,-,+\).`,
+      ], R`Local max \((0,6)\); local mins \((\pm3,-75)\)`),
+      P(R`If \(f'(x)=-(x+3)(x+1)^2\), where does \(f\) have local extrema?`, [
+        R`\((x+1)^2\ge0\), so the sign of \(f'\) comes from \(-(x+3)\).`,
+        R`Sign changes at \(x=-3\) only (+ to −); none at \(x=-1\).`,
+      ], R`Local max at \(x=-3\); no extremum at \(x=-1\)`),
+      P(R`Find the absolute max and min of \(f(x)=x+\dfrac{25}{x}\) on \([1,9]\).`, [
+        R`\(f'=1-\dfrac{25}{x^2}=0\Rightarrow x=5\).`,
+        R`\(f(1)=26\), \(f(5)=10\), \(f(9)=\dfrac{106}{9}\).`,
+      ], R`Min \(10\) at \(x=5\); max \(26\) at \(x=1\)`),
+      P(R`For \(f(x)=x^{3}-9x^{2}+24x+2\), find the local extrema and the inflection point.`, [
+        R`\(f'(x)=3x^{2}-18x+24=3(x-2)(x-4)\).`,
+        R`\(+,-,+\) pattern: max at \(x=2\), min at \(x=4\).`,
+        R`\(f''=6x-18=0\Rightarrow x=3\).`,
+      ], R`Max \((2,22)\), min \((4,18)\), inflection \((3,20)\)`),
+      P(R`Where is \(f(x)=x^{3}+6x^{2}-15x-7\) increasing and decreasing?`, [
+        R`\(f'(x)=3(x+5)(x-1)\); critical numbers \(-5,\ 1\).`,
+        R`Test points: positive outside, negative between.`,
+      ], R`Increasing on \((-\infty,-5)\cup(1,\infty)\); decreasing on \((-5,1)\)`),
+      P(R`Find where \(f(x)=x^{3}-15x^{2}+63x-6\) is concave up and concave down.`, [
+        R`\(f''(x)=6x-30\), zero at \(x=5\).`,
+        R`Negative to the left, positive to the right.`,
+      ], R`Down on \((-\infty,5)\), up on \((5,\infty)\); inflection at \(x=5\)`),
+      P(R`Use the Second Derivative Test to classify the critical numbers of \(f(x)=x^{3}+3x^{2}-9x+5\).`, [
+        R`CPs: \(x=-3,\ 1\). \(f''(x)=6x+6\).`,
+        R`\(f''(-3)=-12<0\) &rArr; max; \(f''(1)=12>0\) &rArr; min.`,
+      ], R`Local max at \(x=-3\), local min at \(x=1\)`),
+      P(R`Find the absolute max and min of \(f(x)=3x^{2}+18x-9\) on \([-5,-2]\).`, [
+        R`\(f'=6x+18=0\Rightarrow x=-3\).`,
+        R`\(f(-5)=-24\), \(f(-3)=-36\), \(f(-2)=-33\).`,
+      ], R`Max \(-24\) at \(x=-5\); min \(-36\) at \(x=-3\)`),
+      P(R`Find the absolute max and min of \(f(x)=x^{3}-48x+5\) on \([-1,7]\).`, [
+        R`\(f'=3x^2-48=0\Rightarrow x=\pm4\); keep the ones inside the interval.`,
+        R`\(f(-1)=52\), \(f(7)=12\), \(f(4)=-123\).`,
+      ], R`Max \(52\) at \(x=-1\); min \(-123\) at \(x=4\)`),
+      P(R`Find the local extrema of \(f(x)=x^{4}-18x^{2}\).`, [
+        R`\(f'=4x^3-36x=4x(x-3)(x+3)\); CPs \(0,\pm3\).`,
+        R`Signs: \(-,+,-,+\).`,
+      ], R`Local max \((0,0)\); local mins \((\pm3,-81)\)`),
+      P(R`If \(f'(x)=(x-3)(x-5)^2\), where does \(f\) have local extrema?`, [
+        R`\((x-5)^2\ge0\), so the sign of \(f'\) comes from \((x-3)\).`,
+        R`Sign changes at \(x=3\) only (− to +); none at \(x=5\).`,
+      ], R`Local min at \(x=3\); no extremum at \(x=5\)`),
+      P(R`Find the absolute max and min of \(f(x)=x+\dfrac{16}{x}\) on \([3,7]\).`, [
+        R`\(f'=1-\dfrac{16}{x^2}=0\Rightarrow x=4\).`,
+        R`\(f(3)=\dfrac{25}{3}\), \(f(4)=8\), \(f(7)=\dfrac{65}{7}\).`,
+      ], R`Min \(8\) at \(x=4\); max \(\dfrac{65}{7}\) at \(x=7\)`),
+      P(R`For \(f(x)=x^{3}-18x^{2}+81x-1\), find the local extrema and the inflection point.`, [
+        R`\(f'(x)=3x^{2}-36x+81=3(x-3)(x-9)\).`,
+        R`\(+,-,+\) pattern: max at \(x=3\), min at \(x=9\).`,
+        R`\(f''=6x-36=0\Rightarrow x=6\).`,
+      ], R`Max \((3,107)\), min \((9,-1)\), inflection \((6,53)\)`),
+      P(R`Where is \(f(x)=x^{3}-6x^{2}+9x+9\) increasing and decreasing?`, [
+        R`\(f'(x)=3(x-1)(x-3)\); critical numbers \(1,\ 3\).`,
+        R`Test points: positive outside, negative between.`,
+      ], R`Increasing on \((-\infty,1)\cup(3,\infty)\); decreasing on \((1,3)\)`),
+      P(R`Find where \(f(x)=x^{3}-15x^{2}+48x-9\) is concave up and concave down.`, [
+        R`\(f''(x)=6x-30\), zero at \(x=5\).`,
+        R`Negative to the left, positive to the right.`,
+      ], R`Down on \((-\infty,5)\), up on \((5,\infty)\); inflection at \(x=5\)`),
+      P(R`Use the Second Derivative Test to classify the critical numbers of \(f(x)=x^{3}-9x^{2}-2\).`, [
+        R`CPs: \(x=0,\ 6\). \(f''(x)=6x-18\).`,
+        R`\(f''(0)=-18<0\) &rArr; max; \(f''(6)=18>0\) &rArr; min.`,
+      ], R`Local max at \(x=0\), local min at \(x=6\)`),
+      P(R`Find the absolute max and min of \(f(x)=-3x^{2}+4\) on \([-1,1]\).`, [
+        R`\(f'=-6x=0\Rightarrow x=0\).`,
+        R`\(f(-1)=1\), \(f(0)=4\), \(f(1)=1\).`,
+      ], R`Max \(4\) at \(x=0\); min \(1\) at \(x=-1 and 1\)`),
+      P(R`Find the absolute max and min of \(f(x)=x^{3}-48x+11\) on \([-4,5]\).`, [
+        R`\(f'=3x^2-48=0\Rightarrow x=\pm4\); keep the ones inside the interval.`,
+        R`\(f(-4)=139\), \(f(5)=-104\), \(f(4)=-117\).`,
+      ], R`Max \(139\) at \(x=-4\); min \(-117\) at \(x=4\)`),
+      P(R`Find the local extrema of \(f(x)=x^{4}-2x^{2}+6\).`, [
+        R`\(f'=4x^3-4x=4x(x-1)(x+1)\); CPs \(0,\pm1\).`,
+        R`Signs: \(-,+,-,+\).`,
+      ], R`Local max \((0,6)\); local mins \((\pm1,5)\)`),
+      P(R`If \(f'(x)=-(x-1)(x+1)^2\), where does \(f\) have local extrema?`, [
+        R`\((x+1)^2\ge0\), so the sign of \(f'\) comes from \(-(x-1)\).`,
+        R`Sign changes at \(x=1\) only (+ to −); none at \(x=-1\).`,
+      ], R`Local max at \(x=1\); no extremum at \(x=-1\)`),
+      P(R`For \(f(x)=x^{3}+3x^{2}-24x-7\), find the local extrema and the inflection point.`, [
+        R`\(f'(x)=3x^{2}+6x-24=3(x+4)(x-2)\).`,
+        R`\(+,-,+\) pattern: max at \(x=-4\), min at \(x=2\).`,
+        R`\(f''=6x+6=0\Rightarrow x=-1\).`,
+      ], R`Max \((-4,73)\), min \((2,-35)\), inflection \((-1,19)\)`),
+      P(R`Where is \(f(x)=x^{3}-3x^{2}-9x\) increasing and decreasing?`, [
+        R`\(f'(x)=3(x+1)(x-3)\); critical numbers \(-1,\ 3\).`,
+        R`Test points: positive outside, negative between.`,
+      ], R`Increasing on \((-\infty,-1)\cup(3,\infty)\); decreasing on \((-1,3)\)`),
+      P(R`Find where \(f(x)=x^{3}-9x^{2}+24x-5\) is concave up and concave down.`, [
+        R`\(f''(x)=6x-18\), zero at \(x=3\).`,
+        R`Negative to the left, positive to the right.`,
+      ], R`Down on \((-\infty,3)\), up on \((3,\infty)\); inflection at \(x=3\)`),
+      P(R`Use the Second Derivative Test to classify the critical numbers of \(f(x)=x^{3}-9x^{2}+24x-7\).`, [
+        R`CPs: \(x=2,\ 4\). \(f''(x)=6x-18\).`,
+        R`\(f''(2)=-6<0\) &rArr; max; \(f''(4)=6>0\) &rArr; min.`,
+      ], R`Local max at \(x=2\), local min at \(x=4\)`),
+      P(R`Find the absolute max and min of \(f(x)=-3x^{2}-12x+5\) on \([-5,2]\).`, [
+        R`\(f'=-6x-12=0\Rightarrow x=-2\).`,
+        R`\(f(-5)=-10\), \(f(-2)=17\), \(f(2)=-31\).`,
+      ], R`Max \(17\) at \(x=-2\); min \(-31\) at \(x=2\)`),
+      P(R`Find the absolute max and min of \(f(x)=x^{3}-3x-15\) on \([-3,3]\).`, [
+        R`\(f'=3x^2-3=0\Rightarrow x=\pm1\); keep the ones inside the interval.`,
+        R`\(f(-3)=-33\), \(f(3)=3\), \(f(1)=-17\), \(f(-1)=-13\).`,
+      ], R`Max \(3\) at \(x=3\); min \(-33\) at \(x=-3\)`),
+      P(R`Find the local extrema of \(f(x)=x^{4}-32x^{2}-4\).`, [
+        R`\(f'=4x^3-64x=4x(x-4)(x+4)\); CPs \(0,\pm4\).`,
+        R`Signs: \(-,+,-,+\).`,
+      ], R`Local max \((0,-4)\); local mins \((\pm4,-260)\)`),
+      P(R`If \(f'(x)=(x+2)(x-2)^2\), where does \(f\) have local extrema?`, [
+        R`\((x-2)^2\ge0\), so the sign of \(f'\) comes from \((x+2)\).`,
+        R`Sign changes at \(x=-2\) only (− to +); none at \(x=2\).`,
+      ], R`Local min at \(x=-2\); no extremum at \(x=2\)`),
+      P(R`Find the absolute max and min of \(f(x)=x+\dfrac{36}{x}\) on \([5,10]\).`, [
+        R`\(f'=1-\dfrac{36}{x^2}=0\Rightarrow x=6\).`,
+        R`\(f(5)=\dfrac{61}{5}\), \(f(6)=12\), \(f(10)=\dfrac{68}{5}\).`,
+      ], R`Min \(12\) at \(x=6\); max \(\dfrac{68}{5}\) at \(x=10\)`),
+      P(R`For \(f(x)=x^{3}-15x^{2}+63x+6\), find the local extrema and the inflection point.`, [
+        R`\(f'(x)=3x^{2}-30x+63=3(x-3)(x-7)\).`,
+        R`\(+,-,+\) pattern: max at \(x=3\), min at \(x=7\).`,
+        R`\(f''=6x-30=0\Rightarrow x=5\).`,
+      ], R`Max \((3,87)\), min \((7,55)\), inflection \((5,71)\)`),
+      P(R`Where is \(f(x)=x^{3}-6x^{2}+4\) increasing and decreasing?`, [
+        R`\(f'(x)=3(x)(x-4)\); critical numbers \(0,\ 4\).`,
+        R`Test points: positive outside, negative between.`,
+      ], R`Increasing on \((-\infty,0)\cup(4,\infty)\); decreasing on \((0,4)\)`),
+      P(R`Find where \(f(x)=x^{3}+6x^{2}+9x+5\) is concave up and concave down.`, [
+        R`\(f''(x)=6x+12\), zero at \(x=-2\).`,
+        R`Negative to the left, positive to the right.`,
+      ], R`Down on \((-\infty,-2)\), up on \((-2,\infty)\); inflection at \(x=-2\)`),
+      P(R`Use the Second Derivative Test to classify the critical numbers of \(f(x)=x^{3}+6x^{2}-15x+4\).`, [
+        R`CPs: \(x=-5,\ 1\). \(f''(x)=6x+12\).`,
+        R`\(f''(-5)=-18<0\) &rArr; max; \(f''(1)=18>0\) &rArr; min.`,
+      ], R`Local max at \(x=-5\), local min at \(x=1\)`),
+      P(R`Find the absolute max and min of \(f(x)=-3x^{2}+18x+8\) on \([2,5]\).`, [
+        R`\(f'=-6x+18=0\Rightarrow x=3\).`,
+        R`\(f(2)=32\), \(f(3)=35\), \(f(5)=23\).`,
+      ], R`Max \(35\) at \(x=3\); min \(23\) at \(x=5\)`),
+      P(R`Find the absolute max and min of \(f(x)=x^{3}-48x+11\) on \([-5,5]\).`, [
+        R`\(f'=3x^2-48=0\Rightarrow x=\pm4\); keep the ones inside the interval.`,
+        R`\(f(-5)=126\), \(f(5)=-104\), \(f(4)=-117\), \(f(-4)=139\).`,
+      ], R`Max \(139\) at \(x=-4\); min \(-117\) at \(x=4\)`),
+      P(R`Find the local extrema of \(f(x)=x^{4}-32x^{2}+7\).`, [
+        R`\(f'=4x^3-64x=4x(x-4)(x+4)\); CPs \(0,\pm4\).`,
+        R`Signs: \(-,+,-,+\).`,
+      ], R`Local max \((0,7)\); local mins \((\pm4,-249)\)`),
+      P(R`Find the absolute max and min of \(f(x)=x+\dfrac{36}{x}\) on \([4,10]\).`, [
+        R`\(f'=1-\dfrac{36}{x^2}=0\Rightarrow x=6\).`,
+        R`\(f(4)=13\), \(f(6)=12\), \(f(10)=\dfrac{68}{5}\).`,
+      ], R`Min \(12\) at \(x=6\); max \(\dfrac{68}{5}\) at \(x=10\)`),
       P(R`For \(f(x)=x^{3}-9x^{2}+24x+5\), find the local extrema and the inflection point.`, [
-        R`\(f'(x)=3x^{2}-18x+24=3(x-2)(x-4)\). Critical numbers \(x=2,\ 4\).`,
-        R`Sign of \(f'\): \(+\) before \(2\), \(-\) between, \(+\) after \(4\).`,
-        R`Local max at \(x=2\): \(f(2)=25\). Local min at \(x=4\): \(f(4)=21\).`,
-        R`\(f''(x)=6x-18=0\Rightarrow x=3\); \(f(3)=23\). Concavity changes there.`,
-      ], R`Local max \((2,25)\), local min \((4,21)\), inflection \((3,23)\)`),
-      P(R`For \(f(x)=x^{3}+9x^{2}+24x-5\), find the local extrema and the inflection point.`, [
-        R`\(f'(x)=3x^{2}+18x+24=3(x+4)(x+2)\). Critical numbers \(x=-4,\ -2\).`,
-        R`Sign of \(f'\): \(+\) before \(-4\), \(-\) between, \(+\) after \(-2\).`,
-        R`Local max at \(x=-4\): \(f(-4)=-21\). Local min at \(x=-2\): \(f(-2)=-25\).`,
-        R`\(f''(x)=6x+18=0\Rightarrow x=-3\); \(f(-3)=-23\). Concavity changes there.`,
-      ], R`Local max \((-4,-21)\), local min \((-2,-25)\), inflection \((-3,-23)\)`),
-      P(R`For \(f(x)=x^{3}-6x^{2}+1\), find the local extrema and the inflection point.`, [
-        R`\(f'(x)=3x^{2}-12x=3(x)(x-4)\). Critical numbers \(x=0,\ 4\).`,
-        R`Sign of \(f'\): \(+\) before \(0\), \(-\) between, \(+\) after \(4\).`,
-        R`Local max at \(x=0\): \(f(0)=1\). Local min at \(x=4\): \(f(4)=-31\).`,
-        R`\(f''(x)=6x-12=0\Rightarrow x=2\); \(f(2)=-15\). Concavity changes there.`,
-      ], R`Local max \((0,1)\), local min \((4,-31)\), inflection \((2,-15)\)`),
-      P(R`For \(f(x)=x^{3}+6x^{2}-5\), find the local extrema and the inflection point.`, [
-        R`\(f'(x)=3x^{2}+12x=3(x+4)(x)\). Critical numbers \(x=-4,\ 0\).`,
-        R`Sign of \(f'\): \(+\) before \(-4\), \(-\) between, \(+\) after \(0\).`,
-        R`Local max at \(x=-4\): \(f(-4)=27\). Local min at \(x=0\): \(f(0)=-5\).`,
-        R`\(f''(x)=6x+12=0\Rightarrow x=-2\); \(f(-2)=11\). Concavity changes there.`,
-      ], R`Local max \((-4,27)\), local min \((0,-5)\), inflection \((-2,11)\)`),
-      P(R`For \(f(x)=x^{3}-12x+3\), find the local extrema and the inflection point.`, [
-        R`\(f'(x)=3x^{2}-12=3(x+2)(x-2)\). Critical numbers \(x=-2,\ 2\).`,
-        R`Sign of \(f'\): \(+\) before \(-2\), \(-\) between, \(+\) after \(2\).`,
-        R`Local max at \(x=-2\): \(f(-2)=19\). Local min at \(x=2\): \(f(2)=-13\).`,
-        R`\(f''(x)=6x=0\Rightarrow x=0\); \(f(0)=3\). Concavity changes there.`,
-      ], R`Local max \((-2,19)\), local min \((2,-13)\), inflection \((0,3)\)`),
-      P(R`Find the absolute max and min of \(f(x)=2x^{2}-12x\) on \([0,5]\).`, [
-        R`\(f'(x)=4x-12=0\Rightarrow x=3\) (inside the interval).`,
-        R`Endpoints: \(f(0)=0\), \(f(5)=-10\). Critical number: \(f(3)=-18\).`,
-        R`Biggest is the max, smallest is the min.`,
-      ], R`Abs max \(0\) at \(x=0\); abs min \(-18\) at \(x=3\)`),
-      P(R`Find the absolute max and min of \(f(x)=x^{2}-4x-3\) on \([0,4]\).`, [
-        R`\(f'(x)=2x-4=0\Rightarrow x=2\) (inside the interval).`,
-        R`Endpoints: \(f(0)=-3\), \(f(4)=-3\). Critical number: \(f(2)=-7\).`,
-        R`Biggest is the max, smallest is the min.`,
-      ], R`Abs max \(-3\) at \(x=0\); abs min \(-7\) at \(x=2\)`),
-      P(R`Find the absolute max and min of \(f(x)=x^{2}+4x\) on \([-5,-1]\).`, [
-        R`\(f'(x)=2x+4=0\Rightarrow x=-2\) (inside the interval).`,
-        R`Endpoints: \(f(-5)=5\), \(f(-1)=-3\). Critical number: \(f(-2)=-4\).`,
-        R`Biggest is the max, smallest is the min.`,
-      ], R`Abs max \(5\) at \(x=-5\); abs min \(-4\) at \(x=-2\)`),
-      P(R`Find the absolute max and min of \(f(x)=x^{2}+4x+4\) on \([-5,1]\).`, [
-        R`\(f'(x)=2x+4=0\Rightarrow x=-2\) (inside the interval).`,
-        R`Endpoints: \(f(-5)=9\), \(f(1)=9\). Critical number: \(f(-2)=0\).`,
-        R`Biggest is the max, smallest is the min.`,
-      ], R`Abs max \(9\) at \(x=-5\); abs min \(0\) at \(x=-2\)`),
-      P(R`Find the absolute max and min of \(f(x)=2x^{2}-8x+4\) on \([1,6]\).`, [
-        R`\(f'(x)=4x-8=0\Rightarrow x=2\) (inside the interval).`,
-        R`Endpoints: \(f(1)=-2\), \(f(6)=28\). Critical number: \(f(2)=-4\).`,
-        R`Biggest is the max, smallest is the min.`,
-      ], R`Abs max \(28\) at \(x=6\); abs min \(-4\) at \(x=2\)`),
+        R`\(f'(x)=3x^{2}-18x+24=3(x-2)(x-4)\).`,
+        R`\(+,-,+\) pattern: max at \(x=2\), min at \(x=4\).`,
+        R`\(f''=6x-18=0\Rightarrow x=3\).`,
+      ], R`Max \((2,25)\), min \((4,21)\), inflection \((3,23)\)`),
+      P(R`Where is \(f(x)=x^{3}-27x-1\) increasing and decreasing?`, [
+        R`\(f'(x)=3(x+3)(x-3)\); critical numbers \(-3,\ 3\).`,
+        R`Test points: positive outside, negative between.`,
+      ], R`Increasing on \((-\infty,-3)\cup(3,\infty)\); decreasing on \((-3,3)\)`),
+      P(R`Find where \(f(x)=x^{3}+6x^{2}+9x+7\) is concave up and concave down.`, [
+        R`\(f''(x)=6x+12\), zero at \(x=-2\).`,
+        R`Negative to the left, positive to the right.`,
+      ], R`Down on \((-\infty,-2)\), up on \((-2,\infty)\); inflection at \(x=-2\)`),
+      P(R`Use the Second Derivative Test to classify the critical numbers of \(f(x)=x^{3}-3x^{2}-9x+4\).`, [
+        R`CPs: \(x=-1,\ 3\). \(f''(x)=6x-6\).`,
+        R`\(f''(-1)=-12<0\) &rArr; max; \(f''(3)=12>0\) &rArr; min.`,
+      ], R`Local max at \(x=-1\), local min at \(x=3\)`),
+      P(R`Find the absolute max and min of \(f(x)=-x^{2}-6x\) on \([-4,1]\).`, [
+        R`\(f'=-2x-6=0\Rightarrow x=-3\).`,
+        R`\(f(-4)=8\), \(f(-3)=9\), \(f(1)=-7\).`,
+      ], R`Max \(9\) at \(x=-3\); min \(-7\) at \(x=1\)`),
+      P(R`Find the absolute max and min of \(f(x)=x^{3}-12x+13\) on \([-4,2]\).`, [
+        R`\(f'=3x^2-12=0\Rightarrow x=\pm2\); keep the ones inside the interval.`,
+        R`\(f(-4)=-3\), \(f(2)=-3\), \(f(-2)=29\).`,
+      ], R`Max \(29\) at \(x=-2\); min \(-3\) at \(x=-4 and 2\)`),
+      P(R`Find the local extrema of \(f(x)=x^{4}-18x^{2}-4\).`, [
+        R`\(f'=4x^3-36x=4x(x-3)(x+3)\); CPs \(0,\pm3\).`,
+        R`Signs: \(-,+,-,+\).`,
+      ], R`Local max \((0,-4)\); local mins \((\pm3,-85)\)`),
+      P(R`If \(f'(x)=(x-2)(x+4)^2\), where does \(f\) have local extrema?`, [
+        R`\((x+4)^2\ge0\), so the sign of \(f'\) comes from \((x-2)\).`,
+        R`Sign changes at \(x=2\) only (− to +); none at \(x=-4\).`,
+      ], R`Local min at \(x=2\); no extremum at \(x=-4\)`),
+      P(R`Find the absolute max and min of \(f(x)=x+\dfrac{16}{x}\) on \([1,5]\).`, [
+        R`\(f'=1-\dfrac{16}{x^2}=0\Rightarrow x=4\).`,
+        R`\(f(1)=17\), \(f(4)=8\), \(f(5)=\dfrac{41}{5}\).`,
+      ], R`Min \(8\) at \(x=4\); max \(17\) at \(x=1\)`),
+      P(R`For \(f(x)=x^{3}-3x-7\), find the local extrema and the inflection point.`, [
+        R`\(f'(x)=3x^{2}-3=3(x+1)(x-1)\).`,
+        R`\(+,-,+\) pattern: max at \(x=-1\), min at \(x=1\).`,
+        R`\(f''=6x+0=0\Rightarrow x=0\).`,
+      ], R`Max \((-1,-5)\), min \((1,-9)\), inflection \((0,-7)\)`),
+      P(R`Where is \(f(x)=x^{3}+6x^{2}+9x-7\) increasing and decreasing?`, [
+        R`\(f'(x)=3(x+3)(x+1)\); critical numbers \(-3,\ -1\).`,
+        R`Test points: positive outside, negative between.`,
+      ], R`Increasing on \((-\infty,-3)\cup(-1,\infty)\); decreasing on \((-3,-1)\)`),
+      P(R`Find where \(f(x)=x^{3}+9x^{2}+15x-4\) is concave up and concave down.`, [
+        R`\(f''(x)=6x+18\), zero at \(x=-3\).`,
+        R`Negative to the left, positive to the right.`,
+      ], R`Down on \((-\infty,-3)\), up on \((-3,\infty)\); inflection at \(x=-3\)`),
+      P(R`Use the Second Derivative Test to classify the critical numbers of \(f(x)=x^{3}-9x^{2}+24x+3\).`, [
+        R`CPs: \(x=2,\ 4\). \(f''(x)=6x-18\).`,
+        R`\(f''(2)=-6<0\) &rArr; max; \(f''(4)=6>0\) &rArr; min.`,
+      ], R`Local max at \(x=2\), local min at \(x=4\)`),
+      P(R`Find the absolute max and min of \(f(x)=-2x^{2}+8x+3\) on \([0,6]\).`, [
+        R`\(f'=-4x+8=0\Rightarrow x=2\).`,
+        R`\(f(0)=3\), \(f(2)=11\), \(f(6)=-21\).`,
+      ], R`Max \(11\) at \(x=2\); min \(-21\) at \(x=6\)`),
+      P(R`Find the absolute max and min of \(f(x)=x^{3}-3x-18\) on \([0,4]\).`, [
+        R`\(f'=3x^2-3=0\Rightarrow x=\pm1\); keep the ones inside the interval.`,
+        R`\(f(0)=-18\), \(f(4)=34\), \(f(1)=-20\).`,
+      ], R`Max \(34\) at \(x=4\); min \(-20\) at \(x=1\)`),
+      P(R`Find the local extrema of \(f(x)=x^{4}-32x^{2}+6\).`, [
+        R`\(f'=4x^3-64x=4x(x-4)(x+4)\); CPs \(0,\pm4\).`,
+        R`Signs: \(-,+,-,+\).`,
+      ], R`Local max \((0,6)\); local mins \((\pm4,-250)\)`),
+      P(R`If \(f'(x)=-(x+5)(x-4)^2\), where does \(f\) have local extrema?`, [
+        R`\((x-4)^2\ge0\), so the sign of \(f'\) comes from \(-(x+5)\).`,
+        R`Sign changes at \(x=-5\) only (+ to −); none at \(x=4\).`,
+      ], R`Local max at \(x=-5\); no extremum at \(x=4\)`),
+      P(R`Find the absolute max and min of \(f(x)=x+\dfrac{9}{x}\) on \([2,4]\).`, [
+        R`\(f'=1-\dfrac{9}{x^2}=0\Rightarrow x=3\).`,
+        R`\(f(2)=\dfrac{13}{2}\), \(f(3)=6\), \(f(4)=\dfrac{25}{4}\).`,
+      ], R`Min \(6\) at \(x=3\); max \(\dfrac{13}{2}\) at \(x=2\)`),
+      P(R`For \(f(x)=x^{3}-12x^{2}+36x-6\), find the local extrema and the inflection point.`, [
+        R`\(f'(x)=3x^{2}-24x+36=3(x-2)(x-6)\).`,
+        R`\(+,-,+\) pattern: max at \(x=2\), min at \(x=6\).`,
+        R`\(f''=6x-24=0\Rightarrow x=4\).`,
+      ], R`Max \((2,26)\), min \((6,-6)\), inflection \((4,10)\)`),
+      P(R`Where is \(f(x)=x^{3}+6x^{2}-4\) increasing and decreasing?`, [
+        R`\(f'(x)=3(x+4)(x)\); critical numbers \(-4,\ 0\).`,
+        R`Test points: positive outside, negative between.`,
+      ], R`Increasing on \((-\infty,-4)\cup(0,\infty)\); decreasing on \((-4,0)\)`),
+      P(R`Find where \(f(x)=x^{3}-18x^{2}+81x-8\) is concave up and concave down.`, [
+        R`\(f''(x)=6x-36\), zero at \(x=6\).`,
+        R`Negative to the left, positive to the right.`,
+      ], R`Down on \((-\infty,6)\), up on \((6,\infty)\); inflection at \(x=6\)`),
+      P(R`Use the Second Derivative Test to classify the critical numbers of \(f(x)=x^{3}+6x^{2}-15x-2\).`, [
+        R`CPs: \(x=-5,\ 1\). \(f''(x)=6x+12\).`,
+        R`\(f''(-5)=-18<0\) &rArr; max; \(f''(1)=18>0\) &rArr; min.`,
+      ], R`Local max at \(x=-5\), local min at \(x=1\)`),
+      P(R`Find the absolute max and min of \(f(x)=-x^{2}+8x-6\) on \([0,7]\).`, [
+        R`\(f'=-2x+8=0\Rightarrow x=4\).`,
+        R`\(f(0)=-6\), \(f(4)=10\), \(f(7)=1\).`,
+      ], R`Max \(10\) at \(x=4\); min \(-6\) at \(x=0\)`),
+      P(R`Find the absolute max and min of \(f(x)=x^{3}-3x-10\) on \([0,1]\).`, [
+        R`\(f'=3x^2-3=0\Rightarrow x=\pm1\); keep the ones inside the interval.`,
+        R`\(f(0)=-10\), \(f(1)=-12\).`,
+      ], R`Max \(-10\) at \(x=0\); min \(-12\) at \(x=1\)`),
+      P(R`Find the local extrema of \(f(x)=x^{4}-32x^{2}-7\).`, [
+        R`\(f'=4x^3-64x=4x(x-4)(x+4)\); CPs \(0,\pm4\).`,
+        R`Signs: \(-,+,-,+\).`,
+      ], R`Local max \((0,-7)\); local mins \((\pm4,-263)\)`),
+      P(R`If \(f'(x)=(x-3)(x-2)^2\), where does \(f\) have local extrema?`, [
+        R`\((x-2)^2\ge0\), so the sign of \(f'\) comes from \((x-3)\).`,
+        R`Sign changes at \(x=3\) only (− to +); none at \(x=2\).`,
+      ], R`Local min at \(x=3\); no extremum at \(x=2\)`),
+      P(R`Find the absolute max and min of \(f(x)=x+\dfrac{16}{x}\) on \([2,5]\).`, [
+        R`\(f'=1-\dfrac{16}{x^2}=0\Rightarrow x=4\).`,
+        R`\(f(2)=10\), \(f(4)=8\), \(f(5)=\dfrac{41}{5}\).`,
+      ], R`Min \(8\) at \(x=4\); max \(10\) at \(x=2\)`),
+      P(R`For \(f(x)=x^{3}+12x^{2}+45x+1\), find the local extrema and the inflection point.`, [
+        R`\(f'(x)=3x^{2}+24x+45=3(x+5)(x+3)\).`,
+        R`\(+,-,+\) pattern: max at \(x=-5\), min at \(x=-3\).`,
+        R`\(f''=6x+24=0\Rightarrow x=-4\).`,
+      ], R`Max \((-5,-49)\), min \((-3,-53)\), inflection \((-4,-51)\)`),
+      P(R`Where is \(f(x)=x^{3}-9x^{2}+2\) increasing and decreasing?`, [
+        R`\(f'(x)=3(x)(x-6)\); critical numbers \(0,\ 6\).`,
+        R`Test points: positive outside, negative between.`,
+      ], R`Increasing on \((-\infty,0)\cup(6,\infty)\); decreasing on \((0,6)\)`),
+      P(R`Find where \(f(x)=x^{3}-12x+7\) is concave up and concave down.`, [
+        R`\(f''(x)=6x+0\), zero at \(x=0\).`,
+        R`Negative to the left, positive to the right.`,
+      ], R`Down on \((-\infty,0)\), up on \((0,\infty)\); inflection at \(x=0\)`),
+      P(R`Use the Second Derivative Test to classify the critical numbers of \(f(x)=x^{3}-3x^{2}-3\).`, [
+        R`CPs: \(x=0,\ 2\). \(f''(x)=6x-6\).`,
+        R`\(f''(0)=-6<0\) &rArr; max; \(f''(2)=6>0\) &rArr; min.`,
+      ], R`Local max at \(x=0\), local min at \(x=2\)`),
+      P(R`Find the absolute max and min of \(f(x)=-3x^{2}+24x+5\) on \([1,7]\).`, [
+        R`\(f'=-6x+24=0\Rightarrow x=4\).`,
+        R`\(f(1)=26\), \(f(4)=53\), \(f(7)=26\).`,
+      ], R`Max \(53\) at \(x=4\); min \(26\) at \(x=1 and 7\)`),
+      P(R`Find the absolute max and min of \(f(x)=x^{3}-27x+14\) on \([0,1]\).`, [
+        R`\(f'=3x^2-27=0\Rightarrow x=\pm3\); keep the ones inside the interval.`,
+        R`\(f(0)=14\), \(f(1)=-12\).`,
+      ], R`Max \(14\) at \(x=0\); min \(-12\) at \(x=1\)`),
+      P(R`Find the local extrema of \(f(x)=x^{4}-2x^{2}-2\).`, [
+        R`\(f'=4x^3-4x=4x(x-1)(x+1)\); CPs \(0,\pm1\).`,
+        R`Signs: \(-,+,-,+\).`,
+      ], R`Local max \((0,-2)\); local mins \((\pm1,-3)\)`),
+      P(R`If \(f'(x)=(x)(x+4)^2\), where does \(f\) have local extrema?`, [
+        R`\((x+4)^2\ge0\), so the sign of \(f'\) comes from \((x)\).`,
+        R`Sign changes at \(x=0\) only (− to +); none at \(x=-4\).`,
+      ], R`Local min at \(x=0\); no extremum at \(x=-4\)`),
     ],
   },
 
@@ -1882,74 +4583,360 @@ window.TOPICS = [
           R`\(f(4)-3\le6\).`,
           R`\(f(4)\le9\).`,
         ], R`\(9\)`),
-      // ---- even more practice ----
-      P(R`Find all \(c\) that satisfy the Mean Value Theorem for \(f(x)=3x^{2}-4x+4\) on \([-3,1]\).`, [
-        R`Polynomial &rArr; continuous and differentiable. ✓`,
-        R`Average slope: \(\dfrac{f(1)-f(-3)}{1-(-3)}=\dfrac{3-43}{4}=-10\).`,
-        R`\(f'(c)=6c-4=-10\Rightarrow c=-1\).`,
-        R`\(-1\) is inside \((-3,1)\). ✓ (For any quadratic, \(c\) is always the midpoint!)`,
-      ], R`\(c=-1\)`),
-      P(R`Find all \(c\) that satisfy the Mean Value Theorem for \(f(x)=3x^{2}+5x-2\) on \([1,5]\).`, [
-        R`Polynomial &rArr; continuous and differentiable. ✓`,
-        R`Average slope: \(\dfrac{f(5)-f(1)}{5-1}=\dfrac{98-6}{4}=23\).`,
-        R`\(f'(c)=6c+5=23\Rightarrow c=3\).`,
-        R`\(3\) is inside \((1,5)\). ✓ (For any quadratic, \(c\) is always the midpoint!)`,
+      // ---- generated practice (numbers vary; answers computed) ----
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=-3x^{2}-2x+6\) on \([3,4]\).`, [
+        R`Average slope \(=\dfrac{-50-(-27)}{1}=-23\).`,
+        R`\(-6c-2=-23\).`,
+      ], R`\(c=\dfrac{7}{2}\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=x^3\) on \([0,11]\).`, [
+        R`Average slope \(=121\); \(3c^2=121\).`,
+      ], R`\(c=\dfrac{11}{\sqrt3}\approx6.351\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=\sqrt x\) on \([0,49]\).`, [
+        R`Average slope \(=\dfrac{7-0}{49}=\dfrac1{7}\).`,
+        R`\(\dfrac{1}{2\sqrt c}=\dfrac1{7}\Rightarrow\sqrt c=\dfrac{7}{2}\).`,
+      ], R`\(c=\dfrac{49}{4}\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=\dfrac1x\) on \([1,9]\).`, [
+        R`Average slope \(=\dfrac{\frac1{9}-\frac1{1}}{8}=-\dfrac{1}{9}\).`,
+        R`\(-\dfrac1{c^2}=-\dfrac1{9}\Rightarrow c^2=9\).`,
       ], R`\(c=3\)`),
-      P(R`Find all \(c\) that satisfy the Mean Value Theorem for \(f(x)=4x^{2}+5x+2\) on \([-1,2]\).`, [
-        R`Polynomial &rArr; continuous and differentiable. ✓`,
-        R`Average slope: \(\dfrac{f(2)-f(-1)}{2-(-1)}=\dfrac{28-1}{3}=9\).`,
-        R`\(f'(c)=8c+5=9\Rightarrow c=\dfrac{1}{2}\).`,
-        R`\(\dfrac{1}{2}\) is inside \((-1,2)\). ✓ (For any quadratic, \(c\) is always the midpoint!)`,
-      ], R`\(c=\dfrac{1}{2}\)`),
-      P(R`Find all \(c\) that satisfy the Mean Value Theorem for \(f(x)=2x^{2}+x+3\) on \([-2,-1]\).`, [
-        R`Polynomial &rArr; continuous and differentiable. ✓`,
-        R`Average slope: \(\dfrac{f(-1)-f(-2)}{-1-(-2)}=\dfrac{4-9}{1}=-5\).`,
-        R`\(f'(c)=4c+1=-5\Rightarrow c=-\dfrac{3}{2}\).`,
-        R`\(-\dfrac{3}{2}\) is inside \((-2,-1)\). ✓ (For any quadratic, \(c\) is always the midpoint!)`,
-      ], R`\(c=-\dfrac{3}{2}\)`),
-      P(R`Find all \(c\) that satisfy the Mean Value Theorem for \(f(x)=3x^{2}-3x-4\) on \([-2,1]\).`, [
-        R`Polynomial &rArr; continuous and differentiable. ✓`,
-        R`Average slope: \(\dfrac{f(1)-f(-2)}{1-(-2)}=\dfrac{-4-14}{3}=-6\).`,
-        R`\(f'(c)=6c-3=-6\Rightarrow c=-\dfrac{1}{2}\).`,
-        R`\(-\dfrac{1}{2}\) is inside \((-2,1)\). ✓ (For any quadratic, \(c\) is always the midpoint!)`,
+      P(R`Verify Rolle's Theorem for \(f(x)=2x^{2}-24x+57\) on \([3,9]\) and find \(c\).`, [
+        R`\(f(3)=3\) and \(f(9)=3\): equal ✓.`,
+        R`\(f'(c)=4c-24=0\).`,
+      ], R`\(c=6\)`),
+      P(R`If \(f(0)=-7\) and \(f'(x)\ge3\) for all \(x\), what is the smallest possible value of \(f(6)\)?`, [
+        R`MVT: \(f(6)-f(0)=f'(c)(6)\).`,
+        R`\(f(6)\ge-7+3(6)\).`,
+      ], R`\(11\)`),
+      P(R`A car travels 420 miles in 6 hours. Explain why it was going exactly 70 mph at some moment.`, [
+        R`Average speed \(=\dfrac{420}{6}=70\).`,
+        R`Position is differentiable, so by the MVT, \(s'(c)=70\) for some \(c\).`,
+      ], R`By the MVT, at some instant the speed equaled the average, 70 mph.`),
+      P(R`Find all \(c\) satisfying the MVT for \(f(x)=x^3-4x\) on \([-4,4]\).`, [
+        R`Average slope: \(\dfrac{f(4)-f(-4)}{8}=12\).`,
+        R`\(3c^2-4=12\Rightarrow c^2=\dfrac{16}{3}\).`,
+      ], R`\(c=\pm\dfrac{4}{\sqrt3}\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=5x^{2}+2x-3\) on \([0,6]\).`, [
+        R`Average slope \(=\dfrac{189-(-3)}{6}=32\).`,
+        R`\(10c+2=32\).`,
+      ], R`\(c=3\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=x^3\) on \([0,12]\).`, [
+        R`Average slope \(=144\); \(3c^2=144\).`,
+      ], R`\(c=\dfrac{12}{\sqrt3}\approx6.928\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=\dfrac1x\) on \([3,27]\).`, [
+        R`Average slope \(=\dfrac{\frac1{27}-\frac1{3}}{24}=-\dfrac{1}{81}\).`,
+        R`\(-\dfrac1{c^2}=-\dfrac1{81}\Rightarrow c^2=81\).`,
+      ], R`\(c=9\)`),
+      P(R`Verify Rolle's Theorem for \(f(x)=-4x^{2}-4x+14\) on \([-2,1]\) and find \(c\).`, [
+        R`\(f(-2)=6\) and \(f(1)=6\): equal ✓.`,
+        R`\(f'(c)=-8c-4=0\).`,
       ], R`\(c=-\dfrac{1}{2}\)`),
-      P(R`Find all \(c\) that satisfy the Mean Value Theorem for \(f(x)=3x^{2}+3x\) on \([-2,-1]\).`, [
-        R`Polynomial &rArr; continuous and differentiable. ✓`,
-        R`Average slope: \(\dfrac{f(-1)-f(-2)}{-1-(-2)}=\dfrac{0-6}{1}=-6\).`,
-        R`\(f'(c)=6c+3=-6\Rightarrow c=-\dfrac{3}{2}\).`,
-        R`\(-\dfrac{3}{2}\) is inside \((-2,-1)\). ✓ (For any quadratic, \(c\) is always the midpoint!)`,
+      P(R`If \(f(1)=-1\) and \(f'(x)\le6\) for all \(x\), what is the largest possible value of \(f(4)\)?`, [
+        R`MVT: \(f(4)-f(1)=f'(c)(3)\).`,
+        R`\(f(4)\le-1+6(3)\).`,
+      ], R`\(17\)`),
+      P(R`A car travels 275 miles in 5 hours. Explain why it was going exactly 55 mph at some moment.`, [
+        R`Average speed \(=\dfrac{275}{5}=55\).`,
+        R`Position is differentiable, so by the MVT, \(s'(c)=55\) for some \(c\).`,
+      ], R`By the MVT, at some instant the speed equaled the average, 55 mph.`),
+      P(R`Find all \(c\) satisfying the MVT for \(f(x)=x^3-15x\) on \([-5,5]\).`, [
+        R`Average slope: \(\dfrac{f(5)-f(-5)}{10}=10\).`,
+        R`\(3c^2-15=10\Rightarrow c^2=\dfrac{25}{3}\).`,
+      ], R`\(c=\pm\dfrac{5}{\sqrt3}\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=-x^{2}-8x-6\) on \([0,6]\).`, [
+        R`Average slope \(=\dfrac{-90-(-6)}{6}=-14\).`,
+        R`\(-2c-8=-14\).`,
+      ], R`\(c=3\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=x^3\) on \([0,8]\).`, [
+        R`Average slope \(=64\); \(3c^2=64\).`,
+      ], R`\(c=\dfrac{8}{\sqrt3}\approx4.619\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=\sqrt x\) on \([0,4]\).`, [
+        R`Average slope \(=\dfrac{2-0}{4}=\dfrac1{2}\).`,
+        R`\(\dfrac{1}{2\sqrt c}=\dfrac1{2}\Rightarrow\sqrt c=\dfrac{2}{2}\).`,
+      ], R`\(c=1\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=\dfrac1x\) on \([2,8]\).`, [
+        R`Average slope \(=\dfrac{\frac1{8}-\frac1{2}}{6}=-\dfrac{1}{16}\).`,
+        R`\(-\dfrac1{c^2}=-\dfrac1{16}\Rightarrow c^2=16\).`,
+      ], R`\(c=4\)`),
+      P(R`Verify Rolle's Theorem for \(f(x)=-3x^{2}+3x+1\) on \([0,1]\) and find \(c\).`, [
+        R`\(f(0)=1\) and \(f(1)=1\): equal ✓.`,
+        R`\(f'(c)=-6c+3=0\).`,
+      ], R`\(c=\dfrac{1}{2}\)`),
+      P(R`If \(f(2)=0\) and \(f'(x)\le-5\) for all \(x\), what is the largest possible value of \(f(3)\)?`, [
+        R`MVT: \(f(3)-f(2)=f'(c)(1)\).`,
+        R`\(f(3)\le0+(-5)(1)\).`,
+      ], R`\(-5\)`),
+      P(R`A car travels 80 miles in 2 hours. Explain why it was going exactly 40 mph at some moment.`, [
+        R`Average speed \(=\dfrac{80}{2}=40\).`,
+        R`Position is differentiable, so by the MVT, \(s'(c)=40\) for some \(c\).`,
+      ], R`By the MVT, at some instant the speed equaled the average, 40 mph.`),
+      P(R`Find all \(c\) satisfying the MVT for \(f(x)=x^3-11x\) on \([-4,4]\).`, [
+        R`Average slope: \(\dfrac{f(4)-f(-4)}{8}=5\).`,
+        R`\(3c^2-11=5\Rightarrow c^2=\dfrac{16}{3}\).`,
+      ], R`\(c=\pm\dfrac{4}{\sqrt3}\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=x^{2}+x-2\) on \([1,4]\).`, [
+        R`Average slope \(=\dfrac{18-0}{3}=6\).`,
+        R`\(2c+1=6\).`,
+      ], R`\(c=\dfrac{5}{2}\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=x^3\) on \([0,14]\).`, [
+        R`Average slope \(=196\); \(3c^2=196\).`,
+      ], R`\(c=\dfrac{14}{\sqrt3}\approx8.083\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=\sqrt x\) on \([0,64]\).`, [
+        R`Average slope \(=\dfrac{8-0}{64}=\dfrac1{8}\).`,
+        R`\(\dfrac{1}{2\sqrt c}=\dfrac1{8}\Rightarrow\sqrt c=\dfrac{8}{2}\).`,
+      ], R`\(c=16\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=\dfrac1x\) on \([5,20]\).`, [
+        R`Average slope \(=\dfrac{\frac1{20}-\frac1{5}}{15}=-\dfrac{1}{100}\).`,
+        R`\(-\dfrac1{c^2}=-\dfrac1{100}\Rightarrow c^2=100\).`,
+      ], R`\(c=10\)`),
+      P(R`Verify Rolle's Theorem for \(f(x)=-4x^{2}+32x-19\) on \([1,7]\) and find \(c\).`, [
+        R`\(f(1)=9\) and \(f(7)=9\): equal ✓.`,
+        R`\(f'(c)=-8c+32=0\).`,
+      ], R`\(c=4\)`),
+      P(R`If \(f(2)=6\) and \(f'(x)\ge6\) for all \(x\), what is the smallest possible value of \(f(4)\)?`, [
+        R`MVT: \(f(4)-f(2)=f'(c)(2)\).`,
+        R`\(f(4)\ge6+6(2)\).`,
+      ], R`\(18\)`),
+      P(R`A car travels 200 miles in 5 hours. Explain why it was going exactly 40 mph at some moment.`, [
+        R`Average speed \(=\dfrac{200}{5}=40\).`,
+        R`Position is differentiable, so by the MVT, \(s'(c)=40\) for some \(c\).`,
+      ], R`By the MVT, at some instant the speed equaled the average, 40 mph.`),
+      P(R`Find all \(c\) satisfying the MVT for \(f(x)=x^3-10x\) on \([-4,4]\).`, [
+        R`Average slope: \(\dfrac{f(4)-f(-4)}{8}=6\).`,
+        R`\(3c^2-10=6\Rightarrow c^2=\dfrac{16}{3}\).`,
+      ], R`\(c=\pm\dfrac{4}{\sqrt3}\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=3x^{2}+5x+5\) on \([0,2]\).`, [
+        R`Average slope \(=\dfrac{27-5}{2}=11\).`,
+        R`\(6c+5=11\).`,
+      ], R`\(c=1\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=x^3\) on \([0,6]\).`, [
+        R`Average slope \(=36\); \(3c^2=36\).`,
+      ], R`\(c=\dfrac{6}{\sqrt3}\approx3.464\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=\sqrt x\) on \([0,144]\).`, [
+        R`Average slope \(=\dfrac{12-0}{144}=\dfrac1{12}\).`,
+        R`\(\dfrac{1}{2\sqrt c}=\dfrac1{12}\Rightarrow\sqrt c=\dfrac{12}{2}\).`,
+      ], R`\(c=36\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=\dfrac1x\) on \([4,9]\).`, [
+        R`Average slope \(=\dfrac{\frac1{9}-\frac1{4}}{5}=-\dfrac{1}{36}\).`,
+        R`\(-\dfrac1{c^2}=-\dfrac1{36}\Rightarrow c^2=36\).`,
+      ], R`\(c=6\)`),
+      P(R`Verify Rolle's Theorem for \(f(x)=4x^{2}+12x-14\) on \([-4,1]\) and find \(c\).`, [
+        R`\(f(-4)=2\) and \(f(1)=2\): equal ✓.`,
+        R`\(f'(c)=8c+12=0\).`,
       ], R`\(c=-\dfrac{3}{2}\)`),
-      P(R`Find all \(c\) that satisfy the Mean Value Theorem for \(f(x)=3x^{2}-5x+5\) on \([-3,-1]\).`, [
-        R`Polynomial &rArr; continuous and differentiable. ✓`,
-        R`Average slope: \(\dfrac{f(-1)-f(-3)}{-1-(-3)}=\dfrac{13-47}{2}=-17\).`,
-        R`\(f'(c)=6c-5=-17\Rightarrow c=-2\).`,
-        R`\(-2\) is inside \((-3,-1)\). ✓ (For any quadratic, \(c\) is always the midpoint!)`,
-      ], R`\(c=-2\)`),
-      P(R`Find \(c\) satisfying the MVT for \(f(x)=x^3\) on \([0,7]\).`, [
-        R`Average slope: \(\dfrac{343-0}{7}=49\).`,
-        R`\(3c^2=49\Rightarrow c^2=\dfrac{49}{3}\Rightarrow c=\dfrac{7}{\sqrt3}\) (take the positive one).`,
-        R`\(\dfrac{7}{\sqrt3}\approx4.041\), which is in \((0,7)\). ✓`,
-      ], R`\(c=\dfrac{7}{\sqrt3}\approx4.041\)`),
-      P(R`Find \(c\) satisfying the MVT for \(f(x)=x^3\) on \([0,5]\).`, [
-        R`Average slope: \(\dfrac{125-0}{5}=25\).`,
-        R`\(3c^2=25\Rightarrow c^2=\dfrac{25}{3}\Rightarrow c=\dfrac{5}{\sqrt3}\) (take the positive one).`,
-        R`\(\dfrac{5}{\sqrt3}\approx2.887\), which is in \((0,5)\). ✓`,
-      ], R`\(c=\dfrac{5}{\sqrt3}\approx2.887\)`),
-      P(R`Find \(c\) satisfying the MVT for \(f(x)=x^3\) on \([0,2]\).`, [
-        R`Average slope: \(\dfrac{8-0}{2}=4\).`,
-        R`\(3c^2=4\Rightarrow c^2=\dfrac{4}{3}\Rightarrow c=\dfrac{2}{\sqrt3}\) (take the positive one).`,
-        R`\(\dfrac{2}{\sqrt3}\approx1.155\), which is in \((0,2)\). ✓`,
-      ], R`\(c=\dfrac{2}{\sqrt3}\approx1.155\)`),
+      P(R`If \(f(1)=1\) and \(f'(x)\ge-1\) for all \(x\), what is the smallest possible value of \(f(6)\)?`, [
+        R`MVT: \(f(6)-f(1)=f'(c)(5)\).`,
+        R`\(f(6)\ge1+(-1)(5)\).`,
+      ], R`\(-4\)`),
+      P(R`A car travels 240 miles in 4 hours. Explain why it was going exactly 60 mph at some moment.`, [
+        R`Average speed \(=\dfrac{240}{4}=60\).`,
+        R`Position is differentiable, so by the MVT, \(s'(c)=60\) for some \(c\).`,
+      ], R`By the MVT, at some instant the speed equaled the average, 60 mph.`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=5x^{2}+5x-7\) on \([1,2]\).`, [
+        R`Average slope \(=\dfrac{23-3}{1}=20\).`,
+        R`\(10c+5=20\).`,
+      ], R`\(c=\dfrac{3}{2}\)`),
       P(R`Find \(c\) satisfying the MVT for \(f(x)=x^3\) on \([0,9]\).`, [
-        R`Average slope: \(\dfrac{729-0}{9}=81\).`,
-        R`\(3c^2=81\Rightarrow c^2=27\Rightarrow c=\dfrac{9}{\sqrt3}\) (take the positive one).`,
-        R`\(\dfrac{9}{\sqrt3}\approx5.196\), which is in \((0,9)\). ✓`,
+        R`Average slope \(=81\); \(3c^2=81\).`,
       ], R`\(c=\dfrac{9}{\sqrt3}\approx5.196\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=\sqrt x\) on \([0,9]\).`, [
+        R`Average slope \(=\dfrac{3-0}{9}=\dfrac1{3}\).`,
+        R`\(\dfrac{1}{2\sqrt c}=\dfrac1{3}\Rightarrow\sqrt c=\dfrac{3}{2}\).`,
+      ], R`\(c=\dfrac{9}{4}\)`),
+      P(R`Verify Rolle's Theorem for \(f(x)=3x^{2}-18x+12\) on \([1,5]\) and find \(c\).`, [
+        R`\(f(1)=-3\) and \(f(5)=-3\): equal ✓.`,
+        R`\(f'(c)=6c-18=0\).`,
+      ], R`\(c=3\)`),
+      P(R`If \(f(2)=1\) and \(f'(x)\ge5\) for all \(x\), what is the smallest possible value of \(f(7)\)?`, [
+        R`MVT: \(f(7)-f(2)=f'(c)(5)\).`,
+        R`\(f(7)\ge1+5(5)\).`,
+      ], R`\(26\)`),
+      P(R`A car travels 120 miles in 2 hours. Explain why it was going exactly 60 mph at some moment.`, [
+        R`Average speed \(=\dfrac{120}{2}=60\).`,
+        R`Position is differentiable, so by the MVT, \(s'(c)=60\) for some \(c\).`,
+      ], R`By the MVT, at some instant the speed equaled the average, 60 mph.`),
+      P(R`Find all \(c\) satisfying the MVT for \(f(x)=x^3-4x\) on \([-1,1]\).`, [
+        R`Average slope: \(\dfrac{f(1)-f(-1)}{2}=-3\).`,
+        R`\(3c^2-4=-3\Rightarrow c^2=\dfrac{1}{3}\).`,
+      ], R`\(c=\pm\dfrac{1}{\sqrt3}\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=4x^{2}-9x+1\) on \([2,5]\).`, [
+        R`Average slope \(=\dfrac{56-(-1)}{3}=19\).`,
+        R`\(8c-9=19\).`,
+      ], R`\(c=\dfrac{7}{2}\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=x^3\) on \([0,3]\).`, [
+        R`Average slope \(=9\); \(3c^2=9\).`,
+      ], R`\(c=\dfrac{3}{\sqrt3}\approx1.732\)`),
+      P(R`Verify Rolle's Theorem for \(f(x)=-x^{2}+5x-6\) on \([1,4]\) and find \(c\).`, [
+        R`\(f(1)=-2\) and \(f(4)=-2\): equal ✓.`,
+        R`\(f'(c)=-2c+5=0\).`,
+      ], R`\(c=\dfrac{5}{2}\)`),
+      P(R`If \(f(4)=-2\) and \(f'(x)\le6\) for all \(x\), what is the largest possible value of \(f(5)\)?`, [
+        R`MVT: \(f(5)-f(4)=f'(c)(1)\).`,
+        R`\(f(5)\le-2+6(1)\).`,
+      ], R`\(4\)`),
+      P(R`A car travels 300 miles in 4 hours. Explain why it was going exactly 75 mph at some moment.`, [
+        R`Average speed \(=\dfrac{300}{4}=75\).`,
+        R`Position is differentiable, so by the MVT, \(s'(c)=75\) for some \(c\).`,
+      ], R`By the MVT, at some instant the speed equaled the average, 75 mph.`),
+      P(R`Find all \(c\) satisfying the MVT for \(f(x)=x^3-9x\) on \([-3,3]\).`, [
+        R`Average slope: \(\dfrac{f(3)-f(-3)}{6}=0\).`,
+        R`\(3c^2-9=0\Rightarrow c^2=3\).`,
+      ], R`\(c=\pm\dfrac{3}{\sqrt3}\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=-x^{2}-5x+3\) on \([-4,-1]\).`, [
+        R`Average slope \(=\dfrac{7-7}{3}=0\).`,
+        R`\(-2c-5=0\).`,
+      ], R`\(c=-\dfrac{5}{2}\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=x^3\) on \([0,15]\).`, [
+        R`Average slope \(=225\); \(3c^2=225\).`,
+      ], R`\(c=\dfrac{15}{\sqrt3}\approx8.66\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=\dfrac1x\) on \([3,12]\).`, [
+        R`Average slope \(=\dfrac{\frac1{12}-\frac1{3}}{9}=-\dfrac{1}{36}\).`,
+        R`\(-\dfrac1{c^2}=-\dfrac1{36}\Rightarrow c^2=36\).`,
+      ], R`\(c=6\)`),
+      P(R`Verify Rolle's Theorem for \(f(x)=3x^{2}-24x+35\) on \([2,6]\) and find \(c\).`, [
+        R`\(f(2)=-1\) and \(f(6)=-1\): equal ✓.`,
+        R`\(f'(c)=6c-24=0\).`,
+      ], R`\(c=4\)`),
+      P(R`If \(f(4)=-3\) and \(f'(x)\le4\) for all \(x\), what is the largest possible value of \(f(7)\)?`, [
+        R`MVT: \(f(7)-f(4)=f'(c)(3)\).`,
+        R`\(f(7)\le-3+4(3)\).`,
+      ], R`\(9\)`),
+      P(R`A car travels 375 miles in 5 hours. Explain why it was going exactly 75 mph at some moment.`, [
+        R`Average speed \(=\dfrac{375}{5}=75\).`,
+        R`Position is differentiable, so by the MVT, \(s'(c)=75\) for some \(c\).`,
+      ], R`By the MVT, at some instant the speed equaled the average, 75 mph.`),
+      P(R`Find all \(c\) satisfying the MVT for \(f(x)=x^3-7x\) on \([-2,2]\).`, [
+        R`Average slope: \(\dfrac{f(2)-f(-2)}{4}=-3\).`,
+        R`\(3c^2-7=-3\Rightarrow c^2=\dfrac{4}{3}\).`,
+      ], R`\(c=\pm\dfrac{2}{\sqrt3}\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=4x^{2}-5x+5\) on \([2,4]\).`, [
+        R`Average slope \(=\dfrac{49-11}{2}=19\).`,
+        R`\(8c-5=19\).`,
+      ], R`\(c=3\)`),
       P(R`Find \(c\) satisfying the MVT for \(f(x)=x^3\) on \([0,4]\).`, [
-        R`Average slope: \(\dfrac{64-0}{4}=16\).`,
-        R`\(3c^2=16\Rightarrow c^2=\dfrac{16}{3}\Rightarrow c=\dfrac{4}{\sqrt3}\) (take the positive one).`,
-        R`\(\dfrac{4}{\sqrt3}\approx2.309\), which is in \((0,4)\). ✓`,
+        R`Average slope \(=16\); \(3c^2=16\).`,
       ], R`\(c=\dfrac{4}{\sqrt3}\approx2.309\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=\sqrt x\) on \([0,100]\).`, [
+        R`Average slope \(=\dfrac{10-0}{100}=\dfrac1{10}\).`,
+        R`\(\dfrac{1}{2\sqrt c}=\dfrac1{10}\Rightarrow\sqrt c=\dfrac{10}{2}\).`,
+      ], R`\(c=25\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=\dfrac1x\) on \([4,16]\).`, [
+        R`Average slope \(=\dfrac{\frac1{16}-\frac1{4}}{12}=-\dfrac{1}{64}\).`,
+        R`\(-\dfrac1{c^2}=-\dfrac1{64}\Rightarrow c^2=64\).`,
+      ], R`\(c=8\)`),
+      P(R`Verify Rolle's Theorem for \(f(x)=-4x^{2}+16x+26\) on \([-1,5]\) and find \(c\).`, [
+        R`\(f(-1)=6\) and \(f(5)=6\): equal ✓.`,
+        R`\(f'(c)=-8c+16=0\).`,
+      ], R`\(c=2\)`),
+      P(R`If \(f(1)=7\) and \(f'(x)\le3\) for all \(x\), what is the largest possible value of \(f(6)\)?`, [
+        R`MVT: \(f(6)-f(1)=f'(c)(5)\).`,
+        R`\(f(6)\le7+3(5)\).`,
+      ], R`\(22\)`),
+      P(R`A car travels 450 miles in 6 hours. Explain why it was going exactly 75 mph at some moment.`, [
+        R`Average speed \(=\dfrac{450}{6}=75\).`,
+        R`Position is differentiable, so by the MVT, \(s'(c)=75\) for some \(c\).`,
+      ], R`By the MVT, at some instant the speed equaled the average, 75 mph.`),
+      P(R`Find all \(c\) satisfying the MVT for \(f(x)=x^3-20x\) on \([-1,1]\).`, [
+        R`Average slope: \(\dfrac{f(1)-f(-1)}{2}=-19\).`,
+        R`\(3c^2-20=-19\Rightarrow c^2=\dfrac{1}{3}\).`,
+      ], R`\(c=\pm\dfrac{1}{\sqrt3}\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=-2x^{2}-2x\) on \([2,5]\).`, [
+        R`Average slope \(=\dfrac{-60-(-12)}{3}=-16\).`,
+        R`\(-4c-2=-16\).`,
+      ], R`\(c=\dfrac{7}{2}\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=x^3\) on \([0,7]\).`, [
+        R`Average slope \(=49\); \(3c^2=49\).`,
+      ], R`\(c=\dfrac{7}{\sqrt3}\approx4.041\)`),
+      P(R`Verify Rolle's Theorem for \(f(x)=3x^{2}+27x+62\) on \([-5,-4]\) and find \(c\).`, [
+        R`\(f(-5)=2\) and \(f(-4)=2\): equal ✓.`,
+        R`\(f'(c)=6c+27=0\).`,
+      ], R`\(c=-\dfrac{9}{2}\)`),
+      P(R`If \(f(0)=-4\) and \(f'(x)\le-1\) for all \(x\), what is the largest possible value of \(f(6)\)?`, [
+        R`MVT: \(f(6)-f(0)=f'(c)(6)\).`,
+        R`\(f(6)\le-4+(-1)(6)\).`,
+      ], R`\(-10\)`),
+      P(R`A car travels 90 miles in 2 hours. Explain why it was going exactly 45 mph at some moment.`, [
+        R`Average speed \(=\dfrac{90}{2}=45\).`,
+        R`Position is differentiable, so by the MVT, \(s'(c)=45\) for some \(c\).`,
+      ], R`By the MVT, at some instant the speed equaled the average, 45 mph.`),
+      P(R`Find all \(c\) satisfying the MVT for \(f(x)=x^3-18x\) on \([-4,4]\).`, [
+        R`Average slope: \(\dfrac{f(4)-f(-4)}{8}=-2\).`,
+        R`\(3c^2-18=-2\Rightarrow c^2=\dfrac{16}{3}\).`,
+      ], R`\(c=\pm\dfrac{4}{\sqrt3}\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=-2x^{2}-9x-8\) on \([2,8]\).`, [
+        R`Average slope \(=\dfrac{-208-(-34)}{6}=-29\).`,
+        R`\(-4c-9=-29\).`,
+      ], R`\(c=5\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=x^3\) on \([0,10]\).`, [
+        R`Average slope \(=100\); \(3c^2=100\).`,
+      ], R`\(c=\dfrac{10}{\sqrt3}\approx5.774\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=\sqrt x\) on \([0,36]\).`, [
+        R`Average slope \(=\dfrac{6-0}{36}=\dfrac1{6}\).`,
+        R`\(\dfrac{1}{2\sqrt c}=\dfrac1{6}\Rightarrow\sqrt c=\dfrac{6}{2}\).`,
+      ], R`\(c=9\)`),
+      P(R`Verify Rolle's Theorem for \(f(x)=4x^{2}+28x+42\) on \([-5,-2]\) and find \(c\).`, [
+        R`\(f(-5)=2\) and \(f(-2)=2\): equal ✓.`,
+        R`\(f'(c)=8c+28=0\).`,
+      ], R`\(c=-\dfrac{7}{2}\)`),
+      P(R`If \(f(4)=2\) and \(f'(x)\ge-3\) for all \(x\), what is the smallest possible value of \(f(10)\)?`, [
+        R`MVT: \(f(10)-f(4)=f'(c)(6)\).`,
+        R`\(f(10)\ge2+(-3)(6)\).`,
+      ], R`\(-16\)`),
+      P(R`A car travels 225 miles in 3 hours. Explain why it was going exactly 75 mph at some moment.`, [
+        R`Average speed \(=\dfrac{225}{3}=75\).`,
+        R`Position is differentiable, so by the MVT, \(s'(c)=75\) for some \(c\).`,
+      ], R`By the MVT, at some instant the speed equaled the average, 75 mph.`),
+      P(R`Find all \(c\) satisfying the MVT for \(f(x)=x^3-14x\) on \([-3,3]\).`, [
+        R`Average slope: \(\dfrac{f(3)-f(-3)}{6}=-5\).`,
+        R`\(3c^2-14=-5\Rightarrow c^2=3\).`,
+      ], R`\(c=\pm\dfrac{3}{\sqrt3}\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=-5x^{2}+9x+8\) on \([2,8]\).`, [
+        R`Average slope \(=\dfrac{-240-6}{6}=-41\).`,
+        R`\(-10c+9=-41\).`,
+      ], R`\(c=5\)`),
+      P(R`Verify Rolle's Theorem for \(f(x)=2x^{2}+14x+26\) on \([-4,-3]\) and find \(c\).`, [
+        R`\(f(-4)=2\) and \(f(-3)=2\): equal ✓.`,
+        R`\(f'(c)=4c+14=0\).`,
+      ], R`\(c=-\dfrac{7}{2}\)`),
+      P(R`If \(f(3)=1\) and \(f'(x)\le-4\) for all \(x\), what is the largest possible value of \(f(6)\)?`, [
+        R`MVT: \(f(6)-f(3)=f'(c)(3)\).`,
+        R`\(f(6)\le1+(-4)(3)\).`,
+      ], R`\(-11\)`),
+      P(R`A car travels 240 miles in 6 hours. Explain why it was going exactly 40 mph at some moment.`, [
+        R`Average speed \(=\dfrac{240}{6}=40\).`,
+        R`Position is differentiable, so by the MVT, \(s'(c)=40\) for some \(c\).`,
+      ], R`By the MVT, at some instant the speed equaled the average, 40 mph.`),
+      P(R`Find all \(c\) satisfying the MVT for \(f(x)=x^3-12x\) on \([-6,6]\).`, [
+        R`Average slope: \(\dfrac{f(6)-f(-6)}{12}=24\).`,
+        R`\(3c^2-12=24\Rightarrow c^2=12\).`,
+      ], R`\(c=\pm\dfrac{6}{\sqrt3}\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=5x^{2}+9x+2\) on \([0,3]\).`, [
+        R`Average slope \(=\dfrac{74-2}{3}=24\).`,
+        R`\(10c+9=24\).`,
+      ], R`\(c=\dfrac{3}{2}\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=\sqrt x\) on \([0,81]\).`, [
+        R`Average slope \(=\dfrac{9-0}{81}=\dfrac1{9}\).`,
+        R`\(\dfrac{1}{2\sqrt c}=\dfrac1{9}\Rightarrow\sqrt c=\dfrac{9}{2}\).`,
+      ], R`\(c=\dfrac{81}{4}\)`),
+      P(R`Verify Rolle's Theorem for \(f(x)=2x^{2}-4x-12\) on \([-2,4]\) and find \(c\).`, [
+        R`\(f(-2)=4\) and \(f(4)=4\): equal ✓.`,
+        R`\(f'(c)=4c-4=0\).`,
+      ], R`\(c=1\)`),
+      P(R`If \(f(2)=-3\) and \(f'(x)\le-1\) for all \(x\), what is the largest possible value of \(f(7)\)?`, [
+        R`MVT: \(f(7)-f(2)=f'(c)(5)\).`,
+        R`\(f(7)\le-3+(-1)(5)\).`,
+      ], R`\(-8\)`),
+      P(R`A car travels 140 miles in 2 hours. Explain why it was going exactly 70 mph at some moment.`, [
+        R`Average speed \(=\dfrac{140}{2}=70\).`,
+        R`Position is differentiable, so by the MVT, \(s'(c)=70\) for some \(c\).`,
+      ], R`By the MVT, at some instant the speed equaled the average, 70 mph.`),
+      P(R`Find all \(c\) satisfying the MVT for \(f(x)=x^3-x\) on \([-3,3]\).`, [
+        R`Average slope: \(\dfrac{f(3)-f(-3)}{6}=8\).`,
+        R`\(3c^2-1=8\Rightarrow c^2=3\).`,
+      ], R`\(c=\pm\dfrac{3}{\sqrt3}\)`),
+      P(R`Find \(c\) satisfying the MVT for \(f(x)=4x^{2}+7x-3\) on \([-2,0]\).`, [
+        R`Average slope \(=\dfrac{-3-(-1)}{2}=-1\).`,
+        R`\(8c+7=-1\).`,
+      ], R`\(c=-1\)`),
     ],
   },
 
@@ -2066,60 +5053,302 @@ window.TOPICS = [
           R`\(F'=3-\dfrac{1200}{x^2}=0\Rightarrow x^2=400\Rightarrow x=20\).`,
           R`\(y=30\). \(F=60+60=120\).`,
         ], R`\(20\) ft by \(30\) ft; \(120\) ft of fence`),
-      // ---- even more practice ----
-      P(R`You have 1872 ft of fence to make a rectangular pen along a river (no fence on the river side). Maximize the area.`, [
-        R`Let \(x\) = sides perpendicular to the river, \(y\) = side parallel. \(2x+y=1872\Rightarrow y=1872-2x\).`,
-        R`\(A=x(1872-2x)=1872x-2x^2\).`,
-        R`\(A'=1872-4x=0\Rightarrow x=468\); \(A''=-4<0\) so it's a max.`,
-        R`\(y=936\), \(A=468\cdot936=438048\).`,
-      ], R`\(468\times936\) ft; area \(438048\) ft²`),
-      P(R`You have 1568 ft of fence to make a rectangular pen along a river (no fence on the river side). Maximize the area.`, [
-        R`Let \(x\) = sides perpendicular to the river, \(y\) = side parallel. \(2x+y=1568\Rightarrow y=1568-2x\).`,
-        R`\(A=x(1568-2x)=1568x-2x^2\).`,
-        R`\(A'=1568-4x=0\Rightarrow x=392\); \(A''=-4<0\) so it's a max.`,
-        R`\(y=784\), \(A=392\cdot784=307328\).`,
-      ], R`\(392\times784\) ft; area \(307328\) ft²`),
-      P(R`You have 1208 ft of fence to make a rectangular pen along a river (no fence on the river side). Maximize the area.`, [
-        R`Let \(x\) = sides perpendicular to the river, \(y\) = side parallel. \(2x+y=1208\Rightarrow y=1208-2x\).`,
-        R`\(A=x(1208-2x)=1208x-2x^2\).`,
-        R`\(A'=1208-4x=0\Rightarrow x=302\); \(A''=-4<0\) so it's a max.`,
-        R`\(y=604\), \(A=302\cdot604=182408\).`,
-      ], R`\(302\times604\) ft; area \(182408\) ft²`),
-      P(R`Find the rectangle with perimeter 224 that has the largest area.`, [
-        R`\(2x+2y=224\Rightarrow y=112-x\).`,
-        R`\(A=x(112-x)\Rightarrow A'=112-2x=0\Rightarrow x=56\).`,
-        R`\(y=56\): a square. \(A=3136\).`,
-      ], R`\(56\times56\); area \(3136\)`),
-      P(R`Find the rectangle with perimeter 124 that has the largest area.`, [
-        R`\(2x+2y=124\Rightarrow y=62-x\).`,
-        R`\(A=x(62-x)\Rightarrow A'=62-2x=0\Rightarrow x=31\).`,
-        R`\(y=31\): a square. \(A=961\).`,
-      ], R`\(31\times31\); area \(961\)`),
-      P(R`Find the rectangle with perimeter 16 that has the largest area.`, [
-        R`\(2x+2y=16\Rightarrow y=8-x\).`,
-        R`\(A=x(8-x)\Rightarrow A'=8-2x=0\Rightarrow x=4\).`,
-        R`\(y=4\): a square. \(A=16\).`,
-      ], R`\(4\times4\); area \(16\)`),
-      P(R`Two positive numbers have product 121. Find the numbers that make their sum as small as possible.`, [
-        R`\(y=\dfrac{121}x\), \(S=x+\dfrac{121}x\).`,
-        R`\(S'=1-\dfrac{121}{x^2}=0\Rightarrow x=11\). \(S''>0\) &rArr; min.`,
-        R`\(y=11\), sum \(22\).`,
-      ], R`\(11\) and \(11\) (sum \(22\))`),
-      P(R`Two positive numbers have product 256. Find the numbers that make their sum as small as possible.`, [
-        R`\(y=\dfrac{256}x\), \(S=x+\dfrac{256}x\).`,
-        R`\(S'=1-\dfrac{256}{x^2}=0\Rightarrow x=16\). \(S''>0\) &rArr; min.`,
-        R`\(y=16\), sum \(32\).`,
-      ], R`\(16\) and \(16\) (sum \(32\))`),
-      P(R`Two numbers add up to 96. Find them so their product is as large as possible.`, [
-        R`\(y=96-x\), \(P=x(96-x)=96x-x^2\).`,
-        R`\(P'=96-2x=0\Rightarrow x=48\); \(P''=-2<0\).`,
-        R`Both are \(48\); product \(2304\).`,
-      ], R`\(48\) and \(48\); max product \(2304\)`),
-      P(R`Two numbers add up to 118. Find them so their product is as large as possible.`, [
-        R`\(y=118-x\), \(P=x(118-x)=118x-x^2\).`,
-        R`\(P'=118-2x=0\Rightarrow x=59\); \(P''=-2<0\).`,
-        R`Both are \(59\); product \(3481\).`,
-      ], R`\(59\) and \(59\); max product \(3481\)`),
+      // ---- generated practice (numbers vary; answers computed) ----
+      P(R`2540 ft of fence encloses a rectangle along a river (no fence on the river side). Maximize the area.`, [
+        R`\(y=2540-2x\), \(A=2540x-2x^2\).`,
+        R`\(A'=2540-4x=0\Rightarrow x=635\).`,
+      ], R`\(635\times1270\) ft; area \(806450\) ft²`),
+      P(R`Find the largest area of a rectangle with perimeter 52.`, [
+        R`\(A=x(26-x)\), \(A'=26-2x=0\).`,
+      ], R`\(13\times13\), area \(169\)`),
+      P(R`Two positive numbers have product 225. Minimize their sum.`, [
+        R`\(S=x+\dfrac{225}x\), \(S'=1-\dfrac{225}{x^2}=0\).`,
+      ], R`\(15\) and \(15\); sum \(30\)`),
+      P(R`Two numbers sum to 50. Maximize their product.`, [
+        R`\(P=x(50-x)\), \(P'=50-2x=0\).`,
+      ], R`Both \(25\); product \(625\)`),
+      P(R`An open box is made from a 6 in square sheet by cutting equal squares from the corners. What cut maximizes the volume?`, [
+        R`\(V=x(6-2x)^2\), \(0<x<3\).`,
+        R`\(V'=(6-2x)(6-6x)=0\Rightarrow x=1\).`,
+        R`\(V(1)=1(4)^2=16\).`,
+      ], R`Cut \(1\) in squares; \(16\) in³`),
+      P(R`A 1536 ft² rectangular pen is split in half by a fence parallel to one side. Minimize the total fencing.`, [
+        R`\(F=3x+2y\), \(y=\dfrac{1536}{x}\): \(F=3x+\dfrac{3072}{x}\).`,
+        R`\(F'=3-\dfrac{3072}{x^2}=0\Rightarrow x=32\).`,
+      ], R`\(32\times48\) ft; \(192\) ft of fence`),
+      P(R`A rectangle sits on the \(x\)-axis with top corners on \(y=12-x^2\). Maximize its area.`, [
+        R`\(A=2x(12-x^2)\), \(A'=24-6x^2=0\Rightarrow x=2\).`,
+      ], R`Width \(4\), height \(8\), area \(32\)`),
+      P(R`Demand is \(q=264-6p\). What price maximizes revenue?`, [
+        R`\(R=p(264-6p)\), \(R'=264-12p=0\).`,
+      ], R`\(p=\$22\); revenue \(\$2904\)`),
+      P(R`Find the point on \(y=\sqrt x\) closest to \((3,0)\).`, [
+        R`Minimize \(d^2=(x-3)^2+x\); derivative \(2x-5=0\).`,
+      ], R`\(\left(\dfrac{5}{2},\sqrt{\dfrac{5}{2}}\right)\)`),
+      P(R`An open-top box with a square base holds 256 cm³. Minimize the material.`, [
+        R`\(S=x^2+\dfrac{1024}{x}\), \(S'=2x-\dfrac{1024}{x^2}=0\Rightarrow x^3=512\).`,
+      ], R`Base \(8\times8\), height \(4\)`),
+      P(R`A closed box with a square base holds 343 cm³. Minimize the surface area.`, [
+        R`\(S=2x^2+\dfrac{1372}{x}\), \(S'=4x-\dfrac{1372}{x^2}=0\Rightarrow x=7\); height \(7\).`,
+      ], R`A cube, \(7\) cm on a side; \(294\) cm²`),
+      P(R`Two numbers sum to 96. Minimize the sum of their squares.`, [
+        R`\(Q=x^2+(96-x)^2\), \(Q'=4x-192=0\).`,
+      ], R`Both \(48\); minimum \(4608\)`),
+      P(R`960 ft of fence encloses a rectangle along a river (no fence on the river side). Maximize the area.`, [
+        R`\(y=960-2x\), \(A=960x-2x^2\).`,
+        R`\(A'=960-4x=0\Rightarrow x=240\).`,
+      ], R`\(240\times480\) ft; area \(115200\) ft²`),
+      P(R`Find the largest area of a rectangle with perimeter 196.`, [
+        R`\(A=x(98-x)\), \(A'=98-2x=0\).`,
+      ], R`\(49\times49\), area \(2401\)`),
+      P(R`Two positive numbers have product 1156. Minimize their sum.`, [
+        R`\(S=x+\dfrac{1156}x\), \(S'=1-\dfrac{1156}{x^2}=0\).`,
+      ], R`\(34\) and \(34\); sum \(68\)`),
+      P(R`Two numbers sum to 200. Maximize their product.`, [
+        R`\(P=x(200-x)\), \(P'=200-2x=0\).`,
+      ], R`Both \(100\); product \(10000\)`),
+      P(R`An open box is made from a 42 in square sheet by cutting equal squares from the corners. What cut maximizes the volume?`, [
+        R`\(V=x(42-2x)^2\), \(0<x<21\).`,
+        R`\(V'=(42-2x)(42-6x)=0\Rightarrow x=7\).`,
+        R`\(V(7)=7(28)^2=5488\).`,
+      ], R`Cut \(7\) in squares; \(5488\) in³`),
+      P(R`A 150 ft² rectangular pen is split in half by a fence parallel to one side. Minimize the total fencing.`, [
+        R`\(F=3x+2y\), \(y=\dfrac{150}{x}\): \(F=3x+\dfrac{300}{x}\).`,
+        R`\(F'=3-\dfrac{300}{x^2}=0\Rightarrow x=10\).`,
+      ], R`\(10\times15\) ft; \(60\) ft of fence`),
+      P(R`Demand is \(q=1824-16p\). What price maximizes revenue?`, [
+        R`\(R=p(1824-16p)\), \(R'=1824-32p=0\).`,
+      ], R`\(p=\$57\); revenue \(\$51984\)`),
+      P(R`Find the point on \(y=\sqrt x\) closest to \((1,0)\).`, [
+        R`Minimize \(d^2=(x-1)^2+x\); derivative \(2x-1=0\).`,
+      ], R`\(\left(\dfrac{1}{2},\sqrt{\dfrac{1}{2}}\right)\)`),
+      P(R`An open-top box with a square base holds 8788 cm³. Minimize the material.`, [
+        R`\(S=x^2+\dfrac{35152}{x}\), \(S'=2x-\dfrac{35152}{x^2}=0\Rightarrow x^3=17576\).`,
+      ], R`Base \(26\times26\), height \(13\)`),
+      P(R`A closed box with a square base holds 512 cm³. Minimize the surface area.`, [
+        R`\(S=2x^2+\dfrac{2048}{x}\), \(S'=4x-\dfrac{2048}{x^2}=0\Rightarrow x=8\); height \(8\).`,
+      ], R`A cube, \(8\) cm on a side; \(384\) cm²`),
+      P(R`Two numbers sum to 16. Minimize the sum of their squares.`, [
+        R`\(Q=x^2+(16-x)^2\), \(Q'=4x-32=0\).`,
+      ], R`Both \(8\); minimum \(128\)`),
+      P(R`396 ft of fence encloses a rectangle along a river (no fence on the river side). Maximize the area.`, [
+        R`\(y=396-2x\), \(A=396x-2x^2\).`,
+        R`\(A'=396-4x=0\Rightarrow x=99\).`,
+      ], R`\(99\times198\) ft; area \(19602\) ft²`),
+      P(R`Find the largest area of a rectangle with perimeter 340.`, [
+        R`\(A=x(170-x)\), \(A'=170-2x=0\).`,
+      ], R`\(85\times85\), area \(7225\)`),
+      P(R`Two positive numbers have product 4. Minimize their sum.`, [
+        R`\(S=x+\dfrac{4}x\), \(S'=1-\dfrac{4}{x^2}=0\).`,
+      ], R`\(2\) and \(2\); sum \(4\)`),
+      P(R`Two numbers sum to 18. Maximize their product.`, [
+        R`\(P=x(18-x)\), \(P'=18-2x=0\).`,
+      ], R`Both \(9\); product \(81\)`),
+      P(R`An open box is made from a 48 in square sheet by cutting equal squares from the corners. What cut maximizes the volume?`, [
+        R`\(V=x(48-2x)^2\), \(0<x<24\).`,
+        R`\(V'=(48-2x)(48-6x)=0\Rightarrow x=8\).`,
+        R`\(V(8)=8(32)^2=8192\).`,
+      ], R`Cut \(8\) in squares; \(8192\) in³`),
+      P(R`A 3174 ft² rectangular pen is split in half by a fence parallel to one side. Minimize the total fencing.`, [
+        R`\(F=3x+2y\), \(y=\dfrac{3174}{x}\): \(F=3x+\dfrac{6348}{x}\).`,
+        R`\(F'=3-\dfrac{6348}{x^2}=0\Rightarrow x=46\).`,
+      ], R`\(46\times69\) ft; \(276\) ft of fence`),
+      P(R`A rectangle sits on the \(x\)-axis with top corners on \(y=3-x^2\). Maximize its area.`, [
+        R`\(A=2x(3-x^2)\), \(A'=6-6x^2=0\Rightarrow x=1\).`,
+      ], R`Width \(2\), height \(2\), area \(4\)`),
+      P(R`Demand is \(q=32-2p\). What price maximizes revenue?`, [
+        R`\(R=p(32-2p)\), \(R'=32-4p=0\).`,
+      ], R`\(p=\$8\); revenue \(\$128\)`),
+      P(R`Find the point on \(y=\sqrt x\) closest to \((8,0)\).`, [
+        R`Minimize \(d^2=(x-8)^2+x\); derivative \(2x-15=0\).`,
+      ], R`\(\left(\dfrac{15}{2},\sqrt{\dfrac{15}{2}}\right)\)`),
+      P(R`A closed box with a square base holds 27 cm³. Minimize the surface area.`, [
+        R`\(S=2x^2+\dfrac{108}{x}\), \(S'=4x-\dfrac{108}{x^2}=0\Rightarrow x=3\); height \(3\).`,
+      ], R`A cube, \(3\) cm on a side; \(54\) cm²`),
+      P(R`Two numbers sum to 62. Minimize the sum of their squares.`, [
+        R`\(Q=x^2+(62-x)^2\), \(Q'=4x-124=0\).`,
+      ], R`Both \(31\); minimum \(1922\)`),
+      P(R`1488 ft of fence encloses a rectangle along a river (no fence on the river side). Maximize the area.`, [
+        R`\(y=1488-2x\), \(A=1488x-2x^2\).`,
+        R`\(A'=1488-4x=0\Rightarrow x=372\).`,
+      ], R`\(372\times744\) ft; area \(276768\) ft²`),
+      P(R`Find the largest area of a rectangle with perimeter 124.`, [
+        R`\(A=x(62-x)\), \(A'=62-2x=0\).`,
+      ], R`\(31\times31\), area \(961\)`),
+      P(R`Two positive numbers have product 1444. Minimize their sum.`, [
+        R`\(S=x+\dfrac{1444}x\), \(S'=1-\dfrac{1444}{x^2}=0\).`,
+      ], R`\(38\) and \(38\); sum \(76\)`),
+      P(R`Two numbers sum to 192. Maximize their product.`, [
+        R`\(P=x(192-x)\), \(P'=192-2x=0\).`,
+      ], R`Both \(96\); product \(9216\)`),
+      P(R`An open box is made from a 18 in square sheet by cutting equal squares from the corners. What cut maximizes the volume?`, [
+        R`\(V=x(18-2x)^2\), \(0<x<9\).`,
+        R`\(V'=(18-2x)(18-6x)=0\Rightarrow x=3\).`,
+        R`\(V(3)=3(12)^2=432\).`,
+      ], R`Cut \(3\) in squares; \(432\) in³`),
+      P(R`A 4374 ft² rectangular pen is split in half by a fence parallel to one side. Minimize the total fencing.`, [
+        R`\(F=3x+2y\), \(y=\dfrac{4374}{x}\): \(F=3x+\dfrac{8748}{x}\).`,
+        R`\(F'=3-\dfrac{8748}{x^2}=0\Rightarrow x=54\).`,
+      ], R`\(54\times81\) ft; \(324\) ft of fence`),
+      P(R`A rectangle sits on the \(x\)-axis with top corners on \(y=75-x^2\). Maximize its area.`, [
+        R`\(A=2x(75-x^2)\), \(A'=150-6x^2=0\Rightarrow x=5\).`,
+      ], R`Width \(10\), height \(50\), area \(500\)`),
+      P(R`Demand is \(q=360-18p\). What price maximizes revenue?`, [
+        R`\(R=p(360-18p)\), \(R'=360-36p=0\).`,
+      ], R`\(p=\$10\); revenue \(\$1800\)`),
+      P(R`Find the point on \(y=\sqrt x\) closest to \((6,0)\).`, [
+        R`Minimize \(d^2=(x-6)^2+x\); derivative \(2x-11=0\).`,
+      ], R`\(\left(\dfrac{11}{2},\sqrt{\dfrac{11}{2}}\right)\)`),
+      P(R`An open-top box with a square base holds 864 cm³. Minimize the material.`, [
+        R`\(S=x^2+\dfrac{3456}{x}\), \(S'=2x-\dfrac{3456}{x^2}=0\Rightarrow x^3=1728\).`,
+      ], R`Base \(12\times12\), height \(6\)`),
+      P(R`A closed box with a square base holds 8000 cm³. Minimize the surface area.`, [
+        R`\(S=2x^2+\dfrac{32000}{x}\), \(S'=4x-\dfrac{32000}{x^2}=0\Rightarrow x=20\); height \(20\).`,
+      ], R`A cube, \(20\) cm on a side; \(2400\) cm²`),
+      P(R`Two numbers sum to 100. Minimize the sum of their squares.`, [
+        R`\(Q=x^2+(100-x)^2\), \(Q'=4x-200=0\).`,
+      ], R`Both \(50\); minimum \(5000\)`),
+      P(R`916 ft of fence encloses a rectangle along a river (no fence on the river side). Maximize the area.`, [
+        R`\(y=916-2x\), \(A=916x-2x^2\).`,
+        R`\(A'=916-4x=0\Rightarrow x=229\).`,
+      ], R`\(229\times458\) ft; area \(104882\) ft²`),
+      P(R`Find the largest area of a rectangle with perimeter 188.`, [
+        R`\(A=x(94-x)\), \(A'=94-2x=0\).`,
+      ], R`\(47\times47\), area \(2209\)`),
+      P(R`Two positive numbers have product 49. Minimize their sum.`, [
+        R`\(S=x+\dfrac{49}x\), \(S'=1-\dfrac{49}{x^2}=0\).`,
+      ], R`\(7\) and \(7\); sum \(14\)`),
+      P(R`Two numbers sum to 86. Maximize their product.`, [
+        R`\(P=x(86-x)\), \(P'=86-2x=0\).`,
+      ], R`Both \(43\); product \(1849\)`),
+      P(R`An open box is made from a 36 in square sheet by cutting equal squares from the corners. What cut maximizes the volume?`, [
+        R`\(V=x(36-2x)^2\), \(0<x<18\).`,
+        R`\(V'=(36-2x)(36-6x)=0\Rightarrow x=6\).`,
+        R`\(V(6)=6(24)^2=3456\).`,
+      ], R`Cut \(6\) in squares; \(3456\) in³`),
+      P(R`A 216 ft² rectangular pen is split in half by a fence parallel to one side. Minimize the total fencing.`, [
+        R`\(F=3x+2y\), \(y=\dfrac{216}{x}\): \(F=3x+\dfrac{432}{x}\).`,
+        R`\(F'=3-\dfrac{432}{x^2}=0\Rightarrow x=12\).`,
+      ], R`\(12\times18\) ft; \(72\) ft of fence`),
+      P(R`Demand is \(q=676-13p\). What price maximizes revenue?`, [
+        R`\(R=p(676-13p)\), \(R'=676-26p=0\).`,
+      ], R`\(p=\$26\); revenue \(\$8788\)`),
+      P(R`Find the point on \(y=\sqrt x\) closest to \((11,0)\).`, [
+        R`Minimize \(d^2=(x-11)^2+x\); derivative \(2x-21=0\).`,
+      ], R`\(\left(\dfrac{21}{2},\sqrt{\dfrac{21}{2}}\right)\)`),
+      P(R`An open-top box with a square base holds 13500 cm³. Minimize the material.`, [
+        R`\(S=x^2+\dfrac{54000}{x}\), \(S'=2x-\dfrac{54000}{x^2}=0\Rightarrow x^3=27000\).`,
+      ], R`Base \(30\times30\), height \(15\)`),
+      P(R`A closed box with a square base holds 729 cm³. Minimize the surface area.`, [
+        R`\(S=2x^2+\dfrac{2916}{x}\), \(S'=4x-\dfrac{2916}{x^2}=0\Rightarrow x=9\); height \(9\).`,
+      ], R`A cube, \(9\) cm on a side; \(486\) cm²`),
+      P(R`Two numbers sum to 42. Minimize the sum of their squares.`, [
+        R`\(Q=x^2+(42-x)^2\), \(Q'=4x-84=0\).`,
+      ], R`Both \(21\); minimum \(882\)`),
+      P(R`1364 ft of fence encloses a rectangle along a river (no fence on the river side). Maximize the area.`, [
+        R`\(y=1364-2x\), \(A=1364x-2x^2\).`,
+        R`\(A'=1364-4x=0\Rightarrow x=341\).`,
+      ], R`\(341\times682\) ft; area \(232562\) ft²`),
+      P(R`Find the largest area of a rectangle with perimeter 252.`, [
+        R`\(A=x(126-x)\), \(A'=126-2x=0\).`,
+      ], R`\(63\times63\), area \(3969\)`),
+      P(R`Two positive numbers have product 361. Minimize their sum.`, [
+        R`\(S=x+\dfrac{361}x\), \(S'=1-\dfrac{361}{x^2}=0\).`,
+      ], R`\(19\) and \(19\); sum \(38\)`),
+      P(R`Two numbers sum to 96. Maximize their product.`, [
+        R`\(P=x(96-x)\), \(P'=96-2x=0\).`,
+      ], R`Both \(48\); product \(2304\)`),
+      P(R`A 1734 ft² rectangular pen is split in half by a fence parallel to one side. Minimize the total fencing.`, [
+        R`\(F=3x+2y\), \(y=\dfrac{1734}{x}\): \(F=3x+\dfrac{3468}{x}\).`,
+        R`\(F'=3-\dfrac{3468}{x^2}=0\Rightarrow x=34\).`,
+      ], R`\(34\times51\) ft; \(204\) ft of fence`),
+      P(R`Demand is \(q=430-5p\). What price maximizes revenue?`, [
+        R`\(R=p(430-5p)\), \(R'=430-10p=0\).`,
+      ], R`\(p=\$43\); revenue \(\$9245\)`),
+      P(R`Find the point on \(y=\sqrt x\) closest to \((5,0)\).`, [
+        R`Minimize \(d^2=(x-5)^2+x\); derivative \(2x-9=0\).`,
+      ], R`\(\left(\dfrac{9}{2},\sqrt{\dfrac{9}{2}}\right)\)`),
+      P(R`A closed box with a square base holds 216 cm³. Minimize the surface area.`, [
+        R`\(S=2x^2+\dfrac{864}{x}\), \(S'=4x-\dfrac{864}{x^2}=0\Rightarrow x=6\); height \(6\).`,
+      ], R`A cube, \(6\) cm on a side; \(216\) cm²`),
+      P(R`Two numbers sum to 20. Minimize the sum of their squares.`, [
+        R`\(Q=x^2+(20-x)^2\), \(Q'=4x-40=0\).`,
+      ], R`Both \(10\); minimum \(200\)`),
+      P(R`1264 ft of fence encloses a rectangle along a river (no fence on the river side). Maximize the area.`, [
+        R`\(y=1264-2x\), \(A=1264x-2x^2\).`,
+        R`\(A'=1264-4x=0\Rightarrow x=316\).`,
+      ], R`\(316\times632\) ft; area \(199712\) ft²`),
+      P(R`Find the largest area of a rectangle with perimeter 28.`, [
+        R`\(A=x(14-x)\), \(A'=14-2x=0\).`,
+      ], R`\(7\times7\), area \(49\)`),
+      P(R`Two numbers sum to 132. Maximize their product.`, [
+        R`\(P=x(132-x)\), \(P'=132-2x=0\).`,
+      ], R`Both \(66\); product \(4356\)`),
+      P(R`A 96 ft² rectangular pen is split in half by a fence parallel to one side. Minimize the total fencing.`, [
+        R`\(F=3x+2y\), \(y=\dfrac{96}{x}\): \(F=3x+\dfrac{192}{x}\).`,
+        R`\(F'=3-\dfrac{192}{x^2}=0\Rightarrow x=8\).`,
+      ], R`\(8\times12\) ft; \(48\) ft of fence`),
+      P(R`Demand is \(q=784-7p\). What price maximizes revenue?`, [
+        R`\(R=p(784-7p)\), \(R'=784-14p=0\).`,
+      ], R`\(p=\$56\); revenue \(\$21952\)`),
+      P(R`Find the point on \(y=\sqrt x\) closest to \((14,0)\).`, [
+        R`Minimize \(d^2=(x-14)^2+x\); derivative \(2x-27=0\).`,
+      ], R`\(\left(\dfrac{27}{2},\sqrt{\dfrac{27}{2}}\right)\)`),
+      P(R`2388 ft of fence encloses a rectangle along a river (no fence on the river side). Maximize the area.`, [
+        R`\(y=2388-2x\), \(A=2388x-2x^2\).`,
+        R`\(A'=2388-4x=0\Rightarrow x=597\).`,
+      ], R`\(597\times1194\) ft; area \(712818\) ft²`),
+      P(R`Find the largest area of a rectangle with perimeter 88.`, [
+        R`\(A=x(44-x)\), \(A'=44-2x=0\).`,
+      ], R`\(22\times22\), area \(484\)`),
+      P(R`Two positive numbers have product 25. Minimize their sum.`, [
+        R`\(S=x+\dfrac{25}x\), \(S'=1-\dfrac{25}{x^2}=0\).`,
+      ], R`\(5\) and \(5\); sum \(10\)`),
+      P(R`Two numbers sum to 12. Maximize their product.`, [
+        R`\(P=x(12-x)\), \(P'=12-2x=0\).`,
+      ], R`Both \(6\); product \(36\)`),
+      P(R`An open box is made from a 30 in square sheet by cutting equal squares from the corners. What cut maximizes the volume?`, [
+        R`\(V=x(30-2x)^2\), \(0<x<15\).`,
+        R`\(V'=(30-2x)(30-6x)=0\Rightarrow x=5\).`,
+        R`\(V(5)=5(20)^2=2000\).`,
+      ], R`Cut \(5\) in squares; \(2000\) in³`),
+      P(R`A rectangle sits on the \(x\)-axis with top corners on \(y=108-x^2\). Maximize its area.`, [
+        R`\(A=2x(108-x^2)\), \(A'=216-6x^2=0\Rightarrow x=6\).`,
+      ], R`Width \(12\), height \(72\), area \(864\)`),
+      P(R`Demand is \(q=1700-17p\). What price maximizes revenue?`, [
+        R`\(R=p(1700-17p)\), \(R'=1700-34p=0\).`,
+      ], R`\(p=\$50\); revenue \(\$42500\)`),
+      P(R`Find the point on \(y=\sqrt x\) closest to \((13,0)\).`, [
+        R`Minimize \(d^2=(x-13)^2+x\); derivative \(2x-25=0\).`,
+      ], R`\(\left(\dfrac{25}{2},\sqrt{\dfrac{25}{2}}\right)\)`),
+      P(R`An open-top box with a square base holds 2048 cm³. Minimize the material.`, [
+        R`\(S=x^2+\dfrac{8192}{x}\), \(S'=2x-\dfrac{8192}{x^2}=0\Rightarrow x^3=4096\).`,
+      ], R`Base \(16\times16\), height \(8\)`),
+      P(R`Two numbers sum to 28. Minimize the sum of their squares.`, [
+        R`\(Q=x^2+(28-x)^2\), \(Q'=4x-56=0\).`,
+      ], R`Both \(14\); minimum \(392\)`),
+      P(R`2064 ft of fence encloses a rectangle along a river (no fence on the river side). Maximize the area.`, [
+        R`\(y=2064-2x\), \(A=2064x-2x^2\).`,
+        R`\(A'=2064-4x=0\Rightarrow x=516\).`,
+      ], R`\(516\times1032\) ft; area \(532512\) ft²`),
+      P(R`Find the largest area of a rectangle with perimeter 360.`, [
+        R`\(A=x(180-x)\), \(A'=180-2x=0\).`,
+      ], R`\(90\times90\), area \(8100\)`),
+      P(R`Two numbers sum to 150. Maximize their product.`, [
+        R`\(P=x(150-x)\), \(P'=150-2x=0\).`,
+      ], R`Both \(75\); product \(5625\)`),
+      P(R`A rectangle sits on the \(x\)-axis with top corners on \(y=48-x^2\). Maximize its area.`, [
+        R`\(A=2x(48-x^2)\), \(A'=96-6x^2=0\Rightarrow x=4\).`,
+      ], R`Width \(8\), height \(32\), area \(256\)`),
+      P(R`Demand is \(q=1944-18p\). What price maximizes revenue?`, [
+        R`\(R=p(1944-18p)\), \(R'=1944-36p=0\).`,
+      ], R`\(p=\$54\); revenue \(\$52488\)`),
+      P(R`An open-top box with a square base holds 500 cm³. Minimize the material.`, [
+        R`\(S=x^2+\dfrac{2000}{x}\), \(S'=2x-\dfrac{2000}{x^2}=0\Rightarrow x^3=1000\).`,
+      ], R`Base \(10\times10\), height \(5\)`),
+      P(R`A closed box with a square base holds 5832 cm³. Minimize the surface area.`, [
+        R`\(S=2x^2+\dfrac{23328}{x}\), \(S'=4x-\dfrac{23328}{x^2}=0\Rightarrow x=18\); height \(18\).`,
+      ], R`A cube, \(18\) cm on a side; \(1944\) cm²`),
     ],
   },
 
@@ -2251,57 +5480,289 @@ window.TOPICS = [
           R`Ratio: \(\dfrac{3}{1+3/x}\to3\). So \(\ln y\to3\).`,
           R`\(y\to e^3\).`,
         ], R`\(e^3\)`),
-      // ---- even more practice ----
-      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{e^{6x}-1}{9x}\).`, [
-        R`Plug in: \(\dfrac{1-1}{0}=\dfrac00\) ✓.`,
-        R`Derivatives: top \(6e^{6x}\), bottom \(9\).`,
-        R`\(\dfrac{6e^0}{9}=\dfrac{2}{3}\).`,
-      ], R`\(\dfrac{2}{3}\)`),
-      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{e^{9x}-1}{2x}\).`, [
-        R`Plug in: \(\dfrac{1-1}{0}=\dfrac00\) ✓.`,
-        R`Derivatives: top \(9e^{9x}\), bottom \(2\).`,
-        R`\(\dfrac{9e^0}{2}=\dfrac{9}{2}\).`,
-      ], R`\(\dfrac{9}{2}\)`),
-      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{e^{8x}-1}{4x}\).`, [
-        R`Plug in: \(\dfrac{1-1}{0}=\dfrac00\) ✓.`,
-        R`Derivatives: top \(8e^{8x}\), bottom \(4\).`,
-        R`\(\dfrac{8e^0}{4}=2\).`,
+      // ---- generated practice (numbers vary; answers computed) ----
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{e^{9x}-1}{6x}\).`, [
+        R`\(\tfrac00\); derivatives give \(\dfrac{9e^{9x}}{6}\).`,
+      ], R`\(\dfrac{3}{2}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to4}\frac{x^{3}-64}{x-4}\).`, [
+        R`\(\tfrac00\); \(\dfrac{3x^{2}}{1}\) at \(x=4\).`,
+      ], R`\(48\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\ln(1+12x)}{11x}\).`, [
+        R`\(\tfrac00\); \(\dfrac{12/(1+12x)}{11}\).`,
+      ], R`\(\dfrac{12}{11}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\sin(8x)}{\sin(10x)}\).`, [
+        R`\(\tfrac00\); \(\dfrac{8\cos(8x)}{10\cos(10x)}\to\dfrac{8}{10}\).`,
+      ], R`\(\dfrac{4}{5}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{1-\cos(12x)}{x^2}\).`, [
+        R`\(\tfrac00\): \(\dfrac{12\sin(12x)}{2x}\), still \(\tfrac00\).`,
+        R`Again: \(\dfrac{144\cos(12x)}{2}\to\dfrac{144}{2}\).`,
+      ], R`\(72\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{x^{3}}{e^{x}}\).`, [
+        R`\(\tfrac\infty\infty\); apply L'Hôpital 3 times. The top becomes the constant \(3!\), the bottom still \(\to\infty\).`,
+      ], R`\(0\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{\ln x}{x^{6}}\).`, [
+        R`\(\tfrac\infty\infty\); \(\dfrac{1/x}{6x^{5}}=\dfrac{1}{6x^{6}}\to0\).`,
+      ], R`\(0\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{e^{5x}-1-5x}{x^2}\).`, [
+        R`\(\tfrac00\): \(\dfrac{5e^{5x}-5}{2x}\), still \(\tfrac00\).`,
+        R`\(\dfrac{25e^{5x}}{2}\to\dfrac{25}{2}\).`,
+      ], R`\(\dfrac{25}{2}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\left(1+\frac{6}{x}\right)^x\).`, [
+        R`\(\ln y=\dfrac{\ln(1+6/x)}{1/x}\), form \(\tfrac00\).`,
+        R`L'Hôpital: \(\dfrac{6}{1+6/x}\to6\). So \(y\to e^{6}\).`,
+      ], R`\(e^{6}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\tan(2x)}{7x}\).`, [
+        R`\(\tfrac00\); \(\dfrac{2\sec^2(2x)}{7}\to\dfrac{2}{7}\).`,
+      ], R`\(\dfrac{2}{7}\)`),
+      P(R`Use L'Hôpital's Rule on \(\displaystyle\lim_{x\to\infty}\frac{3x^{2}-x}{5x^{2}-8}\).`, [
+        R`\(\tfrac\infty\infty\): \(\dfrac{6x-1}{10x}\), still \(\tfrac\infty\infty\).`,
+        R`\(\dfrac{6}{10}\).`,
+      ], R`\(\dfrac{3}{5}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to4}\frac{x^{5}-1024}{x-4}\).`, [
+        R`\(\tfrac00\); \(\dfrac{5x^{4}}{1}\) at \(x=4\).`,
+      ], R`\(1280\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\ln(1+4x)}{11x}\).`, [
+        R`\(\tfrac00\); \(\dfrac{4/(1+4x)}{11}\).`,
+      ], R`\(\dfrac{4}{11}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\sin(6x)}{\sin(11x)}\).`, [
+        R`\(\tfrac00\); \(\dfrac{6\cos(6x)}{11\cos(11x)}\to\dfrac{6}{11}\).`,
+      ], R`\(\dfrac{6}{11}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{1-\cos(9x)}{x^2}\).`, [
+        R`\(\tfrac00\): \(\dfrac{9\sin(9x)}{2x}\), still \(\tfrac00\).`,
+        R`Again: \(\dfrac{81\cos(9x)}{2}\to\dfrac{81}{2}\).`,
+      ], R`\(\dfrac{81}{2}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{x^{8}}{e^{3x}}\).`, [
+        R`\(\tfrac\infty\infty\); apply L'Hôpital 8 times. The top becomes the constant \(8!\), the bottom still \(\to\infty\).`,
+      ], R`\(0\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{\ln x}{x^{5}}\).`, [
+        R`\(\tfrac\infty\infty\); \(\dfrac{1/x}{5x^{4}}=\dfrac{1}{5x^{5}}\to0\).`,
+      ], R`\(0\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{e^{2x}-1-2x}{x^2}\).`, [
+        R`\(\tfrac00\): \(\dfrac{2e^{2x}-2}{2x}\), still \(\tfrac00\).`,
+        R`\(\dfrac{4e^{2x}}{2}\to\dfrac{4}{2}\).`,
       ], R`\(2\)`),
-      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{e^{2x}-1}{8x}\).`, [
-        R`Plug in: \(\dfrac{1-1}{0}=\dfrac00\) ✓.`,
-        R`Derivatives: top \(2e^{2x}\), bottom \(8\).`,
-        R`\(\dfrac{2e^0}{8}=\dfrac{1}{4}\).`,
-      ], R`\(\dfrac{1}{4}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\left(1+\frac{5}{x}\right)^x\).`, [
+        R`\(\ln y=\dfrac{\ln(1+5/x)}{1/x}\), form \(\tfrac00\).`,
+        R`L'Hôpital: \(\dfrac{5}{1+5/x}\to5\). So \(y\to e^{5}\).`,
+      ], R`\(e^{5}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\tan(5x)}{3x}\).`, [
+        R`\(\tfrac00\); \(\dfrac{5\sec^2(5x)}{3}\to\dfrac{5}{3}\).`,
+      ], R`\(\dfrac{5}{3}\)`),
+      P(R`Use L'Hôpital's Rule on \(\displaystyle\lim_{x\to\infty}\frac{x^{2}+4x}{8x^{2}+9}\).`, [
+        R`\(\tfrac\infty\infty\): \(\dfrac{2x+4}{16x}\), still \(\tfrac\infty\infty\).`,
+        R`\(\dfrac{2}{16}\).`,
+      ], R`\(\dfrac{1}{8}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{e^{3x}-1}{6x}\).`, [
+        R`\(\tfrac00\); derivatives give \(\dfrac{3e^{3x}}{6}\).`,
+      ], R`\(\dfrac{1}{2}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to1}\frac{x^{5}-1}{x-1}\).`, [
+        R`\(\tfrac00\); \(\dfrac{5x^{4}}{1}\) at \(x=1\).`,
+      ], R`\(5\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\ln(1+8x)}{6x}\).`, [
+        R`\(\tfrac00\); \(\dfrac{8/(1+8x)}{6}\).`,
+      ], R`\(\dfrac{4}{3}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\sin(5x)}{\sin(8x)}\).`, [
+        R`\(\tfrac00\); \(\dfrac{5\cos(5x)}{8\cos(8x)}\to\dfrac{5}{8}\).`,
+      ], R`\(\dfrac{5}{8}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{1-\cos(5x)}{x^2}\).`, [
+        R`\(\tfrac00\): \(\dfrac{5\sin(5x)}{2x}\), still \(\tfrac00\).`,
+        R`Again: \(\dfrac{25\cos(5x)}{2}\to\dfrac{25}{2}\).`,
+      ], R`\(\dfrac{25}{2}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{x^{7}}{e^{3x}}\).`, [
+        R`\(\tfrac\infty\infty\); apply L'Hôpital 7 times. The top becomes the constant \(7!\), the bottom still \(\to\infty\).`,
+      ], R`\(0\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\left(1+\frac{4}{x}\right)^x\).`, [
+        R`\(\ln y=\dfrac{\ln(1+4/x)}{1/x}\), form \(\tfrac00\).`,
+        R`L'Hôpital: \(\dfrac{4}{1+4/x}\to4\). So \(y\to e^{4}\).`,
+      ], R`\(e^{4}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\tan(8x)}{4x}\).`, [
+        R`\(\tfrac00\); \(\dfrac{8\sec^2(8x)}{4}\to\dfrac{8}{4}\).`,
+      ], R`\(2\)`),
+      P(R`Use L'Hôpital's Rule on \(\displaystyle\lim_{x\to\infty}\frac{-7x^{2}-9x}{5x^{2}-6}\).`, [
+        R`\(\tfrac\infty\infty\): \(\dfrac{-14x-9}{10x}\), still \(\tfrac\infty\infty\).`,
+        R`\(\dfrac{-14}{10}\).`,
+      ], R`\(-\dfrac{7}{5}\)`),
       P(R`Evaluate \(\displaystyle\lim_{x\to3}\frac{x^{6}-729}{x-3}\).`, [
-        R`\(\dfrac00\) ✓.`,
-        R`Derivatives: \(\dfrac{6x^{5}}{1}\).`,
-        R`Plug in: \(6(3)^{5}=1458\).`,
+        R`\(\tfrac00\); \(\dfrac{6x^{5}}{1}\) at \(x=3\).`,
       ], R`\(1458\)`),
-      P(R`Evaluate \(\displaystyle\lim_{x\to1}\frac{x^{4}-1}{x-1}\).`, [
-        R`\(\dfrac00\) ✓.`,
-        R`Derivatives: \(\dfrac{4x^{3}}{1}\).`,
-        R`Plug in: \(4(1)^{3}=4\).`,
-      ], R`\(4\)`),
-      P(R`Evaluate \(\displaystyle\lim_{x\to4}\frac{x^{6}-4096}{x-4}\).`, [
-        R`\(\dfrac00\) ✓.`,
-        R`Derivatives: \(\dfrac{6x^{5}}{1}\).`,
-        R`Plug in: \(6(4)^{5}=6144\).`,
-      ], R`\(6144\)`),
-      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\ln(1+8x)}{9x}\).`, [
-        R`\(\dfrac{\ln 1}{0}=\dfrac00\) ✓.`,
-        R`Top derivative: \(\dfrac{8}{1+8x}\). Bottom: \(9\).`,
-        R`At \(x=0\): \(\dfrac{8}{9}\).`,
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\ln(1+11x)}{2x}\).`, [
+        R`\(\tfrac00\); \(\dfrac{11/(1+11x)}{2}\).`,
+      ], R`\(\dfrac{11}{2}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\sin(3x)}{\sin(8x)}\).`, [
+        R`\(\tfrac00\); \(\dfrac{3\cos(3x)}{8\cos(8x)}\to\dfrac{3}{8}\).`,
+      ], R`\(\dfrac{3}{8}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{\ln x}{x^{2}}\).`, [
+        R`\(\tfrac\infty\infty\); \(\dfrac{1/x}{2x}=\dfrac{1}{2x^{2}}\to0\).`,
+      ], R`\(0\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\left(1+\frac{9}{x}\right)^x\).`, [
+        R`\(\ln y=\dfrac{\ln(1+9/x)}{1/x}\), form \(\tfrac00\).`,
+        R`L'Hôpital: \(\dfrac{9}{1+9/x}\to9\). So \(y\to e^{9}\).`,
+      ], R`\(e^{9}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\tan(6x)}{4x}\).`, [
+        R`\(\tfrac00\); \(\dfrac{6\sec^2(6x)}{4}\to\dfrac{6}{4}\).`,
+      ], R`\(\dfrac{3}{2}\)`),
+      P(R`Use L'Hôpital's Rule on \(\displaystyle\lim_{x\to\infty}\frac{7x^{2}+x}{6x^{2}-1}\).`, [
+        R`\(\tfrac\infty\infty\): \(\dfrac{14x+1}{12x}\), still \(\tfrac\infty\infty\).`,
+        R`\(\dfrac{14}{12}\).`,
+      ], R`\(\dfrac{7}{6}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{e^{6x}-1}{4x}\).`, [
+        R`\(\tfrac00\); derivatives give \(\dfrac{6e^{6x}}{4}\).`,
+      ], R`\(\dfrac{3}{2}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to3}\frac{x^{2}-9}{x-3}\).`, [
+        R`\(\tfrac00\); \(\dfrac{2x}{1}\) at \(x=3\).`,
+      ], R`\(6\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\ln(1+12x)}{5x}\).`, [
+        R`\(\tfrac00\); \(\dfrac{12/(1+12x)}{5}\).`,
+      ], R`\(\dfrac{12}{5}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\sin(8x)}{\sin(9x)}\).`, [
+        R`\(\tfrac00\); \(\dfrac{8\cos(8x)}{9\cos(9x)}\to\dfrac{8}{9}\).`,
       ], R`\(\dfrac{8}{9}\)`),
-      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\ln(1+3x)}{9x}\).`, [
-        R`\(\dfrac{\ln 1}{0}=\dfrac00\) ✓.`,
-        R`Top derivative: \(\dfrac{3}{1+3x}\). Bottom: \(9\).`,
-        R`At \(x=0\): \(\dfrac{3}{9}\).`,
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{1-\cos(11x)}{x^2}\).`, [
+        R`\(\tfrac00\): \(\dfrac{11\sin(11x)}{2x}\), still \(\tfrac00\).`,
+        R`Again: \(\dfrac{121\cos(11x)}{2}\to\dfrac{121}{2}\).`,
+      ], R`\(\dfrac{121}{2}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{x^{5}}{e^{3x}}\).`, [
+        R`\(\tfrac\infty\infty\); apply L'Hôpital 5 times. The top becomes the constant \(5!\), the bottom still \(\to\infty\).`,
+      ], R`\(0\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{e^{4x}-1-4x}{x^2}\).`, [
+        R`\(\tfrac00\): \(\dfrac{4e^{4x}-4}{2x}\), still \(\tfrac00\).`,
+        R`\(\dfrac{16e^{4x}}{2}\to\dfrac{16}{2}\).`,
+      ], R`\(8\)`),
+      P(R`Use L'Hôpital's Rule on \(\displaystyle\lim_{x\to\infty}\frac{4x^{2}-2x}{7x^{2}-2}\).`, [
+        R`\(\tfrac\infty\infty\): \(\dfrac{8x-2}{14x}\), still \(\tfrac\infty\infty\).`,
+        R`\(\dfrac{8}{14}\).`,
+      ], R`\(\dfrac{4}{7}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{e^{11x}-1}{5x}\).`, [
+        R`\(\tfrac00\); derivatives give \(\dfrac{11e^{11x}}{5}\).`,
+      ], R`\(\dfrac{11}{5}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to4}\frac{x^{7}-16384}{x-4}\).`, [
+        R`\(\tfrac00\); \(\dfrac{7x^{6}}{1}\) at \(x=4\).`,
+      ], R`\(28672\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\ln(1+5x)}{8x}\).`, [
+        R`\(\tfrac00\); \(\dfrac{5/(1+5x)}{8}\).`,
+      ], R`\(\dfrac{5}{8}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\sin(12x)}{\sin(3x)}\).`, [
+        R`\(\tfrac00\); \(\dfrac{12\cos(12x)}{3\cos(3x)}\to\dfrac{12}{3}\).`,
+      ], R`\(4\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{1-\cos(6x)}{x^2}\).`, [
+        R`\(\tfrac00\): \(\dfrac{6\sin(6x)}{2x}\), still \(\tfrac00\).`,
+        R`Again: \(\dfrac{36\cos(6x)}{2}\to\dfrac{36}{2}\).`,
+      ], R`\(18\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{x^{4}}{e^{3x}}\).`, [
+        R`\(\tfrac\infty\infty\); apply L'Hôpital 4 times. The top becomes the constant \(4!\), the bottom still \(\to\infty\).`,
+      ], R`\(0\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{e^{10x}-1-10x}{x^2}\).`, [
+        R`\(\tfrac00\): \(\dfrac{10e^{10x}-10}{2x}\), still \(\tfrac00\).`,
+        R`\(\dfrac{100e^{10x}}{2}\to\dfrac{100}{2}\).`,
+      ], R`\(50\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\left(1+\frac{2}{x}\right)^x\).`, [
+        R`\(\ln y=\dfrac{\ln(1+2/x)}{1/x}\), form \(\tfrac00\).`,
+        R`L'Hôpital: \(\dfrac{2}{1+2/x}\to2\). So \(y\to e^{2}\).`,
+      ], R`\(e^{2}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\tan(7x)}{9x}\).`, [
+        R`\(\tfrac00\); \(\dfrac{7\sec^2(7x)}{9}\to\dfrac{7}{9}\).`,
+      ], R`\(\dfrac{7}{9}\)`),
+      P(R`Use L'Hôpital's Rule on \(\displaystyle\lim_{x\to\infty}\frac{-9x^{2}+6x}{4x^{2}-3}\).`, [
+        R`\(\tfrac\infty\infty\): \(\dfrac{-18x+6}{8x}\), still \(\tfrac\infty\infty\).`,
+        R`\(\dfrac{-18}{8}\).`,
+      ], R`\(-\dfrac{9}{4}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{e^{7x}-1}{11x}\).`, [
+        R`\(\tfrac00\); derivatives give \(\dfrac{7e^{7x}}{11}\).`,
+      ], R`\(\dfrac{7}{11}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to2}\frac{x^{3}-8}{x-2}\).`, [
+        R`\(\tfrac00\); \(\dfrac{3x^{2}}{1}\) at \(x=2\).`,
+      ], R`\(12\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\ln(1+7x)}{2x}\).`, [
+        R`\(\tfrac00\); \(\dfrac{7/(1+7x)}{2}\).`,
+      ], R`\(\dfrac{7}{2}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{1-\cos(4x)}{x^2}\).`, [
+        R`\(\tfrac00\): \(\dfrac{4\sin(4x)}{2x}\), still \(\tfrac00\).`,
+        R`Again: \(\dfrac{16\cos(4x)}{2}\to\dfrac{16}{2}\).`,
+      ], R`\(8\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{e^{3x}-1-3x}{x^2}\).`, [
+        R`\(\tfrac00\): \(\dfrac{3e^{3x}-3}{2x}\), still \(\tfrac00\).`,
+        R`\(\dfrac{9e^{3x}}{2}\to\dfrac{9}{2}\).`,
+      ], R`\(\dfrac{9}{2}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\left(1-\frac{8}{x}\right)^x\).`, [
+        R`\(\ln y=\dfrac{\ln(1-8/x)}{1/x}\), form \(\tfrac00\).`,
+        R`L'Hôpital: \(\dfrac{-8}{1-8/x}\to-8\). So \(y\to e^{-8}\).`,
+      ], R`\(e^{-8}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\tan(6x)}{2x}\).`, [
+        R`\(\tfrac00\); \(\dfrac{6\sec^2(6x)}{2}\to\dfrac{6}{2}\).`,
+      ], R`\(3\)`),
+      P(R`Use L'Hôpital's Rule on \(\displaystyle\lim_{x\to\infty}\frac{-5x^{2}+8x}{4x^{2}-4}\).`, [
+        R`\(\tfrac\infty\infty\): \(\dfrac{-10x+8}{8x}\), still \(\tfrac\infty\infty\).`,
+        R`\(\dfrac{-10}{8}\).`,
+      ], R`\(-\dfrac{5}{4}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{e^{11x}-1}{2x}\).`, [
+        R`\(\tfrac00\); derivatives give \(\dfrac{11e^{11x}}{2}\).`,
+      ], R`\(\dfrac{11}{2}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to3}\frac{x^{3}-27}{x-3}\).`, [
+        R`\(\tfrac00\); \(\dfrac{3x^{2}}{1}\) at \(x=3\).`,
+      ], R`\(27\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\ln(1+3x)}{4x}\).`, [
+        R`\(\tfrac00\); \(\dfrac{3/(1+3x)}{4}\).`,
+      ], R`\(\dfrac{3}{4}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\sin(3x)}{\sin(5x)}\).`, [
+        R`\(\tfrac00\); \(\dfrac{3\cos(3x)}{5\cos(5x)}\to\dfrac{3}{5}\).`,
+      ], R`\(\dfrac{3}{5}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{1-\cos(3x)}{x^2}\).`, [
+        R`\(\tfrac00\): \(\dfrac{3\sin(3x)}{2x}\), still \(\tfrac00\).`,
+        R`Again: \(\dfrac{9\cos(3x)}{2}\to\dfrac{9}{2}\).`,
+      ], R`\(\dfrac{9}{2}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{x^{7}}{e^{2x}}\).`, [
+        R`\(\tfrac\infty\infty\); apply L'Hôpital 7 times. The top becomes the constant \(7!\), the bottom still \(\to\infty\).`,
+      ], R`\(0\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{\ln x}{x}\).`, [
+        R`\(\tfrac\infty\infty\); \(\dfrac{1/x}{1}=\dfrac{1}{x}\to0\).`,
+      ], R`\(0\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\left(1+\frac{1}{x}\right)^x\).`, [
+        R`\(\ln y=\dfrac{\ln(1+1/x)}{1/x}\), form \(\tfrac00\).`,
+        R`L'Hôpital: \(\dfrac{1}{1+1/x}\to1\). So \(y\to e^{1}\).`,
+      ], R`\(e^{1}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\tan(4x)}{12x}\).`, [
+        R`\(\tfrac00\); \(\dfrac{4\sec^2(4x)}{12}\to\dfrac{4}{12}\).`,
       ], R`\(\dfrac{1}{3}\)`),
-      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\ln(1+9x)}{8x}\).`, [
-        R`\(\dfrac{\ln 1}{0}=\dfrac00\) ✓.`,
-        R`Top derivative: \(\dfrac{9}{1+9x}\). Bottom: \(8\).`,
-        R`At \(x=0\): \(\dfrac{9}{8}\).`,
-      ], R`\(\dfrac{9}{8}\)`),
+      P(R`Use L'Hôpital's Rule on \(\displaystyle\lim_{x\to\infty}\frac{6x^{2}+3x}{7x^{2}-5}\).`, [
+        R`\(\tfrac\infty\infty\): \(\dfrac{12x+3}{14x}\), still \(\tfrac\infty\infty\).`,
+        R`\(\dfrac{12}{14}\).`,
+      ], R`\(\dfrac{6}{7}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{e^{8x}-1}{5x}\).`, [
+        R`\(\tfrac00\); derivatives give \(\dfrac{8e^{8x}}{5}\).`,
+      ], R`\(\dfrac{8}{5}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\ln(1+4x)}{12x}\).`, [
+        R`\(\tfrac00\); \(\dfrac{4/(1+4x)}{12}\).`,
+      ], R`\(\dfrac{1}{3}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\left(1-\frac{9}{x}\right)^x\).`, [
+        R`\(\ln y=\dfrac{\ln(1-9/x)}{1/x}\), form \(\tfrac00\).`,
+        R`L'Hôpital: \(\dfrac{-9}{1-9/x}\to-9\). So \(y\to e^{-9}\).`,
+      ], R`\(e^{-9}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\tan(10x)}{4x}\).`, [
+        R`\(\tfrac00\); \(\dfrac{10\sec^2(10x)}{4}\to\dfrac{10}{4}\).`,
+      ], R`\(\dfrac{5}{2}\)`),
+      P(R`Use L'Hôpital's Rule on \(\displaystyle\lim_{x\to\infty}\frac{9x^{2}+8x}{6x^{2}+2}\).`, [
+        R`\(\tfrac\infty\infty\): \(\dfrac{18x+8}{12x}\), still \(\tfrac\infty\infty\).`,
+        R`\(\dfrac{18}{12}\).`,
+      ], R`\(\dfrac{3}{2}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to4}\frac{x^{6}-4096}{x-4}\).`, [
+        R`\(\tfrac00\); \(\dfrac{6x^{5}}{1}\) at \(x=4\).`,
+      ], R`\(6144\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\sin(4x)}{\sin(8x)}\).`, [
+        R`\(\tfrac00\); \(\dfrac{4\cos(4x)}{8\cos(8x)}\to\dfrac{4}{8}\).`,
+      ], R`\(\dfrac{1}{2}\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{x^{2}}{e^{2x}}\).`, [
+        R`\(\tfrac\infty\infty\); apply L'Hôpital 2 times. The top becomes the constant \(2!\), the bottom still \(\to\infty\).`,
+      ], R`\(0\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to\infty}\frac{\ln x}{x^{4}}\).`, [
+        R`\(\tfrac\infty\infty\); \(\dfrac{1/x}{4x^{3}}=\dfrac{1}{4x^{4}}\to0\).`,
+      ], R`\(0\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{e^{8x}-1-8x}{x^2}\).`, [
+        R`\(\tfrac00\): \(\dfrac{8e^{8x}-8}{2x}\), still \(\tfrac00\).`,
+        R`\(\dfrac{64e^{8x}}{2}\to\dfrac{64}{2}\).`,
+      ], R`\(32\)`),
+      P(R`Evaluate \(\displaystyle\lim_{x\to0}\frac{\tan(4x)}{8x}\).`, [
+        R`\(\tfrac00\); \(\dfrac{4\sec^2(4x)}{8}\to\dfrac{4}{8}\).`,
+      ], R`\(\dfrac{1}{2}\)`),
     ],
   },
 
@@ -2440,69 +5901,274 @@ window.TOPICS = [
           R`\(s(t)=t^3-4t+C\). \(s(0)=5\Rightarrow C=5\).`,
           R`\(s(2)=8-8+5=5\).`,
         ], R`\(s(t)=t^3-4t+5\); \(s(2)=5\)`),
-      // ---- even more practice ----
-      P(R`Find \(\displaystyle\int(30x^{4}+8x+2)\,dx\).`, [
-        R`Power rule backwards: add 1 to the power, divide by the new power.`,
-        R`\(30x^{4}\to6x^{5}\), \(8x\to4x^{2}\), \(2\to2x\).`,
-        R`Add \(C\).`,
-      ], R`\(6x^{5}+4x^{2}+2x+C\)`),
-      P(R`Find \(\displaystyle\int(18x^{5}-12x+4)\,dx\).`, [
-        R`Power rule backwards: add 1 to the power, divide by the new power.`,
-        R`\(18x^{5}\to3x^{6}\), \(-12x\to-6x^{2}\), \(4\to4x\).`,
-        R`Add \(C\).`,
-      ], R`\(3x^{6}-6x^{2}+4x+C\)`),
-      P(R`Find \(\displaystyle\int(-25x^{4}-4x+5)\,dx\).`, [
-        R`Power rule backwards: add 1 to the power, divide by the new power.`,
-        R`\(-25x^{4}\to-5x^{5}\), \(-4x\to-2x^{2}\), \(5\to5x\).`,
-        R`Add \(C\).`,
-      ], R`\(-5x^{5}-2x^{2}+5x+C\)`),
-      P(R`Find \(\displaystyle\int(15x^{4}-2x-3)\,dx\).`, [
-        R`Power rule backwards: add 1 to the power, divide by the new power.`,
-        R`\(15x^{4}\to3x^{5}\), \(-2x\to-x^{2}\), \(-3\to-3x\).`,
-        R`Add \(C\).`,
-      ], R`\(3x^{5}-x^{2}-3x+C\)`),
-      P(R`Find \(\displaystyle\int(20x^{3}+4x-4)\,dx\).`, [
-        R`Power rule backwards: add 1 to the power, divide by the new power.`,
-        R`\(20x^{3}\to5x^{4}\), \(4x\to2x^{2}\), \(-4\to-4x\).`,
-        R`Add \(C\).`,
-      ], R`\(5x^{4}+2x^{2}-4x+C\)`),
-      P(R`Find \(\displaystyle\int(-24x^{5}-12x-3)\,dx\).`, [
-        R`Power rule backwards: add 1 to the power, divide by the new power.`,
-        R`\(-24x^{5}\to-4x^{6}\), \(-12x\to-6x^{2}\), \(-3\to-3x\).`,
-        R`Add \(C\).`,
-      ], R`\(-4x^{6}-6x^{2}-3x+C\)`),
-      P(R`Find \(f(x)\) if \(f'(x)=-6x-3\) and \(f(0)=-8\).`, [
-        R`Integrate: \(f(x)=-3x^{2}-3x+C\).`,
-        R`Plug in \(x=0\): \(0+C=-8\Rightarrow C=-8\).`,
-      ], R`\(f(x)=-3x^{2}-3x-8\)`),
-      P(R`Find \(f(x)\) if \(f'(x)=-8x-3\) and \(f(1)=8\).`, [
-        R`Integrate: \(f(x)=-4x^{2}-3x+C\).`,
-        R`Plug in \(x=1\): \(-7+C=8\Rightarrow C=15\).`,
-      ], R`\(f(x)=-4x^{2}-3x+15\)`),
-      P(R`Find \(f(x)\) if \(f'(x)=-8x-5\) and \(f(-2)=-8\).`, [
-        R`Integrate: \(f(x)=-4x^{2}-5x+C\).`,
-        R`Plug in \(x=-2\): \(-6+C=-8\Rightarrow C=-2\).`,
-      ], R`\(f(x)=-4x^{2}-5x-2\)`),
-      P(R`Find \(f(x)\) if \(f'(x)=-4x-1\) and \(f(-1)=-5\).`, [
-        R`Integrate: \(f(x)=-2x^{2}-x+C\).`,
-        R`Plug in \(x=-1\): \(-1+C=-5\Rightarrow C=-4\).`,
-      ], R`\(f(x)=-2x^{2}-x-4\)`),
-      P(R`Find \(f(x)\) if \(f'(x)=8x\) and \(f(0)=-8\).`, [
-        R`Integrate: \(f(x)=4x^{2}+C\).`,
-        R`Plug in \(x=0\): \(0+C=-8\Rightarrow C=-8\).`,
-      ], R`\(f(x)=4x^{2}-8\)`),
-      P(R`Find \(\displaystyle\int\left(\frac{-5}{x}-3e^x-4\cos x\right)dx\).`, [
-        R`\(\int\dfrac{-5}{x}dx=-5\ln|x|\).`,
-        R`\(\int -3e^x\,dx=-3e^x\). \(\int -4\cos x\,dx=-4\sin x\).`,
-      ], R`\(-5\ln|x|-3e^x-4\sin x+C\)`),
-      P(R`Find \(\displaystyle\int\left(\frac{-4}{x}-4e^x+5\cos x\right)dx\).`, [
-        R`\(\int\dfrac{-4}{x}dx=-4\ln|x|\).`,
-        R`\(\int -4e^x\,dx=-4e^x\). \(\int 5\cos x\,dx=5\sin x\).`,
-      ], R`\(-4\ln|x|-4e^x+5\sin x+C\)`),
-      P(R`Find \(\displaystyle\int\left(\frac{-4}{x}+e^x-5\cos x\right)dx\).`, [
-        R`\(\int\dfrac{-4}{x}dx=-4\ln|x|\).`,
-        R`\(\int e^x\,dx=e^x\). \(\int -5\cos x\,dx=-5\sin x\).`,
-      ], R`\(-4\ln|x|+e^x-5\sin x+C\)`),
+      // ---- generated practice (numbers vary; answers computed) ----
+      P(R`Find \(\displaystyle\int(-14x^{6}+8x-1)\,dx\).`, [
+        R`Add 1 to each power and divide by the new power.`,
+      ], R`\(-2x^{7}+4x^{2}-x+C\)`),
+      P(R`Find \(f\) if \(f'(x)=4x-9\) and \(f(-3)=1\).`, [
+        R`\(f=2x^{2}-9x+C\); plug in \(x=-3\): \(C=-44\).`,
+      ], R`\(f(x)=2x^{2}-9x-44\)`),
+      P(R`Find \(\displaystyle\int\left(\dfrac{-7}{x}-5e^x-6\cos x\right)dx\).`, [
+        R`Use \(\int\tfrac1x=\ln|x|\), \(\int e^x=e^x\), \(\int\cos x=\sin x\).`,
+      ], R`\(-7\ln|x|-5e^x-6\sin x+C\)`),
+      P(R`Find \(\displaystyle\int\left(9\sqrt x-\dfrac{5}{x^2}\right)dx\).`, [
+        R`Rewrite: \(9x^{1/2}-5x^{-2}\).`,
+        R`\(9x^{1/2}\to6x^{3/2}\), \(-5x^{-2}\to5x^{-1}\).`,
+      ], R`\(6x^{3/2}+\dfrac{5}{x}+C\)`),
+      P(R`Find \(\displaystyle\int(-4\sin x+3\sec^2x)\,dx\).`, [
+        R`\(\int\sin x=-\cos x\), \(\int\sec^2x=\tan x\).`,
+      ], R`\(4\cos x+3\tan x+C\)`),
+      P(R`Find \(\displaystyle\int(x-2)(x-2)\,dx\).`, [
+        R`Multiply out: \(x^{2}-4x+4\).`,
+      ], R`\(\tfrac{1}{3}x^{3}-2x^{2}+4x+C\)`),
+      P(R`Find \(\displaystyle\int\frac{-8x^{2}-3x+8}{x}\,dx\).`, [
+        R`Divide: \(-8x-3+8\tfrac1x\).`,
+      ], R`\(-4x^2-3x+8\ln|x|+C\)`),
+      P(R`Find \(f\) if \(f''(x)=7\), \(f'(0)=5\), \(f(0)=-9\).`, [
+        R`\(f'=7x+C_1\), \(C_1=5\). \(f=\tfrac{7}{2}x^2+5x+C_2\), \(C_2=-9\).`,
+      ], R`\(f(x)=\tfrac{7}{2}x^{2}+5x-9\)`),
+      P(R`A ball is thrown up at 48 ft/s from 57 ft high (\(a=-32\) ft/s²). Find its maximum height.`, [
+        R`\(v=-32t+48\), \(s=-16t^2+48t+57\).`,
+        R`\(v=0\Rightarrow t=1.5\).`,
+      ], R`\(93\) ft`),
+      P(R`Find \(\displaystyle\int\left(\frac{1}{1+x^2}+\frac{4}{\sqrt{1-x^2}}\right)dx\).`, [
+        R`Inverse trig formulas.`,
+      ], R`\(\arctan x+4\arcsin x+C\)`),
+      P(R`Find \(f\) if \(f'(x)=-5\sin x\) and \(f(0)=-8\).`, [
+        R`\(f=5\cos x+C\); at 0: \(5+C=-8\).`,
+      ], R`\(f(x)=5\cos x-13\)`),
+      P(R`Find \(\displaystyle\int(-14x^{6}-12x-4)\,dx\).`, [
+        R`Add 1 to each power and divide by the new power.`,
+      ], R`\(-2x^{7}-6x^{2}-4x+C\)`),
+      P(R`Find \(f\) if \(f'(x)=2x-8\) and \(f(0)=5\).`, [
+        R`\(f=x^{2}-8x+C\); plug in \(x=0\): \(C=5\).`,
+      ], R`\(f(x)=x^{2}-8x+5\)`),
+      P(R`Find \(\displaystyle\int\left(\dfrac{9}{x}-4e^x+5\cos x\right)dx\).`, [
+        R`Use \(\int\tfrac1x=\ln|x|\), \(\int e^x=e^x\), \(\int\cos x=\sin x\).`,
+      ], R`\(9\ln|x|-4e^x+5\sin x+C\)`),
+      P(R`Find \(\displaystyle\int\left(6\sqrt x-\dfrac{6}{x^2}\right)dx\).`, [
+        R`Rewrite: \(6x^{1/2}-6x^{-2}\).`,
+        R`\(6x^{1/2}\to4x^{3/2}\), \(-6x^{-2}\to6x^{-1}\).`,
+      ], R`\(4x^{3/2}+\dfrac{6}{x}+C\)`),
+      P(R`Find \(\displaystyle\int(5\sin x+7\sec^2x)\,dx\).`, [
+        R`\(\int\sin x=-\cos x\), \(\int\sec^2x=\tan x\).`,
+      ], R`\(-5\cos x+7\tan x+C\)`),
+      P(R`Find \(\displaystyle\int(x+4)(x+3)\,dx\).`, [
+        R`Multiply out: \(x^{2}+7x+12\).`,
+      ], R`\(\tfrac{1}{3}x^{3}+\tfrac{7}{2}x^{2}+12x+C\)`),
+      P(R`Find \(\displaystyle\int\frac{-7x^{2}+3x+9}{x}\,dx\).`, [
+        R`Divide: \(-7x+3+9\tfrac1x\).`,
+      ], R`\(-\tfrac{7}{2}x^2+3x+9\ln|x|+C\)`),
+      P(R`Find \(f\) if \(f''(x)=-12\), \(f'(0)=-8\), \(f(0)=-6\).`, [
+        R`\(f'=-12x+C_1\), \(C_1=-8\). \(f=-6x^2-8x+C_2\), \(C_2=-6\).`,
+      ], R`\(f(x)=-6x^{2}-8x-6\)`),
+      P(R`A ball is thrown up at 16 ft/s from 52 ft high (\(a=-32\) ft/s²). Find its maximum height.`, [
+        R`\(v=-32t+16\), \(s=-16t^2+16t+52\).`,
+        R`\(v=0\Rightarrow t=0.5\).`,
+      ], R`\(56\) ft`),
+      P(R`Find \(\displaystyle\int\left(\frac{3}{1+x^2}-\frac{2}{\sqrt{1-x^2}}\right)dx\).`, [
+        R`Inverse trig formulas.`,
+      ], R`\(3\arctan x-2\arcsin x+C\)`),
+      P(R`Find \(f\) if \(f'(x)=-8\cos x\) and \(f(0)=6\).`, [
+        R`\(f=-8\sin x+C\); at 0: \(0+C=6\).`,
+      ], R`\(f(x)=-8\sin x+6\)`),
+      P(R`Find \(\displaystyle\int(14x^{6}-8x-5)\,dx\).`, [
+        R`Add 1 to each power and divide by the new power.`,
+      ], R`\(2x^{7}-4x^{2}-5x+C\)`),
+      P(R`Find \(f\) if \(f'(x)=2x+2\) and \(f(-2)=9\).`, [
+        R`\(f=x^{2}+2x+C\); plug in \(x=-2\): \(C=9\).`,
+      ], R`\(f(x)=x^{2}+2x+9\)`),
+      P(R`Find \(\displaystyle\int\left(\dfrac{-8}{x}+7e^x-8\cos x\right)dx\).`, [
+        R`Use \(\int\tfrac1x=\ln|x|\), \(\int e^x=e^x\), \(\int\cos x=\sin x\).`,
+      ], R`\(-8\ln|x|+7e^x-8\sin x+C\)`),
+      P(R`Find \(\displaystyle\int\left(-12\sqrt x-\dfrac{4}{x^2}\right)dx\).`, [
+        R`Rewrite: \(-12x^{1/2}-4x^{-2}\).`,
+        R`\(-12x^{1/2}\to-8x^{3/2}\), \(-4x^{-2}\to4x^{-1}\).`,
+      ], R`\(-8x^{3/2}+\dfrac{4}{x}+C\)`),
+      P(R`Find \(\displaystyle\int(-\sin x-8\sec^2x)\,dx\).`, [
+        R`\(\int\sin x=-\cos x\), \(\int\sec^2x=\tan x\).`,
+      ], R`\(\cos x-8\tan x+C\)`),
+      P(R`Find \(\displaystyle\int(x-8)(x+5)\,dx\).`, [
+        R`Multiply out: \(x^{2}-3x-40\).`,
+      ], R`\(\tfrac{1}{3}x^{3}-\tfrac{3}{2}x^{2}-40x+C\)`),
+      P(R`Find \(\displaystyle\int\frac{2x^{2}+8x-3}{x}\,dx\).`, [
+        R`Divide: \(2x+8-3\tfrac1x\).`,
+      ], R`\(x^2+8x-3\ln|x|+C\)`),
+      P(R`Find \(f\) if \(f''(x)=12\), \(f'(0)=0\), \(f(0)=9\).`, [
+        R`\(f'=12x+C_1\), \(C_1=0\). \(f=6x^2+C_2\), \(C_2=9\).`,
+      ], R`\(f(x)=6x^{2}+9\)`),
+      P(R`A ball is thrown up at 64 ft/s from 73 ft high (\(a=-32\) ft/s²). Find its maximum height.`, [
+        R`\(v=-32t+64\), \(s=-16t^2+64t+73\).`,
+        R`\(v=0\Rightarrow t=2\).`,
+      ], R`\(137\) ft`),
+      P(R`Find \(\displaystyle\int\left(\frac{-2}{1+x^2}-\frac{3}{\sqrt{1-x^2}}\right)dx\).`, [
+        R`Inverse trig formulas.`,
+      ], R`\(-2\arctan x-3\arcsin x+C\)`),
+      P(R`Find \(f\) if \(f'(x)=9\cos x\) and \(f(0)=-4\).`, [
+        R`\(f=9\sin x+C\); at 0: \(0+C=-4\).`,
+      ], R`\(f(x)=9\sin x-4\)`),
+      P(R`Find \(\displaystyle\int(16x^{3}+6x+4)\,dx\).`, [
+        R`Add 1 to each power and divide by the new power.`,
+      ], R`\(4x^{4}+3x^{2}+4x+C\)`),
+      P(R`Find \(f\) if \(f'(x)=2x-8\) and \(f(-2)=4\).`, [
+        R`\(f=x^{2}-8x+C\); plug in \(x=-2\): \(C=-16\).`,
+      ], R`\(f(x)=x^{2}-8x-16\)`),
+      P(R`Find \(\displaystyle\int\left(\dfrac{-5}{x}-7e^x-2\cos x\right)dx\).`, [
+        R`Use \(\int\tfrac1x=\ln|x|\), \(\int e^x=e^x\), \(\int\cos x=\sin x\).`,
+      ], R`\(-5\ln|x|-7e^x-2\sin x+C\)`),
+      P(R`Find \(\displaystyle\int\left(6\sqrt x-\dfrac{9}{x^2}\right)dx\).`, [
+        R`Rewrite: \(6x^{1/2}-9x^{-2}\).`,
+        R`\(6x^{1/2}\to4x^{3/2}\), \(-9x^{-2}\to9x^{-1}\).`,
+      ], R`\(4x^{3/2}+\dfrac{9}{x}+C\)`),
+      P(R`Find \(\displaystyle\int(-7\sin x+8\sec^2x)\,dx\).`, [
+        R`\(\int\sin x=-\cos x\), \(\int\sec^2x=\tan x\).`,
+      ], R`\(7\cos x+8\tan x+C\)`),
+      P(R`Find \(\displaystyle\int(x-7)(x+7)\,dx\).`, [
+        R`Multiply out: \(x^{2}-49\).`,
+      ], R`\(\tfrac{1}{3}x^{3}-49x+C\)`),
+      P(R`Find \(\displaystyle\int\frac{9x^{2}+6x-7}{x}\,dx\).`, [
+        R`Divide: \(9x+6-7\tfrac1x\).`,
+      ], R`\(\tfrac{9}{2}x^2+6x-7\ln|x|+C\)`),
+      P(R`Find \(f\) if \(f''(x)=7\), \(f'(0)=0\), \(f(0)=-6\).`, [
+        R`\(f'=7x+C_1\), \(C_1=0\). \(f=\tfrac{7}{2}x^2+C_2\), \(C_2=-6\).`,
+      ], R`\(f(x)=\tfrac{7}{2}x^{2}-6\)`),
+      P(R`A ball is thrown up at 48 ft/s from 80 ft high (\(a=-32\) ft/s²). Find its maximum height.`, [
+        R`\(v=-32t+48\), \(s=-16t^2+48t+80\).`,
+        R`\(v=0\Rightarrow t=1.5\).`,
+      ], R`\(116\) ft`),
+      P(R`Find \(\displaystyle\int\left(\frac{7}{1+x^2}+\frac{3}{\sqrt{1-x^2}}\right)dx\).`, [
+        R`Inverse trig formulas.`,
+      ], R`\(7\arctan x+3\arcsin x+C\)`),
+      P(R`Find \(f\) if \(f'(x)=2\cos x\) and \(f(0)=0\).`, [
+        R`\(f=2\sin x+C\); at 0: \(0+C=0\).`,
+      ], R`\(f(x)=2\sin x\)`),
+      P(R`Find \(\displaystyle\int(-16x^{7}+6x+4)\,dx\).`, [
+        R`Add 1 to each power and divide by the new power.`,
+      ], R`\(-2x^{8}+3x^{2}+4x+C\)`),
+      P(R`Find \(f\) if \(f'(x)=-2x-9\) and \(f(-3)=-7\).`, [
+        R`\(f=-x^{2}-9x+C\); plug in \(x=-3\): \(C=-25\).`,
+      ], R`\(f(x)=-x^{2}-9x-25\)`),
+      P(R`Find \(\displaystyle\int\left(\dfrac{3}{x}-6e^x+8\cos x\right)dx\).`, [
+        R`Use \(\int\tfrac1x=\ln|x|\), \(\int e^x=e^x\), \(\int\cos x=\sin x\).`,
+      ], R`\(3\ln|x|-6e^x+8\sin x+C\)`),
+      P(R`Find \(\displaystyle\int\left(-12\sqrt x-\dfrac{2}{x^2}\right)dx\).`, [
+        R`Rewrite: \(-12x^{1/2}-2x^{-2}\).`,
+        R`\(-12x^{1/2}\to-8x^{3/2}\), \(-2x^{-2}\to2x^{-1}\).`,
+      ], R`\(-8x^{3/2}+\dfrac{2}{x}+C\)`),
+      P(R`Find \(\displaystyle\int(-2\sin x+6\sec^2x)\,dx\).`, [
+        R`\(\int\sin x=-\cos x\), \(\int\sec^2x=\tan x\).`,
+      ], R`\(2\cos x+6\tan x+C\)`),
+      P(R`Find \(\displaystyle\int(x+1)(x-9)\,dx\).`, [
+        R`Multiply out: \(x^{2}-8x-9\).`,
+      ], R`\(\tfrac{1}{3}x^{3}-4x^{2}-9x+C\)`),
+      P(R`Find \(\displaystyle\int\frac{x^{2}+3x-8}{x}\,dx\).`, [
+        R`Divide: \(x+3-8\tfrac1x\).`,
+      ], R`\(\tfrac{1}{2}x^2+3x-8\ln|x|+C\)`),
+      P(R`Find \(f\) if \(f''(x)=10\), \(f'(0)=-5\), \(f(0)=8\).`, [
+        R`\(f'=10x+C_1\), \(C_1=-5\). \(f=5x^2-5x+C_2\), \(C_2=8\).`,
+      ], R`\(f(x)=5x^{2}-5x+8\)`),
+      P(R`A ball is thrown up at 32 ft/s from 89 ft high (\(a=-32\) ft/s²). Find its maximum height.`, [
+        R`\(v=-32t+32\), \(s=-16t^2+32t+89\).`,
+        R`\(v=0\Rightarrow t=1\).`,
+      ], R`\(105\) ft`),
+      P(R`Find \(\displaystyle\int\left(\frac{2}{1+x^2}-\frac{7}{\sqrt{1-x^2}}\right)dx\).`, [
+        R`Inverse trig formulas.`,
+      ], R`\(2\arctan x-7\arcsin x+C\)`),
+      P(R`Find \(f\) if \(f'(x)=-2\sin x\) and \(f(0)=-3\).`, [
+        R`\(f=2\cos x+C\); at 0: \(2+C=-3\).`,
+      ], R`\(f(x)=2\cos x-5\)`),
+      P(R`Find \(\displaystyle\int(-12x^{2}-12x-1)\,dx\).`, [
+        R`Add 1 to each power and divide by the new power.`,
+      ], R`\(-4x^{3}-6x^{2}-x+C\)`),
+      P(R`Find \(f\) if \(f'(x)=-8x-7\) and \(f(-2)=15\).`, [
+        R`\(f=-4x^{2}-7x+C\); plug in \(x=-2\): \(C=17\).`,
+      ], R`\(f(x)=-4x^{2}-7x+17\)`),
+      P(R`Find \(\displaystyle\int\left(\dfrac{9}{x}+2e^x+9\cos x\right)dx\).`, [
+        R`Use \(\int\tfrac1x=\ln|x|\), \(\int e^x=e^x\), \(\int\cos x=\sin x\).`,
+      ], R`\(9\ln|x|+2e^x+9\sin x+C\)`),
+      P(R`Find \(\displaystyle\int\left(-12\sqrt x-\dfrac{7}{x^2}\right)dx\).`, [
+        R`Rewrite: \(-12x^{1/2}-7x^{-2}\).`,
+        R`\(-12x^{1/2}\to-8x^{3/2}\), \(-7x^{-2}\to7x^{-1}\).`,
+      ], R`\(-8x^{3/2}+\dfrac{7}{x}+C\)`),
+      P(R`Find \(\displaystyle\int(4\sin x+7\sec^2x)\,dx\).`, [
+        R`\(\int\sin x=-\cos x\), \(\int\sec^2x=\tan x\).`,
+      ], R`\(-4\cos x+7\tan x+C\)`),
+      P(R`Find \(\displaystyle\int(x-5)(x+8)\,dx\).`, [
+        R`Multiply out: \(x^{2}+3x-40\).`,
+      ], R`\(\tfrac{1}{3}x^{3}+\tfrac{3}{2}x^{2}-40x+C\)`),
+      P(R`Find \(\displaystyle\int\frac{4x^{2}+9x-3}{x}\,dx\).`, [
+        R`Divide: \(4x+9-3\tfrac1x\).`,
+      ], R`\(2x^2+9x-3\ln|x|+C\)`),
+      P(R`Find \(f\) if \(f''(x)=1\), \(f'(0)=1\), \(f(0)=-8\).`, [
+        R`\(f'=1x+C_1\), \(C_1=1\). \(f=\tfrac{1}{2}x^2+x+C_2\), \(C_2=-8\).`,
+      ], R`\(f(x)=\tfrac{1}{2}x^{2}+x-8\)`),
+      P(R`A ball is thrown up at 16 ft/s from 69 ft high (\(a=-32\) ft/s²). Find its maximum height.`, [
+        R`\(v=-32t+16\), \(s=-16t^2+16t+69\).`,
+        R`\(v=0\Rightarrow t=0.5\).`,
+      ], R`\(73\) ft`),
+      P(R`Find \(\displaystyle\int\left(\frac{-1}{1+x^2}-\frac{8}{\sqrt{1-x^2}}\right)dx\).`, [
+        R`Inverse trig formulas.`,
+      ], R`\(-\arctan x-8\arcsin x+C\)`),
+      P(R`Find \(f\) if \(f'(x)=-\cos x\) and \(f(0)=-6\).`, [
+        R`\(f=-\sin x+C\); at 0: \(0+C=-6\).`,
+      ], R`\(f(x)=-\sin x-6\)`),
+      P(R`Find \(\displaystyle\int(30x^{4}-2x-6)\,dx\).`, [
+        R`Add 1 to each power and divide by the new power.`,
+      ], R`\(6x^{5}-x^{2}-6x+C\)`),
+      P(R`Find \(f\) if \(f'(x)=-6x+5\) and \(f(-1)=-8\).`, [
+        R`\(f=-3x^{2}+5x+C\); plug in \(x=-1\): \(C=0\).`,
+      ], R`\(f(x)=-3x^{2}+5x\)`),
+      P(R`Find \(\displaystyle\int\left(\dfrac{-7}{x}+2e^x+2\cos x\right)dx\).`, [
+        R`Use \(\int\tfrac1x=\ln|x|\), \(\int e^x=e^x\), \(\int\cos x=\sin x\).`,
+      ], R`\(-7\ln|x|+2e^x+2\sin x+C\)`),
+      P(R`Find \(\displaystyle\int\left(-12\sqrt x+\dfrac{1}{x^2}\right)dx\).`, [
+        R`Rewrite: \(-12x^{1/2}+x^{-2}\).`,
+        R`\(-12x^{1/2}\to-8x^{3/2}\), \(x^{-2}\to-x^{-1}\).`,
+      ], R`\(-8x^{3/2}-\dfrac{1}{x}+C\)`),
+      P(R`Find \(\displaystyle\int(-\sin x+6\sec^2x)\,dx\).`, [
+        R`\(\int\sin x=-\cos x\), \(\int\sec^2x=\tan x\).`,
+      ], R`\(\cos x+6\tan x+C\)`),
+      P(R`Find \(\displaystyle\int(x-3)(x+2)\,dx\).`, [
+        R`Multiply out: \(x^{2}-x-6\).`,
+      ], R`\(\tfrac{1}{3}x^{3}-\tfrac{1}{2}x^{2}-6x+C\)`),
+      P(R`Find \(\displaystyle\int\frac{-9x^{2}+8x-6}{x}\,dx\).`, [
+        R`Divide: \(-9x+8-6\tfrac1x\).`,
+      ], R`\(-\tfrac{9}{2}x^2+8x-6\ln|x|+C\)`),
+      P(R`Find \(f\) if \(f''(x)=3\), \(f'(0)=3\), \(f(0)=-8\).`, [
+        R`\(f'=3x+C_1\), \(C_1=3\). \(f=\tfrac{3}{2}x^2+3x+C_2\), \(C_2=-8\).`,
+      ], R`\(f(x)=\tfrac{3}{2}x^{2}+3x-8\)`),
+      P(R`A ball is thrown up at 48 ft/s from 55 ft high (\(a=-32\) ft/s²). Find its maximum height.`, [
+        R`\(v=-32t+48\), \(s=-16t^2+48t+55\).`,
+        R`\(v=0\Rightarrow t=1.5\).`,
+      ], R`\(91\) ft`),
+      P(R`Find \(\displaystyle\int\left(\frac{9}{1+x^2}-\frac{8}{\sqrt{1-x^2}}\right)dx\).`, [
+        R`Inverse trig formulas.`,
+      ], R`\(9\arctan x-8\arcsin x+C\)`),
+      P(R`Find \(f\) if \(f'(x)=-5\cos x\) and \(f(0)=1\).`, [
+        R`\(f=-5\sin x+C\); at 0: \(0+C=1\).`,
+      ], R`\(f(x)=-5\sin x+1\)`),
+      P(R`Find \(\displaystyle\int(-21x^{6}-2x-6)\,dx\).`, [
+        R`Add 1 to each power and divide by the new power.`,
+      ], R`\(-3x^{7}-x^{2}-6x+C\)`),
+      P(R`Find \(f\) if \(f'(x)=-8x+6\) and \(f(-1)=-4\).`, [
+        R`\(f=-4x^{2}+6x+C\); plug in \(x=-1\): \(C=6\).`,
+      ], R`\(f(x)=-4x^{2}+6x+6\)`),
+      P(R`Find \(\displaystyle\int\left(\dfrac{8}{x}-9e^x-5\cos x\right)dx\).`, [
+        R`Use \(\int\tfrac1x=\ln|x|\), \(\int e^x=e^x\), \(\int\cos x=\sin x\).`,
+      ], R`\(8\ln|x|-9e^x-5\sin x+C\)`),
+      P(R`Find \(\displaystyle\int\left(6\sqrt x+\dfrac{3}{x^2}\right)dx\).`, [
+        R`Rewrite: \(6x^{1/2}+3x^{-2}\).`,
+        R`\(6x^{1/2}\to4x^{3/2}\), \(3x^{-2}\to-3x^{-1}\).`,
+      ], R`\(4x^{3/2}-\dfrac{3}{x}+C\)`),
+      P(R`Find \(\displaystyle\int(6\sin x-8\sec^2x)\,dx\).`, [
+        R`\(\int\sin x=-\cos x\), \(\int\sec^2x=\tan x\).`,
+      ], R`\(-6\cos x-8\tan x+C\)`),
+      P(R`Find \(\displaystyle\int(x-4)(x-3)\,dx\).`, [
+        R`Multiply out: \(x^{2}-7x+12\).`,
+      ], R`\(\tfrac{1}{3}x^{3}-\tfrac{7}{2}x^{2}+12x+C\)`),
+      P(R`Find \(\displaystyle\int\frac{-4x^{2}-4x-6}{x}\,dx\).`, [
+        R`Divide: \(-4x-4-6\tfrac1x\).`,
+      ], R`\(-2x^2-4x-6\ln|x|+C\)`),
     ],
   },
 
@@ -2688,80 +6354,259 @@ window.TOPICS = [
           R`\(\displaystyle\int_0^2(2-t)\,dt=2\) and \(\displaystyle\int_2^4(t-2)\,dt=2\).`,
           R`Total distance \(=2+2=4\).`,
         ], R`Displacement \(0\) m; distance \(4\) m`),
-      // ---- even more practice ----
-      P(R`Evaluate \(\displaystyle\int_{-1}^{1}(-3x-3)\,dx\).`, [
-        R`Antiderivative: \(F(x)=-\tfrac{3}{2}x^{2}-3x\).`,
-        R`\(F(1)=-\dfrac{9}{2}\), \(F(-1)=\dfrac{3}{2}\).`,
-        R`Subtract: \(-6\).`,
-      ], R`\(-6\)`),
-      P(R`Evaluate \(\displaystyle\int_{1}^{2}(-6x+2)\,dx\).`, [
-        R`Antiderivative: \(F(x)=-3x^{2}+2x\).`,
-        R`\(F(2)=-8\), \(F(1)=-1\).`,
-        R`Subtract: \(-7\).`,
-      ], R`\(-7\)`),
-      P(R`Evaluate \(\displaystyle\int_{0}^{1}(-2x+5)\,dx\).`, [
-        R`Antiderivative: \(F(x)=-x^{2}+5x\).`,
-        R`\(F(1)=4\), \(F(0)=0\).`,
-        R`Subtract: \(4\).`,
-      ], R`\(4\)`),
-      P(R`Evaluate \(\displaystyle\int_{1}^{2}(-x-6)\,dx\).`, [
-        R`Antiderivative: \(F(x)=-\tfrac{1}{2}x^{2}-6x\).`,
-        R`\(F(2)=-14\), \(F(1)=-\dfrac{13}{2}\).`,
-        R`Subtract: \(-\dfrac{15}{2}\).`,
-      ], R`\(-\dfrac{15}{2}\)`),
-      P(R`Evaluate \(\displaystyle\int_{0}^{3}(3x^{2}+5)\,dx\).`, [
-        R`Antiderivative: \(F(x)=x^{3}+5x\).`,
-        R`\(F(3)=42\), \(F(0)=0\).`,
-        R`\(F(3)-F(0)=42\).`,
-      ], R`\(42\)`),
-      P(R`Evaluate \(\displaystyle\int_{2}^{3}(-3x^{2}+3)\,dx\).`, [
-        R`Antiderivative: \(F(x)=-x^{3}+3x\).`,
-        R`\(F(3)=-18\), \(F(2)=-2\).`,
-        R`\(F(3)-F(2)=-16\).`,
-      ], R`\(-16\)`),
-      P(R`Evaluate \(\displaystyle\int_{1}^{4}(x^{2}-5)\,dx\).`, [
-        R`Antiderivative: \(F(x)=\tfrac{1}{3}x^{3}-5x\).`,
-        R`\(F(4)=\dfrac{4}{3}\), \(F(1)=-\dfrac{14}{3}\).`,
-        R`\(F(4)-F(1)=6\).`,
-      ], R`\(6\)`),
-      P(R`Evaluate \(\displaystyle\int_{2}^{5}(-2x^{2}-5)\,dx\).`, [
-        R`Antiderivative: \(F(x)=-\tfrac{2}{3}x^{3}-5x\).`,
-        R`\(F(5)=-\dfrac{325}{3}\), \(F(2)=-\dfrac{46}{3}\).`,
-        R`\(F(5)-F(2)=-93\).`,
-      ], R`\(-93\)`),
-      P(R`Find the area between \(y=6x\) and \(y=x^2\).`, [
-        R`Intersections: \(x^2=6x\Rightarrow x=0,\ 6\).`,
-        R`Between them the line is on top (test a point).`,
-        R`\(\displaystyle\int_0^{6}(6x-x^2)\,dx=\left[\tfrac{6}{2}x^2-\tfrac{x^3}{3}\right]_0^{6}=108-72\).`,
-        R`\(=36\).`,
-      ], R`\(36\)`),
-      P(R`Find the area between \(y=2x\) and \(y=x^2\).`, [
-        R`Intersections: \(x^2=2x\Rightarrow x=0,\ 2\).`,
-        R`Between them the line is on top (test a point).`,
-        R`\(\displaystyle\int_0^{2}(2x-x^2)\,dx=\left[\tfrac{2}{2}x^2-\tfrac{x^3}{3}\right]_0^{2}=4-\dfrac{8}{3}\).`,
-        R`\(=\dfrac{4}{3}\).`,
-      ], R`\(\dfrac{4}{3}\)`),
+      // ---- generated practice (numbers vary; answers computed) ----
+      P(R`Evaluate \(\displaystyle\int_{0}^{1}(9x)\,dx\).`, [
+        R`\(F=\tfrac{9}{2}x^{2}\); \(F(1)=\dfrac{9}{2}\), \(F(0)=0\).`,
+      ], R`\(\dfrac{9}{2}\)`),
+      P(R`Evaluate \(\displaystyle\int_{-1}^{2}(4x^{2}-1)\,dx\).`, [
+        R`\(F=\tfrac{4}{3}x^{3}-x\); \(F(2)=\dfrac{26}{3}\), \(F(-1)=-\dfrac{1}{3}\).`,
+      ], R`\(9\)`),
+      P(R`Find the area between \(y=3x\) and \(y=x^2\).`, [
+        R`Intersect at \(0,\ 3\); line on top.`,
+        R`\(\int_0^{3}(3x-x^2)\,dx=\dfrac{27}{2}-9\).`,
+      ], R`\(\dfrac{9}{2}\)`),
+      P(R`Find the average value of \(f(x)=x^2\) on \([0,8]\).`, [
+        R`\(\dfrac{1}{8}\int_0^{8}x^2\,dx=\dfrac{1}{8}\cdot\dfrac{512}{3}\).`,
+      ], R`\(\dfrac{64}{3}\)`),
+      P(R`Evaluate \(\displaystyle\int_{-2}^{0}6x^3\,dx\).`, [
+        R`\(\left[\tfrac{3}{2}x^4\right]_{-2}^{0}\).`,
+      ], R`\(-24\)`),
+      P(R`Evaluate \(\displaystyle\int_{0}^{\tfrac\pi4}5\sec^2x\,dx\).`, [
+        R`Antiderivative \(5\tan x\); top minus bottom.`,
+      ], R`\(5\)`),
+      P(R`Evaluate \(\displaystyle\int_1^{e^{4}}\frac{2}{x}\,dx\).`, [
+        R`\(2[\ln x]_1^{e^{4}}=2(4-0)\).`,
+      ], R`\(8\)`),
+      P(R`Find \(\dfrac{d}{dx}\displaystyle\int_{-1}^{x^{3}}t^2+1\,dt\).`, [
+        R`FTC Part 1 + chain rule: plug in \(x^{3}\) and multiply by \(3x^{2}\).`,
+      ], R`\(3x^{2}\left(x^{6}+1\right)\)`),
+      P(R`Estimate \(\displaystyle\int_0^{6}(x^{2}+2)\,dx\) with a left Riemann sum using 6 rectangles.`, [
+        R`\(\Delta x=1\); left endpoints \(0,\ 1,\ 2,\ 3,\ 4,\ 5\).`,
+        R`Sum of heights: \(2+3+6+11+18+27=67\).`,
+      ], R`\(67\)`),
+      P(R`Find the area under \(y=4-x^2\) above the \(x\)-axis.`, [
+        R`Roots \(\pm2\). \(\left[4x-\tfrac{x^3}{3}\right]_{-2}^{2}\).`,
+      ], R`\(\dfrac{32}{3}\)`),
+      P(R`If \(\int_0^{5}f=-12\) and \(\int_0^{6}f=20\), find \(\int_{5}^{6}f\) and \(\int_{6}^{5}f\).`, [
+        R`\(\int_{5}^{6}f=\int_0^{6}f-\int_0^{5}f\). Flipping limits changes the sign.`,
+      ], R`\(32\) and \(-32\)`),
+      P(R`\(v(t)=t-4\) m/s on \([0,6]\). Find the displacement and total distance.`, [
+        R`Displacement: \(\left[\tfrac{t^2}{2}-4t\right]_0^{6}\).`,
+        R`Distance: \(\int_0^{4}(4-t)\,dt+\int_{4}^{6}(t-4)\,dt=8+2\).`,
+      ], R`Displacement \(-6\) m; distance \(10\) m`),
+      P(R`Find \(\dfrac{d}{dx}\displaystyle\int_{-2}^{x}e^{-t^2}\,dt\).`, [
+        R`FTC Part 1: replace \(t\) with \(x\).`,
+      ], R`\(e^{-x^2}\)`),
+      P(R`Evaluate \(\displaystyle\int_{-1}^{0}(2x-8)\,dx\).`, [
+        R`\(F=x^{2}-8x\); \(F(0)=0\), \(F(-1)=9\).`,
+      ], R`\(-9\)`),
+      P(R`Evaluate \(\displaystyle\int_{2}^{4}(x^{2}+5)\,dx\).`, [
+        R`\(F=\tfrac{1}{3}x^{3}+5x\); \(F(4)=\dfrac{124}{3}\), \(F(2)=\dfrac{38}{3}\).`,
+      ], R`\(\dfrac{86}{3}\)`),
       P(R`Find the area between \(y=x\) and \(y=x^2\).`, [
-        R`Intersections: \(x^2=x\Rightarrow x=0,\ 1\).`,
-        R`Between them the line is on top (test a point).`,
-        R`\(\displaystyle\int_0^{1}(x-x^2)\,dx=\left[\tfrac{1}{2}x^2-\tfrac{x^3}{3}\right]_0^{1}=\dfrac{1}{2}-\dfrac{1}{3}\).`,
-        R`\(=\dfrac{1}{6}\).`,
+        R`Intersect at \(0,\ 1\); line on top.`,
+        R`\(\int_0^{1}(x-x^2)\,dx=\dfrac{1}{2}-\dfrac{1}{3}\).`,
       ], R`\(\dfrac{1}{6}\)`),
-      P(R`Find the average value of \(f(x)=5x^2\) on \([0,3]\).`, [
-        R`\(f_{\text{avg}}=\dfrac1{3}\displaystyle\int_0^{3}5x^2\,dx\).`,
-        R`\(\int_0^{3}5x^2\,dx=\left[\dfrac{5}{3}x^3\right]_0^{3}=45\).`,
-        R`Divide by \(3\): \(15\).`,
-      ], R`\(15\)`),
-      P(R`Find the average value of \(f(x)=2x^2\) on \([0,5]\).`, [
-        R`\(f_{\text{avg}}=\dfrac1{5}\displaystyle\int_0^{5}2x^2\,dx\).`,
-        R`\(\int_0^{5}2x^2\,dx=\left[\dfrac{2}{3}x^3\right]_0^{5}=\dfrac{250}{3}\).`,
-        R`Divide by \(5\): \(\dfrac{50}{3}\).`,
-      ], R`\(\dfrac{50}{3}\)`),
-      P(R`Find the average value of \(f(x)=3x^2\) on \([0,6]\).`, [
-        R`\(f_{\text{avg}}=\dfrac1{6}\displaystyle\int_0^{6}3x^2\,dx\).`,
-        R`\(\int_0^{6}3x^2\,dx=\left[1x^3\right]_0^{6}=216\).`,
-        R`Divide by \(6\): \(36\).`,
+      P(R`Find the average value of \(f(x)=5x^2\) on \([0,9]\).`, [
+        R`\(\dfrac{1}{9}\int_0^{9}5x^2\,dx=\dfrac{1}{9}\cdot1215\).`,
+      ], R`\(135\)`),
+      P(R`Evaluate \(\displaystyle\int_{-2}^{1}4x^3\,dx\).`, [
+        R`\(\left[x^4\right]_{-2}^{1}\).`,
+      ], R`\(-15\)`),
+      P(R`Evaluate \(\displaystyle\int_{0}^{\tfrac\pi2}8\cos x\,dx\).`, [
+        R`Antiderivative \(8\sin x\); top minus bottom.`,
+      ], R`\(8\)`),
+      P(R`Evaluate \(\displaystyle\int_1^{e^{5}}\frac{-4}{x}\,dx\).`, [
+        R`\(-4[\ln x]_1^{e^{5}}=-4(5-0)\).`,
+      ], R`\(-20\)`),
+      P(R`Find \(\dfrac{d}{dx}\displaystyle\int_{5}^{x^{2}}t^3\,dt\).`, [
+        R`FTC Part 1 + chain rule: plug in \(x^{2}\) and multiply by \(2x\).`,
+      ], R`\(2x\left(x^{6}\right)\)`),
+      P(R`Estimate \(\displaystyle\int_0^{6}(x^{2}+3)\,dx\) with a right Riemann sum using 6 rectangles.`, [
+        R`\(\Delta x=1\); right endpoints \(1,\ 2,\ 3,\ 4,\ 5,\ 6\).`,
+        R`Sum of heights: \(4+7+12+19+28+39=109\).`,
+      ], R`\(109\)`),
+      P(R`Find the area under \(y=16-x^2\) above the \(x\)-axis.`, [
+        R`Roots \(\pm4\). \(\left[16x-\tfrac{x^3}{3}\right]_{-4}^{4}\).`,
+      ], R`\(\dfrac{256}{3}\)`),
+      P(R`If \(\int_0^{4}f=12\) and \(\int_0^{6}f=7\), find \(\int_{4}^{6}f\) and \(\int_{6}^{4}f\).`, [
+        R`\(\int_{4}^{6}f=\int_0^{6}f-\int_0^{4}f\). Flipping limits changes the sign.`,
+      ], R`\(-5\) and \(5\)`),
+      P(R`\(v(t)=t-5\) m/s on \([0,7]\). Find the displacement and total distance.`, [
+        R`Displacement: \(\left[\tfrac{t^2}{2}-5t\right]_0^{7}\).`,
+        R`Distance: \(\int_0^{5}(5-t)\,dt+\int_{5}^{7}(t-5)\,dt=\dfrac{25}{2}+2\).`,
+      ], R`Displacement \(-\dfrac{21}{2}\) m; distance \(\dfrac{29}{2}\) m`),
+      P(R`Find \(\dfrac{d}{dx}\displaystyle\int_{2}^{x}\dfrac{1}{1+t^4}\,dt\).`, [
+        R`FTC Part 1: replace \(t\) with \(x\).`,
+      ], R`\(\dfrac{1}{1+x^4}\)`),
+      P(R`Evaluate \(\displaystyle\int_{0}^{3}(8x-1)\,dx\).`, [
+        R`\(F=4x^{2}-x\); \(F(3)=33\), \(F(0)=0\).`,
+      ], R`\(33\)`),
+      P(R`Evaluate \(\displaystyle\int_{2}^{4}(4x^{2}+3)\,dx\).`, [
+        R`\(F=\tfrac{4}{3}x^{3}+3x\); \(F(4)=\dfrac{292}{3}\), \(F(2)=\dfrac{50}{3}\).`,
+      ], R`\(\dfrac{242}{3}\)`),
+      P(R`Find the area between \(y=5x\) and \(y=x^2\).`, [
+        R`Intersect at \(0,\ 5\); line on top.`,
+        R`\(\int_0^{5}(5x-x^2)\,dx=\dfrac{125}{2}-\dfrac{125}{3}\).`,
+      ], R`\(\dfrac{125}{6}\)`),
+      P(R`Find the average value of \(f(x)=5x^2\) on \([0,2]\).`, [
+        R`\(\dfrac{1}{2}\int_0^{2}5x^2\,dx=\dfrac{1}{2}\cdot\dfrac{40}{3}\).`,
+      ], R`\(\dfrac{20}{3}\)`),
+      P(R`Evaluate \(\displaystyle\int_{-1}^{2}-5x^3\,dx\).`, [
+        R`\(\left[-\tfrac{5}{4}x^4\right]_{-1}^{2}\).`,
+      ], R`\(-\dfrac{75}{4}\)`),
+      P(R`Evaluate \(\displaystyle\int_{0}^{\pi}-5\sin x\,dx\).`, [
+        R`Antiderivative \(5\cos x\); top minus bottom.`,
+      ], R`\(-10\)`),
+      P(R`Evaluate \(\displaystyle\int_1^{e^{2}}\frac{11}{x}\,dx\).`, [
+        R`\(11[\ln x]_1^{e^{2}}=11(2-0)\).`,
+      ], R`\(22\)`),
+      P(R`Find \(\dfrac{d}{dx}\displaystyle\int_{3}^{x^{4}}\sqrt{t}\,dt\).`, [
+        R`FTC Part 1 + chain rule: plug in \(x^{4}\) and multiply by \(4x^{3}\).`,
+      ], R`\(4x^{3}\left(\sqrt{x^{4}}\right)\)`),
+      P(R`Estimate \(\displaystyle\int_0^{6}(x^{2})\,dx\) with a right Riemann sum using 6 rectangles.`, [
+        R`\(\Delta x=1\); right endpoints \(1,\ 2,\ 3,\ 4,\ 5,\ 6\).`,
+        R`Sum of heights: \(1+4+9+16+25+36=91\).`,
+      ], R`\(91\)`),
+      P(R`Find the area under \(y=9-x^2\) above the \(x\)-axis.`, [
+        R`Roots \(\pm3\). \(\left[9x-\tfrac{x^3}{3}\right]_{-3}^{3}\).`,
       ], R`\(36\)`),
+      P(R`If \(\int_0^{5}f=-18\) and \(\int_0^{9}f=-14\), find \(\int_{5}^{9}f\) and \(\int_{9}^{5}f\).`, [
+        R`\(\int_{5}^{9}f=\int_0^{9}f-\int_0^{5}f\). Flipping limits changes the sign.`,
+      ], R`\(4\) and \(-4\)`),
+      P(R`\(v(t)=t-6\) m/s on \([0,8]\). Find the displacement and total distance.`, [
+        R`Displacement: \(\left[\tfrac{t^2}{2}-6t\right]_0^{8}\).`,
+        R`Distance: \(\int_0^{6}(6-t)\,dt+\int_{6}^{8}(t-6)\,dt=18+2\).`,
+      ], R`Displacement \(-16\) m; distance \(20\) m`),
+      P(R`Find \(\dfrac{d}{dx}\displaystyle\int_{-2}^{x}\sqrt{t^2+1}\,dt\).`, [
+        R`FTC Part 1: replace \(t\) with \(x\).`,
+      ], R`\(\sqrt{x^2+1}\)`),
+      P(R`Evaluate \(\displaystyle\int_{1}^{4}(2x-9)\,dx\).`, [
+        R`\(F=x^{2}-9x\); \(F(4)=-20\), \(F(1)=-8\).`,
+      ], R`\(-12\)`),
+      P(R`Evaluate \(\displaystyle\int_{-2}^{0}(2x^{2})\,dx\).`, [
+        R`\(F=\tfrac{2}{3}x^{3}\); \(F(0)=0\), \(F(-2)=-\dfrac{16}{3}\).`,
+      ], R`\(\dfrac{16}{3}\)`),
+      P(R`Find the area between \(y=2x\) and \(y=x^2\).`, [
+        R`Intersect at \(0,\ 2\); line on top.`,
+        R`\(\int_0^{2}(2x-x^2)\,dx=4-\dfrac{8}{3}\).`,
+      ], R`\(\dfrac{4}{3}\)`),
+      P(R`Find the average value of \(f(x)=x^2\) on \([0,4]\).`, [
+        R`\(\dfrac{1}{4}\int_0^{4}x^2\,dx=\dfrac{1}{4}\cdot\dfrac{64}{3}\).`,
+      ], R`\(\dfrac{16}{3}\)`),
+      P(R`Evaluate \(\displaystyle\int_{0}^{3}3x^3\,dx\).`, [
+        R`\(\left[\tfrac{3}{4}x^4\right]_{0}^{3}\).`,
+      ], R`\(\dfrac{243}{4}\)`),
+      P(R`Evaluate \(\displaystyle\int_{0}^{\tfrac\pi4}3\sec^2x\,dx\).`, [
+        R`Antiderivative \(3\tan x\); top minus bottom.`,
+      ], R`\(3\)`),
+      P(R`Evaluate \(\displaystyle\int_1^{e^{8}}\frac{-3}{x}\,dx\).`, [
+        R`\(-3[\ln x]_1^{e^{8}}=-3(8-0)\).`,
+      ], R`\(-24\)`),
+      P(R`Find \(\dfrac{d}{dx}\displaystyle\int_{-2}^{x^{3}}\sqrt{t}\,dt\).`, [
+        R`FTC Part 1 + chain rule: plug in \(x^{3}\) and multiply by \(3x^{2}\).`,
+      ], R`\(3x^{2}\left(\sqrt{x^{3}}\right)\)`),
+      P(R`Estimate \(\displaystyle\int_0^{5}(x^{2}+2)\,dx\) with a left Riemann sum using 5 rectangles.`, [
+        R`\(\Delta x=1\); left endpoints \(0,\ 1,\ 2,\ 3,\ 4\).`,
+        R`Sum of heights: \(2+3+6+11+18=40\).`,
+      ], R`\(40\)`),
+      P(R`If \(\int_0^{3}f=8\) and \(\int_0^{7}f=-15\), find \(\int_{3}^{7}f\) and \(\int_{7}^{3}f\).`, [
+        R`\(\int_{3}^{7}f=\int_0^{7}f-\int_0^{3}f\). Flipping limits changes the sign.`,
+      ], R`\(-23\) and \(23\)`),
+      P(R`\(v(t)=t-6\) m/s on \([0,7]\). Find the displacement and total distance.`, [
+        R`Displacement: \(\left[\tfrac{t^2}{2}-6t\right]_0^{7}\).`,
+        R`Distance: \(\int_0^{6}(6-t)\,dt+\int_{6}^{7}(t-6)\,dt=18+\dfrac{1}{2}\).`,
+      ], R`Displacement \(-\dfrac{35}{2}\) m; distance \(\dfrac{37}{2}\) m`),
+      P(R`Find \(\dfrac{d}{dx}\displaystyle\int_{1}^{x}t\ln t\,dt\).`, [
+        R`FTC Part 1: replace \(t\) with \(x\).`,
+      ], R`\(x\ln x\)`),
+      P(R`Evaluate \(\displaystyle\int_{3}^{6}(8x+2)\,dx\).`, [
+        R`\(F=4x^{2}+2x\); \(F(6)=156\), \(F(3)=42\).`,
+      ], R`\(114\)`),
+      P(R`Evaluate \(\displaystyle\int_{0}^{2}(4x^{2}+6)\,dx\).`, [
+        R`\(F=\tfrac{4}{3}x^{3}+6x\); \(F(2)=\dfrac{68}{3}\), \(F(0)=0\).`,
+      ], R`\(\dfrac{68}{3}\)`),
+      P(R`Find the area between \(y=7x\) and \(y=x^2\).`, [
+        R`Intersect at \(0,\ 7\); line on top.`,
+        R`\(\int_0^{7}(7x-x^2)\,dx=\dfrac{343}{2}-\dfrac{343}{3}\).`,
+      ], R`\(\dfrac{343}{6}\)`),
+      P(R`Find the average value of \(f(x)=7x^2\) on \([0,2]\).`, [
+        R`\(\dfrac{1}{2}\int_0^{2}7x^2\,dx=\dfrac{1}{2}\cdot\dfrac{56}{3}\).`,
+      ], R`\(\dfrac{28}{3}\)`),
+      P(R`Evaluate \(\displaystyle\int_{-2}^{0}2x^3\,dx\).`, [
+        R`\(\left[\tfrac{1}{2}x^4\right]_{-2}^{0}\).`,
+      ], R`\(-8\)`),
+      P(R`Evaluate \(\displaystyle\int_{0}^{\pi}3\sin x\,dx\).`, [
+        R`Antiderivative \(-3\cos x\); top minus bottom.`,
+      ], R`\(6\)`),
+      P(R`Evaluate \(\displaystyle\int_1^{e^{7}}\frac{-4}{x}\,dx\).`, [
+        R`\(-4[\ln x]_1^{e^{7}}=-4(7-0)\).`,
+      ], R`\(-28\)`),
+      P(R`Find \(\dfrac{d}{dx}\displaystyle\int_{2}^{x^{3}}\cos t\,dt\).`, [
+        R`FTC Part 1 + chain rule: plug in \(x^{3}\) and multiply by \(3x^{2}\).`,
+      ], R`\(3x^{2}\left(\cos(x^{3})\right)\)`),
+      P(R`Estimate \(\displaystyle\int_0^{4}(x^{2})\,dx\) with a left Riemann sum using 4 rectangles.`, [
+        R`\(\Delta x=1\); left endpoints \(0,\ 1,\ 2,\ 3\).`,
+        R`Sum of heights: \(0+1+4+9=14\).`,
+      ], R`\(14\)`),
+      P(R`Find the area under \(y=1-x^2\) above the \(x\)-axis.`, [
+        R`Roots \(\pm1\). \(\left[1x-\tfrac{x^3}{3}\right]_{-1}^{1}\).`,
+      ], R`\(\dfrac{4}{3}\)`),
+      P(R`If \(\int_0^{5}f=-15\) and \(\int_0^{10}f=-7\), find \(\int_{5}^{10}f\) and \(\int_{10}^{5}f\).`, [
+        R`\(\int_{5}^{10}f=\int_0^{10}f-\int_0^{5}f\). Flipping limits changes the sign.`,
+      ], R`\(8\) and \(-8\)`),
+      P(R`\(v(t)=t-3\) m/s on \([0,8]\). Find the displacement and total distance.`, [
+        R`Displacement: \(\left[\tfrac{t^2}{2}-3t\right]_0^{8}\).`,
+        R`Distance: \(\int_0^{3}(3-t)\,dt+\int_{3}^{8}(t-3)\,dt=\dfrac{9}{2}+\dfrac{25}{2}\).`,
+      ], R`Displacement \(8\) m; distance \(17\) m`),
+      P(R`Find \(\dfrac{d}{dx}\displaystyle\int_{3}^{x}\sqrt{t^2+1}\,dt\).`, [
+        R`FTC Part 1: replace \(t\) with \(x\).`,
+      ], R`\(\sqrt{x^2+1}\)`),
+      P(R`Evaluate \(\displaystyle\int_{1}^{6}(-3x-9)\,dx\).`, [
+        R`\(F=-\tfrac{3}{2}x^{2}-9x\); \(F(6)=-108\), \(F(1)=-\dfrac{21}{2}\).`,
+      ], R`\(-\dfrac{195}{2}\)`),
+      P(R`Evaluate \(\displaystyle\int_{-1}^{1}(-3x^{2}-5)\,dx\).`, [
+        R`\(F=-x^{3}-5x\); \(F(1)=-6\), \(F(-1)=6\).`,
+      ], R`\(-12\)`),
+      P(R`Find the area between \(y=4x\) and \(y=x^2\).`, [
+        R`Intersect at \(0,\ 4\); line on top.`,
+        R`\(\int_0^{4}(4x-x^2)\,dx=32-\dfrac{64}{3}\).`,
+      ], R`\(\dfrac{32}{3}\)`),
+      P(R`Find the average value of \(f(x)=3x^2\) on \([0,6]\).`, [
+        R`\(\dfrac{1}{6}\int_0^{6}3x^2\,dx=\dfrac{1}{6}\cdot216\).`,
+      ], R`\(36\)`),
+      P(R`Evaluate \(\displaystyle\int_{-1}^{2}3x^3\,dx\).`, [
+        R`\(\left[\tfrac{3}{4}x^4\right]_{-1}^{2}\).`,
+      ], R`\(\dfrac{45}{4}\)`),
+      P(R`Evaluate \(\displaystyle\int_1^{e^{1}}\frac{9}{x}\,dx\).`, [
+        R`\(9[\ln x]_1^{e^{1}}=9(1-0)\).`,
+      ], R`\(9\)`),
+      P(R`Find \(\dfrac{d}{dx}\displaystyle\int_{0}^{x^{4}}\ln t\,dt\).`, [
+        R`FTC Part 1 + chain rule: plug in \(x^{4}\) and multiply by \(4x^{3}\).`,
+      ], R`\(4x^{3}\left(\ln(x^{4})\right)\)`),
+      P(R`Estimate \(\displaystyle\int_0^{4}(x^{2}+3)\,dx\) with a right Riemann sum using 4 rectangles.`, [
+        R`\(\Delta x=1\); right endpoints \(1,\ 2,\ 3,\ 4\).`,
+        R`Sum of heights: \(4+7+12+19=42\).`,
+      ], R`\(42\)`),
+      P(R`Find the area under \(y=36-x^2\) above the \(x\)-axis.`, [
+        R`Roots \(\pm6\). \(\left[36x-\tfrac{x^3}{3}\right]_{-6}^{6}\).`,
+      ], R`\(288\)`),
+      P(R`If \(\int_0^{4}f=14\) and \(\int_0^{8}f=0\), find \(\int_{4}^{8}f\) and \(\int_{8}^{4}f\).`, [
+        R`\(\int_{4}^{8}f=\int_0^{8}f-\int_0^{4}f\). Flipping limits changes the sign.`,
+      ], R`\(-14\) and \(14\)`),
+      P(R`\(v(t)=t-4\) m/s on \([0,10]\). Find the displacement and total distance.`, [
+        R`Displacement: \(\left[\tfrac{t^2}{2}-4t\right]_0^{10}\).`,
+        R`Distance: \(\int_0^{4}(4-t)\,dt+\int_{4}^{10}(t-4)\,dt=8+18\).`,
+      ], R`Displacement \(10\) m; distance \(26\) m`),
+      P(R`Find \(\dfrac{d}{dx}\displaystyle\int_{-3}^{x}e^{-t^2}\,dt\).`, [
+        R`FTC Part 1: replace \(t\) with \(x\).`,
+      ], R`\(e^{-x^2}\)`),
+      P(R`Evaluate \(\displaystyle\int_{3}^{5}(3x-9)\,dx\).`, [
+        R`\(F=\tfrac{3}{2}x^{2}-9x\); \(F(5)=-\dfrac{15}{2}\), \(F(3)=-\dfrac{27}{2}\).`,
+      ], R`\(6\)`),
+      P(R`Evaluate \(\displaystyle\int_{1}^{2}(-5x^{2}-9)\,dx\).`, [
+        R`\(F=-\tfrac{5}{3}x^{3}-9x\); \(F(2)=-\dfrac{94}{3}\), \(F(1)=-\dfrac{32}{3}\).`,
+      ], R`\(-\dfrac{62}{3}\)`),
     ],
   },
 
@@ -2927,55 +6772,241 @@ window.TOPICS = [
           R`\(u=x^2+1\), \(x\,dx=\tfrac12du\). Limits: \(x=1\to u=2\), \(x=2\to u=5\).`,
           R`\(\tfrac12\int_2^5\dfrac1u\,du=\tfrac12(\ln5-\ln2)\).`,
         ], R`\(\tfrac12\ln\tfrac52\approx0.458\)`),
-      // ---- even more practice ----
-      P(R`Find \(\displaystyle\int(2x+9)^{5}\,dx\).`, [
-        R`\(u=2x+9\), \(du=2\,dx\Rightarrow dx=\tfrac1{2}du\).`,
-        R`\(\tfrac1{2}\int u^{5}\,du=\tfrac1{2}\cdot\dfrac{u^{6}}{6}\).`,
-      ], R`\(\dfrac{(2x+9)^{6}}{12}+C\)`),
-      P(R`Find \(\displaystyle\int(7x-4)^{4}\,dx\).`, [
-        R`\(u=7x-4\), \(du=7\,dx\Rightarrow dx=\tfrac1{7}du\).`,
-        R`\(\tfrac1{7}\int u^{4}\,du=\tfrac1{7}\cdot\dfrac{u^{5}}{5}\).`,
-      ], R`\(\dfrac{(7x-4)^{5}}{35}+C\)`),
-      P(R`Find \(\displaystyle\int(6x-6)^{8}\,dx\).`, [
-        R`\(u=6x-6\), \(du=6\,dx\Rightarrow dx=\tfrac1{6}du\).`,
-        R`\(\tfrac1{6}\int u^{8}\,du=\tfrac1{6}\cdot\dfrac{u^{9}}{9}\).`,
-      ], R`\(\dfrac{(6x-6)^{9}}{54}+C\)`),
-      P(R`Find \(\displaystyle\int(6x-4)^{4}\,dx\).`, [
-        R`\(u=6x-4\), \(du=6\,dx\Rightarrow dx=\tfrac1{6}du\).`,
-        R`\(\tfrac1{6}\int u^{4}\,du=\tfrac1{6}\cdot\dfrac{u^{5}}{5}\).`,
-      ], R`\(\dfrac{(6x-4)^{5}}{30}+C\)`),
-      P(R`Find \(\displaystyle\int x(x^{2}+5)^{5}\,dx\).`, [
-        R`\(u=x^{2}+5\), \(du=2x\,dx\Rightarrow x\,dx=\tfrac12du\).`,
-        R`\(\tfrac12\int u^{5}\,du=\dfrac{u^{6}}{12}\).`,
-      ], R`\(\dfrac{(x^{2}+5)^{6}}{12}+C\)`),
-      P(R`Find \(\displaystyle\int x(x^{2}-8)^{7}\,dx\).`, [
-        R`\(u=x^{2}-8\), \(du=2x\,dx\Rightarrow x\,dx=\tfrac12du\).`,
-        R`\(\tfrac12\int u^{7}\,du=\dfrac{u^{8}}{16}\).`,
-      ], R`\(\dfrac{(x^{2}-8)^{8}}{16}+C\)`),
-      P(R`Find \(\displaystyle\int x(x^{2}+5)^{2}\,dx\).`, [
-        R`\(u=x^{2}+5\), \(du=2x\,dx\Rightarrow x\,dx=\tfrac12du\).`,
-        R`\(\tfrac12\int u^{2}\,du=\dfrac{u^{3}}{6}\).`,
-      ], R`\(\dfrac{(x^{2}+5)^{3}}{6}+C\)`),
+      // ---- generated practice (numbers vary; answers computed) ----
+      P(R`Find \(\displaystyle\int(2x-3)^{9}\,dx\).`, [
+        R`\(u=2x-3\), \(dx=\tfrac1{2}du\).`,
+      ], R`\(\dfrac{(2x-3)^{10}}{20}+C\)`),
+      P(R`Find \(\displaystyle\int x(x^2-2)^{7}\,dx\).`, [
+        R`\(u=x^2-2\), \(x\,dx=\tfrac12du\).`,
+      ], R`\(\dfrac{(x^2-2)^{8}}{16}+C\)`),
+      P(R`Find \(\displaystyle\int \sin(10x)\,dx\).`, [
+        R`\(u=10x\), \(dx=\tfrac1{10}du\).`,
+      ], R`\(-\dfrac{\cos(10x)}{10}+C\)`),
+      P(R`Evaluate \(\displaystyle\int_0^1x(x^2+1)^{2}\,dx\).`, [
+        R`\(u=x^2+1\) from 1 to 2: \(\tfrac12\left[\tfrac{u^{3}}{3}\right]_1^2\).`,
+      ], R`\(\dfrac{7}{6}\)`),
+      P(R`Find \(\displaystyle\int x^2(x^3+12)^{2}\,dx\).`, [
+        R`\(u=x^3+12\), \(x^2dx=\tfrac13du\).`,
+      ], R`\(\dfrac{(x^3+12)^{3}}{9}+C\)`),
+      P(R`Find \(\displaystyle\int\frac{1}{8x+6}\,dx\).`, [
+        R`\(u=8x+6\), \(dx=\tfrac1{8}du\).`,
+      ], R`\(\tfrac1{8}\ln|8x+6|+C\)`),
+      P(R`Find \(\displaystyle\int\frac{8x}{x^2+20}\,dx\).`, [
+        R`\(u=x^2+20\), \(x\,dx=\tfrac12du\).`,
+      ], R`\(4\ln(x^2+20)+C\)`),
+      P(R`Find \(\displaystyle\int xe^{2x^2}\,dx\).`, [
+        R`\(u=2x^2\), \(du=4x\,dx\).`,
+      ], R`\(\tfrac{1}{4}e^{2x^2}+C\)`),
+      P(R`Find \(\displaystyle\int \cos^{3}x\sin x\,dx\).`, [
+        R`\(u=\cos x\), \(du=-\sin x\,dx\).`,
+      ], R`\(-\dfrac{\cos^{4}x}{4}+C\)`),
+      P(R`Find \(\displaystyle\int\frac{(\ln x)^{4}}{x}\,dx\).`, [
+        R`\(u=\ln x\), \(du=\tfrac1x dx\).`,
+      ], R`\(\dfrac{(\ln x)^{5}}{5}+C\)`),
+      P(R`Find \(\displaystyle\int\sqrt{6x-5}\,dx\).`, [
+        R`\(u=6x-5\): \(\tfrac1{6}\cdot\tfrac23u^{3/2}\).`,
+      ], R`\(\dfrac{2(6x-5)^{3/2}}{18}+C\)`),
+      P(R`Evaluate \(\displaystyle\int_0^1(x+1)^{4}\,dx\).`, [
+        R`\(u=x+1\) from 1 to 2: \(\tfrac1{1}\left[\tfrac{u^{5}}{5}\right]_1^{2}\).`,
+      ], R`\(\dfrac{31}{5}\)`),
+      P(R`Find \(\displaystyle\int(2x-8)^{4}\,dx\).`, [
+        R`\(u=2x-8\), \(dx=\tfrac1{2}du\).`,
+      ], R`\(\dfrac{(2x-8)^{5}}{10}+C\)`),
+      P(R`Find \(\displaystyle\int x(x^2+6)^{9}\,dx\).`, [
+        R`\(u=x^2+6\), \(x\,dx=\tfrac12du\).`,
+      ], R`\(\dfrac{(x^2+6)^{10}}{20}+C\)`),
       P(R`Find \(\displaystyle\int \cos(3x)\,dx\).`, [
         R`\(u=3x\), \(dx=\tfrac1{3}du\).`,
-        R`Integrate with respect to \(u\), then put \(3x\) back in.`,
       ], R`\(\dfrac{\sin(3x)}{3}+C\)`),
-      P(R`Find \(\displaystyle\int e^{2x}\,dx\).`, [
-        R`\(u=2x\), \(dx=\tfrac1{2}du\).`,
-        R`Integrate with respect to \(u\), then put \(2x\) back in.`,
-      ], R`\(\dfrac{e^{2x}}{2}+C\)`),
+      P(R`Evaluate \(\displaystyle\int_0^1x(x^2+1)^{6}\,dx\).`, [
+        R`\(u=x^2+1\) from 1 to 2: \(\tfrac12\left[\tfrac{u^{7}}{7}\right]_1^2\).`,
+      ], R`\(\dfrac{127}{14}\)`),
+      P(R`Find \(\displaystyle\int x^2(x^3+1)^{7}\,dx\).`, [
+        R`\(u=x^3+1\), \(x^2dx=\tfrac13du\).`,
+      ], R`\(\dfrac{(x^3+1)^{8}}{24}+C\)`),
+      P(R`Find \(\displaystyle\int\frac{1}{2x+10}\,dx\).`, [
+        R`\(u=2x+10\), \(dx=\tfrac1{2}du\).`,
+      ], R`\(\tfrac1{2}\ln|2x+10|+C\)`),
+      P(R`Find \(\displaystyle\int\frac{7x}{x^2+6}\,dx\).`, [
+        R`\(u=x^2+6\), \(x\,dx=\tfrac12du\).`,
+      ], R`\(\tfrac{7}{2}\ln(x^2+6)+C\)`),
+      P(R`Find \(\displaystyle\int xe^{5x^2}\,dx\).`, [
+        R`\(u=5x^2\), \(du=10x\,dx\).`,
+      ], R`\(\tfrac{1}{10}e^{5x^2}+C\)`),
+      P(R`Find \(\displaystyle\int \sin^{5}x\cos x\,dx\).`, [
+        R`\(u=\sin x\), \(du=\cos x\,dx\).`,
+      ], R`\(\dfrac{\sin^{6}x}{6}+C\)`),
+      P(R`Find \(\displaystyle\int\frac{(\ln x)^{2}}{x}\,dx\).`, [
+        R`\(u=\ln x\), \(du=\tfrac1x dx\).`,
+      ], R`\(\dfrac{(\ln x)^{3}}{3}+C\)`),
+      P(R`Find \(\displaystyle\int\sqrt{6x+1}\,dx\).`, [
+        R`\(u=6x+1\): \(\tfrac1{6}\cdot\tfrac23u^{3/2}\).`,
+      ], R`\(\dfrac{2(6x+1)^{3/2}}{18}+C\)`),
+      P(R`Evaluate \(\displaystyle\int_0^1(3x+1)^{4}\,dx\).`, [
+        R`\(u=3x+1\) from 1 to 4: \(\tfrac1{3}\left[\tfrac{u^{5}}{5}\right]_1^{4}\).`,
+      ], R`\(\dfrac{341}{5}\)`),
+      P(R`Find \(\displaystyle\int(9x+6)^{5}\,dx\).`, [
+        R`\(u=9x+6\), \(dx=\tfrac1{9}du\).`,
+      ], R`\(\dfrac{(9x+6)^{6}}{54}+C\)`),
+      P(R`Find \(\displaystyle\int x(x^2-5)^{10}\,dx\).`, [
+        R`\(u=x^2-5\), \(x\,dx=\tfrac12du\).`,
+      ], R`\(\dfrac{(x^2-5)^{11}}{22}+C\)`),
+      P(R`Find \(\displaystyle\int \sin(3x)\,dx\).`, [
+        R`\(u=3x\), \(dx=\tfrac1{3}du\).`,
+      ], R`\(-\dfrac{\cos(3x)}{3}+C\)`),
+      P(R`Evaluate \(\displaystyle\int_0^1x(x^2+1)^{3}\,dx\).`, [
+        R`\(u=x^2+1\) from 1 to 2: \(\tfrac12\left[\tfrac{u^{4}}{4}\right]_1^2\).`,
+      ], R`\(\dfrac{15}{8}\)`),
+      P(R`Find \(\displaystyle\int x^2(x^3-11)^{7}\,dx\).`, [
+        R`\(u=x^3-11\), \(x^2dx=\tfrac13du\).`,
+      ], R`\(\dfrac{(x^3-11)^{8}}{24}+C\)`),
+      P(R`Find \(\displaystyle\int\frac{1}{7x-1}\,dx\).`, [
+        R`\(u=7x-1\), \(dx=\tfrac1{7}du\).`,
+      ], R`\(\tfrac1{7}\ln|7x-1|+C\)`),
+      P(R`Find \(\displaystyle\int\frac{6x}{x^2+12}\,dx\).`, [
+        R`\(u=x^2+12\), \(x\,dx=\tfrac12du\).`,
+      ], R`\(3\ln(x^2+12)+C\)`),
+      P(R`Find \(\displaystyle\int xe^{-5x^2}\,dx\).`, [
+        R`\(u=-5x^2\), \(du=-10x\,dx\).`,
+      ], R`\(-\tfrac{1}{10}e^{-5x^2}+C\)`),
+      P(R`Find \(\displaystyle\int \cos^{8}x\sin x\,dx\).`, [
+        R`\(u=\cos x\), \(du=-\sin x\,dx\).`,
+      ], R`\(-\dfrac{\cos^{9}x}{9}+C\)`),
+      P(R`Find \(\displaystyle\int\frac{(\ln x)^{6}}{x}\,dx\).`, [
+        R`\(u=\ln x\), \(du=\tfrac1x dx\).`,
+      ], R`\(\dfrac{(\ln x)^{7}}{7}+C\)`),
+      P(R`Find \(\displaystyle\int\sqrt{9x-6}\,dx\).`, [
+        R`\(u=9x-6\): \(\tfrac1{9}\cdot\tfrac23u^{3/2}\).`,
+      ], R`\(\dfrac{2(9x-6)^{3/2}}{27}+C\)`),
+      P(R`Evaluate \(\displaystyle\int_0^1(4x+1)^{4}\,dx\).`, [
+        R`\(u=4x+1\) from 1 to 5: \(\tfrac1{4}\left[\tfrac{u^{5}}{5}\right]_1^{5}\).`,
+      ], R`\(\dfrac{781}{5}\)`),
+      P(R`Find \(\displaystyle\int(3x+2)^{3}\,dx\).`, [
+        R`\(u=3x+2\), \(dx=\tfrac1{3}du\).`,
+      ], R`\(\dfrac{(3x+2)^{4}}{12}+C\)`),
+      P(R`Find \(\displaystyle\int x(x^2-3)^{4}\,dx\).`, [
+        R`\(u=x^2-3\), \(x\,dx=\tfrac12du\).`,
+      ], R`\(\dfrac{(x^2-3)^{5}}{10}+C\)`),
+      P(R`Find \(\displaystyle\int \sec^2(6x)\,dx\).`, [
+        R`\(u=6x\), \(dx=\tfrac1{6}du\).`,
+      ], R`\(\dfrac{\tan(6x)}{6}+C\)`),
+      P(R`Evaluate \(\displaystyle\int_0^1x(x^2+1)^{9}\,dx\).`, [
+        R`\(u=x^2+1\) from 1 to 2: \(\tfrac12\left[\tfrac{u^{10}}{10}\right]_1^2\).`,
+      ], R`\(\dfrac{1023}{20}\)`),
+      P(R`Find \(\displaystyle\int x^2(x^3-9)^{5}\,dx\).`, [
+        R`\(u=x^3-9\), \(x^2dx=\tfrac13du\).`,
+      ], R`\(\dfrac{(x^3-9)^{6}}{18}+C\)`),
+      P(R`Find \(\displaystyle\int\frac{1}{12x+7}\,dx\).`, [
+        R`\(u=12x+7\), \(dx=\tfrac1{12}du\).`,
+      ], R`\(\tfrac1{12}\ln|12x+7|+C\)`),
+      P(R`Find \(\displaystyle\int\frac{6x}{x^2+19}\,dx\).`, [
+        R`\(u=x^2+19\), \(x\,dx=\tfrac12du\).`,
+      ], R`\(3\ln(x^2+19)+C\)`),
+      P(R`Find \(\displaystyle\int xe^{-2x^2}\,dx\).`, [
+        R`\(u=-2x^2\), \(du=-4x\,dx\).`,
+      ], R`\(-\tfrac{1}{4}e^{-2x^2}+C\)`),
+      P(R`Find \(\displaystyle\int\sqrt{6x-7}\,dx\).`, [
+        R`\(u=6x-7\): \(\tfrac1{6}\cdot\tfrac23u^{3/2}\).`,
+      ], R`\(\dfrac{2(6x-7)^{3/2}}{18}+C\)`),
+      P(R`Find \(\displaystyle\int(3x+4)^{7}\,dx\).`, [
+        R`\(u=3x+4\), \(dx=\tfrac1{3}du\).`,
+      ], R`\(\dfrac{(3x+4)^{8}}{24}+C\)`),
+      P(R`Find \(\displaystyle\int x(x^2-2)^{5}\,dx\).`, [
+        R`\(u=x^2-2\), \(x\,dx=\tfrac12du\).`,
+      ], R`\(\dfrac{(x^2-2)^{6}}{12}+C\)`),
+      P(R`Find \(\displaystyle\int \cos(7x)\,dx\).`, [
+        R`\(u=7x\), \(dx=\tfrac1{7}du\).`,
+      ], R`\(\dfrac{\sin(7x)}{7}+C\)`),
+      P(R`Evaluate \(\displaystyle\int_0^1x(x^2+1)^{8}\,dx\).`, [
+        R`\(u=x^2+1\) from 1 to 2: \(\tfrac12\left[\tfrac{u^{9}}{9}\right]_1^2\).`,
+      ], R`\(\dfrac{511}{18}\)`),
+      P(R`Find \(\displaystyle\int x^2(x^3+9)^{5}\,dx\).`, [
+        R`\(u=x^3+9\), \(x^2dx=\tfrac13du\).`,
+      ], R`\(\dfrac{(x^3+9)^{6}}{18}+C\)`),
+      P(R`Find \(\displaystyle\int\frac{1}{11x+11}\,dx\).`, [
+        R`\(u=11x+11\), \(dx=\tfrac1{11}du\).`,
+      ], R`\(\tfrac1{11}\ln|11x+11|+C\)`),
+      P(R`Find \(\displaystyle\int\frac{8x}{x^2+15}\,dx\).`, [
+        R`\(u=x^2+15\), \(x\,dx=\tfrac12du\).`,
+      ], R`\(4\ln(x^2+15)+C\)`),
+      P(R`Find \(\displaystyle\int xe^{-4x^2}\,dx\).`, [
+        R`\(u=-4x^2\), \(du=-8x\,dx\).`,
+      ], R`\(-\tfrac{1}{8}e^{-4x^2}+C\)`),
+      P(R`Find \(\displaystyle\int \sin^{7}x\cos x\,dx\).`, [
+        R`\(u=\sin x\), \(du=\cos x\,dx\).`,
+      ], R`\(\dfrac{\sin^{8}x}{8}+C\)`),
+      P(R`Find \(\displaystyle\int\frac{(\ln x)^{7}}{x}\,dx\).`, [
+        R`\(u=\ln x\), \(du=\tfrac1x dx\).`,
+      ], R`\(\dfrac{(\ln x)^{8}}{8}+C\)`),
+      P(R`Find \(\displaystyle\int\sqrt{2x+1}\,dx\).`, [
+        R`\(u=2x+1\): \(\tfrac1{2}\cdot\tfrac23u^{3/2}\).`,
+      ], R`\(\dfrac{2(2x+1)^{3/2}}{6}+C\)`),
+      P(R`Evaluate \(\displaystyle\int_0^1(3x+1)^{2}\,dx\).`, [
+        R`\(u=3x+1\) from 1 to 4: \(\tfrac1{3}\left[\tfrac{u^{3}}{3}\right]_1^{4}\).`,
+      ], R`\(7\)`),
+      P(R`Find \(\displaystyle\int(2x-8)^{7}\,dx\).`, [
+        R`\(u=2x-8\), \(dx=\tfrac1{2}du\).`,
+      ], R`\(\dfrac{(2x-8)^{8}}{16}+C\)`),
+      P(R`Find \(\displaystyle\int x(x^2+5)^{6}\,dx\).`, [
+        R`\(u=x^2+5\), \(x\,dx=\tfrac12du\).`,
+      ], R`\(\dfrac{(x^2+5)^{7}}{14}+C\)`),
       P(R`Find \(\displaystyle\int e^{5x}\,dx\).`, [
         R`\(u=5x\), \(dx=\tfrac1{5}du\).`,
-        R`Integrate with respect to \(u\), then put \(5x\) back in.`,
       ], R`\(\dfrac{e^{5x}}{5}+C\)`),
-      P(R`Evaluate \(\displaystyle\int_0^1x(x^2+1)^{3}\,dx\).`, [
-        R`\(u=x^2+1\), \(x\,dx=\tfrac12du\). Limits: \(x=0\to u=1\), \(x=1\to u=2\).`,
-        R`\(\tfrac12\int_1^2u^{3}\,du=\tfrac12\left[\dfrac{u^{4}}{4}\right]_1^2=\dfrac{16-1}{8}\).`,
-      ], R`\(\dfrac{15}{8}\)`),
-      P(R`Evaluate \(\displaystyle\int_0^1x(x^2+1)^{4}\,dx\).`, [
-        R`\(u=x^2+1\), \(x\,dx=\tfrac12du\). Limits: \(x=0\to u=1\), \(x=1\to u=2\).`,
-        R`\(\tfrac12\int_1^2u^{4}\,du=\tfrac12\left[\dfrac{u^{5}}{5}\right]_1^2=\dfrac{32-1}{10}\).`,
-      ], R`\(\dfrac{31}{10}\)`),
+      P(R`Find \(\displaystyle\int x^2(x^3+2)^{4}\,dx\).`, [
+        R`\(u=x^3+2\), \(x^2dx=\tfrac13du\).`,
+      ], R`\(\dfrac{(x^3+2)^{5}}{15}+C\)`),
+      P(R`Find \(\displaystyle\int\frac{1}{12x-7}\,dx\).`, [
+        R`\(u=12x-7\), \(dx=\tfrac1{12}du\).`,
+      ], R`\(\tfrac1{12}\ln|12x-7|+C\)`),
+      P(R`Find \(\displaystyle\int xe^{-6x^2}\,dx\).`, [
+        R`\(u=-6x^2\), \(du=-12x\,dx\).`,
+      ], R`\(-\tfrac{1}{12}e^{-6x^2}+C\)`),
+      P(R`Find \(\displaystyle\int \sin^{9}x\cos x\,dx\).`, [
+        R`\(u=\sin x\), \(du=\cos x\,dx\).`,
+      ], R`\(\dfrac{\sin^{10}x}{10}+C\)`),
+      P(R`Find \(\displaystyle\int\sqrt{8x+7}\,dx\).`, [
+        R`\(u=8x+7\): \(\tfrac1{8}\cdot\tfrac23u^{3/2}\).`,
+      ], R`\(\dfrac{2(8x+7)^{3/2}}{24}+C\)`),
+      P(R`Evaluate \(\displaystyle\int_0^1(2x+1)^{4}\,dx\).`, [
+        R`\(u=2x+1\) from 1 to 3: \(\tfrac1{2}\left[\tfrac{u^{5}}{5}\right]_1^{3}\).`,
+      ], R`\(\dfrac{121}{5}\)`),
+      P(R`Find \(\displaystyle\int(9x+1)^{7}\,dx\).`, [
+        R`\(u=9x+1\), \(dx=\tfrac1{9}du\).`,
+      ], R`\(\dfrac{(9x+1)^{8}}{72}+C\)`),
+      P(R`Find \(\displaystyle\int x(x^2+2)^{3}\,dx\).`, [
+        R`\(u=x^2+2\), \(x\,dx=\tfrac12du\).`,
+      ], R`\(\dfrac{(x^2+2)^{4}}{8}+C\)`),
+      P(R`Find \(\displaystyle\int \cos(2x)\,dx\).`, [
+        R`\(u=2x\), \(dx=\tfrac1{2}du\).`,
+      ], R`\(\dfrac{\sin(2x)}{2}+C\)`),
+      P(R`Find \(\displaystyle\int x^2(x^3-11)^{4}\,dx\).`, [
+        R`\(u=x^3-11\), \(x^2dx=\tfrac13du\).`,
+      ], R`\(\dfrac{(x^3-11)^{5}}{15}+C\)`),
+      P(R`Find \(\displaystyle\int\frac{1}{11x+2}\,dx\).`, [
+        R`\(u=11x+2\), \(dx=\tfrac1{11}du\).`,
+      ], R`\(\tfrac1{11}\ln|11x+2|+C\)`),
+      P(R`Find \(\displaystyle\int\frac{7x}{x^2+18}\,dx\).`, [
+        R`\(u=x^2+18\), \(x\,dx=\tfrac12du\).`,
+      ], R`\(\tfrac{7}{2}\ln(x^2+18)+C\)`),
+      P(R`Find \(\displaystyle\int xe^{x^2}\,dx\).`, [
+        R`\(u=x^2\), \(du=2x\,dx\).`,
+      ], R`\(\tfrac{1}{2}e^{x^2}+C\)`),
+      P(R`Find \(\displaystyle\int \sin^{8}x\cos x\,dx\).`, [
+        R`\(u=\sin x\), \(du=\cos x\,dx\).`,
+      ], R`\(\dfrac{\sin^{9}x}{9}+C\)`),
+      P(R`Find \(\displaystyle\int\sqrt{6x-9}\,dx\).`, [
+        R`\(u=6x-9\): \(\tfrac1{6}\cdot\tfrac23u^{3/2}\).`,
+      ], R`\(\dfrac{2(6x-9)^{3/2}}{18}+C\)`),
+      P(R`Find \(\displaystyle\int(9x+2)^{3}\,dx\).`, [
+        R`\(u=9x+2\), \(dx=\tfrac1{9}du\).`,
+      ], R`\(\dfrac{(9x+2)^{4}}{36}+C\)`),
+      P(R`Find \(\displaystyle\int x(x^2+4)^{10}\,dx\).`, [
+        R`\(u=x^2+4\), \(x\,dx=\tfrac12du\).`,
+      ], R`\(\dfrac{(x^2+4)^{11}}{22}+C\)`),
+      P(R`Find \(\displaystyle\int \sin(5x)\,dx\).`, [
+        R`\(u=5x\), \(dx=\tfrac1{5}du\).`,
+      ], R`\(-\dfrac{\cos(5x)}{5}+C\)`),
     ],
   },
 ];

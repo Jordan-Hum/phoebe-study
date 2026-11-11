@@ -228,7 +228,7 @@
 
     var head = el("div", { class: "problem-head" });
     head.appendChild(el("span", { class: "problem-label" },
-      opts.showTopic ? '<a href="#/topic/' + item.topic.id + '/practice">' + item.topic.title + "</a> · Problem " + (item.index + 1)
+      opts.showTopic ? '<a href="#/topic/' + item.topic.id + '/practice/' + (Math.floor(item.index / 10) + 1) + '">' + item.topic.title + "</a> · Problem " + (item.index + 1)
         : "Problem " + (item.index + 1)));
     var statusTag = el("span", { class: "tag" });
     head.appendChild(statusTag);
@@ -317,7 +317,7 @@
     return card;
   }
 
-  function viewTopic(id, tab) {
+  function viewTopic(id, tab, pageArg) {
     var t = topicById(id);
     if (!t) return viewNotFound();
     tab = tab || "howto";
@@ -359,9 +359,28 @@
       body.appendChild(list);
     } else {
       body.appendChild(el("p", { class: "muted tip" }, "Work each one on paper first. Stuck? Reveal one step at a time until you can finish it yourself."));
-      t.problems.forEach(function (p, i) {
-        body.appendChild(problemCard({ topic: t, problem: p, index: i, id: t.id + "-" + i }));
-      });
+      var PER = 10, pages = Math.ceil(t.problems.length / PER);
+      var page = Math.min(Math.max(parseInt(pageArg, 10) || 1, 1), pages);
+      var status = getStatus();
+      function pager() {
+        var nav = el("nav", { class: "page-nav", "aria-label": "Problem pages" });
+        for (var pg = 1; pg <= pages; pg++) {
+          var from = (pg - 1) * PER, to = Math.min(pg * PER, t.problems.length), done = 0;
+          for (var k = from; k < to; k++) if (status[t.id + "-" + k] === "got") done++;
+          nav.appendChild(el("a", {
+            href: "#/topic/" + t.id + "/practice/" + pg,
+            class: "page-btn" + (pg === page ? " active" : "") + (done === to - from ? " done" : ""),
+            title: "Problems " + (from + 1) + "–" + to + " (" + done + " right)",
+          }, (from + 1) + "–" + to));
+        }
+        return nav;
+      }
+      body.appendChild(pager());
+      for (var i = (page - 1) * PER; i < Math.min(page * PER, t.problems.length); i++) {
+        body.appendChild(problemCard({ topic: t, problem: t.problems[i], index: i, id: t.id + "-" + i }));
+      }
+      if (page < pages) body.appendChild(el("a", { class: "btn primary big", href: "#/topic/" + t.id + "/practice/" + (page + 1) }, "Next 10 problems →"));
+      body.appendChild(pager());
     }
     wrap.appendChild(body);
 
@@ -477,7 +496,7 @@
     var parts = (location.hash.replace(/^#\/?/, "") || "").split("/");
     var view;
     if (!parts[0]) view = viewHome();
-    else if (parts[0] === "topic") view = viewTopic(parts[1], parts[2]);
+    else if (parts[0] === "topic") view = viewTopic(parts[1], parts[2], parts[3]);
     else if (parts[0] === "formulas") view = viewFormulas();
     else if (parts[0] === "practice") view = viewPractice();
     else if (parts[0] === "review") view = viewReview();
