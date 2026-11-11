@@ -193,7 +193,7 @@
     wrap.appendChild(el("section", { class: "hero" },
       "<h1>Hi Phoebe! Let's do some calculus.</h1>" +
       '<p class="muted">Pick a topic to read the how-to, check the formulas, and work practice problems with step-by-step solutions. ' +
-      "Try each problem on paper first, then reveal one step at a time.</p>" +
+      "Try each problem on paper first, then reveal one step at a time. Your progress saves automatically on this device.</p>" +
       '<div class="overall"><div class="overall-label"><span><b>' + got + "</b> of " + all.length +
       ' problems right</span><span class="muted">' + pct + '%</span></div>' +
       '<div class="bar"><span style="width:' + pct + '%"></span></div></div>' +
