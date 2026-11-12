@@ -41,6 +41,18 @@
     return null;
   }
 
+  var CALC_GROUP = "Calculus 1";
+  function groupOf(t) { return t.group || CALC_GROUP; }
+  function groups() {
+    var order = [], map = {};
+    TOPICS.forEach(function (t) {
+      var g = groupOf(t);
+      if (!map[g]) { map[g] = []; order.push(g); }
+      map[g].push(t);
+    });
+    return order.map(function (g) { return { name: g, topics: map[g] }; });
+  }
+
   function allProblems() {
     var list = [];
     TOPICS.forEach(function (t) {
@@ -191,8 +203,8 @@
 
     var wrap = el("div");
     wrap.appendChild(el("section", { class: "hero" },
-      "<h1>Hi Phoebe! Let's do some calculus.</h1>" +
-      '<p class="muted">Pick a topic to read the how-to, check the formulas, and work practice problems with step-by-step solutions. ' +
+      "<h1>Hi Phoebe! Let's get ready for Calc 1.</h1>" +
+      '<p class="muted">Start with the Pre-Calc Review if you want to brush up, or jump straight into Calculus 1. Pick a topic to read the how-to, check the formulas, and work practice problems with step-by-step solutions. ' +
       "Try each problem on paper first, then reveal one step at a time. Your progress saves automatically on this device.</p>" +
       '<div class="overall"><div class="overall-label"><span><b>' + got + "</b> of " + all.length +
       ' problems right</span><span class="muted">' + pct + '%</span></div>' +
@@ -203,8 +215,14 @@
       (review ? '<a class="btn" href="#/review">Review list (' + review + ")</a>" : "") +
       "</div>"));
 
+    groups().forEach(function (g) {
+    var gp = g.topics.reduce(function (acc, t) { var x = progressFor(t); acc.got += x.got; acc.total += x.total; return acc; }, { got: 0, total: 0 });
+    wrap.appendChild(el("div", { class: "group-head" },
+      "<h2>" + g.name + "</h2>" +
+      '<span class="muted small">' + (g.name === CALC_GROUP ? "The main course" : "Brush up on these first if Calc 1 feels shaky") +
+      " · " + gp.got + "/" + gp.total + " right</span>"));
     var grid = el("div", { class: "topic-grid" });
-    TOPICS.forEach(function (t, i) {
+    g.topics.forEach(function (t, i) {
       var p = progressFor(t);
       var card = el("a", { class: "topic-card", href: "#/topic/" + t.id },
         '<div class="topic-num">' + (i + 1) + "</div>" +
@@ -217,6 +235,7 @@
       grid.appendChild(card);
     });
     wrap.appendChild(grid);
+    });
     return wrap;
   }
 
@@ -322,11 +341,12 @@
     if (!t) return viewNotFound();
     tab = tab || "howto";
     var idx = TOPICS.indexOf(t);
+    var siblings = TOPICS.filter(function (x) { return groupOf(x) === groupOf(t); });
 
     var wrap = el("div");
     wrap.appendChild(el("a", { class: "back", href: "#/" }, "← All topics"));
     wrap.appendChild(el("header", { class: "topic-header" },
-      '<span class="eyebrow">Topic ' + (idx + 1) + " of " + TOPICS.length + "</span>" +
+      '<span class="eyebrow">' + groupOf(t) + " · Topic " + (siblings.indexOf(t) + 1) + " of " + siblings.length + "</span>" +
       "<h1>" + t.title + "</h1><p class=\"muted\">" + t.blurb + "</p>"));
 
     var tabs = el("nav", { class: "tabs", role: "tablist" });
@@ -419,6 +439,21 @@
     var wrap = el("div");
     wrap.appendChild(el("header", { class: "topic-header" },
       "<h1>Random Practice</h1><p class=\"muted\">A mixed set, like a real exam. Choose which topics to include.</p>"));
+
+    var quick = el("div", { class: "chips quick" });
+    [["All topics", null]].concat(groups().map(function (g) { return [g.name + " only", g.name]; })).forEach(function (q) {
+      var b = el("button", { class: "btn small", type: "button" }, q[0]);
+      b.addEventListener("click", function () {
+        if (!q[1]) practiceFilter = null;
+        else {
+          practiceFilter = {};
+          TOPICS.forEach(function (x) { if (groupOf(x) === q[1]) practiceFilter[x.id] = true; });
+        }
+        render(viewPractice());
+      });
+      quick.appendChild(b);
+    });
+    wrap.appendChild(quick);
 
     var chips = el("div", { class: "chips" });
     TOPICS.forEach(function (t) {

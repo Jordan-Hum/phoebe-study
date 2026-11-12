@@ -239,6 +239,10 @@ body.locked .container {
 }
 .hero-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 
+.group-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; flex-wrap: wrap; margin: 28px 0 12px; }
+.group-head h2 { margin: 0; font-size: 1.35rem; }
+.chips.quick { margin-bottom: 10px; }
+
 .topic-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

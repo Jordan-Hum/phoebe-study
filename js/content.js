@@ -9,6 +9,1808 @@ var R = String.raw;
 function P(q, steps, answer) { return { q: q, steps: steps, answer: answer }; }
 
 window.TOPICS = [
+  // ==================================================================
+  //  PRE-CALC REVIEW
+  // ==================================================================
+  {
+    id: "algebra",
+    group: "Pre-Calc Review",
+    title: "Algebra Essentials",
+    icon: "x",
+    blurb: "Exponents, factoring, solving equations, fractions, and radicals.",
+    howto: [
+      {
+        title: "Solving a linear equation",
+        steps: [
+          R`Distribute to get rid of parentheses.`,
+          R`Combine like terms on each side.`,
+          R`Move all the \(x\) terms to one side and the numbers to the other.`,
+          R`Divide by the coefficient of \(x\). Check by plugging your answer back in.`,
+        ],
+      },
+      {
+        title: "Solving a quadratic equation",
+        steps: [
+          R`Get everything on one side so it equals 0: \(ax^2+bx+c=0\).`,
+          R`<b>Try factoring first.</b> For \(x^2+bx+c\), find two numbers that multiply to \(c\) and add to \(b\).`,
+          R`For \(ax^2+bx+c\) with \(a\neq1\): find two numbers that multiply to \(ac\) and add to \(b\), split the middle term, then factor by grouping.`,
+          R`Set each factor equal to 0 and solve (zero product property).`,
+          R`If it won't factor, use the <b>quadratic formula</b> \(x=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}\).`,
+        ],
+      },
+      {
+        title: "Factoring checklist (do these in order)",
+        steps: [
+          R`<b>GCF:</b> pull out anything every term shares, like \(6x^3+9x^2=3x^2(2x+3)\).`,
+          R`<b>Difference of squares:</b> \(a^2-b^2=(a-b)(a+b)\).`,
+          R`<b>Trinomial:</b> \(x^2+bx+c=(x+r)(x+s)\) where \(rs=c\) and \(r+s=b\).`,
+          R`<b>Sum/difference of cubes:</b> \(a^3\pm b^3=(a\pm b)(a^2\mp ab+b^2)\).`,
+          R`<b>Grouping</b> for four terms: factor pairs, then pull out the common binomial.`,
+        ],
+      },
+      {
+        title: "Working with fractions (rational expressions)",
+        steps: [
+          R`<b>Simplify:</b> factor top and bottom completely, then cancel common <b>factors</b> (never cancel terms that are being added!).`,
+          R`<b>Add/subtract:</b> get a common denominator, combine the tops, then simplify.`,
+          R`<b>Complex fractions</b> (fractions inside fractions): multiply top and bottom by the LCD of all the little fractions. This exact skill shows up constantly in Calc 1 limits!`,
+        ],
+      },
+      {
+        title: "Exponents and radicals",
+        steps: [
+          R`Use the exponent rules: same base multiplied &rArr; add exponents; divided &rArr; subtract; power of a power &rArr; multiply.`,
+          R`Negative exponent = flip it: \(x^{-n}=\dfrac1{x^n}\).`,
+          R`Fractional exponent = root: \(x^{m/n}=\left(\sqrt[n]{x}\right)^m\). Take the root first; the numbers stay smaller.`,
+          R`Simplify \(\sqrt{n}\) by pulling out perfect squares: \(\sqrt{72}=\sqrt{36\cdot2}=6\sqrt2\).`,
+          R`Rationalize a denominator: multiply by \(\sqrt{m}\), or by the <b>conjugate</b> if there's a sum or difference.`,
+        ],
+      },
+    ],
+    formulas: [
+      { name: "Exponent rules", tex: R`x^ax^b=x^{a+b},\ \frac{x^a}{x^b}=x^{a-b},\ (x^a)^b=x^{ab}` },
+      { name: "Negative & fractional exponents", tex: R`x^{-a}=\frac1{x^a},\quad x^{m/n}=\sqrt[n]{x^m},\quad x^0=1` },
+      { name: "Quadratic formula", tex: R`x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}` },
+      { name: "Difference of squares", tex: R`a^2-b^2=(a-b)(a+b)` },
+      { name: "Sum / difference of cubes", tex: R`a^3\pm b^3=(a\pm b)(a^2\mp ab+b^2)` },
+      { name: "Perfect square", tex: R`(a\pm b)^2=a^2\pm2ab+b^2` },
+      { name: "Completing the square", tex: R`x^2+bx=\left(x+\tfrac b2\right)^2-\tfrac{b^2}{4}` },
+      { name: "Absolute value", tex: R`|x|<a\iff -a<x<a,\qquad |x|>a\iff x<-a\text{ or }x>a` },
+    ],
+    problems: [
+      P(R`Solve \(3(x-2)+4=2x+7\).`, [
+        R`Distribute: \(3x-6+4=2x+7\).`,
+        R`Combine: \(3x-2=2x+7\).`,
+        R`Subtract \(2x\) and add 2: \(x=9\).`,
+        R`Check: \(3(7)+4=25\) and \(2(9)+7=25\). ✓`,
+      ], R`\(x=9\)`),
+      P(R`Factor \(2x^2+7x+3\).`, [
+        R`\(ac=2\cdot3=6\). Find two numbers that multiply to 6 and add to 7: \(6\) and \(1\).`,
+        R`Split the middle: \(2x^2+6x+x+3\).`,
+        R`Group: \(2x(x+3)+1(x+3)\).`,
+        R`Factor out \((x+3)\): \((2x+1)(x+3)\).`,
+      ], R`\((2x+1)(x+3)\)`),
+      P(R`Solve \(x^2-5x-14=0\).`, [
+        R`Two numbers that multiply to \(-14\) and add to \(-5\): \(-7\) and \(2\).`,
+        R`\((x-7)(x+2)=0\).`,
+        R`\(x-7=0\) or \(x+2=0\).`,
+      ], R`\(x=7\) or \(x=-2\)`),
+      P(R`Solve \(2x^2+3x-1=0\).`, [
+        R`It doesn't factor nicely, so use the quadratic formula with \(a=2,\ b=3,\ c=-1\).`,
+        R`Discriminant: \(b^2-4ac=9-4(2)(-1)=9+8=17\).`,
+        R`\(x=\dfrac{-3\pm\sqrt{17}}{2(2)}\).`,
+      ], R`\(x=\dfrac{-3\pm\sqrt{17}}{4}\)`),
+      P(R`Simplify \(\dfrac{x^2-9}{x^2+x-6}\).`, [
+        R`Factor the top: \((x-3)(x+3)\).`,
+        R`Factor the bottom: \((x+3)(x-2)\).`,
+        R`Cancel the common factor \((x+3)\).`,
+      ], R`\(\dfrac{x-3}{x-2}\) (with \(x\neq-3\))`),
+      P(R`Simplify \(\dfrac{(2x^3y^{-2})^3}{4x^5y}\). Write with positive exponents.`, [
+        R`Power of a power: \((2x^3y^{-2})^3=8x^9y^{-6}\).`,
+        R`Divide: \(\dfrac{8}{4}=2\), \(\dfrac{x^9}{x^5}=x^4\), \(\dfrac{y^{-6}}{y}=y^{-7}\).`,
+        R`\(2x^4y^{-7}=\dfrac{2x^4}{y^7}\).`,
+      ], R`\(\dfrac{2x^4}{y^7}\)`),
+      P(R`Combine into one fraction: \(\dfrac2x+\dfrac{3}{x+1}\).`, [
+        R`Common denominator: \(x(x+1)\).`,
+        R`\(\dfrac{2(x+1)}{x(x+1)}+\dfrac{3x}{x(x+1)}\).`,
+        R`Add the tops: \(2x+2+3x=5x+2\).`,
+      ], R`\(\dfrac{5x+2}{x(x+1)}\)`),
+      P(R`Rationalize: \(\dfrac{1}{\sqrt5-2}\).`, [
+        R`Multiply top and bottom by the conjugate \(\sqrt5+2\).`,
+        R`Bottom: \((\sqrt5-2)(\sqrt5+2)=5-4=1\).`,
+        R`Top: \(\sqrt5+2\).`,
+      ], R`\(\sqrt5+2\)`),
+      P(R`Simplify the complex fraction \(\dfrac{\frac1x-\frac13}{x-3}\). (This exact move shows up in Calc 1 limits!)`, [
+        R`Combine the top: \(\dfrac1x-\dfrac13=\dfrac{3-x}{3x}\).`,
+        R`Dividing by \(x-3\) is multiplying by \(\dfrac1{x-3}\): \(\dfrac{3-x}{3x(x-3)}\).`,
+        R`Notice \(3-x=-(x-3)\). Cancel: \(\dfrac{-1}{3x}\).`,
+      ], R`\(-\dfrac{1}{3x}\)`),
+      P(R`Solve \(|2x-1|<5\).`, [
+        R`\(|u|<5\) means \(-5<u<5\): \(-5<2x-1<5\).`,
+        R`Add 1 to all three parts: \(-4<2x<6\).`,
+        R`Divide by 2: \(-2<x<3\).`,
+      ], R`\(-2<x<3\), i.e. \((-2,3)\)`),
+      // ---- generated practice (numbers vary; answers computed) ----
+      P(R`Solve \(-4x-11=-7x+6\).`, [
+        R`Move the \(x\) terms left and the numbers right: \(-4x+7x=6+11\).`,
+        R`\(3x=17\).`,
+        R`Divide by \(3\).`,
+      ], R`\(x=\dfrac{17}{3}\)`),
+      P(R`Solve \(x^{2}-6x+5=0\) by factoring.`, [
+        R`Find two numbers that multiply to \(5\) and add to \(-6\): \(-5\) and \(-1\).`,
+        R`\((x-5)(x-1)=0\).`,
+        R`Set each factor to 0.`,
+      ], R`\(x=1\text{ or }x=5\)`),
+      P(R`Simplify \(\dfrac{(x^{2})^{2}\cdot x^{4}}{x^{7}}\).`, [
+        R`Power of a power: \((x^{2})^{2}=x^{4}\).`,
+        R`Multiply (add exponents): \(x^{8}\). Divide (subtract): \(x^{8-7}=x\).`,
+      ], R`\(x\)`),
+      P(R`Evaluate \(4^{2/2}\) without a calculator.`, [
+        R`Take the root first: \(\sqrt[2]{4}=2\).`,
+        R`Then the power: \(2^{2}\).`,
+      ], R`\(4\)`),
+      P(R`Simplify \(\sqrt{405}\).`, [
+        R`Find the biggest perfect square factor: \(405=81\cdot5\).`,
+        R`\(\sqrt{81}\cdot\sqrt{5}\).`,
+      ], R`\(9\sqrt{5}\)`),
+      P(R`Rationalize the denominator: \(\dfrac{10}{\sqrt{2}}\).`, [
+        R`Multiply top and bottom by \(\sqrt{2}\): \(\dfrac{10\sqrt{2}}{2}\).`,
+        R`Reduce the fraction if possible.`,
+      ], R`\(5\sqrt{2}\)`),
+      P(R`Simplify \(\dfrac{x^2-25}{x^{2}-x-20}\).`, [
+        R`Top: \((x-5)(x+5)\). Bottom: \((x-5)(x+4)\).`,
+        R`Cancel \((x-5)\).`,
+      ], R`\(\dfrac{x+5}{x+4}\)`),
+      P(R`Solve \(x+6<-2\).`, [
+        R`Subtract \(6\): \(x<-8\).`,
+        R`Divide by \(1\).`,
+      ], R`\(x<-8\)`),
+      P(R`Solve \(|x-4|=2\).`, [
+        R`Two cases: \(x-4=2\) or \(x-4=-2\).`,
+        R`\(x=6\) or \(x=2\).`,
+      ], R`\(x=2\text{ or }x=6\)`),
+      P(R`Complete the square: write \(x^{2}+14x+10\) in the form \((x+h)^2+k\).`, [
+        R`Half of \(14\) is \(7\); square it: \(49\).`,
+        R`\(x^2+14x+49-49+10=(x+7)^2-39\).`,
+      ], R`\((x+7)^2-39\)`),
+      P(R`Solve \(-7x+2=-5x\).`, [
+        R`Move the \(x\) terms left and the numbers right: \(-7x+5x=0-2\).`,
+        R`\(-2x=-2\).`,
+        R`Divide by \(-2\).`,
+      ], R`\(x=1\)`),
+      P(R`Solve \(x^{2}+5x-6=0\) by factoring.`, [
+        R`Find two numbers that multiply to \(-6\) and add to \(5\): \(6\) and \(-1\).`,
+        R`\((x+6)(x-1)=0\).`,
+        R`Set each factor to 0.`,
+      ], R`\(x=-6\text{ or }x=1\)`),
+      P(R`Factor \(5x^{2}+24x+16\).`, [
+        R`\(ac=5\cdot16=80\). Two numbers that multiply to 80 and add to 24: \(20\) and \(4\).`,
+        R`Split the middle: \(5x^2+20x+4x+16\).`,
+        R`Group: \(5x(x+4)+4(x+4)\).`,
+      ], R`\((5x+4)(x+4)\)`),
+      P(R`Solve \(2x^{2}-3x-3=0\) with the quadratic formula.`, [
+        R`\(a=2,\ b=-3,\ c=-3\). Discriminant: \(b^2-4ac=9-(-24)=33\).`,
+        R`Simplify the root: \(\sqrt{33}=\sqrt{33}\).`,
+        R`\(x=\dfrac{3\pm\sqrt{33}}{4}\).`,
+      ], R`\(x=\dfrac{3\pm\sqrt{33}}{4}\)`),
+      P(R`Simplify \(\dfrac{(x^{2})^{3}\cdot x^{3}}{x^{3}}\).`, [
+        R`Power of a power: \((x^{2})^{3}=x^{6}\).`,
+        R`Multiply (add exponents): \(x^{9}\). Divide (subtract): \(x^{9-3}=x^{6}\).`,
+      ], R`\(x^{6}\)`),
+      P(R`Evaluate \(64^{3/2}\) without a calculator.`, [
+        R`Take the root first: \(\sqrt[2]{64}=8\).`,
+        R`Then the power: \(8^{3}\).`,
+      ], R`\(512\)`),
+      P(R`Simplify \(\sqrt{637}\).`, [
+        R`Find the biggest perfect square factor: \(637=49\cdot13\).`,
+        R`\(\sqrt{49}\cdot\sqrt{13}\).`,
+      ], R`\(7\sqrt{13}\)`),
+      P(R`Rationalize the denominator: \(\dfrac{4}{\sqrt{5}}\).`, [
+        R`Multiply top and bottom by \(\sqrt{5}\): \(\dfrac{4\sqrt{5}}{5}\).`,
+        R`Reduce the fraction if possible.`,
+      ], R`\(\dfrac{4\sqrt{5}}{5}\)`),
+      P(R`Simplify \(\dfrac{x^2-64}{x^{2}-9x+8}\).`, [
+        R`Top: \((x-8)(x+8)\). Bottom: \((x-8)(x-1)\).`,
+        R`Cancel \((x-8)\).`,
+      ], R`\(\dfrac{x+8}{x-1}\)`),
+      P(R`Solve \(x-11\ge10\).`, [
+        R`Subtract \(-11\): \(x\ge21\).`,
+        R`Divide by \(1\).`,
+      ], R`\(x\ge21\)`),
+      P(R`Solve \(|3x+11|=9\).`, [
+        R`Two cases: \(3x+11=9\) or \(3x+11=-9\).`,
+        R`\(3x=-2\) or \(3x=-20\).`,
+      ], R`\(x=-\dfrac{20}{3}\text{ or }x=-\dfrac{2}{3}\)`),
+      P(R`Complete the square: write \(x^{2}-2x+14\) in the form \((x+h)^2+k\).`, [
+        R`Half of \(-2\) is \(-1\); square it: \(1\).`,
+        R`\(x^2-2x+1-1+14=(x-1)^2+13\).`,
+      ], R`\((x-1)^2+13\)`),
+      P(R`Solve \(-6x-10=-3x+5\).`, [
+        R`Move the \(x\) terms left and the numbers right: \(-6x+3x=5+10\).`,
+        R`\(-3x=15\).`,
+        R`Divide by \(-3\).`,
+      ], R`\(x=-5\)`),
+      P(R`Solve \(x^{2}-64=0\) by factoring.`, [
+        R`Find two numbers that multiply to \(-64\) and add to \(0\): \(-8\) and \(8\).`,
+        R`\((x-8)(x+8)=0\).`,
+        R`Set each factor to 0.`,
+      ], R`\(x=-8\text{ or }x=8\)`),
+      P(R`Factor \(4x^{2}-11x-3\).`, [
+        R`\(ac=4\cdot(-3)=-12\). Two numbers that multiply to -12 and add to -11: \(-12\) and \(1\).`,
+        R`Split the middle: \(4x^2-12x+x-3\).`,
+        R`Group: \(4x(x-3)+1(x-3)\).`,
+      ], R`\((4x+1)(x-3)\)`),
+      P(R`Solve \(3x^{2}-x-1=0\) with the quadratic formula.`, [
+        R`\(a=3,\ b=-1,\ c=-1\). Discriminant: \(b^2-4ac=1-(-12)=13\).`,
+        R`Simplify the root: \(\sqrt{13}=\sqrt{13}\).`,
+        R`\(x=\dfrac{1\pm\sqrt{13}}{6}\).`,
+      ], R`\(x=\dfrac{1\pm\sqrt{13}}{6}\)`),
+      P(R`Factor \(25x^2-4\).`, [
+        R`Difference of squares: \((5x)^2-(2)^2\).`,
+      ], R`\((5x-2)(5x+2)\)`),
+      P(R`Simplify \(\dfrac{(x^{5})^{3}\cdot x^{7}}{x^{10}}\).`, [
+        R`Power of a power: \((x^{5})^{3}=x^{15}\).`,
+        R`Multiply (add exponents): \(x^{22}\). Divide (subtract): \(x^{22-10}=x^{12}\).`,
+      ], R`\(x^{12}\)`),
+      P(R`Evaluate \(25^{2/2}\) without a calculator.`, [
+        R`Take the root first: \(\sqrt[2]{25}=5\).`,
+        R`Then the power: \(5^{2}\).`,
+      ], R`\(25\)`),
+      P(R`Simplify \(\sqrt{20}\).`, [
+        R`Find the biggest perfect square factor: \(20=4\cdot5\).`,
+        R`\(\sqrt{4}\cdot\sqrt{5}\).`,
+      ], R`\(2\sqrt{5}\)`),
+      P(R`Rationalize the denominator: \(\dfrac{8}{\sqrt{2}}\).`, [
+        R`Multiply top and bottom by \(\sqrt{2}\): \(\dfrac{8\sqrt{2}}{2}\).`,
+        R`Reduce the fraction if possible.`,
+      ], R`\(4\sqrt{2}\)`),
+      P(R`Simplify \(\dfrac{x^2-36}{x^{2}-8x+12}\).`, [
+        R`Top: \((x-6)(x+6)\). Bottom: \((x-6)(x-2)\).`,
+        R`Cancel \((x-6)\).`,
+      ], R`\(\dfrac{x+6}{x-2}\)`),
+      P(R`Solve \(2x+3\le-2\).`, [
+        R`Subtract \(3\): \(2x\le-5\).`,
+        R`Divide by \(2\).`,
+      ], R`\(x\le-\dfrac{5}{2}\)`),
+      P(R`Solve \(|3x+1|=6\).`, [
+        R`Two cases: \(3x+1=6\) or \(3x+1=-6\).`,
+        R`\(3x=5\) or \(3x=-7\).`,
+      ], R`\(x=-\dfrac{7}{3}\text{ or }x=\dfrac{5}{3}\)`),
+      P(R`Complete the square: write \(x^{2}+12x-6\) in the form \((x+h)^2+k\).`, [
+        R`Half of \(12\) is \(6\); square it: \(36\).`,
+        R`\(x^2+12x+36-36-6=(x+6)^2-42\).`,
+      ], R`\((x+6)^2-42\)`),
+      P(R`Solve \(6x+11=7x-3\).`, [
+        R`Move the \(x\) terms left and the numbers right: \(6x-7x=-3-11\).`,
+        R`\(-x=-14\).`,
+        R`Divide by \(-1\).`,
+      ], R`\(x=14\)`),
+      P(R`Solve \(x^{2}+5x-24=0\) by factoring.`, [
+        R`Find two numbers that multiply to \(-24\) and add to \(5\): \(8\) and \(-3\).`,
+        R`\((x+8)(x-3)=0\).`,
+        R`Set each factor to 0.`,
+      ], R`\(x=-8\text{ or }x=3\)`),
+      P(R`Solve \(4x^{2}-2x-4=0\) with the quadratic formula.`, [
+        R`\(a=4,\ b=-2,\ c=-4\). Discriminant: \(b^2-4ac=4-(-64)=68\).`,
+        R`Simplify the root: \(\sqrt{68}=2\sqrt{17}\).`,
+        R`\(x=\dfrac{2\pm2\sqrt{17}}{8}\), then divide everything by 2.`,
+      ], R`\(x=\dfrac{1\pm\sqrt{17}}{4}\)`),
+      P(R`Factor \(36x^2-1\).`, [
+        R`Difference of squares: \((6x)^2-(1)^2\).`,
+      ], R`\((6x-1)(6x+1)\)`),
+      P(R`Simplify \(\dfrac{(x^{4})^{3}\cdot x^{8}}{x^{6}}\).`, [
+        R`Power of a power: \((x^{4})^{3}=x^{12}\).`,
+        R`Multiply (add exponents): \(x^{20}\). Divide (subtract): \(x^{20-6}=x^{14}\).`,
+      ], R`\(x^{14}\)`),
+      P(R`Evaluate \(81^{-2/4}\) without a calculator.`, [
+        R`Take the root first: \(\sqrt[4]{81}=3\).`,
+        R`Then the power: \(3^{-2}\) (negative means flip).`,
+      ], R`\(\dfrac{1}{9}\)`),
+      P(R`Simplify \(\sqrt{200}\).`, [
+        R`Find the biggest perfect square factor: \(200=100\cdot2\).`,
+        R`\(\sqrt{100}\cdot\sqrt{2}\).`,
+      ], R`\(10\sqrt{2}\)`),
+      P(R`Rationalize the denominator: \(\dfrac{10}{\sqrt{3}}\).`, [
+        R`Multiply top and bottom by \(\sqrt{3}\): \(\dfrac{10\sqrt{3}}{3}\).`,
+        R`Reduce the fraction if possible.`,
+      ], R`\(\dfrac{10\sqrt{3}}{3}\)`),
+      P(R`Simplify \(\dfrac{x^2-1}{x^{2}-7x+6}\).`, [
+        R`Top: \((x-1)(x+1)\). Bottom: \((x-1)(x-6)\).`,
+        R`Cancel \((x-1)\).`,
+      ], R`\(\dfrac{x+1}{x-6}\)`),
+      P(R`Solve \(4x-1\ge2\).`, [
+        R`Subtract \(-1\): \(4x\ge3\).`,
+        R`Divide by \(4\).`,
+      ], R`\(x\ge\dfrac{3}{4}\)`),
+      P(R`Solve \(|4x+12|=6\).`, [
+        R`Two cases: \(4x+12=6\) or \(4x+12=-6\).`,
+        R`\(4x=-6\) or \(4x=-18\).`,
+      ], R`\(x=-\dfrac{9}{2}\text{ or }x=-\dfrac{3}{2}\)`),
+      P(R`Complete the square: write \(x^{2}-4x+20\) in the form \((x+h)^2+k\).`, [
+        R`Half of \(-4\) is \(-2\); square it: \(4\).`,
+        R`\(x^2-4x+4-4+20=(x-2)^2+16\).`,
+      ], R`\((x-2)^2+16\)`),
+      P(R`Solve \(9x+14=7x+8\).`, [
+        R`Move the \(x\) terms left and the numbers right: \(9x-7x=8-14\).`,
+        R`\(2x=-6\).`,
+        R`Divide by \(2\).`,
+      ], R`\(x=-3\)`),
+      P(R`Solve \(x^{2}-11x+30=0\) by factoring.`, [
+        R`Find two numbers that multiply to \(30\) and add to \(-11\): \(-6\) and \(-5\).`,
+        R`\((x-6)(x-5)=0\).`,
+        R`Set each factor to 0.`,
+      ], R`\(x=5\text{ or }x=6\)`),
+      P(R`Factor \(4x^{2}-29x-63\).`, [
+        R`\(ac=4\cdot(-63)=-252\). Two numbers that multiply to -252 and add to -29: \(-36\) and \(7\).`,
+        R`Split the middle: \(4x^2-36x+7x-63\).`,
+        R`Group: \(4x(x-9)+7(x-9)\).`,
+      ], R`\((4x+7)(x-9)\)`),
+      P(R`Simplify \(\dfrac{(x^{3})^{4}\cdot x^{7}}{x^{2}}\).`, [
+        R`Power of a power: \((x^{3})^{4}=x^{12}\).`,
+        R`Multiply (add exponents): \(x^{19}\). Divide (subtract): \(x^{19-2}=x^{17}\).`,
+      ], R`\(x^{17}\)`),
+      P(R`Evaluate \(64^{-1/3}\) without a calculator.`, [
+        R`Take the root first: \(\sqrt[3]{64}=4\).`,
+        R`Then the power: \(4^{-1}\) (negative means flip).`,
+      ], R`\(\dfrac{1}{4}\)`),
+      P(R`Simplify \(\sqrt{539}\).`, [
+        R`Find the biggest perfect square factor: \(539=49\cdot11\).`,
+        R`\(\sqrt{49}\cdot\sqrt{11}\).`,
+      ], R`\(7\sqrt{11}\)`),
+      P(R`Rationalize the denominator: \(\dfrac{6}{\sqrt{3}}\).`, [
+        R`Multiply top and bottom by \(\sqrt{3}\): \(\dfrac{6\sqrt{3}}{3}\).`,
+        R`Reduce the fraction if possible.`,
+      ], R`\(2\sqrt{3}\)`),
+      P(R`Simplify \(\dfrac{x^2-4}{x^{2}-10x+16}\).`, [
+        R`Top: \((x-2)(x+2)\). Bottom: \((x-2)(x-8)\).`,
+        R`Cancel \((x-2)\).`,
+      ], R`\(\dfrac{x+2}{x-8}\)`),
+      P(R`Solve \(x+6>-9\).`, [
+        R`Subtract \(6\): \(x>-15\).`,
+        R`Divide by \(1\).`,
+      ], R`\(x>-15\)`),
+      P(R`Solve \(|2x+12|=11\).`, [
+        R`Two cases: \(2x+12=11\) or \(2x+12=-11\).`,
+        R`\(2x=-1\) or \(2x=-23\).`,
+      ], R`\(x=-\dfrac{23}{2}\text{ or }x=-\dfrac{1}{2}\)`),
+      P(R`Complete the square: write \(x^{2}+4x-20\) in the form \((x+h)^2+k\).`, [
+        R`Half of \(4\) is \(2\); square it: \(4\).`,
+        R`\(x^2+4x+4-4-20=(x+2)^2-24\).`,
+      ], R`\((x+2)^2-24\)`),
+      P(R`Solve \(-3x-9=8x+13\).`, [
+        R`Move the \(x\) terms left and the numbers right: \(-3x-8x=13+9\).`,
+        R`\(-11x=22\).`,
+        R`Divide by \(-11\).`,
+      ], R`\(x=-2\)`),
+      P(R`Solve \(x^{2}-x-72=0\) by factoring.`, [
+        R`Find two numbers that multiply to \(-72\) and add to \(-1\): \(8\) and \(-9\).`,
+        R`\((x+8)(x-9)=0\).`,
+        R`Set each factor to 0.`,
+      ], R`\(x=-8\text{ or }x=9\)`),
+      P(R`Solve \(x^{2}-7x+7=0\) with the quadratic formula.`, [
+        R`\(a=1,\ b=-7,\ c=7\). Discriminant: \(b^2-4ac=49-28=21\).`,
+        R`Simplify the root: \(\sqrt{21}=\sqrt{21}\).`,
+        R`\(x=\dfrac{7\pm\sqrt{21}}{2}\).`,
+      ], R`\(x=\dfrac{7\pm\sqrt{21}}{2}\)`),
+      P(R`Simplify \(\dfrac{(x^{3})^{2}\cdot x^{2}}{x^{3}}\).`, [
+        R`Power of a power: \((x^{3})^{2}=x^{6}\).`,
+        R`Multiply (add exponents): \(x^{8}\). Divide (subtract): \(x^{8-3}=x^{5}\).`,
+      ], R`\(x^{5}\)`),
+      P(R`Evaluate \(27^{1/3}\) without a calculator.`, [
+        R`Take the root first: \(\sqrt[3]{27}=3\).`,
+        R`Then the power: \(3^{1}\).`,
+      ], R`\(3\)`),
+      P(R`Simplify \(\sqrt{160}\).`, [
+        R`Find the biggest perfect square factor: \(160=16\cdot10\).`,
+        R`\(\sqrt{16}\cdot\sqrt{10}\).`,
+      ], R`\(4\sqrt{10}\)`),
+      P(R`Rationalize the denominator: \(\dfrac{11}{\sqrt{2}}\).`, [
+        R`Multiply top and bottom by \(\sqrt{2}\): \(\dfrac{11\sqrt{2}}{2}\).`,
+        R`Reduce the fraction if possible.`,
+      ], R`\(\dfrac{11\sqrt{2}}{2}\)`),
+      P(R`Simplify \(\dfrac{x^2-36}{x^{2}-11x+30}\).`, [
+        R`Top: \((x-6)(x+6)\). Bottom: \((x-6)(x-5)\).`,
+        R`Cancel \((x-6)\).`,
+      ], R`\(\dfrac{x+6}{x-5}\)`),
+      P(R`Solve \(5x-1<-6\).`, [
+        R`Subtract \(-1\): \(5x<-5\).`,
+        R`Divide by \(5\).`,
+      ], R`\(x<-1\)`),
+      P(R`Solve \(|4x+11|=2\).`, [
+        R`Two cases: \(4x+11=2\) or \(4x+11=-2\).`,
+        R`\(4x=-9\) or \(4x=-13\).`,
+      ], R`\(x=-\dfrac{13}{4}\text{ or }x=-\dfrac{9}{4}\)`),
+      P(R`Complete the square: write \(x^{2}+14x+17\) in the form \((x+h)^2+k\).`, [
+        R`Half of \(14\) is \(7\); square it: \(49\).`,
+        R`\(x^2+14x+49-49+17=(x+7)^2-32\).`,
+      ], R`\((x+7)^2-32\)`),
+      P(R`Solve \(9x-3=-7x-13\).`, [
+        R`Move the \(x\) terms left and the numbers right: \(9x+7x=-13+3\).`,
+        R`\(16x=-10\).`,
+        R`Divide by \(16\).`,
+      ], R`\(x=-\dfrac{5}{8}\)`),
+      P(R`Factor \(3x^{2}-29x+56\).`, [
+        R`\(ac=3\cdot56=168\). Two numbers that multiply to 168 and add to -29: \(-21\) and \(-8\).`,
+        R`Split the middle: \(3x^2-21x-8x+56\).`,
+        R`Group: \(3x(x-7)-8(x-7)\).`,
+      ], R`\((3x-8)(x-7)\)`),
+      P(R`Solve \(x^{2}-x-9=0\) with the quadratic formula.`, [
+        R`\(a=1,\ b=-1,\ c=-9\). Discriminant: \(b^2-4ac=1-(-36)=37\).`,
+        R`Simplify the root: \(\sqrt{37}=\sqrt{37}\).`,
+        R`\(x=\dfrac{1\pm\sqrt{37}}{2}\).`,
+      ], R`\(x=\dfrac{1\pm\sqrt{37}}{2}\)`),
+      P(R`Simplify \(\dfrac{(x^{5})^{4}\cdot x^{6}}{x^{10}}\).`, [
+        R`Power of a power: \((x^{5})^{4}=x^{20}\).`,
+        R`Multiply (add exponents): \(x^{26}\). Divide (subtract): \(x^{26-10}=x^{16}\).`,
+      ], R`\(x^{16}\)`),
+      P(R`Evaluate \(16^{3/4}\) without a calculator.`, [
+        R`Take the root first: \(\sqrt[4]{16}=2\).`,
+        R`Then the power: \(2^{3}\).`,
+      ], R`\(8\)`),
+      P(R`Simplify \(\sqrt{1000}\).`, [
+        R`Find the biggest perfect square factor: \(1000=100\cdot10\).`,
+        R`\(\sqrt{100}\cdot\sqrt{10}\).`,
+      ], R`\(10\sqrt{10}\)`),
+      P(R`Rationalize the denominator: \(\dfrac{5}{\sqrt{3}}\).`, [
+        R`Multiply top and bottom by \(\sqrt{3}\): \(\dfrac{5\sqrt{3}}{3}\).`,
+        R`Reduce the fraction if possible.`,
+      ], R`\(\dfrac{5\sqrt{3}}{3}\)`),
+      P(R`Solve \(5x+2\le-1\).`, [
+        R`Subtract \(2\): \(5x\le-3\).`,
+        R`Divide by \(5\).`,
+      ], R`\(x\le-\dfrac{3}{5}\)`),
+      P(R`Solve \(|2x+5|=2\).`, [
+        R`Two cases: \(2x+5=2\) or \(2x+5=-2\).`,
+        R`\(2x=-3\) or \(2x=-7\).`,
+      ], R`\(x=-\dfrac{7}{2}\text{ or }x=-\dfrac{3}{2}\)`),
+      P(R`Complete the square: write \(x^{2}+14x-6\) in the form \((x+h)^2+k\).`, [
+        R`Half of \(14\) is \(7\); square it: \(49\).`,
+        R`\(x^2+14x+49-49-6=(x+7)^2-55\).`,
+      ], R`\((x+7)^2-55\)`),
+      P(R`Solve \(7x-5=-4x+15\).`, [
+        R`Move the \(x\) terms left and the numbers right: \(7x+4x=15+5\).`,
+        R`\(11x=20\).`,
+        R`Divide by \(11\).`,
+      ], R`\(x=\dfrac{20}{11}\)`),
+      P(R`Solve \(x^{2}+15x+54=0\) by factoring.`, [
+        R`Find two numbers that multiply to \(54\) and add to \(15\): \(6\) and \(9\).`,
+        R`\((x+6)(x+9)=0\).`,
+        R`Set each factor to 0.`,
+      ], R`\(x=-9\text{ or }x=-6\)`),
+      P(R`Factor \(6x^{2}+x-7\).`, [
+        R`\(ac=6\cdot(-7)=-42\). Two numbers that multiply to -42 and add to 1: \(-6\) and \(7\).`,
+        R`Split the middle: \(6x^2-6x+7x-7\).`,
+        R`Group: \(6x(x-1)+7(x-1)\).`,
+      ], R`\((6x+7)(x-1)\)`),
+      P(R`Factor \(9x^2-121\).`, [
+        R`Difference of squares: \((3x)^2-(11)^2\).`,
+      ], R`\((3x-11)(3x+11)\)`),
+      P(R`Simplify \(\dfrac{(x^{4})^{4}\cdot x^{8}}{x^{7}}\).`, [
+        R`Power of a power: \((x^{4})^{4}=x^{16}\).`,
+        R`Multiply (add exponents): \(x^{24}\). Divide (subtract): \(x^{24-7}=x^{17}\).`,
+      ], R`\(x^{17}\)`),
+      P(R`Evaluate \(9^{3/2}\) without a calculator.`, [
+        R`Take the root first: \(\sqrt[2]{9}=3\).`,
+        R`Then the power: \(3^{3}\).`,
+      ], R`\(27\)`),
+      P(R`Simplify \(\sqrt{960}\).`, [
+        R`Find the biggest perfect square factor: \(960=64\cdot15\).`,
+        R`\(\sqrt{64}\cdot\sqrt{15}\).`,
+      ], R`\(8\sqrt{15}\)`),
+      P(R`Rationalize the denominator: \(\dfrac{4}{\sqrt{7}}\).`, [
+        R`Multiply top and bottom by \(\sqrt{7}\): \(\dfrac{4\sqrt{7}}{7}\).`,
+        R`Reduce the fraction if possible.`,
+      ], R`\(\dfrac{4\sqrt{7}}{7}\)`),
+      P(R`Simplify \(\dfrac{x^2-9}{x^{2}-11x+24}\).`, [
+        R`Top: \((x-3)(x+3)\). Bottom: \((x-3)(x-8)\).`,
+        R`Cancel \((x-3)\).`,
+      ], R`\(\dfrac{x+3}{x-8}\)`),
+      P(R`Solve \(-2x-8\le-2\).`, [
+        R`Subtract \(-8\): \(-2x\le6\).`,
+        R`Divide by \(-2\) &mdash; <b>negative</b>, so flip the inequality.`,
+      ], R`\(x\ge-3\)`),
+      P(R`Solve \(|2x-4|=12\).`, [
+        R`Two cases: \(2x-4=12\) or \(2x-4=-12\).`,
+        R`\(2x=16\) or \(2x=-8\).`,
+      ], R`\(x=-4\text{ or }x=8\)`),
+    ],
+  },
+
+  // ------------------------------------------------------------------
+  {
+    id: "functions",
+    group: "Pre-Calc Review",
+    title: "Functions & Graphs",
+    icon: "f",
+    blurb: "Function notation, domain, composition, inverses, lines, and graph shifts.",
+    howto: [
+      {
+        title: "Evaluating functions",
+        steps: [
+          R`\(f(\text{something})\) means: replace <b>every</b> \(x\) with that something, in parentheses.`,
+          R`Example: if \(f(x)=x^2-3x\), then \(f(a+1)=(a+1)^2-3(a+1)\).`,
+          R`The <b>difference quotient</b> \(\dfrac{f(x+h)-f(x)}{h}\) is the doorway to derivatives. Practice it!`,
+        ],
+      },
+      {
+        title: "Finding the domain",
+        steps: [
+          R`Start with "all real numbers," then remove trouble spots.`,
+          R`<b>Denominators</b> can't be 0.`,
+          R`<b>Even roots</b> (like \(\sqrt{\ }\)) need the inside \(\ge0\).`,
+          R`<b>Logs</b> need the inside \(>0\).`,
+          R`Write the answer in interval notation.`,
+        ],
+      },
+      {
+        title: "Composition and inverses",
+        steps: [
+          R`\((f\circ g)(x)=f(g(x))\): plug \(g(x)\) into \(f\). Work inside-out.`,
+          R`To find \(f^{-1}\): write \(y=f(x)\), <b>swap \(x\) and \(y\)</b>, then solve for \(y\).`,
+          R`Check: \(f(f^{-1}(x))=x\). The graph of \(f^{-1}\) is \(f\) reflected over \(y=x\).`,
+        ],
+      },
+      {
+        title: "Lines",
+        steps: [
+          R`Slope: \(m=\dfrac{y_2-y_1}{x_2-x_1}\) ("rise over run").`,
+          R`Point-slope form: \(y-y_1=m(x-x_1)\). This is the form you'll use for tangent lines in Calc 1.`,
+          R`Parallel lines have the <b>same</b> slope. Perpendicular slopes are <b>negative reciprocals</b> (\(2\) and \(-\tfrac12\)).`,
+        ],
+      },
+      {
+        title: "Graph transformations of y = f(x)",
+        steps: [
+          R`\(f(x)+k\): up \(k\). \(f(x)-k\): down \(k\).`,
+          R`\(f(x-h)\): <b>right</b> \(h\). \(f(x+h)\): <b>left</b> \(h\). (Inside is backwards!)`,
+          R`\(af(x)\): vertical stretch by \(a\); if \(a<0\), also reflect over the \(x\)-axis.`,
+          R`\(f(-x)\): reflect over the \(y\)-axis.`,
+          R`Vertex form of a parabola: \(y=a(x-h)^2+k\) has vertex \((h,k)\).`,
+        ],
+      },
+    ],
+    formulas: [
+      { name: "Slope", tex: R`m=\frac{y_2-y_1}{x_2-x_1}` },
+      { name: "Point-slope / slope-intercept", tex: R`y-y_1=m(x-x_1),\qquad y=mx+b` },
+      { name: "Perpendicular slopes", tex: R`m_1m_2=-1` },
+      { name: "Composition", tex: R`(f\circ g)(x)=f(g(x))` },
+      { name: "Inverse", tex: R`f(f^{-1}(x))=x,\quad f^{-1}(f(x))=x` },
+      { name: "Difference quotient", tex: R`\frac{f(x+h)-f(x)}{h}` },
+      { name: "Vertex of a parabola", tex: R`y=ax^2+bx+c:\ x=-\frac{b}{2a}` },
+      { name: "Even / odd", tex: R`\text{even: }f(-x)=f(x),\qquad\text{odd: }f(-x)=-f(x)` },
+      { name: "Distance & midpoint", tex: R`d=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2},\quad M=\left(\tfrac{x_1+x_2}2,\tfrac{y_1+y_2}2\right)` },
+    ],
+    problems: [
+      P(R`If \(f(x)=x^2-3x\), find \(f(-2)\) and \(f(a+1)\).`, [
+        R`\(f(-2)=(-2)^2-3(-2)=4+6=10\).`,
+        R`\(f(a+1)=(a+1)^2-3(a+1)\).`,
+        R`Expand: \(a^2+2a+1-3a-3=a^2-a-2\).`,
+      ], R`\(f(-2)=10\); \(f(a+1)=a^2-a-2\)`),
+      P(R`Find and simplify the difference quotient \(\dfrac{f(x+h)-f(x)}{h}\) for \(f(x)=x^2+2x\).`, [
+        R`\(f(x+h)=(x+h)^2+2(x+h)=x^2+2xh+h^2+2x+2h\).`,
+        R`Subtract \(f(x)=x^2+2x\): \(2xh+h^2+2h\).`,
+        R`Divide by \(h\): \(2x+h+2\).`,
+        R`(In Calc 1 you'll let \(h\to0\) to get the derivative \(2x+2\).)`,
+      ], R`\(2x+h+2\)`),
+      P(R`Let \(f(x)=\sqrt x\) and \(g(x)=x^2+1\). Find \(f(g(x))\) and \(g(f(x))\).`, [
+        R`\(f(g(x))=f(x^2+1)=\sqrt{x^2+1}\).`,
+        R`\(g(f(x))=g(\sqrt x)=(\sqrt x)^2+1=x+1\) (for \(x\ge0\)).`,
+        R`Notice they're different: order matters in composition!`,
+      ], R`\(f(g(x))=\sqrt{x^2+1}\); \(g(f(x))=x+1\)`),
+      P(R`Find the domain of \(f(x)=\dfrac{\sqrt{4-x}}{x+1}\).`, [
+        R`Square root: \(4-x\ge0\Rightarrow x\le4\).`,
+        R`Denominator: \(x+1\neq0\Rightarrow x\neq-1\).`,
+        R`Combine: \(x\le4\), but skip \(-1\).`,
+      ], R`\((-\infty,-1)\cup(-1,4]\)`),
+      P(R`Find the inverse of \(f(x)=\dfrac{2x+1}{x-3}\).`, [
+        R`Write \(y=\dfrac{2x+1}{x-3}\), then swap: \(x=\dfrac{2y+1}{y-3}\).`,
+        R`Multiply: \(x(y-3)=2y+1\Rightarrow xy-3x=2y+1\).`,
+        R`Get \(y\) terms together: \(xy-2y=3x+1\Rightarrow y(x-2)=3x+1\).`,
+        R`\(y=\dfrac{3x+1}{x-2}\).`,
+      ], R`\(f^{-1}(x)=\dfrac{3x+1}{x-2}\)`),
+      P(R`Find the equation of the line through \((1,3)\) and \((4,-3)\).`, [
+        R`Slope: \(m=\dfrac{-3-3}{4-1}=\dfrac{-6}{3}=-2\).`,
+        R`Point-slope with \((1,3)\): \(y-3=-2(x-1)\).`,
+        R`Simplify: \(y=-2x+2+3=-2x+5\).`,
+      ], R`\(y=-2x+5\)`),
+      P(R`Find the line perpendicular to \(y=3x-1\) that passes through \((6,2)\).`, [
+        R`Original slope is 3, so the perpendicular slope is \(-\tfrac13\).`,
+        R`\(y-2=-\tfrac13(x-6)\).`,
+        R`\(y=-\tfrac13x+2+2=-\tfrac13x+4\).`,
+      ], R`\(y=-\tfrac13x+4\)`),
+      P(R`Describe how \(g(x)=-2(x+1)^2+3\) is obtained from \(y=x^2\).`, [
+        R`\((x+1)\) inside &rArr; shift <b>left</b> 1.`,
+        R`Multiply by 2 &rArr; vertical stretch by 2; the negative &rArr; reflect over the \(x\)-axis (opens down).`,
+        R`\(+3\) &rArr; shift up 3.`,
+        R`Vertex: \((-1,3)\).`,
+      ], R`Left 1, stretch by 2, flip upside down, up 3; vertex \((-1,3)\)`),
+      P(R`Is \(f(x)=x^3-x\) even, odd, or neither?`, [
+        R`Compute \(f(-x)=(-x)^3-(-x)=-x^3+x\).`,
+        R`That's \(-(x^3-x)=-f(x)\).`,
+      ], R`Odd`),
+      P(R`Find the vertex of \(y=2x^2-8x+5\). Is it a max or a min?`, [
+        R`\(x=-\dfrac{b}{2a}=-\dfrac{-8}{4}=2\).`,
+        R`\(y=2(4)-16+5=-3\).`,
+        R`\(a=2>0\), so it opens up: the vertex is a minimum.`,
+      ], R`Vertex \((2,-3)\), a minimum`),
+      // ---- generated practice (numbers vary; answers computed) ----
+      P(R`If \(f(x)=3x^{2}+4x+5\), find \(f(-1)\).`, [
+        R`Replace every \(x\) with \((-1)\): \(3(-1)^2+4(-1)+5\).`,
+      ], R`\(4\)`),
+      P(R`Find and simplify \(\dfrac{f(x+h)-f(x)}{h}\) for \(f(x)=2x^{2}+6x-1\).`, [
+        R`\(f(x+h)-f(x)=4xh+2h^2+6h\) (everything else cancels).`,
+        R`Divide by \(h\).`,
+      ], R`\(4x+2h+6\)`),
+      P(R`Let \(f(x)=-5x+9\) and \(g(x)=x^{2}-5\). Find \(f(g(x))\) and \(g(f(x))\).`, [
+        R`\(f(g(x))=-5(x^{2}-5)+9\).`,
+        R`\(g(f(x))=(-5x+9)^2-5\); expand.`,
+      ], R`\(f(g(x))=-5x^{2}+34\); \(g(f(x))=25x^{2}-90x+76\)`),
+      P(R`If \(f(x)=-x-3\) and \(g(x)=x^{2}-4\), find \(f(g(1))\).`, [
+        R`Inside first: \(g(1)=-3\).`,
+        R`Then \(f(-3)=-1(-3)-3\).`,
+      ], R`\(0\)`),
+      P(R`Find the inverse of \(f(x)=-x+7\).`, [
+        R`Swap: \(x=-y+7\).`,
+        R`Solve: \(-y=x-7\), so \(y=\dfrac{x-7}{-1}\).`,
+      ], R`\(f^{-1}(x)=-x+7\)`),
+      P(R`Find the inverse of \(f(x)=x^3+6\).`, [
+        R`Swap: \(x=y^3+6\). Solve: \(y^3=x-6\).`,
+      ], R`\(f^{-1}(x)=\sqrt[3]{x-6}\)`),
+      P(R`Find the domain of \(f(x)=\sqrt{5x-7}\).`, [
+        R`Need \(5x-7\ge0\) &rArr; \(5x\ge7\).`,
+      ], R`\([\dfrac{7}{5},\infty)\)`),
+      P(R`Find the equation of the line through \((-7,-8)\) and \((-3,-1)\).`, [
+        R`Slope: \(\dfrac{-1-(-8)}{-3-(-7)}=\dfrac{7}{4}\).`,
+        R`\(y-(-8)=\dfrac{7}{4}(x-(-7))\), then solve for \(y\).`,
+      ], R`\(y=\tfrac{7}{4}x+\tfrac{17}{4}\)`),
+      P(R`Find the line perpendicular to \(y=-3x+9\) through \((2,1)\).`, [
+        R`Perpendicular: negative reciprocal, so \(m=\dfrac{1}{3}\).`,
+        R`\(y-1=\dfrac{1}{3}(x-2)\).`,
+      ], R`\(y=\tfrac{1}{3}x+\tfrac{1}{3}\)`),
+      P(R`Find the vertex of \(y=-3x^{2}+18x-26\). Is it a max or a min?`, [
+        R`\(x=-\dfrac{b}{2a}=-\dfrac{18}{-6}=3\).`,
+        R`\(y(3)=1\). \(a<0\) so it opens down.`,
+      ], R`Vertex \((3,1)\), a maximum`),
+      P(R`Describe how \(y=(x+5)^2+3\) is obtained from \(y=x^2\), and give its vertex.`, [
+        R`Inside \((x+5)\) moves it horizontally (opposite of the sign).`,
+        R`The number in front stretches/shrinks it; a negative flips it. The number added at the end moves it vertically.`,
+      ], R`shift left 5, shift up 3; vertex \((-5,3)\)`),
+      P(R`Is \(f(x)=-7x^{4}+7x-5\) even, odd, or neither?`, [
+        R`Replace \(x\) with \(-x\): even powers stay the same, odd powers change sign.`,
+        R`It has a mix of even and odd powers, so neither rule works.`,
+      ], R`Neither`),
+      P(R`Find the distance and midpoint between \((-2,-8)\) and \((-5,-9)\).`, [
+        R`\(d=\sqrt{(-3)^2+(-1)^2}=\sqrt{10}\).`,
+        R`Midpoint: average the coordinates.`,
+      ], R`\(d=\sqrt{10}\); midpoint \(\left(-\tfrac{7}{2},-\tfrac{17}{2}\right)\)`),
+      P(R`For \(f(x)=\begin{cases}x^{2}+4 & x<-2\\ -2x-4 & x\ge-2\end{cases}\), find \(f(-4)\) and \(f(-1)\).`, [
+        R`\(-4<-2\): use the top piece. \(-1\ge-2\): use the bottom piece.`,
+      ], R`\(f(-4)=20\), \(f(-1)=-2\)`),
+      P(R`If \(f(x)=4x^{2}+8x-8\), find \(f(3)\).`, [
+        R`Replace every \(x\) with \((3)\): \(4(3)^2+8(3)-8\).`,
+      ], R`\(52\)`),
+      P(R`Find and simplify \(\dfrac{f(x+h)-f(x)}{h}\) for \(f(x)=-2x^{2}-9x+9\).`, [
+        R`\(f(x+h)-f(x)=-4xh-2h^2-9h\) (everything else cancels).`,
+        R`Divide by \(h\).`,
+      ], R`\(-4x-2h-9\)`),
+      P(R`Let \(f(x)=2x+2\) and \(g(x)=x^{2}+1\). Find \(f(g(x))\) and \(g(f(x))\).`, [
+        R`\(f(g(x))=2(x^{2}+1)+2\).`,
+        R`\(g(f(x))=(2x+2)^2+1\); expand.`,
+      ], R`\(f(g(x))=2x^{2}+4\); \(g(f(x))=4x^{2}+8x+5\)`),
+      P(R`If \(f(x)=-x+3\) and \(g(x)=x^{2}+6\), find \(f(g(-3))\).`, [
+        R`Inside first: \(g(-3)=15\).`,
+        R`Then \(f(15)=-1(15)+3\).`,
+      ], R`\(-12\)`),
+      P(R`Find the inverse of \(f(x)=3x-7\).`, [
+        R`Swap: \(x=3y-7\).`,
+        R`Solve: \(3y=x+7\), so \(y=\dfrac{x+7}{3}\).`,
+      ], R`\(f^{-1}(x)=\tfrac{1}{3}x+\tfrac{7}{3}\)`),
+      P(R`Find the inverse of \(f(x)=x^3-6\).`, [
+        R`Swap: \(x=y^3-6\). Solve: \(y^3=x+6\).`,
+      ], R`\(f^{-1}(x)=\sqrt[3]{x+6}\)`),
+      P(R`Find the domain of \(f(x)=\sqrt{3x-5}\).`, [
+        R`Need \(3x-5\ge0\) &rArr; \(3x\ge5\).`,
+      ], R`\([\dfrac{5}{3},\infty)\)`),
+      P(R`Find the equation of the line through \((-5,-5)\) and \((-6,-6)\).`, [
+        R`Slope: \(\dfrac{-6-(-5)}{-6-(-5)}=1\).`,
+        R`\(y-(-5)=1(x-(-5))\), then solve for \(y\).`,
+      ], R`\(y=x\)`),
+      P(R`Find the line perpendicular to \(y=-4x-8\) through \((-3,-9)\).`, [
+        R`Perpendicular: negative reciprocal, so \(m=\dfrac{1}{4}\).`,
+        R`\(y-(-9)=\dfrac{1}{4}(x-(-3))\).`,
+      ], R`\(y=\tfrac{1}{4}x-\tfrac{33}{4}\)`),
+      P(R`Find the vertex of \(y=-2x^{2}+12x-30\). Is it a max or a min?`, [
+        R`\(x=-\dfrac{b}{2a}=-\dfrac{12}{-4}=3\).`,
+        R`\(y(3)=-12\). \(a<0\) so it opens down.`,
+      ], R`Vertex \((3,-12)\), a maximum`),
+      P(R`Describe how \(y=-\tfrac12(x+4)^2-8\) is obtained from \(y=x^2\), and give its vertex.`, [
+        R`Inside \((x+4)\) moves it horizontally (opposite of the sign).`,
+        R`The number in front stretches/shrinks it; a negative flips it. The number added at the end moves it vertically.`,
+      ], R`shift left 4, vertical shrink by \(\tfrac12\), reflect over the \(x\)-axis, shift down 8; vertex \((-4,-8)\)`),
+      P(R`Is \(f(x)=2x^{7}+7x^{3}-6x\) even, odd, or neither?`, [
+        R`Replace \(x\) with \(-x\): even powers stay the same, odd powers change sign.`,
+        R`All powers are odd, so \(f(-x)=-f(x)\).`,
+      ], R`Odd`),
+      P(R`Find the distance and midpoint between \((-1,-3)\) and \((6,1)\).`, [
+        R`\(d=\sqrt{(7)^2+(4)^2}=\sqrt{65}\).`,
+        R`Midpoint: average the coordinates.`,
+      ], R`\(d=\sqrt{65}\); midpoint \(\left(\tfrac{5}{2},-1\right)\)`),
+      P(R`For \(f(x)=\begin{cases}x^{2}+3 & x<-1\\ -x-5 & x\ge-1\end{cases}\), find \(f(-5)\) and \(f(0)\).`, [
+        R`\(-5<-1\): use the top piece. \(0\ge-1\): use the bottom piece.`,
+      ], R`\(f(-5)=28\), \(f(0)=-5\)`),
+      P(R`If \(f(x)=-3x^{2}+9x+1\), find \(f(-3)\).`, [
+        R`Replace every \(x\) with \((-3)\): \(-3(-3)^2+9(-3)+1\).`,
+      ], R`\(-53\)`),
+      P(R`Find and simplify \(\dfrac{f(x+h)-f(x)}{h}\) for \(f(x)=-x^{2}-2x-1\).`, [
+        R`\(f(x+h)-f(x)=-2xh-h^2-2h\) (everything else cancels).`,
+        R`Divide by \(h\).`,
+      ], R`\(-2x-h-2\)`),
+      P(R`Let \(f(x)=-2x-7\) and \(g(x)=x^{2}+2\). Find \(f(g(x))\) and \(g(f(x))\).`, [
+        R`\(f(g(x))=-2(x^{2}+2)-7\).`,
+        R`\(g(f(x))=(-2x-7)^2+2\); expand.`,
+      ], R`\(f(g(x))=-2x^{2}-11\); \(g(f(x))=4x^{2}+28x+51\)`),
+      P(R`If \(f(x)=-3x-3\) and \(g(x)=x^{2}-3\), find \(f(g(-1))\).`, [
+        R`Inside first: \(g(-1)=-2\).`,
+        R`Then \(f(-2)=-3(-2)-3\).`,
+      ], R`\(3\)`),
+      P(R`Find the inverse of \(f(x)=-9x-8\).`, [
+        R`Swap: \(x=-9y-8\).`,
+        R`Solve: \(-9y=x+8\), so \(y=\dfrac{x+8}{-9}\).`,
+      ], R`\(f^{-1}(x)=-\tfrac{1}{9}x-\tfrac{8}{9}\)`),
+      P(R`Find the inverse of \(f(x)=x^3+11\).`, [
+        R`Swap: \(x=y^3+11\). Solve: \(y^3=x-11\).`,
+      ], R`\(f^{-1}(x)=\sqrt[3]{x-11}\)`),
+      P(R`Find the domain of \(f(x)=\sqrt{5x+12}\).`, [
+        R`Need \(5x+12\ge0\) &rArr; \(5x\ge-12\).`,
+      ], R`\([-\dfrac{12}{5},\infty)\)`),
+      P(R`Find the equation of the line through \((6,4)\) and \((3,-3)\).`, [
+        R`Slope: \(\dfrac{-3-4}{3-6}=\dfrac{7}{3}\).`,
+        R`\(y-4=\dfrac{7}{3}(x-6)\), then solve for \(y\).`,
+      ], R`\(y=\tfrac{7}{3}x-10\)`),
+      P(R`Find the line perpendicular to \(y=5x+7\) through \((1,-6)\).`, [
+        R`Perpendicular: negative reciprocal, so \(m=-\dfrac{1}{5}\).`,
+        R`\(y-(-6)=-\dfrac{1}{5}(x-1)\).`,
+      ], R`\(y=-\tfrac{1}{5}x-\tfrac{29}{5}\)`),
+      P(R`Find the vertex of \(y=-2x^{2}-20x-47\). Is it a max or a min?`, [
+        R`\(x=-\dfrac{b}{2a}=-\dfrac{-20}{-4}=-5\).`,
+        R`\(y(-5)=3\). \(a<0\) so it opens down.`,
+      ], R`Vertex \((-5,3)\), a maximum`),
+      P(R`Describe how \(y=3(x+5)^2+7\) is obtained from \(y=x^2\), and give its vertex.`, [
+        R`Inside \((x+5)\) moves it horizontally (opposite of the sign).`,
+        R`The number in front stretches/shrinks it; a negative flips it. The number added at the end moves it vertically.`,
+      ], R`shift left 5, vertical stretch by 3, shift up 7; vertex \((-5,7)\)`),
+      P(R`Is \(f(x)=-x^{6}-6x^{2}+4\) even, odd, or neither?`, [
+        R`Replace \(x\) with \(-x\): even powers stay the same, odd powers change sign.`,
+        R`All powers are even (a constant counts as \(x^0\)), so \(f(-x)=f(x)\).`,
+      ], R`Even`),
+      P(R`Find the distance and midpoint between \((2,-5)\) and \((-1,-3)\).`, [
+        R`\(d=\sqrt{(-3)^2+(2)^2}=\sqrt{13}\).`,
+        R`Midpoint: average the coordinates.`,
+      ], R`\(d=\sqrt{13}\); midpoint \(\left(\tfrac{1}{2},-4\right)\)`),
+      P(R`For \(f(x)=\begin{cases}x^{2}+4 & x<0\\ -4x+1 & x\ge0\end{cases}\), find \(f(-3)\) and \(f(0)\).`, [
+        R`\(-3<0\): use the top piece. \(0\ge0\): use the bottom piece.`,
+      ], R`\(f(-3)=13\), \(f(0)=1\)`),
+      P(R`If \(f(x)=-3x^{2}+x-6\), find \(f(2)\).`, [
+        R`Replace every \(x\) with \((2)\): \(-3(2)^2+(2)-6\).`,
+      ], R`\(-16\)`),
+      P(R`Find and simplify \(\dfrac{f(x+h)-f(x)}{h}\) for \(f(x)=-5x^{2}+2x-4\).`, [
+        R`\(f(x+h)-f(x)=-10xh-5h^2+2h\) (everything else cancels).`,
+        R`Divide by \(h\).`,
+      ], R`\(-10x-5h+2\)`),
+      P(R`Let \(f(x)=-x+9\) and \(g(x)=x^{2}-7\). Find \(f(g(x))\) and \(g(f(x))\).`, [
+        R`\(f(g(x))=-(x^{2}-7)+9\).`,
+        R`\(g(f(x))=(-x+9)^2-7\); expand.`,
+      ], R`\(f(g(x))=-x^{2}+16\); \(g(f(x))=x^{2}-18x+74\)`),
+      P(R`If \(f(x)=-4x+3\) and \(g(x)=x^{2}\), find \(f(g(4))\).`, [
+        R`Inside first: \(g(4)=16\).`,
+        R`Then \(f(16)=-4(16)+3\).`,
+      ], R`\(-61\)`),
+      P(R`Find the inverse of \(f(x)=-6x+12\).`, [
+        R`Swap: \(x=-6y+12\).`,
+        R`Solve: \(-6y=x-12\), so \(y=\dfrac{x-12}{-6}\).`,
+      ], R`\(f^{-1}(x)=-\tfrac{1}{6}x+2\)`),
+      P(R`Find the inverse of \(f(x)=\sqrt{x-9}\).`, [
+        R`Swap: \(x=\sqrt{y-9}\). Square: \(x^2=y-9\).`,
+        R`The original outputs are \(\ge0\), so the inverse needs \(x\ge0\).`,
+      ], R`\(f^{-1}(x)=x^2+9,\ x\ge0\)`),
+      P(R`Find the domain of \(f(x)=\sqrt{-2x+11}\).`, [
+        R`Need \(-2x+11\ge0\) &rArr; \(-2x\ge-11\) (dividing by a negative flips it).`,
+      ], R`\((-\infty,\dfrac{11}{2}]\)`),
+      P(R`Find the equation of the line through \((-8,-4)\) and \((6,3)\).`, [
+        R`Slope: \(\dfrac{3-(-4)}{6-(-8)}=\dfrac{1}{2}\).`,
+        R`\(y-(-4)=\dfrac{1}{2}(x-(-8))\), then solve for \(y\).`,
+      ], R`\(y=\tfrac{1}{2}x\)`),
+      P(R`Find the line parallel to \(y=-x-6\) through \((-4,-1)\).`, [
+        R`Parallel: same slope, so \(m=-1\).`,
+        R`\(y-(-1)=-1(x-(-4))\).`,
+      ], R`\(y=-x-5\)`),
+      P(R`Find the vertex of \(y=x^{2}+4x-8\). Is it a max or a min?`, [
+        R`\(x=-\dfrac{b}{2a}=-\dfrac{4}{2}=-2\).`,
+        R`\(y(-2)=-12\). \(a>0\) so it opens up.`,
+      ], R`Vertex \((-2,-12)\), a minimum`),
+      P(R`Describe how \(y=(x+6)^2-3\) is obtained from \(y=x^2\), and give its vertex.`, [
+        R`Inside \((x+6)\) moves it horizontally (opposite of the sign).`,
+        R`The number in front stretches/shrinks it; a negative flips it. The number added at the end moves it vertically.`,
+      ], R`shift left 6, shift down 3; vertex \((-6,-3)\)`),
+      P(R`Is \(f(x)=6x^{6}+4x^{2}-5\) even, odd, or neither?`, [
+        R`Replace \(x\) with \(-x\): even powers stay the same, odd powers change sign.`,
+        R`All powers are even (a constant counts as \(x^0\)), so \(f(-x)=f(x)\).`,
+      ], R`Even`),
+      P(R`Find the distance and midpoint between \((1,-5)\) and \((-3,0)\).`, [
+        R`\(d=\sqrt{(-4)^2+(5)^2}=\sqrt{41}\).`,
+        R`Midpoint: average the coordinates.`,
+      ], R`\(d=\sqrt{41}\); midpoint \(\left(-1,-\tfrac{5}{2}\right)\)`),
+      P(R`For \(f(x)=\begin{cases}x^{2}+4 & x<2\\ -5x+8 & x\ge2\end{cases}\), find \(f(-1)\) and \(f(3)\).`, [
+        R`\(-1<2\): use the top piece. \(3\ge2\): use the bottom piece.`,
+      ], R`\(f(-1)=5\), \(f(3)=-7\)`),
+      P(R`If \(f(x)=-5x^{2}-8x+9\), find \(f(5)\).`, [
+        R`Replace every \(x\) with \((5)\): \(-5(5)^2-8(5)+9\).`,
+      ], R`\(-156\)`),
+      P(R`Find and simplify \(\dfrac{f(x+h)-f(x)}{h}\) for \(f(x)=-4x^{2}+8x+4\).`, [
+        R`\(f(x+h)-f(x)=-8xh-4h^2+8h\) (everything else cancels).`,
+        R`Divide by \(h\).`,
+      ], R`\(-8x-4h+8\)`),
+      P(R`Let \(f(x)=-2x+8\) and \(g(x)=x^{2}\). Find \(f(g(x))\) and \(g(f(x))\).`, [
+        R`\(f(g(x))=-2(x^{2})+8\).`,
+        R`\(g(f(x))=(-2x+8)^2\); expand.`,
+      ], R`\(f(g(x))=-2x^{2}+8\); \(g(f(x))=4x^{2}-32x+64\)`),
+      P(R`If \(f(x)=4x-3\) and \(g(x)=x^{2}+4\), find \(f(g(3))\).`, [
+        R`Inside first: \(g(3)=13\).`,
+        R`Then \(f(13)=4(13)-3\).`,
+      ], R`\(49\)`),
+      P(R`Find the inverse of \(f(x)=-x-8\).`, [
+        R`Swap: \(x=-y-8\).`,
+        R`Solve: \(-y=x+8\), so \(y=\dfrac{x+8}{-1}\).`,
+      ], R`\(f^{-1}(x)=-x-8\)`),
+      P(R`Find the inverse of \(f(x)=\sqrt{x-1}\).`, [
+        R`Swap: \(x=\sqrt{y-1}\). Square: \(x^2=y-1\).`,
+        R`The original outputs are \(\ge0\), so the inverse needs \(x\ge0\).`,
+      ], R`\(f^{-1}(x)=x^2+1,\ x\ge0\)`),
+      P(R`Find the domain of \(f(x)=\sqrt{3x-1}\).`, [
+        R`Need \(3x-1\ge0\) &rArr; \(3x\ge1\).`,
+      ], R`\([\dfrac{1}{3},\infty)\)`),
+      P(R`Find the domain of \(f(x)=\dfrac{1}{x^{2}+7x+12}\).`, [
+        R`Denominator: \((x+4)(x+3)=0\) at \(x=-4,-3\). Remove those.`,
+      ], R`\((-\infty,-4)\cup(-4,-3)\cup(-3,\infty)\)`),
+      P(R`Find the equation of the line through \((-1,4)\) and \((1,-4)\).`, [
+        R`Slope: \(\dfrac{-4-4}{1-(-1)}=-4\).`,
+        R`\(y-4=-4(x-(-1))\), then solve for \(y\).`,
+      ], R`\(y=-4x\)`),
+      P(R`Find the line perpendicular to \(y=-5x+8\) through \((-3,-8)\).`, [
+        R`Perpendicular: negative reciprocal, so \(m=\dfrac{1}{5}\).`,
+        R`\(y-(-8)=\dfrac{1}{5}(x-(-3))\).`,
+      ], R`\(y=\tfrac{1}{5}x-\tfrac{37}{5}\)`),
+      P(R`Find the vertex of \(y=2x^{2}-12x+25\). Is it a max or a min?`, [
+        R`\(x=-\dfrac{b}{2a}=-\dfrac{-12}{4}=3\).`,
+        R`\(y(3)=7\). \(a>0\) so it opens up.`,
+      ], R`Vertex \((3,7)\), a minimum`),
+      P(R`Describe how \(y=2(x-1)^2+4\) is obtained from \(y=x^2\), and give its vertex.`, [
+        R`Inside \((x-1)\) moves it horizontally (opposite of the sign).`,
+        R`The number in front stretches/shrinks it; a negative flips it. The number added at the end moves it vertically.`,
+      ], R`shift right 1, vertical stretch by 2, shift up 4; vertex \((1,4)\)`),
+      P(R`Is \(f(x)=-x^{5}-6x^{3}-4x\) even, odd, or neither?`, [
+        R`Replace \(x\) with \(-x\): even powers stay the same, odd powers change sign.`,
+        R`All powers are odd, so \(f(-x)=-f(x)\).`,
+      ], R`Odd`),
+      P(R`Find the distance and midpoint between \((4,7)\) and \((-9,5)\).`, [
+        R`\(d=\sqrt{(-13)^2+(-2)^2}=\sqrt{173}\).`,
+        R`Midpoint: average the coordinates.`,
+      ], R`\(d=\sqrt{173}\); midpoint \(\left(-\tfrac{5}{2},6\right)\)`),
+      P(R`For \(f(x)=\begin{cases}x^{2}-6 & x<1\\ x-8 & x\ge1\end{cases}\), find \(f(0)\) and \(f(3)\).`, [
+        R`\(0<1\): use the top piece. \(3\ge1\): use the bottom piece.`,
+      ], R`\(f(0)=-6\), \(f(3)=-5\)`),
+      P(R`If \(f(x)=-5x^{2}-3\), find \(f(-5)\).`, [
+        R`Replace every \(x\) with \((-5)\): \(-5(-5)^2-3\).`,
+      ], R`\(-128\)`),
+      P(R`Find and simplify \(\dfrac{f(x+h)-f(x)}{h}\) for \(f(x)=5x^{2}+4x-5\).`, [
+        R`\(f(x+h)-f(x)=10xh+5h^2+4h\) (everything else cancels).`,
+        R`Divide by \(h\).`,
+      ], R`\(10x+5h+4\)`),
+      P(R`Let \(f(x)=2x+9\) and \(g(x)=x^{2}-7\). Find \(f(g(x))\) and \(g(f(x))\).`, [
+        R`\(f(g(x))=2(x^{2}-7)+9\).`,
+        R`\(g(f(x))=(2x+9)^2-7\); expand.`,
+      ], R`\(f(g(x))=2x^{2}-5\); \(g(f(x))=4x^{2}+36x+74\)`),
+      P(R`If \(f(x)=2x+5\) and \(g(x)=x^{2}-5\), find \(f(g(0))\).`, [
+        R`Inside first: \(g(0)=-5\).`,
+        R`Then \(f(-5)=2(-5)+5\).`,
+      ], R`\(-5\)`),
+      P(R`Find the inverse of \(f(x)=3x-12\).`, [
+        R`Swap: \(x=3y-12\).`,
+        R`Solve: \(3y=x+12\), so \(y=\dfrac{x+12}{3}\).`,
+      ], R`\(f^{-1}(x)=\tfrac{1}{3}x+4\)`),
+      P(R`Find the domain of \(f(x)=\sqrt{-6x+5}\).`, [
+        R`Need \(-6x+5\ge0\) &rArr; \(-6x\ge-5\) (dividing by a negative flips it).`,
+      ], R`\((-\infty,\dfrac{5}{6}]\)`),
+      P(R`Find the domain of \(f(x)=\dfrac{1}{x^{2}+3x+2}\).`, [
+        R`Denominator: \((x+2)(x+1)=0\) at \(x=-2,-1\). Remove those.`,
+      ], R`\((-\infty,-2)\cup(-2,-1)\cup(-1,\infty)\)`),
+      P(R`Find the equation of the line through \((-6,1)\) and \((3,-1)\).`, [
+        R`Slope: \(\dfrac{-1-1}{3-(-6)}=-\dfrac{2}{9}\).`,
+        R`\(y-1=-\dfrac{2}{9}(x-(-6))\), then solve for \(y\).`,
+      ], R`\(y=-\tfrac{2}{9}x-\tfrac{1}{3}\)`),
+      P(R`Find the line perpendicular to \(y=-4x-5\) through \((-3,7)\).`, [
+        R`Perpendicular: negative reciprocal, so \(m=\dfrac{1}{4}\).`,
+        R`\(y-7=\dfrac{1}{4}(x-(-3))\).`,
+      ], R`\(y=\tfrac{1}{4}x+\tfrac{31}{4}\)`),
+      P(R`Find the vertex of \(y=2x^{2}+8x+16\). Is it a max or a min?`, [
+        R`\(x=-\dfrac{b}{2a}=-\dfrac{8}{4}=-2\).`,
+        R`\(y(-2)=8\). \(a>0\) so it opens up.`,
+      ], R`Vertex \((-2,8)\), a minimum`),
+      P(R`Describe how \(y=2(x)^2-6\) is obtained from \(y=x^2\), and give its vertex.`, [
+        R`Inside \((x)\) moves it horizontally (opposite of the sign).`,
+        R`The number in front stretches/shrinks it; a negative flips it. The number added at the end moves it vertically.`,
+      ], R`vertical stretch by 2, shift down 6; vertex \((0,-6)\)`),
+      P(R`Is \(f(x)=7x^{4}+4x-3\) even, odd, or neither?`, [
+        R`Replace \(x\) with \(-x\): even powers stay the same, odd powers change sign.`,
+        R`It has a mix of even and odd powers, so neither rule works.`,
+      ], R`Neither`),
+      P(R`Find the distance and midpoint between \((-1,-6)\) and \((4,0)\).`, [
+        R`\(d=\sqrt{(5)^2+(6)^2}=\sqrt{61}\).`,
+        R`Midpoint: average the coordinates.`,
+      ], R`\(d=\sqrt{61}\); midpoint \(\left(\tfrac{3}{2},-3\right)\)`),
+      P(R`For \(f(x)=\begin{cases}x^{2}+6 & x<-2\\ -x-9 & x\ge-2\end{cases}\), find \(f(-6)\) and \(f(-2)\).`, [
+        R`\(-6<-2\): use the top piece. \(-2\ge-2\): use the bottom piece.`,
+      ], R`\(f(-6)=42\), \(f(-2)=-7\)`),
+      P(R`If \(f(x)=4x^{2}-4x+6\), find \(f(4)\).`, [
+        R`Replace every \(x\) with \((4)\): \(4(4)^2-4(4)+6\).`,
+      ], R`\(54\)`),
+      P(R`Find and simplify \(\dfrac{f(x+h)-f(x)}{h}\) for \(f(x)=-5x^{2}+7x-3\).`, [
+        R`\(f(x+h)-f(x)=-10xh-5h^2+7h\) (everything else cancels).`,
+        R`Divide by \(h\).`,
+      ], R`\(-10x-5h+7\)`),
+      P(R`Let \(f(x)=-x+8\) and \(g(x)=x^{2}\). Find \(f(g(x))\) and \(g(f(x))\).`, [
+        R`\(f(g(x))=-(x^{2})+8\).`,
+        R`\(g(f(x))=(-x+8)^2\); expand.`,
+      ], R`\(f(g(x))=-x^{2}+8\); \(g(f(x))=x^{2}-16x+64\)`),
+      P(R`If \(f(x)=-3x-1\) and \(g(x)=x^{2}\), find \(f(g(0))\).`, [
+        R`Inside first: \(g(0)=0\).`,
+        R`Then \(f(0)=-3(0)-1\).`,
+      ], R`\(-1\)`),
+      P(R`Find the inverse of \(f(x)=-2x\).`, [
+        R`Swap: \(x=-2y\).`,
+        R`Solve: \(-2y=x+0\), so \(y=\dfrac{x}{-2}\).`,
+      ], R`\(f^{-1}(x)=-\tfrac{1}{2}x\)`),
+    ],
+  },
+
+  // ------------------------------------------------------------------
+  {
+    id: "trig",
+    group: "Pre-Calc Review",
+    title: "Trigonometry",
+    icon: "θ",
+    blurb: "Radians, the unit circle, right triangles, identities, and trig equations.",
+    howto: [
+      {
+        title: "Degrees and radians",
+        steps: [
+          R`\(180^\circ=\pi\) radians. That's the only conversion you need.`,
+          R`Degrees &rarr; radians: multiply by \(\dfrac{\pi}{180}\). Radians &rarr; degrees: multiply by \(\dfrac{180}{\pi}\).`,
+          R`<b>Calculus uses radians</b> &mdash; always. Make sure your calculator is in radian mode!`,
+        ],
+      },
+      {
+        title: "Finding exact values on the unit circle",
+        steps: [
+          R`On the unit circle, a point at angle \(\theta\) is \((\cos\theta,\sin\theta)\). And \(\tan\theta=\dfrac{\sin\theta}{\cos\theta}\).`,
+          R`Find the <b>reference angle</b> (the acute angle to the \(x\)-axis): it's \(\tfrac\pi6\), \(\tfrac\pi4\), or \(\tfrac\pi3\) for the common angles.`,
+          R`Use the values for the reference angle: \(\sin\tfrac\pi6=\tfrac12\), \(\sin\tfrac\pi4=\tfrac{\sqrt2}2\), \(\sin\tfrac\pi3=\tfrac{\sqrt3}2\) (cosine goes in the reverse order).`,
+          R`Fix the sign by quadrant: "<b>A</b>ll <b>S</b>tudents <b>T</b>ake <b>C</b>alculus" &mdash; QI all positive, QII sin positive, QIII tan positive, QIV cos positive.`,
+        ],
+      },
+      {
+        title: "Right triangles: SOH-CAH-TOA",
+        steps: [
+          R`\(\sin=\dfrac{\text{opp}}{\text{hyp}}\), \(\cos=\dfrac{\text{adj}}{\text{hyp}}\), \(\tan=\dfrac{\text{opp}}{\text{adj}}\).`,
+          R`Missing side? Use the Pythagorean theorem \(a^2+b^2=c^2\).`,
+          R`If you know one trig value and the quadrant, draw the triangle, find the third side, then attach signs by quadrant.`,
+        ],
+      },
+      {
+        title: "Solving trig equations",
+        steps: [
+          R`Isolate the trig function (like \(\sin x=\tfrac12\)).`,
+          R`Find the reference angle from the value.`,
+          R`Find <b>all</b> angles in \([0,2\pi)\) with the right sign &mdash; there are usually two.`,
+          R`If it's squared (like \(\cos^2x=\tfrac12\)), remember \(\pm\) when you take the square root.`,
+        ],
+      },
+    ],
+    formulas: [
+      { name: "Conversion", tex: R`180^\circ=\pi\text{ rad}` },
+      { name: "Unit circle values", tex: R`\sin\tfrac\pi6=\tfrac12,\ \sin\tfrac\pi4=\tfrac{\sqrt2}2,\ \sin\tfrac\pi3=\tfrac{\sqrt3}2,\ \sin\tfrac\pi2=1` },
+      { name: "Reciprocal functions", tex: R`\csc x=\frac1{\sin x},\ \sec x=\frac1{\cos x},\ \cot x=\frac{\cos x}{\sin x}` },
+      { name: "Pythagorean identity", tex: R`\sin^2x+\cos^2x=1` },
+      { name: "Other Pythagorean identities", tex: R`1+\tan^2x=\sec^2x,\quad 1+\cot^2x=\csc^2x` },
+      { name: "Double angle", tex: R`\sin2x=2\sin x\cos x,\quad\cos2x=\cos^2x-\sin^2x` },
+      { name: "Even / odd", tex: R`\sin(-x)=-\sin x,\quad\cos(-x)=\cos x` },
+      { name: "Graphs", tex: R`y=A\sin(Bx)+D:\ \text{amplitude }|A|,\ \text{period }\tfrac{2\pi}{B},\ \text{midline }y=D` },
+    ],
+    problems: [
+      P(R`Convert \(150^\circ\) to radians.`, [
+        R`\(150\cdot\dfrac{\pi}{180}=\dfrac{150\pi}{180}\).`,
+        R`Simplify (divide by 30): \(\dfrac{5\pi}{6}\).`,
+      ], R`\(\dfrac{5\pi}{6}\)`),
+      P(R`Find the exact value of \(\sin\dfrac{7\pi}{6}\).`, [
+        R`\(\tfrac{7\pi}{6}\) is just past \(\pi\): Quadrant III. Reference angle \(\tfrac\pi6\).`,
+        R`\(\sin\tfrac\pi6=\tfrac12\).`,
+        R`Sine is negative in QIII.`,
+      ], R`\(-\dfrac12\)`),
+      P(R`Find the exact value of \(\cos\dfrac{3\pi}{4}\).`, [
+        R`QII, reference angle \(\tfrac\pi4\).`,
+        R`\(\cos\tfrac\pi4=\tfrac{\sqrt2}2\); cosine is negative in QII.`,
+      ], R`\(-\dfrac{\sqrt2}{2}\)`),
+      P(R`Find the exact value of \(\tan\dfrac{5\pi}{3}\).`, [
+        R`QIV, reference angle \(\tfrac\pi3\).`,
+        R`\(\tan\tfrac\pi3=\dfrac{\sqrt3/2}{1/2}=\sqrt3\).`,
+        R`Tangent is negative in QIV.`,
+      ], R`\(-\sqrt3\)`),
+      P(R`If \(\sin\theta=\tfrac35\) and \(\theta\) is in Quadrant II, find \(\cos\theta\) and \(\tan\theta\).`, [
+        R`Triangle: opposite 3, hypotenuse 5 &rArr; adjacent \(=\sqrt{25-9}=4\).`,
+        R`In QII cosine is negative: \(\cos\theta=-\tfrac45\).`,
+        R`\(\tan\theta=\dfrac{\sin\theta}{\cos\theta}=\dfrac{3/5}{-4/5}=-\tfrac34\).`,
+      ], R`\(\cos\theta=-\tfrac45\), \(\tan\theta=-\tfrac34\)`),
+      P(R`Solve \(2\sin x-1=0\) on \([0,2\pi)\).`, [
+        R`Isolate: \(\sin x=\tfrac12\).`,
+        R`Reference angle \(\tfrac\pi6\). Sine is positive in QI and QII.`,
+        R`QI: \(\tfrac\pi6\). QII: \(\pi-\tfrac\pi6=\tfrac{5\pi}6\).`,
+      ], R`\(x=\dfrac\pi6,\ \dfrac{5\pi}6\)`),
+      P(R`Solve \(2\cos^2x-1=0\) on \([0,2\pi)\).`, [
+        R`\(\cos^2x=\tfrac12\Rightarrow\cos x=\pm\dfrac{1}{\sqrt2}=\pm\dfrac{\sqrt2}2\).`,
+        R`Reference angle \(\tfrac\pi4\), and with \(\pm\) we need all four quadrants.`,
+      ], R`\(x=\dfrac\pi4,\ \dfrac{3\pi}4,\ \dfrac{5\pi}4,\ \dfrac{7\pi}4\)`),
+      P(R`Simplify \(\dfrac{1-\cos^2x}{\sin x}\).`, [
+        R`From \(\sin^2x+\cos^2x=1\): \(1-\cos^2x=\sin^2x\).`,
+        R`\(\dfrac{\sin^2x}{\sin x}=\sin x\).`,
+      ], R`\(\sin x\)`),
+      P(R`Simplify \(\sin x\cot x+\cos x\).`, [
+        R`\(\cot x=\dfrac{\cos x}{\sin x}\), so \(\sin x\cot x=\cos x\).`,
+        R`\(\cos x+\cos x=2\cos x\).`,
+      ], R`\(2\cos x\)`),
+      P(R`Find the amplitude, period, and midline of \(y=3\sin(2x)+1\).`, [
+        R`Amplitude \(=|A|=3\).`,
+        R`Period \(=\dfrac{2\pi}{B}=\dfrac{2\pi}{2}=\pi\).`,
+        R`Midline: \(y=1\).`,
+      ], R`Amplitude 3, period \(\pi\), midline \(y=1\)`),
+      // ---- generated practice (numbers vary; answers computed) ----
+      P(R`Convert \(330^\circ\) to radians.`, [
+        R`\(330\cdot\dfrac{\pi}{180}=\dfrac{330\pi}{180}\), then reduce.`,
+      ], R`\(\tfrac{11\pi}{6}\)`),
+      P(R`Convert \(\tfrac{3\pi}{4}\) to degrees.`, [
+        R`\(\tfrac{3\pi}{4}\cdot\dfrac{180^\circ}{\pi}\).`,
+      ], R`\(135^\circ\)`),
+      P(R`Find the exact value of \(\tan\left(\tfrac{7\pi}{6}\right)\).`, [
+        R`\(\tfrac{7\pi}{6}\) is in Quadrant III; reference angle \(\tfrac{\pi}{6}\).`,
+        R`Use the reference-angle value, then the sign for that quadrant (All Students Take Calculus).`,
+      ], R`\(\tfrac{\sqrt3}{3}\)`),
+      P(R`In a right triangle, angle \(\theta\) has opposite side 120 and hypotenuse 123. Find \(\sin\theta\), \(\cos\theta\), and \(\tan\theta\).`, [
+        R`Adjacent: \(\sqrt{123^2-120^2}=27\).`,
+        R`SOH-CAH-TOA, then reduce.`,
+      ], R`\(\sin\theta=\dfrac{40}{41},\ \cos\theta=\dfrac{9}{41},\ \tan\theta=\dfrac{40}{9}\)`),
+      P(R`If \(\sin\theta=\dfrac{4}{5}\) and \(\theta\) is in Quadrant I, find the other two of sin, cos, tan.`, [
+        R`Triangle sides 4, 3, 5 (Pythagorean theorem).`,
+        R`Quadrant I: sin is +, cos is +, tan is +.`,
+      ], R`\(\cos\theta=\dfrac{3}{5},\ \tan\theta=\dfrac{4}{3}\)`),
+      P(R`Solve \(\sqrt2\cos x+1=0\) on \([0,2\pi)\).`, [
+        R`Isolate: \(\cos x=-\tfrac{\sqrt2}{2}\).`,
+        R`Find the reference angle, then every quadrant where \(\cos\) has that sign.`,
+      ], R`\(x=\tfrac{3\pi}{4},\ \tfrac{5\pi}{4}\)`),
+      P(R`Find the amplitude, period, and midline of \(y=3\cos(x)-2\).`, [
+        R`Amplitude \(=|3|\). Period \(=\dfrac{2\pi}{1}\). Midline \(y=-2\).`,
+      ], R`Amplitude \(3\), period \(2\pi\), midline \(y=-2\)`),
+      P(R`Find the angle in \([0^\circ,360^\circ)\) coterminal with \(-16^\circ\), and its reference angle.`, [
+        R`Add or subtract \(360^\circ\) until it lands in range: \(344^\circ\).`,
+        R`Reference angle: distance to the nearest part of the \(x\)-axis.`,
+      ], R`\(344^\circ\); reference angle \(16^\circ\)`),
+      P(R`Simplify \(\cos x\tan x\).`, [
+        R`\(\tan x=\tfrac{\sin x}{\cos x}\); the cosines cancel.`,
+      ], R`\(\sin x\)`),
+      P(R`A circle has radius 7 cm. Find the arc length and sector area for a central angle of \(\tfrac{\pi}{3}\).`, [
+        R`Arc length \(s=r\theta\) (θ in radians!).`,
+        R`Sector area \(A=\tfrac12r^2\theta\).`,
+      ], R`\(s=\tfrac{7\pi}{3}\) cm, \(A=\tfrac{49\pi}{6}\) cm²`),
+      P(R`Convert \(210^\circ\) to radians.`, [
+        R`\(210\cdot\dfrac{\pi}{180}=\dfrac{210\pi}{180}\), then reduce.`,
+      ], R`\(\tfrac{7\pi}{6}\)`),
+      P(R`Convert \(\tfrac{\pi}{2}\) to degrees.`, [
+        R`\(\tfrac{\pi}{2}\cdot\dfrac{180^\circ}{\pi}\).`,
+      ], R`\(90^\circ\)`),
+      P(R`Find the exact value of \(\cos\left(\tfrac{2\pi}{3}\right)\).`, [
+        R`\(\tfrac{2\pi}{3}\) is in Quadrant II; reference angle \(\tfrac{\pi}{3}\).`,
+        R`Use the reference-angle value, then the sign for that quadrant (All Students Take Calculus).`,
+      ], R`\(-\tfrac12\)`),
+      P(R`In a right triangle, angle \(\theta\) has opposite side 8 and hypotenuse 17. Find \(\sin\theta\), \(\cos\theta\), and \(\tan\theta\).`, [
+        R`Adjacent: \(\sqrt{17^2-8^2}=15\).`,
+        R`SOH-CAH-TOA, then reduce.`,
+      ], R`\(\sin\theta=\dfrac{8}{17},\ \cos\theta=\dfrac{15}{17},\ \tan\theta=\dfrac{8}{15}\)`),
+      P(R`If \(\sin\theta=\dfrac{12}{13}\) and \(\theta\) is in Quadrant II, find the other two of sin, cos, tan.`, [
+        R`Triangle sides 12, 5, 13 (Pythagorean theorem).`,
+        R`Quadrant II: sin is +, cos is −, tan is −.`,
+      ], R`\(\cos\theta=-\dfrac{5}{13},\ \tan\theta=-\dfrac{12}{5}\)`),
+      P(R`Solve \(2\sin x-1=0\) on \([0,2\pi)\).`, [
+        R`Isolate: \(\sin x=\tfrac12\).`,
+        R`Find the reference angle, then every quadrant where \(\sin\) has that sign.`,
+      ], R`\(x=\tfrac{\pi}{6},\ \tfrac{5\pi}{6}\)`),
+      P(R`Find the amplitude, period, and midline of \(y=5\cos(4x)-1\).`, [
+        R`Amplitude \(=|5|\). Period \(=\dfrac{2\pi}{4}\). Midline \(y=-1\).`,
+      ], R`Amplitude \(5\), period \(\tfrac{\pi}{2}\), midline \(y=-1\)`),
+      P(R`Find the angle in \([0^\circ,360^\circ)\) coterminal with \(-18^\circ\), and its reference angle.`, [
+        R`Add or subtract \(360^\circ\) until it lands in range: \(342^\circ\).`,
+        R`Reference angle: distance to the nearest part of the \(x\)-axis.`,
+      ], R`\(342^\circ\); reference angle \(18^\circ\)`),
+      P(R`Simplify \(\dfrac{\sec^2x-1}{\tan x}\).`, [
+        R`\(\sec^2x-1=\tan^2x\).`,
+      ], R`\(\tan x\)`),
+      P(R`A circle has radius 8 cm. Find the arc length and sector area for a central angle of \(\tfrac{4\pi}{3}\).`, [
+        R`Arc length \(s=r\theta\) (θ in radians!).`,
+        R`Sector area \(A=\tfrac12r^2\theta\).`,
+      ], R`\(s=\tfrac{32\pi}{3}\) cm, \(A=\tfrac{128\pi}{3}\) cm²`),
+      P(R`Convert \(300^\circ\) to radians.`, [
+        R`\(300\cdot\dfrac{\pi}{180}=\dfrac{300\pi}{180}\), then reduce.`,
+      ], R`\(\tfrac{5\pi}{3}\)`),
+      P(R`Convert \(\tfrac{5\pi}{6}\) to degrees.`, [
+        R`\(\tfrac{5\pi}{6}\cdot\dfrac{180^\circ}{\pi}\).`,
+      ], R`\(150^\circ\)`),
+      P(R`Find the exact value of \(\sin\left(\tfrac{7\pi}{6}\right)\).`, [
+        R`\(\tfrac{7\pi}{6}\) is in Quadrant III; reference angle \(\tfrac{\pi}{6}\).`,
+        R`Use the reference-angle value, then the sign for that quadrant (All Students Take Calculus).`,
+      ], R`\(-\tfrac12\)`),
+      P(R`In a right triangle, angle \(\theta\) has opposite side 24 and hypotenuse 51. Find \(\sin\theta\), \(\cos\theta\), and \(\tan\theta\).`, [
+        R`Adjacent: \(\sqrt{51^2-24^2}=45\).`,
+        R`SOH-CAH-TOA, then reduce.`,
+      ], R`\(\sin\theta=\dfrac{8}{17},\ \cos\theta=\dfrac{15}{17},\ \tan\theta=\dfrac{8}{15}\)`),
+      P(R`If \(\cos\theta=\dfrac{15}{17}\) and \(\theta\) is in Quadrant I, find the other two of sin, cos, tan.`, [
+        R`Triangle sides 8, 15, 17 (Pythagorean theorem).`,
+        R`Quadrant I: sin is +, cos is +, tan is +.`,
+      ], R`\(\sin\theta=\dfrac{8}{17},\ \tan\theta=\dfrac{8}{15}\)`),
+      P(R`Solve \(\tan x+\sqrt3=0\) on \([0,2\pi)\).`, [
+        R`Isolate: \(\tan x=-\sqrt3\).`,
+        R`Find the reference angle, then every quadrant where \(\tan\) has that sign.`,
+      ], R`\(x=\tfrac{2\pi}{3},\ \tfrac{5\pi}{3}\)`),
+      P(R`Find the amplitude, period, and midline of \(y=5\cos(6x)+2\).`, [
+        R`Amplitude \(=|5|\). Period \(=\dfrac{2\pi}{6}\). Midline \(y=2\).`,
+      ], R`Amplitude \(5\), period \(\tfrac{\pi}{3}\), midline \(y=2\)`),
+      P(R`Find the angle in \([0^\circ,360^\circ)\) coterminal with \(-320^\circ\), and its reference angle.`, [
+        R`Add or subtract \(360^\circ\) until it lands in range: \(40^\circ\).`,
+        R`Reference angle: distance to the nearest part of the \(x\)-axis.`,
+      ], R`\(40^\circ\); reference angle \(40^\circ\)`),
+      P(R`Simplify \(\dfrac{\sin^2x}{1-\cos^2x}\).`, [
+        R`\(1-\cos^2x=\sin^2x\).`,
+      ], R`\(1\)`),
+      P(R`A circle has radius 4 cm. Find the arc length and sector area for a central angle of \(\tfrac{5\pi}{3}\).`, [
+        R`Arc length \(s=r\theta\) (θ in radians!).`,
+        R`Sector area \(A=\tfrac12r^2\theta\).`,
+      ], R`\(s=\tfrac{20\pi}{3}\) cm, \(A=\tfrac{40\pi}{3}\) cm²`),
+      P(R`Convert \(90^\circ\) to radians.`, [
+        R`\(90\cdot\dfrac{\pi}{180}=\dfrac{90\pi}{180}\), then reduce.`,
+      ], R`\(\tfrac{\pi}{2}\)`),
+      P(R`Convert \(\tfrac{11\pi}{6}\) to degrees.`, [
+        R`\(\tfrac{11\pi}{6}\cdot\dfrac{180^\circ}{\pi}\).`,
+      ], R`\(330^\circ\)`),
+      P(R`Find the exact value of \(\sin\left(\tfrac{3\pi}{2}\right)\).`, [
+        R`\(\tfrac{3\pi}{2}\) is on an axis: the point on the unit circle is \((0,-1)\).`,
+        R`\(\cos\) is the \(x\)-coordinate, \(\sin\) the \(y\)-coordinate, \(\tan=\tfrac yx\).`,
+      ], R`\(-1\)`),
+      P(R`In a right triangle, angle \(\theta\) has opposite side 9 and hypotenuse 15. Find \(\sin\theta\), \(\cos\theta\), and \(\tan\theta\).`, [
+        R`Adjacent: \(\sqrt{15^2-9^2}=12\).`,
+        R`SOH-CAH-TOA, then reduce.`,
+      ], R`\(\sin\theta=\dfrac{3}{5},\ \cos\theta=\dfrac{4}{5},\ \tan\theta=\dfrac{3}{4}\)`),
+      P(R`If \(\cos\theta=\dfrac{7}{25}\) and \(\theta\) is in Quadrant IV, find the other two of sin, cos, tan.`, [
+        R`Triangle sides 24, 7, 25 (Pythagorean theorem).`,
+        R`Quadrant IV: sin is −, cos is +, tan is −.`,
+      ], R`\(\sin\theta=-\dfrac{24}{25},\ \tan\theta=-\dfrac{24}{7}\)`),
+      P(R`Solve \(2\cos x-1=0\) on \([0,2\pi)\).`, [
+        R`Isolate: \(\cos x=\tfrac12\).`,
+        R`Find the reference angle, then every quadrant where \(\cos\) has that sign.`,
+      ], R`\(x=\tfrac{\pi}{3},\ \tfrac{5\pi}{3}\)`),
+      P(R`Find the amplitude, period, and midline of \(y=3\sin(5x)-3\).`, [
+        R`Amplitude \(=|3|\). Period \(=\dfrac{2\pi}{5}\). Midline \(y=-3\).`,
+      ], R`Amplitude \(3\), period \(\tfrac{2\pi}{5}\), midline \(y=-3\)`),
+      P(R`Find the angle in \([0^\circ,360^\circ)\) coterminal with \(-504^\circ\), and its reference angle.`, [
+        R`Add or subtract \(360^\circ\) until it lands in range: \(216^\circ\).`,
+        R`Reference angle: distance to the nearest part of the \(x\)-axis.`,
+      ], R`\(216^\circ\); reference angle \(36^\circ\)`),
+      P(R`Simplify \(\cos^2x-\sin^2x\).`, [
+        R`Double-angle formula.`,
+      ], R`\(\cos 2x\)`),
+      P(R`Convert \(180^\circ\) to radians.`, [
+        R`\(180\cdot\dfrac{\pi}{180}=\dfrac{180\pi}{180}\), then reduce.`,
+      ], R`\(\pi\)`),
+      P(R`Convert \(\pi\) to degrees.`, [
+        R`\(\pi\cdot\dfrac{180^\circ}{\pi}\).`,
+      ], R`\(180^\circ\)`),
+      P(R`Find the exact value of \(\tan\left(\tfrac{7\pi}{4}\right)\).`, [
+        R`\(\tfrac{7\pi}{4}\) is in Quadrant IV; reference angle \(\tfrac{\pi}{4}\).`,
+        R`Use the reference-angle value, then the sign for that quadrant (All Students Take Calculus).`,
+      ], R`\(-1\)`),
+      P(R`In a right triangle, angle \(\theta\) has opposite side 72 and adjacent side 21. Find \(\sin\theta\), \(\cos\theta\), and \(\tan\theta\).`, [
+        R`Hypotenuse: \(\sqrt{72^2+21^2}=75\).`,
+        R`SOH-CAH-TOA, then reduce.`,
+      ], R`\(\sin\theta=\dfrac{24}{25},\ \cos\theta=\dfrac{7}{25},\ \tan\theta=\dfrac{24}{7}\)`),
+      P(R`If \(\cos\theta=\dfrac{8}{17}\) and \(\theta\) is in Quadrant IV, find the other two of sin, cos, tan.`, [
+        R`Triangle sides 15, 8, 17 (Pythagorean theorem).`,
+        R`Quadrant IV: sin is −, cos is +, tan is −.`,
+      ], R`\(\sin\theta=-\dfrac{15}{17},\ \tan\theta=-\dfrac{15}{8}\)`),
+      P(R`Solve \(\sqrt3\tan x-1=0\) on \([0,2\pi)\).`, [
+        R`Isolate: \(\tan x=\tfrac{\sqrt3}{3}\).`,
+        R`Find the reference angle, then every quadrant where \(\tan\) has that sign.`,
+      ], R`\(x=\tfrac{\pi}{6},\ \tfrac{7\pi}{6}\)`),
+      P(R`Find the amplitude, period, and midline of \(y=2\cos(x)+1\).`, [
+        R`Amplitude \(=|2|\). Period \(=\dfrac{2\pi}{1}\). Midline \(y=1\).`,
+      ], R`Amplitude \(2\), period \(2\pi\), midline \(y=1\)`),
+      P(R`Find the angle in \([0^\circ,360^\circ)\) coterminal with \(1039^\circ\), and its reference angle.`, [
+        R`Add or subtract \(360^\circ\) until it lands in range: \(319^\circ\).`,
+        R`Reference angle: distance to the nearest part of the \(x\)-axis.`,
+      ], R`\(319^\circ\); reference angle \(41^\circ\)`),
+      P(R`Simplify \(\dfrac{\cos x}{1-\sin x}-\dfrac{\cos x}{1+\sin x}\).`, [
+        R`Common denominator \(\cos^2x\); top \(=\cos x(1+\sin x)-\cos x(1-\sin x)=2\sin x\cos x\).`,
+      ], R`\(2\tan x\)`),
+      P(R`A circle has radius 8 cm. Find the arc length and sector area for a central angle of \(\tfrac{\pi}{6}\).`, [
+        R`Arc length \(s=r\theta\) (θ in radians!).`,
+        R`Sector area \(A=\tfrac12r^2\theta\).`,
+      ], R`\(s=\tfrac{4\pi}{3}\) cm, \(A=\tfrac{16\pi}{3}\) cm²`),
+      P(R`Convert \(315^\circ\) to radians.`, [
+        R`\(315\cdot\dfrac{\pi}{180}=\dfrac{315\pi}{180}\), then reduce.`,
+      ], R`\(\tfrac{7\pi}{4}\)`),
+      P(R`In a right triangle, angle \(\theta\) has opposite side 80 and adjacent side 18. Find \(\sin\theta\), \(\cos\theta\), and \(\tan\theta\).`, [
+        R`Hypotenuse: \(\sqrt{80^2+18^2}=82\).`,
+        R`SOH-CAH-TOA, then reduce.`,
+      ], R`\(\sin\theta=\dfrac{40}{41},\ \cos\theta=\dfrac{9}{41},\ \tan\theta=\dfrac{40}{9}\)`),
+      P(R`If \(\sin\theta=-\dfrac{5}{13}\) and \(\theta\) is in Quadrant IV, find the other two of sin, cos, tan.`, [
+        R`Triangle sides 5, 12, 13 (Pythagorean theorem).`,
+        R`Quadrant IV: sin is −, cos is +, tan is −.`,
+      ], R`\(\cos\theta=\dfrac{12}{13},\ \tan\theta=-\dfrac{5}{12}\)`),
+      P(R`Solve \(2\cos x+1=0\) on \([0,2\pi)\).`, [
+        R`Isolate: \(\cos x=-\tfrac12\).`,
+        R`Find the reference angle, then every quadrant where \(\cos\) has that sign.`,
+      ], R`\(x=\tfrac{2\pi}{3},\ \tfrac{4\pi}{3}\)`),
+      P(R`Find the amplitude, period, and midline of \(y=6\cos(2x)+4\).`, [
+        R`Amplitude \(=|6|\). Period \(=\dfrac{2\pi}{2}\). Midline \(y=4\).`,
+      ], R`Amplitude \(6\), period \(\pi\), midline \(y=4\)`),
+      P(R`Find the angle in \([0^\circ,360^\circ)\) coterminal with \(-553^\circ\), and its reference angle.`, [
+        R`Add or subtract \(360^\circ\) until it lands in range: \(167^\circ\).`,
+        R`Reference angle: distance to the nearest part of the \(x\)-axis.`,
+      ], R`\(167^\circ\); reference angle \(13^\circ\)`),
+      P(R`Simplify \(\sec x-\cos x\).`, [
+        R`\(\dfrac{1}{\cos x}-\cos x=\dfrac{1-\cos^2x}{\cos x}=\dfrac{\sin^2x}{\cos x}\).`,
+      ], R`\(\sin x\tan x\)`),
+      P(R`A circle has radius 9 cm. Find the arc length and sector area for a central angle of \(\tfrac{\pi}{6}\).`, [
+        R`Arc length \(s=r\theta\) (θ in radians!).`,
+        R`Sector area \(A=\tfrac12r^2\theta\).`,
+      ], R`\(s=\tfrac{3\pi}{2}\) cm, \(A=\tfrac{27\pi}{4}\) cm²`),
+      P(R`Convert \(\tfrac{\pi}{6}\) to degrees.`, [
+        R`\(\tfrac{\pi}{6}\cdot\dfrac{180^\circ}{\pi}\).`,
+      ], R`\(30^\circ\)`),
+      P(R`Find the exact value of \(\sin\left(\tfrac{2\pi}{3}\right)\).`, [
+        R`\(\tfrac{2\pi}{3}\) is in Quadrant II; reference angle \(\tfrac{\pi}{3}\).`,
+        R`Use the reference-angle value, then the sign for that quadrant (All Students Take Calculus).`,
+      ], R`\(\tfrac{\sqrt3}{2}\)`),
+      P(R`In a right triangle, angle \(\theta\) has opposite side 27 and adjacent side 120. Find \(\sin\theta\), \(\cos\theta\), and \(\tan\theta\).`, [
+        R`Hypotenuse: \(\sqrt{27^2+120^2}=123\).`,
+        R`SOH-CAH-TOA, then reduce.`,
+      ], R`\(\sin\theta=\dfrac{9}{41},\ \cos\theta=\dfrac{40}{41},\ \tan\theta=\dfrac{9}{40}\)`),
+      P(R`If \(\cos\theta=-\dfrac{4}{5}\) and \(\theta\) is in Quadrant II, find the other two of sin, cos, tan.`, [
+        R`Triangle sides 3, 4, 5 (Pythagorean theorem).`,
+        R`Quadrant II: sin is +, cos is −, tan is −.`,
+      ], R`\(\sin\theta=\dfrac{3}{5},\ \tan\theta=-\dfrac{3}{4}\)`),
+      P(R`Find the amplitude, period, and midline of \(y=-6\sin(3x)+2\).`, [
+        R`Amplitude \(=|-6|\). Period \(=\dfrac{2\pi}{3}\). Midline \(y=2\).`,
+      ], R`Amplitude \(6\), period \(\tfrac{2\pi}{3}\), midline \(y=2\)`),
+      P(R`A circle has radius 10 cm. Find the arc length and sector area for a central angle of \(\tfrac{5\pi}{6}\).`, [
+        R`Arc length \(s=r\theta\) (θ in radians!).`,
+        R`Sector area \(A=\tfrac12r^2\theta\).`,
+      ], R`\(s=\tfrac{25\pi}{3}\) cm, \(A=\tfrac{125\pi}{3}\) cm²`),
+      P(R`Find the exact value of \(\cos\left(\tfrac{7\pi}{4}\right)\).`, [
+        R`\(\tfrac{7\pi}{4}\) is in Quadrant IV; reference angle \(\tfrac{\pi}{4}\).`,
+        R`Use the reference-angle value, then the sign for that quadrant (All Students Take Calculus).`,
+      ], R`\(\tfrac{\sqrt2}{2}\)`),
+      P(R`In a right triangle, angle \(\theta\) has opposite side 10 and hypotenuse 26. Find \(\sin\theta\), \(\cos\theta\), and \(\tan\theta\).`, [
+        R`Adjacent: \(\sqrt{26^2-10^2}=24\).`,
+        R`SOH-CAH-TOA, then reduce.`,
+      ], R`\(\sin\theta=\dfrac{5}{13},\ \cos\theta=\dfrac{12}{13},\ \tan\theta=\dfrac{5}{12}\)`),
+      P(R`If \(\sin\theta=-\dfrac{4}{5}\) and \(\theta\) is in Quadrant III, find the other two of sin, cos, tan.`, [
+        R`Triangle sides 4, 3, 5 (Pythagorean theorem).`,
+        R`Quadrant III: sin is −, cos is −, tan is +.`,
+      ], R`\(\cos\theta=-\dfrac{3}{5},\ \tan\theta=\dfrac{4}{3}\)`),
+      P(R`Solve \(\sqrt2\sin x-1=0\) on \([0,2\pi)\).`, [
+        R`Isolate: \(\sin x=\tfrac{\sqrt2}{2}\).`,
+        R`Find the reference angle, then every quadrant where \(\sin\) has that sign.`,
+      ], R`\(x=\tfrac{\pi}{4},\ \tfrac{3\pi}{4}\)`),
+      P(R`Find the amplitude, period, and midline of \(y=-2\sin(3x)-3\).`, [
+        R`Amplitude \(=|-2|\). Period \(=\dfrac{2\pi}{3}\). Midline \(y=-3\).`,
+      ], R`Amplitude \(2\), period \(\tfrac{2\pi}{3}\), midline \(y=-3\)`),
+      P(R`Find the angle in \([0^\circ,360^\circ)\) coterminal with \(-537^\circ\), and its reference angle.`, [
+        R`Add or subtract \(360^\circ\) until it lands in range: \(183^\circ\).`,
+        R`Reference angle: distance to the nearest part of the \(x\)-axis.`,
+      ], R`\(183^\circ\); reference angle \(3^\circ\)`),
+      P(R`Simplify \((1-\cos^2x)\csc x\).`, [
+        R`\(1-\cos^2x=\sin^2x\), and \(\csc x=\tfrac1{\sin x}\).`,
+      ], R`\(\sin x\)`),
+      P(R`A circle has radius 9 cm. Find the arc length and sector area for a central angle of \(\tfrac{4\pi}{3}\).`, [
+        R`Arc length \(s=r\theta\) (θ in radians!).`,
+        R`Sector area \(A=\tfrac12r^2\theta\).`,
+      ], R`\(s=12\pi\) cm, \(A=54\pi\) cm²`),
+      P(R`Convert \(\tfrac{\pi}{3}\) to degrees.`, [
+        R`\(\tfrac{\pi}{3}\cdot\dfrac{180^\circ}{\pi}\).`,
+      ], R`\(60^\circ\)`),
+      P(R`In a right triangle, angle \(\theta\) has opposite side 10 and adjacent side 24. Find \(\sin\theta\), \(\cos\theta\), and \(\tan\theta\).`, [
+        R`Hypotenuse: \(\sqrt{10^2+24^2}=26\).`,
+        R`SOH-CAH-TOA, then reduce.`,
+      ], R`\(\sin\theta=\dfrac{5}{13},\ \cos\theta=\dfrac{12}{13},\ \tan\theta=\dfrac{5}{12}\)`),
+      P(R`If \(\sin\theta=-\dfrac{4}{5}\) and \(\theta\) is in Quadrant IV, find the other two of sin, cos, tan.`, [
+        R`Triangle sides 4, 3, 5 (Pythagorean theorem).`,
+        R`Quadrant IV: sin is −, cos is +, tan is −.`,
+      ], R`\(\cos\theta=\dfrac{3}{5},\ \tan\theta=-\dfrac{4}{3}\)`),
+      P(R`Solve \(2\sin x-\sqrt3=0\) on \([0,2\pi)\).`, [
+        R`Isolate: \(\sin x=\tfrac{\sqrt3}{2}\).`,
+        R`Find the reference angle, then every quadrant where \(\sin\) has that sign.`,
+      ], R`\(x=\tfrac{\pi}{3},\ \tfrac{2\pi}{3}\)`),
+      P(R`Find the amplitude, period, and midline of \(y=6\sin(x)\).`, [
+        R`Amplitude \(=|6|\). Period \(=\dfrac{2\pi}{1}\). Midline \(y=0\).`,
+      ], R`Amplitude \(6\), period \(2\pi\), midline \(y=0\)`),
+      P(R`Find the angle in \([0^\circ,360^\circ)\) coterminal with \(891^\circ\), and its reference angle.`, [
+        R`Add or subtract \(360^\circ\) until it lands in range: \(171^\circ\).`,
+        R`Reference angle: distance to the nearest part of the \(x\)-axis.`,
+      ], R`\(171^\circ\); reference angle \(9^\circ\)`),
+      P(R`A circle has radius 8 cm. Find the arc length and sector area for a central angle of \(\tfrac{5\pi}{3}\).`, [
+        R`Arc length \(s=r\theta\) (θ in radians!).`,
+        R`Sector area \(A=\tfrac12r^2\theta\).`,
+      ], R`\(s=\tfrac{40\pi}{3}\) cm, \(A=\tfrac{160\pi}{3}\) cm²`),
+      P(R`Convert \(60^\circ\) to radians.`, [
+        R`\(60\cdot\dfrac{\pi}{180}=\dfrac{60\pi}{180}\), then reduce.`,
+      ], R`\(\tfrac{\pi}{3}\)`),
+      P(R`Find the exact value of \(\sin\left(\tfrac{3\pi}{4}\right)\).`, [
+        R`\(\tfrac{3\pi}{4}\) is in Quadrant II; reference angle \(\tfrac{\pi}{4}\).`,
+        R`Use the reference-angle value, then the sign for that quadrant (All Students Take Calculus).`,
+      ], R`\(\tfrac{\sqrt2}{2}\)`),
+      P(R`In a right triangle, angle \(\theta\) has opposite side 21 and hypotenuse 29. Find \(\sin\theta\), \(\cos\theta\), and \(\tan\theta\).`, [
+        R`Adjacent: \(\sqrt{29^2-21^2}=20\).`,
+        R`SOH-CAH-TOA, then reduce.`,
+      ], R`\(\sin\theta=\dfrac{21}{29},\ \cos\theta=\dfrac{20}{29},\ \tan\theta=\dfrac{21}{20}\)`),
+      P(R`Solve \(\sin x-1=0\) on \([0,2\pi)\).`, [
+        R`Isolate: \(\sin x=1\).`,
+        R`Find the reference angle, then every quadrant where \(\sin\) has that sign.`,
+      ], R`\(x=\tfrac{\pi}{2}\)`),
+      P(R`Find the amplitude, period, and midline of \(y=2\cos(2x)+4\).`, [
+        R`Amplitude \(=|2|\). Period \(=\dfrac{2\pi}{2}\). Midline \(y=4\).`,
+      ], R`Amplitude \(2\), period \(\pi\), midline \(y=4\)`),
+      P(R`Find the angle in \([0^\circ,360^\circ)\) coterminal with \(768^\circ\), and its reference angle.`, [
+        R`Add or subtract \(360^\circ\) until it lands in range: \(48^\circ\).`,
+        R`Reference angle: distance to the nearest part of the \(x\)-axis.`,
+      ], R`\(48^\circ\); reference angle \(48^\circ\)`),
+      P(R`A circle has radius 10 cm. Find the arc length and sector area for a central angle of \(\tfrac{\pi}{6}\).`, [
+        R`Arc length \(s=r\theta\) (θ in radians!).`,
+        R`Sector area \(A=\tfrac12r^2\theta\).`,
+      ], R`\(s=\tfrac{5\pi}{3}\) cm, \(A=\tfrac{25\pi}{3}\) cm²`),
+      P(R`Convert \(15^\circ\) to radians.`, [
+        R`\(15\cdot\dfrac{\pi}{180}=\dfrac{15\pi}{180}\), then reduce.`,
+      ], R`\(\tfrac{\pi}{12}\)`),
+      P(R`Convert \(\tfrac{\pi}{4}\) to degrees.`, [
+        R`\(\tfrac{\pi}{4}\cdot\dfrac{180^\circ}{\pi}\).`,
+      ], R`\(45^\circ\)`),
+      P(R`In a right triangle, angle \(\theta\) has opposite side 30 and hypotenuse 34. Find \(\sin\theta\), \(\cos\theta\), and \(\tan\theta\).`, [
+        R`Adjacent: \(\sqrt{34^2-30^2}=16\).`,
+        R`SOH-CAH-TOA, then reduce.`,
+      ], R`\(\sin\theta=\dfrac{15}{17},\ \cos\theta=\dfrac{8}{17},\ \tan\theta=\dfrac{15}{8}\)`),
+      P(R`Solve \(2\cos x=\sqrt2\) on \([0,2\pi)\).`, [
+        R`Isolate: \(\cos x=\tfrac{\sqrt2}{2}\).`,
+        R`Find the reference angle, then every quadrant where \(\cos\) has that sign.`,
+      ], R`\(x=\tfrac{\pi}{4},\ \tfrac{7\pi}{4}\)`),
+      P(R`Find the amplitude, period, and midline of \(y=3\cos(2x)+3\).`, [
+        R`Amplitude \(=|3|\). Period \(=\dfrac{2\pi}{2}\). Midline \(y=3\).`,
+      ], R`Amplitude \(3\), period \(\pi\), midline \(y=3\)`),
+    ],
+  },
+
+  // ------------------------------------------------------------------
+  {
+    id: "explog",
+    group: "Pre-Calc Review",
+    title: "Exponents & Logarithms",
+    icon: "log",
+    blurb: "Log rules, e and ln, and solving exponential and log equations.",
+    howto: [
+      {
+        title: "What a logarithm means",
+        steps: [
+          R`\(\log_b n=k\) means \(b^k=n\). A log answers: "what power do I raise \(b\) to, to get \(n\)?"`,
+          R`\(\ln\) is \(\log_e\) (base \(e\approx2.718\)). \(\log\) with no base usually means base 10.`,
+          R`You can only take the log of a <b>positive</b> number.`,
+          R`\(\log_b1=0\), \(\log_bb=1\), \(\log_b(b^k)=k\), \(b^{\log_bn}=n\).`,
+        ],
+      },
+      {
+        title: "Using the log rules",
+        steps: [
+          R`<b>Product</b> &rarr; sum: \(\log(ab)=\log a+\log b\).`,
+          R`<b>Quotient</b> &rarr; difference: \(\log\dfrac ab=\log a-\log b\).`,
+          R`<b>Power</b> &rarr; multiply in front: \(\log(a^r)=r\log a\). Roots are powers: \(\sqrt{y}=y^{1/2}\).`,
+          R`<b>Careful:</b> \(\log(a+b)\) does NOT split up. There's no rule for that!`,
+        ],
+      },
+      {
+        title: "Solving exponential equations",
+        steps: [
+          R`If you can write both sides with the <b>same base</b>, set the exponents equal (e.g. \(4^x=8\Rightarrow2^{2x}=2^3\)).`,
+          R`Otherwise, isolate the exponential part, then take \(\ln\) of both sides and bring the exponent down.`,
+          R`For \(e^{\text{stuff}}=n\): stuff \(=\ln n\).`,
+        ],
+      },
+      {
+        title: "Solving log equations",
+        steps: [
+          R`Combine logs into a single log using the rules.`,
+          R`Rewrite in exponential form: \(\log_b(\text{stuff})=k\Rightarrow\text{stuff}=b^k\).`,
+          R`Solve, then <b>check</b>: throw out any answer that makes a log's input zero or negative.`,
+        ],
+      },
+    ],
+    formulas: [
+      { name: "Definition", tex: R`\log_bn=k\iff b^k=n` },
+      { name: "Product / quotient", tex: R`\log(ab)=\log a+\log b,\quad\log\frac ab=\log a-\log b` },
+      { name: "Power", tex: R`\log(a^r)=r\log a` },
+      { name: "Inverse properties", tex: R`\ln(e^x)=x,\quad e^{\ln x}=x,\quad \log_b1=0,\quad\log_bb=1` },
+      { name: "Change of base", tex: R`\log_bn=\frac{\ln n}{\ln b}` },
+      { name: "Continuous growth", tex: R`A=Pe^{rt}` },
+      { name: "Compound interest", tex: R`A=P\left(1+\frac rn\right)^{nt}` },
+      { name: "Graph facts", tex: R`y=e^x:\ (0,1),\ y>0;\qquad y=\ln x:\ (1,0),\ x>0` },
+    ],
+    problems: [
+      P(R`Evaluate \(\log_2 32\), \(\log_3\tfrac19\), and \(\log_5 1\).`, [
+        R`\(2^5=32\), so \(\log_232=5\).`,
+        R`\(3^{-2}=\tfrac19\), so \(\log_3\tfrac19=-2\).`,
+        R`\(5^0=1\), so \(\log_51=0\).`,
+      ], R`\(5,\ -2,\ 0\)`),
+      P(R`Write \(5^3=125\) in logarithmic form.`, [
+        R`\(b^k=n\iff\log_bn=k\), with \(b=5\), \(k=3\), \(n=125\).`,
+      ], R`\(\log_5125=3\)`),
+      P(R`Expand \(\ln\!\left(\dfrac{x^3\sqrt y}{z^2}\right)\).`, [
+        R`Quotient: \(\ln(x^3\sqrt y)-\ln(z^2)\).`,
+        R`Product: \(\ln x^3+\ln y^{1/2}-\ln z^2\).`,
+        R`Power: \(3\ln x+\tfrac12\ln y-2\ln z\).`,
+      ], R`\(3\ln x+\tfrac12\ln y-2\ln z\)`),
+      P(R`Condense into a single log: \(2\log x-\log y+3\log z\).`, [
+        R`Power rule backwards: \(\log x^2-\log y+\log z^3\).`,
+        R`Add &rarr; multiply, subtract &rarr; divide: \(\log\dfrac{x^2z^3}{y}\).`,
+      ], R`\(\log\dfrac{x^2z^3}{y}\)`),
+      P(R`Solve \(3^{2x-1}=27\).`, [
+        R`\(27=3^3\), so \(3^{2x-1}=3^3\).`,
+        R`Same base &rArr; exponents equal: \(2x-1=3\).`,
+        R`\(x=2\).`,
+      ], R`\(x=2\)`),
+      P(R`Solve \(4^x=8\).`, [
+        R`Both are powers of 2: \(4^x=(2^2)^x=2^{2x}\), \(8=2^3\).`,
+        R`\(2x=3\).`,
+      ], R`\(x=\tfrac32\)`),
+      P(R`Solve \(e^{2x}=7\).`, [
+        R`Take \(\ln\) of both sides: \(2x=\ln7\).`,
+        R`\(x=\dfrac{\ln7}{2}\approx0.973\).`,
+      ], R`\(x=\dfrac{\ln7}{2}\approx0.973\)`),
+      P(R`Solve \(\log_2(x+3)=4\).`, [
+        R`Exponential form: \(x+3=2^4=16\).`,
+        R`\(x=13\). Check: \(\log_216=4\). ✓`,
+      ], R`\(x=13\)`),
+      P(R`Solve \(\ln x+\ln(x-2)=\ln8\).`, [
+        R`Combine: \(\ln[x(x-2)]=\ln8\Rightarrow x^2-2x=8\).`,
+        R`\(x^2-2x-8=0\Rightarrow(x-4)(x+2)=0\Rightarrow x=4\) or \(x=-2\).`,
+        R`Check: \(x=-2\) would mean \(\ln(-2)\), which is undefined. Throw it out.`,
+      ], R`\(x=4\)`),
+      P(R`&#36;1000 is invested at 5% interest compounded continuously. How much is there after 10 years?`, [
+        R`\(A=Pe^{rt}=1000e^{0.05\cdot10}=1000e^{0.5}\).`,
+        R`\(e^{0.5}\approx1.6487\).`,
+      ], R`\(\approx\$1648.72\)`),
+      P(R`Simplify \(e^{\ln5+2\ln x}\).`, [
+        R`\(2\ln x=\ln x^2\), so the exponent is \(\ln5+\ln x^2=\ln(5x^2)\).`,
+        R`\(e^{\ln(5x^2)}=5x^2\).`,
+      ], R`\(5x^2\)`),
+      // ---- generated practice (numbers vary; answers computed) ----
+      P(R`Evaluate \(\log_{6}7776\).`, [
+        R`Ask: \(6^{?}=7776\). \(6^{5}=7776\).`,
+      ], R`\(5\)`),
+      P(R`Evaluate \(\log_{125}25\).`, [
+        R`Write both as powers of 5: \(125=5^{3}\), \(25=5^{2}\).`,
+        R`\((5^{3})^{x}=5^{2}\Rightarrow 3x=2\).`,
+      ], R`\(\dfrac{2}{3}\)`),
+      P(R`Write \(4^{-1}=\tfrac{1}{4}\) in logarithmic form.`, [
+        R`\(b^k=n\iff\log_bn=k\).`,
+      ], R`\(\log_{4}\tfrac{1}{4}=-1\)`),
+      P(R`Expand \(\ln\!\left(\dfrac{x^{2}y^{3}}{z}\right)\).`, [
+        R`Quotient &rarr; subtract; product &rarr; add; powers (and roots) come down in front.`,
+      ], R`\(2\ln x+3\ln y-\ln z\)`),
+      P(R`Condense into a single logarithm: \(\log x-5\log y+2\log z\).`, [
+        R`Move coefficients up as powers, then add &rarr; multiply, subtract &rarr; divide.`,
+      ], R`\(\log\dfrac{xz^{2}}{y^{5}}\)`),
+      P(R`Solve \(4^{-x-1}=16\).`, [
+        R`\(16=4^{2}\), so \(-x-1=2\).`,
+      ], R`\(x=-3\)`),
+      P(R`Solve \(8e^{-2x}=104\).`, [
+        R`Divide: \(e^{-2x}=13\).`,
+        R`Take ln: \(-2x=\ln 13\).`,
+      ], R`\(x=-\tfrac{1}{2}\ln 13\approx-1.2825\)`),
+      P(R`Solve \(\log_{4}(2x+6)=4\).`, [
+        R`Exponential form: \(2x+6=4^{4}=256\).`,
+        R`Solve for \(x\), and check the inside is positive.`,
+      ], R`\(x=125\)`),
+      P(R`Solve \(\ln x+\ln(x-3)=\ln 70\).`, [
+        R`Combine: \(x(x-3)=70\Rightarrow x^{2}-3x-70=0\).`,
+        R`Factor: \((x-10)(x+7)=0\), so \(x=10\) or \(x=-7\).`,
+        R`Check: \(x=-7\) makes a log input negative or zero, so throw it out.`,
+      ], R`\(x=10\)`),
+      P(R`Use change of base to approximate \(\log_{5}7\).`, [
+        R`\(\dfrac{\ln 7}{\ln 5}\).`,
+      ], R`\(\approx1.2091\)`),
+      P(R`&#36;4800 earns 6% interest compounded yearly. How much after 10 years?`, [
+        R`\(A=4800(1.06)^{10}\).`,
+      ], R`\(\approx\$8596.07\)`),
+      P(R`Simplify \(\ln(e^{1})+e^{\ln 14}\).`, [
+        R`\(\ln(e^a)=a\) and \(e^{\ln b}=b\).`,
+      ], R`\(15\)`),
+      P(R`Find the domain of \(f(x)=\ln(-6x-6)\).`, [
+        R`Logs need a positive input: \(-6x-6>0\) (flip when dividing by a negative).`,
+      ], R`\((-\infty,-1)\)`),
+      P(R`Evaluate \(\log_{6}1\).`, [
+        R`Ask: \(6^{?}=1\). \(6^{0}=1\).`,
+      ], R`\(0\)`),
+      P(R`Evaluate \(\log_{4}\tfrac{1}{2}\).`, [
+        R`Write both as powers of 2: \(4=2^{2}\), \(\tfrac{1}{2}=2^{-1}\).`,
+        R`\((2^{2})^{x}=2^{-1}\Rightarrow 2x=-1\).`,
+      ], R`\(-\dfrac{1}{2}\)`),
+      P(R`Write \(\log_{4}4=1\) in exponential form.`, [
+        R`\(\log_bn=k\iff b^k=n\).`,
+      ], R`\(4^{1}=4\)`),
+      P(R`Expand \(\ln\!\left(\dfrac{x^{2}y}{z^{4}}\right)\).`, [
+        R`Quotient &rarr; subtract; product &rarr; add; powers (and roots) come down in front.`,
+      ], R`\(2\ln x+\ln y-4\ln z\)`),
+      P(R`Condense into a single logarithm: \(4\ln x-5\ln y+\ln z\).`, [
+        R`Move coefficients up as powers, then add &rarr; multiply, subtract &rarr; divide.`,
+      ], R`\(\ln\dfrac{x^{4}z}{y^{5}}\)`),
+      P(R`Solve \(4^{-3x}=256\).`, [
+        R`\(256=4^{4}\), so \(-3x=4\).`,
+      ], R`\(x=-\dfrac{4}{3}\)`),
+      P(R`Solve \(6e^{5x}=24\).`, [
+        R`Divide: \(e^{5x}=4\).`,
+        R`Take ln: \(5x=\ln 4\).`,
+      ], R`\(x=\tfrac{1}{5}\ln 4\approx0.2773\)`),
+      P(R`Solve \(\log_{5}(5x+9)=1\).`, [
+        R`Exponential form: \(5x+9=5^{1}=5\).`,
+        R`Solve for \(x\), and check the inside is positive.`,
+      ], R`\(x=-\dfrac{4}{5}\)`),
+      P(R`Solve \(\ln x+\ln(x+5)=\ln 104\).`, [
+        R`Combine: \(x(x+5)=104\Rightarrow x^{2}+5x-104=0\).`,
+        R`Factor: \((x-8)(x+13)=0\), so \(x=8\) or \(x=-13\).`,
+        R`Check: \(x=-13\) makes a log input negative or zero, so throw it out.`,
+      ], R`\(x=8\)`),
+      P(R`&#36;6500 earns 5% interest compounded yearly. How much after 5 years?`, [
+        R`\(A=6500(1.05)^{5}\).`,
+      ], R`\(\approx\$8295.83\)`),
+      P(R`Simplify \(e^{6\ln x}\).`, [
+        R`\(6\ln x=\ln x^{6}\), then \(e^{\ln u}=u\).`,
+      ], R`\(x^{6}\)`),
+      P(R`Find the domain of \(f(x)=\ln(4x+3)\).`, [
+        R`Logs need a positive input: \(4x+3>0\).`,
+      ], R`\((-\dfrac{3}{4},\infty)\)`),
+      P(R`Evaluate \(\log_{9}59049\).`, [
+        R`Ask: \(9^{?}=59049\). \(9^{5}=59049\).`,
+      ], R`\(5\)`),
+      P(R`Evaluate \(\log_{4}16\).`, [
+        R`Write both as powers of 2: \(4=2^{2}\), \(16=2^{4}\).`,
+        R`\((2^{2})^{x}=2^{4}\Rightarrow 2x=4\).`,
+      ], R`\(2\)`),
+      P(R`Write \(\log_{8}1=0\) in exponential form.`, [
+        R`\(\log_bn=k\iff b^k=n\).`,
+      ], R`\(8^{0}=1\)`),
+      P(R`Expand \(\ln\!\left(\dfrac{xy^{2}}{z^{4}}\right)\).`, [
+        R`Quotient &rarr; subtract; product &rarr; add; powers (and roots) come down in front.`,
+      ], R`\(\ln x+2\ln y-4\ln z\)`),
+      P(R`Condense into a single logarithm: \(3\ln x-\ln y+2\ln z\).`, [
+        R`Move coefficients up as powers, then add &rarr; multiply, subtract &rarr; divide.`,
+      ], R`\(\ln\dfrac{x^{3}z^{2}}{y}\)`),
+      P(R`Solve \(5^{4x-5}=625\).`, [
+        R`\(625=5^{4}\), so \(4x-5=4\).`,
+      ], R`\(x=\dfrac{9}{4}\)`),
+      P(R`Solve \(4^{x}=8^{x+1}\).`, [
+        R`Same base 2: \(2^{2x}=2^{3(x+1)}\).`,
+        R`\(2x=3x+3\Rightarrow -x=3\).`,
+      ], R`\(x=-3\)`),
+      P(R`Solve \(7e^{5x}=77\).`, [
+        R`Divide: \(e^{5x}=11\).`,
+        R`Take ln: \(5x=\ln 11\).`,
+      ], R`\(x=\tfrac{1}{5}\ln 11\approx0.4796\)`),
+      P(R`Solve \(\log_{3}(x-6)=2\).`, [
+        R`Exponential form: \(x-6=3^{2}=9\).`,
+        R`Solve for \(x\), and check the inside is positive.`,
+      ], R`\(x=15\)`),
+      P(R`Solve \(\ln x+\ln(x-2)=\ln 24\).`, [
+        R`Combine: \(x(x-2)=24\Rightarrow x^{2}-2x-24=0\).`,
+        R`Factor: \((x-6)(x+4)=0\), so \(x=6\) or \(x=-4\).`,
+        R`Check: \(x=-4\) makes a log input negative or zero, so throw it out.`,
+      ], R`\(x=6\)`),
+      P(R`Use change of base to approximate \(\log_{4}46\).`, [
+        R`\(\dfrac{\ln 46}{\ln 4}\).`,
+      ], R`\(\approx2.7618\)`),
+      P(R`&#36;7800 earns 6% interest compounded yearly. How much after 5 years?`, [
+        R`\(A=7800(1.06)^{5}\).`,
+      ], R`\(\approx\$10438.16\)`),
+      P(R`Simplify \(\ln\!\left(\dfrac{1}{e^{4}}\right)\).`, [
+        R`\(\dfrac1{e^{4}}=e^{-4}\).`,
+      ], R`\(-4\)`),
+      P(R`Find the domain of \(f(x)=\ln(2x+10)\).`, [
+        R`Logs need a positive input: \(2x+10>0\).`,
+      ], R`\((-5,\infty)\)`),
+      P(R`Evaluate \(\log_{6}\tfrac{1}{6}\).`, [
+        R`Ask: \(6^{?}=\tfrac{1}{6}\). \(6^{-1}=\tfrac{1}{6}\).`,
+      ], R`\(-1\)`),
+      P(R`Write \(5^{1}=5\) in logarithmic form.`, [
+        R`\(b^k=n\iff\log_bn=k\).`,
+      ], R`\(\log_{5}5=1\)`),
+      P(R`Condense into a single logarithm: \(\ln x-3\ln y+3\ln z\).`, [
+        R`Move coefficients up as powers, then add &rarr; multiply, subtract &rarr; divide.`,
+      ], R`\(\ln\dfrac{xz^{3}}{y^{3}}\)`),
+      P(R`Solve \(5^{2x-1}=25\).`, [
+        R`\(25=5^{2}\), so \(2x-1=2\).`,
+      ], R`\(x=\dfrac{3}{2}\)`),
+      P(R`Solve \(8^{x}=2^{x-1}\).`, [
+        R`Same base 2: \(2^{3x}=2^{1(x-1)}\).`,
+        R`\(3x=x-1\Rightarrow 2x=-1\).`,
+      ], R`\(x=-\dfrac{1}{2}\)`),
+      P(R`Solve \(6e^{-4x}=102\).`, [
+        R`Divide: \(e^{-4x}=17\).`,
+        R`Take ln: \(-4x=\ln 17\).`,
+      ], R`\(x=-\tfrac{1}{4}\ln 17\approx-0.7083\)`),
+      P(R`Solve \(\log_{4}(4x+7)=3\).`, [
+        R`Exponential form: \(4x+7=4^{3}=64\).`,
+        R`Solve for \(x\), and check the inside is positive.`,
+      ], R`\(x=\dfrac{57}{4}\)`),
+      P(R`Solve \(\ln x+\ln(x+6)=\ln 27\).`, [
+        R`Combine: \(x(x+6)=27\Rightarrow x^{2}+6x-27=0\).`,
+        R`Factor: \((x-3)(x+9)=0\), so \(x=3\) or \(x=-9\).`,
+        R`Check: \(x=-9\) makes a log input negative or zero, so throw it out.`,
+      ], R`\(x=3\)`),
+      P(R`Use change of base to approximate \(\log_{9}6\).`, [
+        R`\(\dfrac{\ln 6}{\ln 9}\).`,
+      ], R`\(\approx0.8155\)`),
+      P(R`&#36;1400 earns 4% interest compounded yearly. How much after 13 years?`, [
+        R`\(A=1400(1.04)^{13}\).`,
+      ], R`\(\approx\$2331.10\)`),
+      P(R`Simplify \(\ln(e^{8})+e^{\ln 14}\).`, [
+        R`\(\ln(e^a)=a\) and \(e^{\ln b}=b\).`,
+      ], R`\(22\)`),
+      P(R`Find the domain of \(f(x)=\ln(3x+6)\).`, [
+        R`Logs need a positive input: \(3x+6>0\).`,
+      ], R`\((-2,\infty)\)`),
+      P(R`Evaluate \(\log_{7}\tfrac{1}{49}\).`, [
+        R`Ask: \(7^{?}=\tfrac{1}{49}\). \(7^{-2}=\tfrac{1}{49}\).`,
+      ], R`\(-2\)`),
+      P(R`Evaluate \(\log_{125}\tfrac{1}{25}\).`, [
+        R`Write both as powers of 5: \(125=5^{3}\), \(\tfrac{1}{25}=5^{-2}\).`,
+        R`\((5^{3})^{x}=5^{-2}\Rightarrow 3x=-2\).`,
+      ], R`\(-\dfrac{2}{3}\)`),
+      P(R`Write \(\log_{6}6=1\) in exponential form.`, [
+        R`\(\log_bn=k\iff b^k=n\).`,
+      ], R`\(6^{1}=6\)`),
+      P(R`Expand \(\ln\!\left(\dfrac{x^{3}y^{3}}{z}\right)\).`, [
+        R`Quotient &rarr; subtract; product &rarr; add; powers (and roots) come down in front.`,
+      ], R`\(3\ln x+3\ln y-\ln z\)`),
+      P(R`Condense into a single logarithm: \(2\ln x-2\ln y+\tfrac12\ln z\).`, [
+        R`Move coefficients up as powers, then add &rarr; multiply, subtract &rarr; divide.`,
+      ], R`\(\ln\dfrac{x^{2}\sqrt{z}}{y^{2}}\)`),
+      P(R`Solve \(3^{-2x-5}=9\).`, [
+        R`\(9=3^{2}\), so \(-2x-5=2\).`,
+      ], R`\(x=-\dfrac{7}{2}\)`),
+      P(R`Solve \(e^{5x}=4\).`, [
+        R`Divide: \(e^{5x}=4\).`,
+        R`Take ln: \(5x=\ln 4\).`,
+      ], R`\(x=\tfrac{1}{5}\ln 4\approx0.2773\)`),
+      P(R`Solve \(\log_{4}(3x+1)=2\).`, [
+        R`Exponential form: \(3x+1=4^{2}=16\).`,
+        R`Solve for \(x\), and check the inside is positive.`,
+      ], R`\(x=5\)`),
+      P(R`Use change of base to approximate \(\log_{8}104\).`, [
+        R`\(\dfrac{\ln 104}{\ln 8}\).`,
+      ], R`\(\approx2.2335\)`),
+      P(R`&#36;8700 grows at 5% compounded continuously. How much after 16 years?`, [
+        R`\(A=8700e^{0.05\cdot16}\).`,
+      ], R`\(\approx\$19362.21\)`),
+      P(R`Simplify \(\ln(e^{-3})+e^{\ln 13}\).`, [
+        R`\(\ln(e^a)=a\) and \(e^{\ln b}=b\).`,
+      ], R`\(10\)`),
+      P(R`Find the domain of \(f(x)=\ln(2x+5)\).`, [
+        R`Logs need a positive input: \(2x+5>0\).`,
+      ], R`\((-\dfrac{5}{2},\infty)\)`),
+      P(R`Evaluate \(\log_{4}32\).`, [
+        R`Write both as powers of 2: \(4=2^{2}\), \(32=2^{5}\).`,
+        R`\((2^{2})^{x}=2^{5}\Rightarrow 2x=5\).`,
+      ], R`\(\dfrac{5}{2}\)`),
+      P(R`Write \(\log_{5}\tfrac{1}{25}=-2\) in exponential form.`, [
+        R`\(\log_bn=k\iff b^k=n\).`,
+      ], R`\(5^{-2}=\tfrac{1}{25}\)`),
+      P(R`Expand \(\ln\!\left(\dfrac{x^{5}y^{2}}{z}\right)\).`, [
+        R`Quotient &rarr; subtract; product &rarr; add; powers (and roots) come down in front.`,
+      ], R`\(5\ln x+2\ln y-\ln z\)`),
+      P(R`Condense into a single logarithm: \(2\ln x-2\ln y+3\ln z\).`, [
+        R`Move coefficients up as powers, then add &rarr; multiply, subtract &rarr; divide.`,
+      ], R`\(\ln\dfrac{x^{2}z^{3}}{y^{2}}\)`),
+      P(R`Solve \(4^{2x-5}=4\).`, [
+        R`\(4=4^{1}\), so \(2x-5=1\).`,
+      ], R`\(x=3\)`),
+      P(R`Solve \(8e^{x}=24\).`, [
+        R`Divide: \(e^{x}=3\).`,
+        R`Take ln: \(x=\ln 3\).`,
+      ], R`\(x=\ln 3\approx1.0986\)`),
+      P(R`Solve \(\log_{4}(x-4)=4\).`, [
+        R`Exponential form: \(x-4=4^{4}=256\).`,
+        R`Solve for \(x\), and check the inside is positive.`,
+      ], R`\(x=260\)`),
+      P(R`Solve \(\ln x+\ln(x+4)=\ln 140\).`, [
+        R`Combine: \(x(x+4)=140\Rightarrow x^{2}+4x-140=0\).`,
+        R`Factor: \((x-10)(x+14)=0\), so \(x=10\) or \(x=-14\).`,
+        R`Check: \(x=-14\) makes a log input negative or zero, so throw it out.`,
+      ], R`\(x=10\)`),
+      P(R`Use change of base to approximate \(\log_{5}13\).`, [
+        R`\(\dfrac{\ln 13}{\ln 5}\).`,
+      ], R`\(\approx1.5937\)`),
+      P(R`&#36;2700 grows at 5% compounded continuously. How much after 25 years?`, [
+        R`\(A=2700e^{0.05\cdot25}\).`,
+      ], R`\(\approx\$9423.93\)`),
+      P(R`Simplify \(\ln(e^{-4})+e^{\ln 19}\).`, [
+        R`\(\ln(e^a)=a\) and \(e^{\ln b}=b\).`,
+      ], R`\(15\)`),
+      P(R`Find the domain of \(f(x)=\ln(-5x+6)\).`, [
+        R`Logs need a positive input: \(-5x+6>0\) (flip when dividing by a negative).`,
+      ], R`\((-\infty,\dfrac{6}{5})\)`),
+      P(R`Evaluate \(\log_{2}1\).`, [
+        R`Ask: \(2^{?}=1\). \(2^{0}=1\).`,
+      ], R`\(0\)`),
+      P(R`Evaluate \(\log_{25}625\).`, [
+        R`Write both as powers of 5: \(25=5^{2}\), \(625=5^{4}\).`,
+        R`\((5^{2})^{x}=5^{4}\Rightarrow 2x=4\).`,
+      ], R`\(2\)`),
+      P(R`Write \(\log_{7}49=2\) in exponential form.`, [
+        R`\(\log_bn=k\iff b^k=n\).`,
+      ], R`\(7^{2}=49\)`),
+      P(R`Expand \(\ln\!\left(\dfrac{x^{4}y^{2}}{z}\right)\).`, [
+        R`Quotient &rarr; subtract; product &rarr; add; powers (and roots) come down in front.`,
+      ], R`\(4\ln x+2\ln y-\ln z\)`),
+      P(R`Condense into a single logarithm: \(4\log x-\log y+\tfrac12\log z\).`, [
+        R`Move coefficients up as powers, then add &rarr; multiply, subtract &rarr; divide.`,
+      ], R`\(\log\dfrac{x^{4}\sqrt{z}}{y}\)`),
+      P(R`Solve \(5^{-3x}=125\).`, [
+        R`\(125=5^{3}\), so \(-3x=3\).`,
+      ], R`\(x=-1\)`),
+      P(R`Solve \(5e^{x}=100\).`, [
+        R`Divide: \(e^{x}=20\).`,
+        R`Take ln: \(x=\ln 20\).`,
+      ], R`\(x=\ln 20\approx2.9957\)`),
+      P(R`Solve \(\log_{4}(2x+1)=3\).`, [
+        R`Exponential form: \(2x+1=4^{3}=64\).`,
+        R`Solve for \(x\), and check the inside is positive.`,
+      ], R`\(x=\dfrac{63}{2}\)`),
+      P(R`Solve \(\ln x+\ln(x+8)=\ln 48\).`, [
+        R`Combine: \(x(x+8)=48\Rightarrow x^{2}+8x-48=0\).`,
+        R`Factor: \((x-4)(x+12)=0\), so \(x=4\) or \(x=-12\).`,
+        R`Check: \(x=-12\) makes a log input negative or zero, so throw it out.`,
+      ], R`\(x=4\)`),
+      P(R`Use change of base to approximate \(\log_{2}146\).`, [
+        R`\(\dfrac{\ln 146}{\ln 2}\).`,
+      ], R`\(\approx7.1898\)`),
+      P(R`&#36;2100 earns 7% interest compounded yearly. How much after 28 years?`, [
+        R`\(A=2100(1.07)^{28}\).`,
+      ], R`\(\approx\$13962.56\)`),
+      P(R`Simplify \(\ln(e^{8})+e^{\ln 5}\).`, [
+        R`\(\ln(e^a)=a\) and \(e^{\ln b}=b\).`,
+      ], R`\(13\)`),
+      P(R`Find the domain of \(f(x)=\ln(-4x+4)\).`, [
+        R`Logs need a positive input: \(-4x+4>0\) (flip when dividing by a negative).`,
+      ], R`\((-\infty,1)\)`),
+      P(R`Evaluate \(\log_{4}\tfrac{1}{64}\).`, [
+        R`Ask: \(4^{?}=\tfrac{1}{64}\). \(4^{-3}=\tfrac{1}{64}\).`,
+      ], R`\(-3\)`),
+    ],
+  },
+
+  // ==================================================================
+  //  CALCULUS 1
+  // ==================================================================
   // ------------------------------------------------------------------
   {
     id: "limits",
@@ -7011,19 +8813,5 @@ window.TOPICS = [
   },
 ];
 
-// Extra formulas that only show up on the Formula Sheet page
-window.EXTRA_FORMULAS = [
-  {
-    group: "Algebra & Trig Review",
-    items: [
-      { name: "Pythagorean identity", tex: String.raw`\sin^2x+\cos^2x=1` },
-      { name: "Other Pythagorean identities", tex: String.raw`1+\tan^2x=\sec^2x,\quad 1+\cot^2x=\csc^2x` },
-      { name: "Double angle", tex: String.raw`\sin 2x=2\sin x\cos x,\quad \cos2x=\cos^2x-\sin^2x` },
-      { name: "Unit circle values", tex: String.raw`\sin\tfrac\pi6=\tfrac12,\ \sin\tfrac\pi4=\tfrac{\sqrt2}2,\ \sin\tfrac\pi3=\tfrac{\sqrt3}2,\ \sin\tfrac\pi2=1` },
-      { name: "Exponent rules", tex: String.raw`x^ax^b=x^{a+b},\ \frac{x^a}{x^b}=x^{a-b},\ (x^a)^b=x^{ab},\ x^{-a}=\frac1{x^a},\ x^{m/n}=\sqrt[n]{x^m}` },
-      { name: "Log rules", tex: String.raw`\ln(ab)=\ln a+\ln b,\ \ln\tfrac ab=\ln a-\ln b,\ \ln a^r=r\ln a,\ \ln e=1,\ \ln1=0` },
-      { name: "Factoring", tex: String.raw`a^2-b^2=(a-b)(a+b),\quad a^3\pm b^3=(a\pm b)(a^2\mp ab+b^2)` },
-      { name: "Quadratic formula", tex: String.raw`x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}` },
-    ],
-  },
-];
+// Extra formula groups for the Formula Sheet page (none right now; each topic has its own).
+window.EXTRA_FORMULAS = [];
